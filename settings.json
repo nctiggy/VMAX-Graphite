@@ -1,0 +1,48 @@
+{
+	"uni_user": "smc",
+	"uni_password": "smc",
+	"graphite_host": "hostname",
+	"graphite_port": "2003",
+	"unisphere": [
+		{
+			"ip": "10.1.31.30",
+			"port": 8443,
+			"symmetrix": [
+				{ "sid": "000192601775" },
+				{ "sid": "000192601650" }
+			]
+		}
+	],
+	"monitor": [
+		{
+			"scope": "array",
+			"type": "performance",
+			"keys": false,
+			"metrics": [
+				"HostIOs",
+				"HostMBs",
+				"WPCount",
+				"PercentReads",
+				"BEIOs",
+				"SystemMaxWPLimit",
+				"RDFA_WPCount",
+				"AllocatedCapacity",
+				"BE_IOS_PER_SEC",
+				"RESPONSE_TIME_READ",
+				"RESPONSE_TIME_WRITE",
+				"TOTAL_CACHE_UTILIZATION",
+				"DEV_WRITE_PENDING_EVENT_PER_SEC"
+			]
+		},
+		{
+			"scope": "BEDirector",
+			"type": "performance",
+			"keys": true,
+			"metrics": [
+				"PercentBusy",
+				"IOs",
+				"MBs"
+			]
+		}
+	]
+}
