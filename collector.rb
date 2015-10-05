@@ -1,10 +1,23 @@
 require "rest_client"
 require "json"
 require "base64"
+require "crack"
 %w{simple-graphite}.each { |l| require l }
 
 @timestamp=''
 settings_file="settings.json"
+
+def get_metrics(param_type,xsd)
+	output = Array.new
+	JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
+		if type['name'] == "#{param_type}Metric"
+			type['xs:restriction']['xs:enumeration'].each do |metric|
+				output.push(metric['value'])
+			end
+		end
+	end
+	return output
+end
 
 def rest_post(payload, api_url, auth, cert=nil)
 	JSON.parse(RestClient::Request.execute(
@@ -39,22 +52,23 @@ end
 config=readSettings(settings_file)
 auth = Base64.strict_encode64("#{config['uni_user']}:#{config['uni_password']}")
 g = Graphite.new({host: config['graphite_host'], port: config['graphite_port']})
+myparams = Crack::XML.parse(File.read(config['parameters_file'])).to_json
 
 config['unisphere'].each do |unisphere|
 	unisphere['symmetrix'].each do |symmetrix|
 		config['monitor'].each do |monitor|
-			payload = {}
-			###arrays_timestamp = JSON.parse('{"arrayKeyResult": {"arrayInfo": [{"symmetrixId": "000192601775","lastAvailableDate": "1441310100000"}]}}')
+			graphite_payload = {}
 			rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)['arrayKeyResult']['arrayInfo']
 			arrays_timestamp['arrayKeyResult']['arrayInfo'].each do |array|
 				if array['symmetrixId'] == symmetrix['sid']
 					@timestamp=array['lastAvailableDate']
 				end
 			end
-			payload = {arrayParam: {symmetrixId: symmetrix['sid'], startDate: @timestamp, endDate: @timestamp, metrics: monitor['metrics']}}
+			metrics_param = get_metrics(monitor['scope'],myparams)
+			payload = {arrayParam: {symmetrixId: symmetrix['sid'], startDate: @timestamp, endDate: @timestamp, metrics: metrics_param}}
 			metrics = rest_post(payload, "https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
-			monitor['metrics'].each do |metric|
-				payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}] = metrics['iterator']['resultList']['result'][0][metric]
+			metrics_param.each do |metric|
+				graphite_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}] = metrics['iterator']['resultList']['result'][0][metric]
 			g.send_metrics(payload)
 		end
 	end
