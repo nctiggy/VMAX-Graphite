@@ -16,11 +16,15 @@
 	"monitor": [
 		{
 			"scope": "Array",
-			"type": "performance",
+			"type": "performance"
 		},
 		{
 			"scope": "BEDirector",
-			"type": "performance",
+			"type": "performance"
+		},
+		{
+			"scope": "FEDirector",
+			"type": "performance"
 		}
 	]
 }
