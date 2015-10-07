@@ -19,6 +19,11 @@ def get_metrics(param_type,xsd)
 	return output
 end
 
+def get_keys(scope,auth)
+	rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
+
+end
+
 def rest_post(payload, api_url, auth, cert=nil)
 	JSON.parse(RestClient::Request.execute(
 		method: :post,
@@ -49,16 +54,16 @@ def readSettings(file)
 	JSON.parse(settings)
 end
 
-config=readSettings(settings_file)
-auth = Base64.strict_encode64("#{config['uni_user']}:#{config['uni_password']}")
-g = Graphite.new({host: config['graphite_host'], port: config['graphite_port']})
-myparams = Crack::XML.parse(File.read(config['parameters_file'])).to_json
+@config=readSettings(settings_file)
+auth = Base64.strict_encode64("#{@config['uni_user']}:#{@config['uni_password']}")
+g = Graphite.new({host: @config['graphite_host'], port: @config['graphite_port']})
+myparams = Crack::XML.parse(File.read(@config['parameters_file'])).to_json
 
-config['unisphere'].each do |unisphere|
+@config['unisphere'].each do |unisphere|
 	unisphere['symmetrix'].each do |symmetrix|
-		config['monitor'].each do |monitor|
+		@config['monitor'].each do |monitor|
 			graphite_payload = {}
-			rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)['arrayKeyResult']['arrayInfo']
+			arrays_timestamp = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)['arrayKeyResult']['arrayInfo']
 			arrays_timestamp['arrayKeyResult']['arrayInfo'].each do |array|
 				if array['symmetrixId'] == symmetrix['sid']
 					@timestamp=array['lastAvailableDate']
@@ -68,7 +73,8 @@ config['unisphere'].each do |unisphere|
 			payload = {arrayParam: {symmetrixId: symmetrix['sid'], startDate: @timestamp, endDate: @timestamp, metrics: metrics_param}}
 			metrics = rest_post(payload, "https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
 			metrics_param.each do |metric|
-				graphite_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}] = metrics['iterator']['resultList']['result'][0][metric]
+				graphite_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics['iterator']['resultList']['result'][0][metric]
+			end
 			g.send_metrics(payload)
 		end
 	end
