@@ -19,9 +19,16 @@ def get_metrics(param_type,xsd)
 	return output
 end
 
-def get_keys(scope,auth)
+def get_keys(scope,sid=nil,auth)
 	rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
-
+	if sid do
+		rest.each do |array|
+			if array['symmetrixId'] == sid do
+				@timestamp=array['lastAvailableDate']
+				return @timestamp
+			end
+		end
+	end
 end
 
 def rest_post(payload, api_url, auth, cert=nil)
