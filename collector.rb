@@ -19,16 +19,21 @@ def get_metrics(param_type,xsd)
 	return output
 end
 
-def get_keys(scope,sid=nil,auth)
-	rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
-	if sid do
-		rest.each do |array|
-			if array['symmetrixId'] == sid do
-				@timestamp=array['lastAvailableDate']
-				return @timestamp
-			end
-		end
+def get_keys(unisphere,symmetrix,monitor,auth)
+	if monitor['scope'].downcase == "array"
+		rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
+		#rest.each do |array|
+			#if array['symmetrixId'] == symmetrix['symmetrixId']
+				#@timestamp=array['lastAvailableDate']
+				#return @timestamp
+			#end
+		#end
+	else
+		payload = { "#{monitor['scope']}KeyParam": { "symmetrixId": symmetrix['symmetrixId']}}
+		rest = rest_post(payload,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
+		#rest.each do |device|
 	end
+	return rest
 end
 
 def rest_post(payload, api_url, auth, cert=nil)
@@ -70,7 +75,7 @@ myparams = Crack::XML.parse(File.read(@config['parameters_file'])).to_json
 	unisphere['symmetrix'].each do |symmetrix|
 		@config['monitor'].each do |monitor|
 			graphite_payload = {}
-			arrays_timestamp = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)['arrayKeyResult']['arrayInfo']
+			arrays_timestamp = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)
 			arrays_timestamp['arrayKeyResult']['arrayInfo'].each do |array|
 				if array['symmetrixId'] == symmetrix['sid']
 					@timestamp=array['lastAvailableDate']
@@ -78,11 +83,11 @@ myparams = Crack::XML.parse(File.read(@config['parameters_file'])).to_json
 			end
 			metrics_param = get_metrics(monitor['scope'],myparams)
 			payload = {arrayParam: {symmetrixId: symmetrix['sid'], startDate: @timestamp, endDate: @timestamp, metrics: metrics_param}}
-			metrics = rest_post(payload, "https://#{unisphere['ip']}:#{unisphere['port']}/unimax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
+			metrics = rest_post(payload, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
 			metrics_param.each do |metric|
 				graphite_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics['iterator']['resultList']['result'][0][metric]
 			end
-			g.send_metrics(payload)
+			g.send_metrics(graphite_payload)
 		end
 	end
 end
