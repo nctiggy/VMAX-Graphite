@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require "rest_client"
 require "json"
 require "base64"
