@@ -6,6 +6,9 @@
 		"host": "hostname",
 		"port": "2003"
 	},
+	"csv": {
+		"enabled": true
+	},
 	"parameters_file": "unisphere7.xsd",
 	"unisphere": [
 		{
