@@ -1,8 +1,11 @@
 {
 	"uni_user": "smc",
 	"uni_password": "smc",
-	"graphite_host": "hostname",
-	"graphite_port": "2003",
+	"graphite": {
+		"enabled": true,
+		"host": "hostname",
+		"port": "2003"
+	},
 	"parameters_file": "unisphere7.xsd",
 	"unisphere": [
 		{

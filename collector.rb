@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
 require "rest_client"
+require "csv"
 require "json"
 require "base64"
 require "crack"
 %w{simple-graphite}.each { |l| require l }
 
-@timestamp=''
 settings_file="settings.json"
 
 def get_metrics(param_type,xsd)
@@ -78,13 +78,13 @@ end
 
 config=readSettings(settings_file)
 auth = Base64.strict_encode64("#{@config['uni_user']}:#{@config['uni_password']}")
-g = Graphite.new({host: @config['graphite_host'], port: @config['graphite_port']})
+g = Graphite.new({host: @config['graphite']['host'], port: @config['graphite']['port']}) if config['graphite']['enabled']
 myparams = Crack::XML.parse(File.read(@config['parameters_file'])).to_json
 
 config['unisphere'].each do |unisphere|
 	unisphere['symmetrix'].each do |symmetrix|
 		config['monitor'].each do |monitor|
-			graphite_payload = {}
+			metric_payload = {}
 			metrics_param = get_metrics(monitor['scope'],myparams)
 			keys = get_keys(unisphere,symmetrix,monitor,auth)
 			if monitor['scope'] == "Array"
@@ -92,7 +92,7 @@ config['unisphere'].each do |unisphere|
 					if key['symmetrixId'] == symmetrix['sid']
 						metrics = get_array_metrics(unisphere,symmetrix,monitor,key,metrics_param,auth)
 						metrics_param.each do |metric|
-							graphite_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric]
+							metric_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric]
 						end
 					end
 				end
@@ -100,11 +100,12 @@ config['unisphere'].each do |unisphere|
 				keys.each do |key|
 					metrics = get_component_metrics(unisphere,symmetrix,monitor,key,metrics_param,auth)
 					metrics_param.each do |metric|
-						graphite_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[get_component_id_key(monitor['scope'])+'Id']}.#{metric}"] = metrics[metric]
+						metric_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[get_component_id_key(monitor['scope'])+'Id']}.#{metric}"] = metrics[metric]
 					end
 				end
 			end
-			g.send_metrics(graphite_payload)
+			g.send_metrics(metric_payload) if config['graphite']['enabled']
+			CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| metric_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
 		end
 	end
 end
