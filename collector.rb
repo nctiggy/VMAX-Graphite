@@ -5,7 +5,6 @@ require "csv"
 require "json"
 require "base64"
 require "crack"
-require "pry-byebug"
 %w{simple-graphite}.each { |l| require l }
 
 settings_file="settings.json"
@@ -15,7 +14,7 @@ def get_metrics(param_type,xsd)
 	JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
 		if type['name'] == "#{param_type}Metric"
 			type['xs:restriction']['xs:enumeration'].each do |metric|
-				output.push(metric['value']) if metric['value'] == metric['value'].upcase
+				output.push(metric['value'])
 			end
 		end
 	end
@@ -24,23 +23,23 @@ end
 
 def get_keys(unisphere,symmetrix,monitor,auth)
 	if monitor['scope'].downcase == "array"
-		rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{monitor['scope'].downcase}Info"]
+		rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
 	else
-		payload = { "#{monitor['scope']}KeyParam" => { "symmetrixId" => symmetrix['sid']}}
-		rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{monitor['scope'].downcase}KeyResult"]["#{monitor['scope'].downcase}Info"]
+		payload = { "#{monitor['scope']}KeyParam": { "symmetrixId": symmetrix['symmetrixId']}}
+		rest = rest_post(payload,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{scope.downcase}KeyResult"]["#{scope.downcase}Info"]
 	end
 	return rest
 end
 
 def get_component_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
 	componentId = get_component_id_key(monitor['scope'])
-	payload = { "#{monitor['scope']}Param" => { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "#{componentId}Id" => key["#{componentId}Id"], "metrics" => metrics}}
-	rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['resultList']['result'][0]
+	payload = { "#{monitor['scope']}Param": { "symmetrixId": symmetrix['symmetrixId'], "startDate": key['lastAvailableDate'], "endDate": key['lastAvailableDate'], "#{componentId}Id": key["#{componentId}Id"], "metrics": metrics}}
+	rest_post(payload,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['iterator']['resultList']['result'][0]
 end
 
 def get_array_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
-	payload = { "metrics" => metrics, "dataFormat" => "Average", "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate']}
-	rest_post(payload.to_json, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['resultList']['result'][0]
+	payload = { "#{monitor['scope']}Param": { "symmetrixId": symmetrix['symmetrixId'], "startDate": key['lastAvailableDate'], "endDate": key['lastAvailableDate']}}
+	rest_post(payload, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['iterator']['resultList']['result'][0]
 end
 
 def rest_post(payload, api_url, auth, cert=nil)
@@ -58,7 +57,7 @@ def rest_post(payload, api_url, auth, cert=nil)
 end
 
 def get_component_id_key(scope)
-	monitor['scope'].start_with?("fe","be") ? scope[2..-1].downcase : monitor['scope'].downcase
+	scope.start_with?("fe","be") ? scope[2..-1].downcase : scope.downcase
 end
 
 def rest_get(api_url, auth, cert=nil)
@@ -78,9 +77,9 @@ def readSettings(file)
 end
 
 config=readSettings(settings_file)
-auth = Base64.strict_encode64("#{config['uni_user']}:#{config['uni_password']}")
-g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
-myparams = Crack::XML.parse(File.read(config['parameters_file'])).to_json
+auth = Base64.strict_encode64("#{@config['uni_user']}:#{@config['uni_password']}")
+g = Graphite.new({host: @config['graphite']['host'], port: @config['graphite']['port']}) if config['graphite']['enabled']
+myparams = Crack::XML.parse(File.read(@config['parameters_file'])).to_json
 
 config['unisphere'].each do |unisphere|
 	unisphere['symmetrix'].each do |symmetrix|
