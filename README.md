@@ -1,8 +1,35 @@
 # VMAX-Graphite
 
+###This ruby script is meant to simplify the ability to push VMAX statistics to Graphite and other targets
+
+To install dependancies run:
+```bash
+$ bundle install
+```
+
 Please modify settings.json.example with your information and save as settings.json
 
-Unisphere 7 Scope options:
+You can add multiple VMAX's to a Unisphere
+```json
+"symmetrix": [
+	{ "sid": "00019xxxxx1" },
+	{ "sid": "00019xxxxx2" }
+]
+```
+You can have multiple Unisphere Objects
+```json
+{
+	"ip": "x.x.x.x",
+	"user": "smc",
+	"password": "smc",
+	"port": 8443,
+	"version": 8,
+	"symmetrix": [
+		{ "sid": "00019xxxxx1" }
+	]
+}
+```
+###Unisphere 7 Scope options:
 
 - Array
 - FEDirector
@@ -26,7 +53,7 @@ Unisphere 7 Scope options:
 - StorageGroupByTier
 
 
-Unisphere 8 Scope options:
+###Unisphere 8 Scope options:
 
 - Array
 - BEDirector
