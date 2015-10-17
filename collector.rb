@@ -9,7 +9,6 @@ require "pry-byebug"
 %w{simple-graphite}.each { |l| require l }
 
 settings_file="settings.json"
-@unisphere = ''
 
 def get_metrics(param_type,xsd)
 	output = Array.new
@@ -30,8 +29,8 @@ def get_keys(unisphere,symmetrix,monitor,auth)
 		payload = { "#{monitor['scope']}KeyParam" => { "symmetrixId" => symmetrix['sid']}}
 		rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)["#{monitor['scope'].downcase}KeyResult"]["#{monitor['scope'].downcase}Info"]
 	end
-	output = rest["#{monitor['scope'].downcase}Info"] if @unisphere == 8
-	output = rest["#{monitor['scope'].downcase}KeyResult"]["#{monitor['scope'].downcase}Info"] if @unisphere == 7
+	output = rest["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 8
+	output = rest["#{monitor['scope'].downcase}KeyResult"]["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 7
 	return output
 end
 
@@ -39,16 +38,16 @@ def get_component_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
 	componentId = get_component_id_key(monitor['scope'])
 	payload = { "#{monitor['scope']}Param" => { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "#{componentId}Id" => key["#{componentId}Id"], "metrics" => metrics}}
 	rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['resultList']['result'][0]
-	output = rest['resultList']['result'][0] if @unisphere == 8
-	output = rest['iterator']['resultList']['result'][0] if @unisphere == 7
+	output = rest['resultList']['result'][0] if unisphere['version'] == 8
+	output = rest['iterator']['resultList']['result'][0] if unisphere['version'] == 7
 	return output
 end
 
 def get_array_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
 	payload = { "metrics" => metrics, "dataFormat" => "Average", "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate']}
 	rest = rest_post(payload.to_json, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['resultList']['result'][0]
-	output = rest['resultList']['result'][0] if @unisphere == 8
-	output = rest['iterator']['resultList']['result'][0] if @unisphere == 7
+	output = rest['resultList']['result'][0] if unisphere['version'] == 8
+	output = rest['iterator']['resultList']['result'][0] if unisphere['version'] == 7
 end
 
 def rest_post(payload, api_url, auth, cert=nil)
@@ -88,10 +87,9 @@ end
 config=readSettings(settings_file)
 auth = Base64.strict_encode64("#{config['uni_user']}:#{config['uni_password']}")
 g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
-myparams = Crack::XML.parse(File.read(config['parameters_file'])).to_json
 
 config['unisphere'].each do |unisphere|
-	@unisphere = unisphere['version']
+	myparams = Crack::XML.parse(File.read("unisphere#{unisphere['version']}.xsd")).to_json
 	unisphere['symmetrix'].each do |symmetrix|
 		config['monitor'].each do |monitor|
 			metric_payload = {}
