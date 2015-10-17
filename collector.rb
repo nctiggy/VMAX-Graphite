@@ -85,11 +85,11 @@ def readSettings(file)
 end
 
 config=readSettings(settings_file)
-auth = Base64.strict_encode64("#{config['uni_user']}:#{config['uni_password']}")
 g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
 
 config['unisphere'].each do |unisphere|
 	myparams = Crack::XML.parse(File.read("unisphere#{unisphere['version']}.xsd")).to_json
+	auth = Base64.strict_encode64("#{unisphere['user']}:#{unisphere['password']}")
 	unisphere['symmetrix'].each do |symmetrix|
 		config['monitor'].each do |monitor|
 			metric_payload = {}
