@@ -29,7 +29,7 @@ You can have multiple Unisphere Objects
 	]
 }
 ```
-###Unisphere 7 Scope options:
+**Unisphere 7 Scope options:**
 
 - Array
 - FEDirector
@@ -53,7 +53,7 @@ You can have multiple Unisphere Objects
 - StorageGroupByTier
 
 
-###Unisphere 8 Scope options:
+**Unisphere 8 Scope options:**
 
 - Array
 - BEDirector
