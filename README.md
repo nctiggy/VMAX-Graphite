@@ -1,13 +1,13 @@
 # VMAX-Graphite
 
-###This ruby script is meant to simplify the ability to push VMAX statistics to Graphite and other targets
+###Simplify the ability to push VMAX statistics to Graphite and other targets
 
 To install dependancies run:
 ```bash
 $ bundle install
 ```
 
-Please modify settings.json.example with your information and save as settings.json
+###Rename settings.json.example to settings.json and make appropriate changes
 
 You can add multiple VMAX's to a Unisphere
 ```json
