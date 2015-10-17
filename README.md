@@ -7,7 +7,7 @@ To install dependancies run:
 $ bundle install
 ```
 
-###Rename settings.json.example to settings.json and make appropriate changes
+**Rename settings.json.example to settings.json and make appropriate changes**
 
 You can add multiple VMAX's to a Unisphere
 ```json
