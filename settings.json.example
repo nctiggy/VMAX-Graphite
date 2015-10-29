@@ -1,6 +1,4 @@
 {
-	"uni_user": "smc",
-	"uni_password": "smc",
 	"graphite": {
 		"enabled": true,
 		"host": "hostname",
@@ -9,13 +7,27 @@
 	"csv": {
 		"enabled": true
 	},
-	"parameters_file": "unisphere7.xsd",
 	"unisphere": [
 		{
 			"ip": "x.x.x.x",
+			"user": "smc",
+			"password": "smc",
 			"port": 8443,
+			"version": 8,
 			"symmetrix": [
-				{ "sid": "00019xxxxxx" }
+				{ "sid": "00019xxxxx1" },
+				{ "sid": "00019xxxxx2" }
+			]
+		},
+		{
+			"ip": "x.x.x.x",
+			"user": "smc",
+			"password": "smc",
+			"port": 8443,
+			"version": 7,
+			"symmetrix": [
+				{ "sid": "00019xxxxx3" },
+				{ "sid": "00019xxxxx4" }
 			]
 		}
 	],
