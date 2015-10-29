@@ -63,7 +63,7 @@ def get_array_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
 	### Create a payload if unisphere 8 ###
 	payload = { "metrics" => metrics, "dataFormat" => "Average", "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate']} if unisphere['version'] == 8
 	### Make the rest call to unisphere ###
-	rest = rest_post(payload.to_json, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)['resultList']['result'][0]
+	rest = rest_post(payload.to_json, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
 	### Parse the results to return an array of metrics for unisphere 8 ###
 	output = rest['resultList']['result'][0] if unisphere['version'] == 8
 	### Parse the results to return an array of metrics for unisphere 7 ###
