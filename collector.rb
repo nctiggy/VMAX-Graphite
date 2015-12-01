@@ -6,7 +6,6 @@ require "json"
 require "base64"
 require "crack"
 require "pry-byebug"
-require "hashdiff"
 %w{simple-graphite}.each { |l| require l }
 
 settings_file="settings.json"
