@@ -15,7 +15,6 @@ settings_file="settings.json"
 ####################################################################################
 def get_metrics(param_type,xsd)
 	output = Array.new
-	binding.pry
 	JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
 		if type['name'] == "#{param_type}Metric"
 			type['xs:restriction']['xs:enumeration'].each do |metric|
@@ -31,11 +30,11 @@ end
 #####################################
 def get_keys(unisphere,symmetrix,monitor,auth)
 	if monitor['scope'].downcase == "array"
-		rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)
+		rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/keys", auth)
 	else
 		payload = { "#{monitor['scope']}KeyParam" => { "symmetrixId" => symmetrix['sid']}} if unisphere['version'] == 7
 		payload = { "symmetrixId" => symmetrix['sid']} if unisphere['version'] == 8
-		rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/keys", auth)
+		rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/keys", auth)
 	end
 	output = rest["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 8
 	output = rest["#{monitor['scope'].downcase}KeyResult"]["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 7
@@ -49,7 +48,7 @@ def get_component_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
 	componentId = get_component_id_key(monitor['scope'])
 	payload = { "#{componentId}Param" => { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "#{componentId}Id" => key["#{componentId}Id"], "metrics" => metrics}} if unisphere['version'] == 7
 	payload = { "symmetrixId" => symmetrix['sid'], "dataFormat" => "Average", "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "#{componentId}Id" => key["#{componentId}Id"], "metrics" => metrics} if unisphere['version'] == 8
-	rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
+	rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/metrics", auth)
 	output = rest['resultList']['result'][0] if unisphere['version'] == 8
 	output = rest['iterator']['resultList']['result'][0] if unisphere['version'] == 7
 	return output
@@ -64,7 +63,7 @@ def get_array_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
 	### Create a payload if unisphere 8 ###
 	payload = { "metrics" => metrics, "dataFormat" => "Average", "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate']} if unisphere['version'] == 8
 	### Make the rest call to unisphere ###
-	rest = rest_post(payload.to_json, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/#{monitor['type']}/#{monitor['scope']}/metrics", auth)
+	rest = rest_post(payload.to_json, "https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/metrics", auth)
 	### Parse the results to return an array of metrics for unisphere 8 ###
 	output = rest['resultList']['result'][0] if unisphere['version'] == 8
 	### Parse the results to return an array of metrics for unisphere 7 ###
