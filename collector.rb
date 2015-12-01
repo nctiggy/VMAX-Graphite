@@ -6,6 +6,7 @@ require "json"
 require "base64"
 require "crack"
 require "pry-byebug"
+require "hashdiff"
 %w{simple-graphite}.each { |l| require l }
 
 settings_file="settings.json"
@@ -28,12 +29,10 @@ end
 #####################################
 # Method: Reutrns keys for all scopes
 #####################################
-def get_keys(unisphere,symmetrix,monitor,auth)
+def get_keys(unisphere,payload,monitor,auth)
 	if monitor['scope'].downcase == "array"
 		rest = rest_get("https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/keys", auth)
 	else
-		payload = { "#{monitor['scope']}KeyParam" => { "symmetrixId" => symmetrix['sid']}} if unisphere['version'] == 7
-		payload = { "symmetrixId" => symmetrix['sid']} if unisphere['version'] == 8
 		rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/keys", auth)
 	end
 	output = rest["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 8
@@ -42,12 +41,45 @@ def get_keys(unisphere,symmetrix,monitor,auth)
 end
 
 ##################################################
+# Method: Find differences in the key payload
+##################################################
+def diff_key_payload(incoming_payload,parent_id=nil)
+	baseline_keys=["firstAvailableDate","lastAvailableDate"]
+	#baseline_keys.push(parent_id) if parent_id
+	incoming_keys=incoming_payload.keys
+	return incoming_keys-baseline_keys
+end
+
+##################################################
+# Method: Build the Key Payload
+##################################################
+def build_key_payload(unisphere,symmetrix,key=nil,parent_id=nil)
+	payload = { "symmetrixId" => symmetrix['sid']}
+	extra_payload = {parent_id[0] => key[parent_id[0]]} if parent_id
+	payload.merge(extra_payload) if parent _id
+	payload = {  "#{monitor['scope']}KeyParam" => payload } if unisphere['version'] == 7
+	return payload
+end
+
+##################################################
+# Method: Build the Metric Payload
+##################################################
+def build_metric_payload(monitor,symmetrix,metrics,key=nil,parent_id=nil,child_key=nil)
+	payload = { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "lastDate" => key['lastAvailableDate'], "dataFormat" => "Average", "metrics" => metrics}
+	parent_payload = { parent_id[0] => key[parent_id[0]] } unless monitor['scope'] == "Array"
+	payload.merge(parent_payload) unless monitor['scope'] == "Array"
+	child_id = diff_key_payload(child_key) if child_key
+	child_payload = { child_id[0] => child_key[child_id[0]] } if child_key
+	payload.merge(child_payload) if child_key
+	componentId = get_component_id_key(monitor['scope']) if unisphere['version'] == 7
+	payload = {  "#{monitor['scope']}Param" => payload } if unisphere['version'] == 7
+	return payload
+end
+
+##################################################
 # Method: Returns Metrics for all component scopes
 ##################################################
-def get_component_metrics(unisphere,symmetrix,monitor,key,metrics,auth)
-	componentId = get_component_id_key(monitor['scope'])
-	payload = { "#{componentId}Param" => { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "#{componentId}Id" => key["#{componentId}Id"], "metrics" => metrics}} if unisphere['version'] == 7
-	payload = { "symmetrixId" => symmetrix['sid'], "dataFormat" => "Average", "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "#{componentId}Id" => key["#{componentId}Id"], "metrics" => metrics} if unisphere['version'] == 8
+def get_metrics(unisphere,payload,monitor,auth)
 	rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/metrics", auth)
 	output = rest['resultList']['result'][0] if unisphere['version'] == 8
 	output = rest['iterator']['resultList']['result'][0] if unisphere['version'] == 7
@@ -124,29 +156,39 @@ config['unisphere'].each do |unisphere|
 	auth = Base64.strict_encode64("#{unisphere['user']}:#{unisphere['password']}")
 	unisphere['symmetrix'].each do |symmetrix|
 		config['monitor'].each do |monitor|
-			metric_payload = {}
+			output_payload = {}
 			metrics_param = get_metrics(monitor['scope'],myparams)
-			keys = get_keys(unisphere,symmetrix,monitor,auth)
+			key_payload = build_key_payload(unisphere,symmetrix)
+			keys = get_keys(unisphere,key_payload,monitor,auth)
 			if monitor['scope'] == "Array"
 				keys.each do |key|
 					if key['symmetrixId'] == symmetrix['sid']
 						metrics = get_array_metrics(unisphere,symmetrix,monitor,key,metrics_param,auth)
 						metrics_param.each do |metric|
-							metric_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric]
+							output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric]
 						end
 					end
 				end
 			else
 				keys.each do |key|
+					parent_ids = diff_key_payload(key)
+					if monitor.key?("children")
+						child_payload = build_key_payload(unisphere,symmetrix,key,parent_ids)
+						child_keys = get_keys(unisphere,child_payload,monitor,auth)
+						child_keys.each do |child_key|
+							metric_payload = build_metric_payload(monitor,symmetrix,metrics,key,parent_ids,child_key)
+							metrics = get_metrics(unisphere,metric_payload,monitor,auth)
+						end
+					end
 					metrics = get_component_metrics(unisphere,symmetrix,monitor,key,metrics_param,auth)
 					metrics_param.each do |metric|
-						metric_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key['id']}.#{metric}"] = metrics[metric] if unisphere['version'] == 8
-						metric_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[get_component_id_key(monitor['scope'])+'Id']}.#{metric}"] = metrics[metric] if unisphere['version'] == 7
+						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key['id']}.#{metric}"] = metrics[metric] if unisphere['version'] == 8
+						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[get_component_id_key(monitor['scope'])+'Id']}.#{metric}"] = metrics[metric] if unisphere['version'] == 7
 					end
 				end
 			end
-			g.send_metrics(metric_payload) if config['graphite']['enabled']
-			CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| metric_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
+			g.send_metrics(output_payload) if config['graphite']['enabled']
+			CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
 		end
 	end
 end
