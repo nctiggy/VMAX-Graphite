@@ -15,6 +15,7 @@ settings_file="settings.json"
 ####################################################################################
 def get_metrics(param_type,xsd)
 	output = Array.new
+	binding.pry
 	JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
 		if type['name'] == "#{param_type}Metric"
 			type['xs:restriction']['xs:enumeration'].each do |metric|
