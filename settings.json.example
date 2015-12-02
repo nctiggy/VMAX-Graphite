@@ -34,15 +34,27 @@
 	"monitor": [
 		{
 			"scope": "Array",
-			"type": "performance"
-		},
-		{
-			"scope": "BEDirector",
-			"type": "performance"
+			"enabled": true
 		},
 		{
 			"scope": "FEDirector",
-			"type": "performance"
+			"enabled": true
+			"children: [
+				{
+					"scope": "FEPort",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"scope": "BEDirector",
+			"enabled": true
+			"children: [
+				{
+					"scope": "BEPort",
+					"enabled": true
+				}
+			]
 		}
 	]
 }
