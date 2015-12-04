@@ -77,7 +77,7 @@ end
 ##################################################
 # Method: Returns Metrics for all component scopes
 ##################################################
-def get_metrics(unisphere,payload,monitor,auth)
+def get_perf_metrics(unisphere,payload,monitor,auth)
 	rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/metrics", auth)
 	output = rest['resultList']['result'][0] if unisphere['version'] == 8
 	output = rest['iterator']['resultList']['result'][0] if unisphere['version'] == 7
@@ -147,9 +147,9 @@ config['unisphere'].each do |unisphere|
 					child_keys = get_keys(unisphere,child_payload,monitor['children'][0],auth)
 					child_keys.each do |child_key|
 						child_ids = diff_key_payload(child_key)
-						metric_payload = build_metric_payload(monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
-						metrics = get_metrics(unisphere,metric_payload,monitor,auth)
 						metrics_param = get_metrics(monitor['children'][0]['scope'],myparams)
+						metric_payload = build_metric_payload(monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
+						metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
 						metrics_param.each do |metric|
 							output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
 						end
@@ -157,7 +157,7 @@ config['unisphere'].each do |unisphere|
 				end
 				if ((monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid']))
 					metric_payload = build_metric_payload(monitor,symmetrix,metrics_param,key,parent_ids)
-					metrics = get_metrics(unisphere,metric_payload,monitor,auth)
+					metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
 					metrics_param.each do |metric|
 						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
 						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{metric}"] = metrics[metric] unless monitor['scope'] == "Array"
