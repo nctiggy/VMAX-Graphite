@@ -155,7 +155,7 @@ config['unisphere'].each do |unisphere|
 						end
 					end
 				end
-				if ((monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid'])
+				if ((monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid']))
 					metric_payload = build_metric_payload(monitor,symmetrix,metrics_param,key,parent_ids)
 					metrics = get_metrics(unisphere,metric_payload,monitor,auth)
 					metrics_param.each do |metric|
