@@ -15,6 +15,7 @@ settings_file="settings.json"
 ####################################################################################
 def get_metrics(param_type,xsd)
 	output = Array.new
+	binding.pry
 	JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
 		if type['name'] == "#{param_type}Metric"
 			type['xs:restriction']['xs:enumeration'].each do |metric|
@@ -157,6 +158,7 @@ config['unisphere'].each do |unisphere|
 		config['monitor'].each do |monitor|
 			## If the component is not enabled i.e. false then skip. If the aprent is false it will skip the children ##
 			next unless monitor['enabled']
+			metrics_param = get_metrics(monitor['scope'],myparams)
 			output_payload = {}
 			key_payload = build_key_payload(unisphere,symmetrix,monitor)
 			keys = get_keys(unisphere,key_payload,monitor,auth)

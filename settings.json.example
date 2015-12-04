@@ -38,23 +38,85 @@
 		},
 		{
 			"scope": "FEDirector",
-			"enabled": true
-			"children: [
+			"enabled": true,
+			"children": [
 				{
-					"scope": "FEPort",
+					"scope": "FEDirectorByPort",
 					"enabled": true
 				}
 			]
 		},
 		{
 			"scope": "BEDirector",
-			"enabled": true
-			"children: [
+			"enabled": true,
+			"children": [
 				{
-					"scope": "BEPort",
+					"scope": "BEDirectorByPort",
 					"enabled": true
 				}
 			]
+		},
+		{
+			"scope": "RDFDirector",
+			"enabled": true
+		},
+		{
+			"scope": "Disk",
+			"enabled": true
+		},
+		{
+			"scope": "DeviceGroup",
+			"enabled": true
+		},
+		{
+			"scope": "StorageGroup",
+			"enabled": true
+			"children": [
+				{
+					"scope": "TierByStorageGroup",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"scope": "RDFS",
+			"enabled": true
+		},
+		{
+			"scope": "RDFA",
+			"enabled": true
+		},
+		{
+			"scope": "CachePartition",
+			"enabled": true
+		},
+		{
+			"scope": "DiskGroup",
+			"enabled": true
+		},
+		{
+			"scope": "DSEPool",
+			"enabled": true
+		},
+		{
+			"scope": "SnapPool",
+			"enabled": true
+		},
+		{
+			"scope": "ThinPool",
+			"enabled": true
+		},
+		{
+			"scope": "ThinTier",
+			"enabled": true
+		},
+		{
+			"scope": "StorageTier",
+			"enabled": true
+		},
+		{
+			"scope": "FASTPolicy",
+			"enabled": true
 		}
 	]
 }
