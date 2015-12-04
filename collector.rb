@@ -52,7 +52,7 @@ end
 ##################################################
 # Method: Build the Key Payload
 ##################################################
-def build_key_payload(unisphere,symmetrix,key=nil,parent_id=nil)
+def build_key_payload(unisphere,symmetrix,monitor,key=nil,parent_id=nil)
 	payload = { "symmetrixId" => symmetrix['sid']}
 	extra_payload = {parent_id[0] => key[parent_id[0]]} if parent_id
 	payload.merge(extra_payload) if parent_id
@@ -138,12 +138,12 @@ config['unisphere'].each do |unisphere|
 		config['monitor'].each do |monitor|
 			output_payload = {}
 			metrics_param = get_metrics(monitor['scope'],myparams)
-			key_payload = build_key_payload(unisphere,symmetrix)
+			key_payload = build_key_payload(unisphere,symmetrix,monitor)
 			keys = get_keys(unisphere,key_payload,monitor,auth)
 			keys.each do |key|
 				parent_ids = diff_key_payload(key)
 				if monitor.key?("children")
-					child_payload = build_key_payload(unisphere,symmetrix,key,parent_ids)
+					child_payload = build_key_payload(unisphere,symmetrix,monitor['children'][0],key,parent_ids)
 					child_keys = get_keys(unisphere,child_payload,monitor['children'][0],auth)
 					child_keys.each do |child_key|
 						child_ids = diff_key_payload(child_key)
