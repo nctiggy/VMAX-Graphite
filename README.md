@@ -29,29 +29,27 @@ You can have multiple Unisphere Objects
 	]
 }
 ```
-**Unisphere 7 Scope options:**
-
-- Array
-- FEDirector
-- BEDirector
-- RDFDirector
-- Disk
-- DeviceGroup
-- StorageGroup
-- RDFS
-- RDFA
-- CachePartition
-- DiskGroup
-- DSEPool
-- SnapPool
-- ThinPool
-- ThinTier
-- StorageTier
-- FEDirectorByPort
-- FASTPolicy
-- TierByStorageGroup
-- StorageGroupByTier
-
+Toggle collection of component metrics by setting enabled to true or false
+```json
+"monitor": [
+	{
+		"scope": "Array",
+		"enabled": false
+	},
+	{
+		"scope": "FEDirector",
+		"enabled": true,
+		"children": [
+			{
+				"scope": "FEDirectorByPort",
+				"enabled": true
+			}
+		]
+	}
+```
+ToDo:
+- Set monitor scope options to be Unisphere 7, unisphere 8 or both
+- Native outut to Splunk
 
 **Unisphere 8 Scope options:**
 
