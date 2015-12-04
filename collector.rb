@@ -56,7 +56,8 @@ def build_key_payload(unisphere,symmetrix,monitor,key=nil,parent_id=nil)
 	payload = { "symmetrixId" => symmetrix['sid']}
 	extra_payload = {parent_id[0] => key[parent_id[0]]} if parent_id
 	payload.merge(extra_payload) if parent_id
-	payload = {  "#{monitor['scope']}KeyParam" => payload } if unisphere['version'] == 7
+	componentId = get_component_id_key(monitor['scope']) if unisphere['version'] == 7
+	payload = {  "#{componentId}KeyParam" => payload } if unisphere['version'] == 7
 	return payload
 end
 
@@ -70,13 +71,13 @@ def build_metric_payload(unisphere,monitor,symmetrix,metrics,key=nil,parent_id=n
 	child_payload = { child_id[0] => child_key[child_id[0]] } if child_key
 	payload.merge(child_payload) if child_key
 	componentId = get_component_id_key(monitor['scope']) if unisphere['version'] == 7
-	payload = {  "#{monitor['scope']}Param" => payload } if unisphere['version'] == 7
+	payload = {  "#{componentId}Param" => payload } if unisphere['version'] == 7
 	return payload
 end
 
-##################################################
-# Method: Returns Metrics for all component scopes
-##################################################
+################################################################################
+# Method: Returns Metrics for all component scopes. Helper for building payloads
+################################################################################
 def get_perf_metrics(unisphere,payload,monitor,auth)
 	rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/metrics", auth)
 	output = rest['resultList']['result'][0] if unisphere['version'] == 8
@@ -101,12 +102,22 @@ def rest_post(payload, api_url, auth, cert=nil)
 	))
 end
 
-###################################################################
-# Method: Helper Method to correctly format scope for JSON payloads
-###################################################################
+##################################################################################
+# Method: Helper Method to correctly format scope for JSON payloads in Unisphere 7
+##################################################################################
 def get_component_id_key(scope)
-	### If the scope starts with fe or be
-	scope.start_with?("fe","be") ? scope[2..-1].downcase : scope.downcase
+	## Splits the string based on upper case letters ##
+	s = scope.split /(?=[A-Z])/
+	i = 0
+	while i < s.length
+		## If the string in the array is all upcase, make it downcase ##
+		s[i] = s[i].downcase if s[i] == s[i].upcase
+		## If this is the first string in the array and it is camelcase, make it all downcase ##
+		s[i] = s[i].downcase if i == 0 && s[i] == s[i].capitalize
+		i += 1
+	end
+	new_scope = s.join
+	return new_scope
 end
 
 ########################
@@ -123,6 +134,9 @@ def rest_get(api_url, auth, cert=nil)
 	))
 end
 
+#################################
+# Method: Read settings.json file
+#################################
 def readSettings(file)
 	settings = File.read(file)
 	JSON.parse(settings)
@@ -131,13 +145,19 @@ end
 config=readSettings(settings_file)
 g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
 
+## Loop through each Unisphere ##
 config['unisphere'].each do |unisphere|
+	## Read the appropriate XSD file based on unisphere version ##
 	myparams = Crack::XML.parse(File.read("unisphere#{unisphere['version']}.xsd")).to_json
+	## Build the Base64 auth string ##
 	auth = Base64.strict_encode64("#{unisphere['user']}:#{unisphere['password']}")
+	## Loop through each symmetrix in the current unisphere ##
 	unisphere['symmetrix'].each do |symmetrix|
+		## Loop through each component on the current symmetrix ##
 		config['monitor'].each do |monitor|
+			## If the component is not enabled i.e. false then skip. If the aprent is false it will skip the children ##
+			next unless monitor['enabled']
 			output_payload = {}
-			metrics_param = get_metrics(monitor['scope'],myparams)
 			key_payload = build_key_payload(unisphere,symmetrix,monitor)
 			keys = get_keys(unisphere,key_payload,monitor,auth)
 			keys.each do |key|
@@ -155,13 +175,13 @@ config['unisphere'].each do |unisphere|
 						end
 					end
 				end
-				if ((monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid']))
+				if (monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid'])
+					metrics_param = get_metrics(monitor['scope'],myparams)
 					metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids)
 					metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
 					metrics_param.each do |metric|
 						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
 						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{metric}"] = metrics[metric] unless monitor['scope'] == "Array"
-						#output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[get_component_id_key(monitor['scope'])+'Id']}.#{metric}"] = metrics[metric] if unisphere['version'] == 7
 					end
 				end
 			end
