@@ -63,7 +63,7 @@ end
 ##################################################
 # Method: Build the Metric Payload
 ##################################################
-def build_metric_payload(monitor,symmetrix,metrics,key=nil,parent_id=nil,child_key=nil,child_id=nil)
+def build_metric_payload(unisphere,monitor,symmetrix,metrics,key=nil,parent_id=nil,child_key=nil,child_id=nil)
 	payload = { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "lastDate" => key['lastAvailableDate'], "dataFormat" => "Average", "metrics" => metrics}
 	parent_payload = { parent_id[0] => key[parent_id[0]] } unless monitor['scope'] == "Array"
 	payload.merge(parent_payload) unless monitor['scope'] == "Array"
@@ -148,7 +148,7 @@ config['unisphere'].each do |unisphere|
 					child_keys.each do |child_key|
 						child_ids = diff_key_payload(child_key)
 						metrics_param = get_metrics(monitor['children'][0]['scope'],myparams)
-						metric_payload = build_metric_payload(monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
+						metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
 						metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
 						metrics_param.each do |metric|
 							output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
@@ -156,7 +156,7 @@ config['unisphere'].each do |unisphere|
 					end
 				end
 				if ((monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid']))
-					metric_payload = build_metric_payload(monitor,symmetrix,metrics_param,key,parent_ids)
+					metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids)
 					metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
 					metrics_param.each do |metric|
 						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
