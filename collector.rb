@@ -55,7 +55,7 @@ end
 def build_key_payload(unisphere,symmetrix,key=nil,parent_id=nil)
 	payload = { "symmetrixId" => symmetrix['sid']}
 	extra_payload = {parent_id[0] => key[parent_id[0]]} if parent_id
-	payload.merge(extra_payload) if parent _id
+	payload.merge(extra_payload) if parent_id
 	payload = {  "#{monitor['scope']}KeyParam" => payload } if unisphere['version'] == 7
 	return payload
 end
