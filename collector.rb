@@ -15,7 +15,6 @@ settings_file="settings.json"
 ####################################################################################
 def get_metrics(param_type,xsd)
 	output = Array.new
-	binding.pry
 	JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
 		if type['name'] == "#{param_type}Metric"
 			type['xs:restriction']['xs:enumeration'].each do |metric|
@@ -35,8 +34,9 @@ def get_keys(unisphere,payload,monitor,auth)
 	else
 		rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/keys", auth)
 	end
-	output = rest["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 8
-	output = rest["#{monitor['scope'].downcase}KeyResult"]["#{monitor['scope'].downcase}Info"] if unisphere['version'] == 7
+	componentId = get_component_id_key(monitor['scope'])
+	output = rest["#{componentId}Info"] if unisphere['version'] == 8
+	output = rest["#{componentId}KeyResult"]["#{componentId}Info"] if unisphere['version'] == 7
 	return output
 end
 
@@ -171,7 +171,7 @@ config['unisphere'].each do |unisphere|
 						child_ids = diff_key_payload(child_key)
 						metrics_param = get_metrics(monitor['children'][0]['scope'],myparams)
 						metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
-						metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
+						metrics = get_perf_metrics(unisphere,metric_payload,monitor['children'][0],auth)
 						metrics_param.each do |metric|
 							output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
 						end

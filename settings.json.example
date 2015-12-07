@@ -70,7 +70,7 @@
 		},
 		{
 			"scope": "StorageGroup",
-			"enabled": true
+			"enabled": true,
 			"children": [
 				{
 					"scope": "TierByStorageGroup",
