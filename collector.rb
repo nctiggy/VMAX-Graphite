@@ -66,11 +66,13 @@ end
 # Method: Build the Metric Payload
 ##################################################
 def build_metric_payload(unisphere,monitor,symmetrix,metrics,key=nil,parent_id=nil,child_key=nil,child_id=nil)
-	payload = { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "lastDate" => key['lastAvailableDate'], "dataFormat" => "Average", "metrics" => metrics}
+	payload = { "symmetrixId" => symmetrix['sid'], "startDate" => key['lastAvailableDate'], "endDate" => key['lastAvailableDate'], "metrics" => metrics}
 	parent_payload = { parent_id[0] => key[parent_id[0]] } unless monitor['scope'] == "Array"
 	payload.merge(parent_payload) unless monitor['scope'] == "Array"
 	child_payload = { child_id[0] => child_key[child_id[0]] } if child_key
 	payload.merge(child_payload) if child_key
+	uni8_payload = { "dataFormat" => "Average" } if unisphere['version'] == 8
+	payload.merge(uni8_payload) if unisphere['version'] == 8
 	componentId = get_component_id_key(monitor['scope']) if unisphere['version'] == 7
 	payload = {  "#{componentId}Param" => payload } if unisphere['version'] == 7
 	return payload
