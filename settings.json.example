@@ -38,23 +38,11 @@
 		},
 		{
 			"scope": "FEDirector",
-			"enabled": true,
-			"children": [
-				{
-					"scope": "FEDirectorByPort",
-					"enabled": true
-				}
-			]
+			"enabled": true
 		},
 		{
 			"scope": "BEDirector",
-			"enabled": true,
-			"children": [
-				{
-					"scope": "BEDirectorByPort",
-					"enabled": true
-				}
-			]
+			"enabled": true
 		},
 		{
 			"scope": "RDFDirector",
@@ -70,13 +58,7 @@
 		},
 		{
 			"scope": "StorageGroup",
-			"enabled": true,
-			"children": [
-				{
-					"scope": "TierByStorageGroup",
-					"enabled": true
-				}
-			]
+			"enabled": true
 		},
 		{
 			"scope": "RDFS",
