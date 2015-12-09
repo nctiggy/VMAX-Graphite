@@ -34,15 +34,71 @@
 	"monitor": [
 		{
 			"scope": "Array",
-			"type": "performance"
-		},
-		{
-			"scope": "BEDirector",
-			"type": "performance"
+			"enabled": true
 		},
 		{
 			"scope": "FEDirector",
-			"type": "performance"
+			"enabled": true
+		},
+		{
+			"scope": "BEDirector",
+			"enabled": true
+		},
+		{
+			"scope": "RDFDirector",
+			"enabled": true
+		},
+		{
+			"scope": "Disk",
+			"enabled": true
+		},
+		{
+			"scope": "DeviceGroup",
+			"enabled": true
+		},
+		{
+			"scope": "StorageGroup",
+			"enabled": true
+		},
+		{
+			"scope": "RDFS",
+			"enabled": true
+		},
+		{
+			"scope": "RDFA",
+			"enabled": true
+		},
+		{
+			"scope": "CachePartition",
+			"enabled": true
+		},
+		{
+			"scope": "DiskGroup",
+			"enabled": true
+		},
+		{
+			"scope": "DSEPool",
+			"enabled": true
+		},
+		{
+			"scope": "SnapPool",
+			"enabled": true
+		},
+		{
+			"scope": "ThinPool",
+			"enabled": true
+		},
+		{
+			"scope": "ThinTier",
+			"enabled": true
+		},
+		{
+			"scope": "StorageTier",
+			"enabled": true
+		},
+		{
+			"scope": "FASTPolicy",
+			"enabled": true
 		}
 	]
 }
