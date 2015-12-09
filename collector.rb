@@ -156,6 +156,7 @@ config['unisphere'].each do |unisphere|
 	auth = Base64.strict_encode64("#{unisphere['user']}:#{unisphere['password']}")
 	## Loop through each symmetrix in the current unisphere ##
 	unisphere['symmetrix'].each do |symmetrix|
+		output_payload = []
 		## Loop through each component on the current symmetrix ##
 		config['monitor'].each do |monitor|
 			## If the component is not enabled i.e. false then skip. If the aprent is false it will skip the children ##
