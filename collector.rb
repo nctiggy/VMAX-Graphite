@@ -178,7 +178,7 @@ config['unisphere'].each do |unisphere|
 						metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
 						metrics = get_perf_metrics(unisphere,metric_payload,monitor['children'][0],auth)
 						metrics_param.each do |metric|
-							output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
+							output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
 						end
 					end
 				end
@@ -187,8 +187,8 @@ config['unisphere'].each do |unisphere|
 					metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids)
 					metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
 					metrics_param.each do |metric|
-						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
-						output_payload["symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{metric}"] = metrics[metric] unless monitor['scope'] == "Array"
+						output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
+						output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{metric}"] = metrics[metric] unless monitor['scope'] == "Array"
 					end
 				end
 			end

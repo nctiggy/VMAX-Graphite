@@ -1,6 +1,7 @@
 {
 	"graphite": {
 		"enabled": true,
+		"prefix": false,
 		"host": "hostname",
 		"port": "2003"
 	},
