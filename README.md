@@ -29,6 +29,15 @@ You can have multiple Unisphere Objects
 	]
 }
 ```
+Hosted Graphite? Need to add a prefix to the payload? Replace false with your UID.
+```json
+"graphite": {
+	"enabled": true,
+	"prefix": false,
+	"host": "hostname",
+	"port": "2003"
+}
+```
 Toggle collection of component metrics by setting enabled to true or false
 ```json
 "monitor": [
