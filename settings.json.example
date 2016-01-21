@@ -1,6 +1,7 @@
 {
 	"graphite": {
 		"enabled": true,
+		"prefix": false,
 		"host": "hostname",
 		"port": "2003"
 	},
@@ -38,11 +39,23 @@
 		},
 		{
 			"scope": "FEDirector",
-			"enabled": true
+			"enabled": true,
+			"children": [
+				{
+					"scope": "FEDirectorByPort",
+					"enabled": true
+				}
+			]
 		},
 		{
 			"scope": "BEDirector",
-			"enabled": true
+			"enabled": true,
+			"children": [
+				{
+					"scope": "BEDirectorByPort",
+					"enabled": true
+				}
+			]
 		},
 		{
 			"scope": "RDFDirector",
@@ -58,7 +71,13 @@
 		},
 		{
 			"scope": "StorageGroup",
-			"enabled": true
+			"enabled": true,
+			"children": [
+				{
+					"scope": "TierByStorageGroup",
+					"enabled": true
+				}
+			]
 		},
 		{
 			"scope": "RDFS",
