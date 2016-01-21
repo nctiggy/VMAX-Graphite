@@ -75,7 +75,8 @@ def build_metric_payload(unisphere,monitor,symmetrix,metrics,key=nil,parent_id=n
 	payload.merge!(timestamp_payload) unless child_key
 	uni8_payload = { "dataFormat" => "Average" } if unisphere['version'] == 8
 	payload.merge!(uni8_payload) if unisphere['version'] == 8
-	componentId = get_component_id_key(monitor['scope']) if unisphere['version'] == 7
+	componentId = get_component_id_key(monitor['scope']) if (unisphere['version'] == 7 && child_key.nil?)
+	componentId = get_component_id_key(monitor['children'][0]['scope']) if (unisphere['version'] == 7 && child_key != nil)
 	payload = {  "#{componentId}Param" => payload } if unisphere['version'] == 7
 	return payload
 end
