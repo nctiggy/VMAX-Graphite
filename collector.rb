@@ -166,7 +166,6 @@ config['unisphere'].each do |unisphere|
       ## If the component is not enabled i.e. false then skip. If the parent is false it will skip the children ##
       next unless monitor['enabled']
       metrics_param = get_metrics(monitor['scope'],myparams)
-      output_payload = {}
       key_payload = build_key_payload(unisphere,symmetrix,monitor)
       keys = get_keys(unisphere,key_payload,monitor,auth)
       keys.each do |key|
