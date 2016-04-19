@@ -35,7 +35,7 @@ def get_keys(unisphere,payload,monitor,auth)
   else
     rest = rest_post(payload.to_json,"https://#{unisphere['ip']}:#{unisphere['port']}/univmax/restapi/performance/#{monitor['scope']}/keys", auth)
   end
-  componentId = get_component_id_key(monitor['scope'])
+  componentId = get_component_id_payload(monitor['scope'])
   output = rest["#{componentId}Info"] if unisphere['version'] == 8
   output = rest["#{componentId}KeyResult"]["#{componentId}Info"] if unisphere['version'] == 7
   return output
@@ -124,6 +124,28 @@ def get_component_id_key(scope)
     i += 1
   end
   new_scope = s.join
+  return new_scope
+end
+
+##################################################################################
+# Method: Helper Method to correctly format scope for JSON return in Unisphere 7
+##################################################################################
+def get_component_id_payload(scope)
+  ## Splits the string based on upper case letters ##
+  s = scope.split /(?=[A-Z])/
+  i = 0
+  if s[-1].capitalize == "Pool"
+    new_scope = "Pool"
+  else
+    while i < s.length
+      ## If the string in the array is all upcase, make it downcase ##
+      s[i] = s[i].downcase if s[i] == s[i].upcase
+      ## If this is the first string in the array and it is camelcase, make it all downcase ##
+      s[i] = s[i].downcase if i == 0 && s[i] == s[i].capitalize
+      i += 1
+    end
+    new_scope = s.join
+  end
   return new_scope
 end
 
