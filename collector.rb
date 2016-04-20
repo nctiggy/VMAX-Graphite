@@ -135,7 +135,7 @@ def get_component_id_payload(scope)
   s = scope.split /(?=[A-Z])/
   i = 0
   if s[-1].capitalize == "Pool"
-    new_scope = "Pool"
+    new_scope = "pool"
   else
     while i < s.length
       ## If the string in the array is all upcase, make it downcase ##
