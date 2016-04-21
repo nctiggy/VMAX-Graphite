@@ -58,7 +58,7 @@ def build_key_payload(unisphere,symmetrix,monitor,key=nil,parent_id=nil)
   payload = { "symmetrixId" => symmetrix['sid']}
   extra_payload = {parent_id[0] => key[parent_id[0]]} if parent_id
   payload.merge!(extra_payload) if parent_id
-  componentId = get_component_id_payload(monitor['scope']) if unisphere['version'] == 7
+  componentId = get_component_id_key(monitor['scope']) if unisphere['version'] == 7
   payload = {  "#{componentId}KeyParam" => payload } if unisphere['version'] == 7
   return payload
 end
@@ -76,8 +76,8 @@ def build_metric_payload(unisphere,monitor,symmetrix,metrics,key=nil,parent_id=n
   payload.merge!(timestamp_payload) unless child_key
   uni8_payload = { "dataFormat" => "Average" } if unisphere['version'] == 8
   payload.merge!(uni8_payload) if unisphere['version'] == 8
-  componentId = get_component_id_payload(monitor['scope']) if (unisphere['version'] == 7 && child_key.nil?)
-  componentId = get_component_id_payload(monitor['children'][0]['scope']) if (unisphere['version'] == 7 && child_key != nil)
+  componentId = get_component_id_key(monitor['scope']) if (unisphere['version'] == 7 && child_key.nil?)
+  componentId = get_component_id_key(monitor['children'][0]['scope']) if (unisphere['version'] == 7 && child_key != nil)
   payload = {  "#{componentId}Param" => payload } if unisphere['version'] == 7
   return payload
 end
