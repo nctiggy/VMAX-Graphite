@@ -173,6 +173,7 @@ end
 
 config=readSettings(settings_file)
 g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
+influxdb = InfluxDB::Client.new host: config['influxdb']['host'], port: config['influxdb']['port']}) if config['influxdb']['enabled']
 
 ## Loop through each Unisphere ##
 config['unisphere'].each do |unisphere|
@@ -182,7 +183,8 @@ config['unisphere'].each do |unisphere|
   auth = Base64.strict_encode64("#{unisphere['user']}:#{unisphere['password']}")
   ## Loop through each symmetrix in the current unisphere ##
   unisphere['symmetrix'].each do |symmetrix|
-    output_payload = {}
+    graphite_output_payload = {}
+    influx_output_payload = []
     ## Loop through each component on the current symmetrix ##
     config['monitor'].each do |monitor|
       ## If the component is not enabled i.e. false then skip. If the parent is false it will skip the children ##
@@ -202,7 +204,8 @@ config['unisphere'].each do |unisphere|
               metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
               metrics = get_perf_metrics(unisphere,metric_payload,monitor['children'][0],auth)
               metrics_param.each do |metric|
-                output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
+                influx_output_payload.push({series: metric, tags: { array_type: 'symmetrix', sn: symmetrix['sid'], component: monitor['scope'], component_name: key[parent_ids[0]], child_component_name: child_key[child_ids[0]]}, values: { value: metrics[metric] } } )
+                graphite_output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{child_key[child_ids[0]]}.#{metric}"] = metrics[metric]
               end
             end
           end
@@ -212,13 +215,16 @@ config['unisphere'].each do |unisphere|
           metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids)
           metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
           metrics_param.each do |metric|
-            output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
-            output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{metric}"] = metrics[metric] unless monitor['scope'] == "Array"
+            influx_output_payload.push({series: metric, tags: { array_type: 'symmetrix', sn: symmetrix['sid'], component: monitor['scope'], component_name: key[parent_ids[0]]}, values: { value: metrics[metric] } } ) unless monitor['scope'] == "Array"
+            influx_output_payload.push({series: metric, tags: { array_type: 'symmetrix', sn: symmetrix['sid'], component: monitor['scope']}, values: { value: metrics[metric] } } ) if monitor['scope'] == "Array"
+            graphite_output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{metric}"] = metrics[metric] if monitor['scope'] == "Array"
+            graphite_output_payload[(config['graphite']['prefix'] ? "#{config['graphite']['prefix']}." : "") + "symmetrix.#{symmetrix['sid']}.#{monitor['scope']}.#{key[parent_ids[0]]}.#{metric}"] = metrics[metric] unless monitor['scope'] == "Array"
           end
         end
       end
     end
-    g.send_metrics(output_payload) if config['graphite']['enabled']
-    CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
+    influxdb.write_points(influx_output_payload)
+    g.send_metrics(graphite_output_payload) if config['graphite']['enabled']
+    CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| graphite_output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
   end
 end
