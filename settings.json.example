@@ -5,6 +5,12 @@
 		"host": "hostname",
 		"port": "2003"
 	},
+	"influx": {
+		"enabled": true,
+		"prefix": false,
+		"host": "hostname",
+		"port": "8086"
+	},
 	"csv": {
 		"enabled": true
 	},
