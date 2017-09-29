@@ -4,8 +4,9 @@ require "rest_client"
 require "csv"
 require "json"
 require "base64"
-require "crack"
-require "pry-byebug"
+require "timber"
+require "nokogiri"
+#require "pry-byebug"
 %w{simple-graphite}.each { |l| require l }
 
 current_dir=File.dirname(__FILE__)
@@ -14,15 +15,9 @@ settings_file="#{current_dir}/settings.json"
 ####################################################################################
 # Method: Read's the Unisphere XSD file and gets all Metrics for the specified scope
 ####################################################################################
-def get_metrics(param_type,xsd)
-  output = Array.new
-  JSON.parse(xsd)['xs:schema']['xs:simpleType'].each do |type|
-    if type['name'] == "#{param_type}Metric"
-      type['xs:restriction']['xs:enumeration'].each do |metric|
-        output.push(metric['value']) if metric['value'] == metric['value'].upcase
-      end
-    end
-  end
+def get_metrics(param_type)
+  page = Nokogiri::HTML(open("performance_#{param_type}Metric.html"))
+  output = page.css('table').last.css('td:first-child:not(.deprecated)').map(&:text)
   return output
 end
 
@@ -177,8 +172,6 @@ influxdb = InfluxDB::Client.new host: config['influxdb']['host'], port: config['
 
 ## Loop through each Unisphere ##
 config['unisphere'].each do |unisphere|
-  ## Read the appropriate XSD file based on unisphere version ##
-  myparams = Crack::XML.parse(File.read("#{current_dir}/unisphere#{unisphere['version']}.xsd")).to_json
   ## Build the Base64 auth string ##
   auth = Base64.strict_encode64("#{unisphere['user']}:#{unisphere['password']}")
   ## Loop through each symmetrix in the current unisphere ##
@@ -189,7 +182,7 @@ config['unisphere'].each do |unisphere|
     config['monitor'].each do |monitor|
       ## If the component is not enabled i.e. false then skip. If the parent is false it will skip the children ##
       next unless monitor['enabled']
-      metrics_param = get_metrics(monitor['scope'],myparams)
+      metrics_param = get_metrics(monitor['scope'])
       key_payload = build_key_payload(unisphere,symmetrix,monitor)
       keys = get_keys(unisphere,key_payload,monitor,auth)
       keys.each do |key|
@@ -200,7 +193,7 @@ config['unisphere'].each do |unisphere|
             child_keys = get_keys(unisphere,child_payload,monitor['children'][0],auth)
             child_keys.each do |child_key|
               child_ids = diff_key_payload(child_key)
-              metrics_param = get_metrics(monitor['children'][0]['scope'],myparams)
+              metrics_param = get_metrics(monitor['children'][0]['scope'])
               metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids,child_key,child_ids)
               metrics = get_perf_metrics(unisphere,metric_payload,monitor['children'][0],auth)
               metrics_param.each do |metric|
@@ -211,7 +204,7 @@ config['unisphere'].each do |unisphere|
           end
         end
         if (monitor['scope'] != "Array") || (monitor['scope'] == "Array" && key['symmetrixId'] == symmetrix['sid'])
-          metrics_param = get_metrics(monitor['scope'],myparams)
+          metrics_param = get_metrics(monitor['scope'])
           metric_payload = build_metric_payload(unisphere,monitor,symmetrix,metrics_param,key,parent_ids)
           metrics = get_perf_metrics(unisphere,metric_payload,monitor,auth)
           metrics_param.each do |metric|
