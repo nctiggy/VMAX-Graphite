@@ -7,6 +7,7 @@ require "base64"
 require "timber"
 require "nokogiri"
 #require "pry-byebug"
+require "influxdb"
 %w{simple-graphite}.each { |l| require l }
 
 current_dir=File.dirname(__FILE__)
@@ -16,10 +17,21 @@ settings_file="#{current_dir}/settings.json"
 # Method: Read's the Unisphere XSD file and gets all Metrics for the specified scope
 ####################################################################################
 def get_metrics(param_type)
-  page = Nokogiri::HTML(open("performance_#{param_type}Metric.html"))
+  page = Nokogiri::HTML(open("#{current_dir}/target/docs/performance_#{param_type}Metric.html"))
   output = page.css('table').last.css('td:first-child:not(.deprecated)').map(&:text)
   return output
 end
+
+####################################################################################
+# Method: Create a version file
+####################################################################################
+def newer_version?(auth)
+  puts "magic"
+end
+
+####################################################################################
+# Method:
+####################################################################################
 
 #####################################
 # Method: Reutrns keys for all scopes
