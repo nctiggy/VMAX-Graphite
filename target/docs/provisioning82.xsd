@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/82/provisioning" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:provisioning82="http://www.emc.com/em/2012/07/univmax/restapi/82/provisioning" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="getSymmetrixParam" type="provisioning82:GetSymmetrixParamType"/>
+  <xs:element name="getSymmetrixResult" type="provisioning82:GetSymmetrixResultType"/>
+  <xs:element name="symmetrix" type="provisioning82:SymmetrixType"/>
+  <xs:complexType name="GetSymmetrixParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/provisioning}symmetrix"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrix" type="provisioning82:SymmetrixType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned list of Symmetrix Arrays.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="device_count" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="ucode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="targetUcode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}physicalCapacity" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}virtualCapacity"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="device_count" type="xs:long" minOccurs="0"/>
+      <xs:element name="ucode" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetUcode" type="xs:string" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="local" type="xs:boolean" minOccurs="0"/>
+      <xs:element ref="common:physicalCapacity" minOccurs="0"/>
+      <xs:element ref="common:virtualCapacity" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

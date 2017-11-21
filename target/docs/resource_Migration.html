@@ -1,0 +1,1041 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Migration</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">Migration</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="rest.html">REST</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="resource_Migration.html">Migration</a>
+              <ul>
+                <li><a href="resource_Common.html">Common</a></li>
+                <li><a href="resource_Dsa.html">Dsa</a></li>
+                <li><a href="resource_Migration.html">Migration</a></li>
+                <li><a href="resource_Performance.html">Performance</a></li>
+                <li><a href="resource_Provisioning.html">Provisioning</a></li>
+                <li><a href="resource_Replication.html">Replication</a></li>
+                <li><a href="resource_SLO Provisioning.html">SLO Provisioning</a></li>
+                <li><a href="resource_System.html">System</a></li>
+                <li><a href="resource_VVol.html">VVol</a></li>
+                <li><a href="resource_Workload.html">Workload</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>Migration</h1>
+
+      <p></p>
+      <p>The following resources are applicable:</p>
+      <ul>
+        <li>
+        <a href="#path__83_migration_capabilities_symmetrix.html">/83/migration/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__83_migration_symmetrix.html">/83/migration/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__83_migration_symmetrix_-symmetrixId-.html">/83/migration/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__83_migration_symmetrix_-symmetrixId-_environment.html">/83/migration/symmetrix/{symmetrixId}/environment</a>
+        </li>
+        <li>
+        <a href="#path__83_migration_symmetrix_-symmetrixId-_environment_-remoteArrayId-.html">/83/migration/symmetrix/{symmetrixId}/environment/{remoteArrayId}</a>
+        </li>
+        <li>
+        <a href="#path__83_migration_symmetrix_-symmetrixId-_storagegroup.html">/83/migration/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/83/migration/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_capabilities_symmetrix.html">/84/migration/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix.html">/84/migration/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix_-symmetrixId-.html">/84/migration/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix_-symmetrixId-_environment.html">/84/migration/symmetrix/{symmetrixId}/environment</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix_-symmetrixId-_environment_-otherSymmetrixId-.html">/84/migration/symmetrix/{symmetrixId}/environment/{otherSymmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix_-symmetrixId-_environment_-remoteArrayId-.html">/84/migration/symmetrix/{symmetrixId}/environment/{remoteArrayId}</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix_-symmetrixId-_storagegroup.html">/84/migration/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/84/migration/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+      </ul>
+        <a name="path__83_migration_capabilities_symmetrix.html"></a>
+      <h1>/83/migration/capabilities/symmetrix</h1>
+      <a name="GETpath__83_migration_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Capability checker to see if NDM will execute on the Symmetrix arrays.  NDM is capability checked for source and target capability
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_dmStorageArrayCapabilityList.html">dmStorageArrayCapabilityList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of Symmetrix and their ability to accept REST calls for NDM</p>
+        <a name="path__83_migration_symmetrix.html"></a>
+      <h1>/83/migration/symmetrix</h1>
+      <a name="GETpath__83_migration_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for local Symmetrix IDs
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_dmStorageArrayList.html">dmStorageArrayList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the 12 digit local Symmetrix IDs</p>
+        <a name="path__83_migration_symmetrix_-symmetrixId-.html"></a>
+      <h1>/83/migration/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__83_migration_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call retrieves a Symmetrix when given a valid ID
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit Symmetrix ID for the Symmetrix being looked for.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_storageArray.html">storageArray</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Symmetrix.</p>
+      <a name="POSTpath__83_migration_symmetrix_-symmetrixId-.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array on one side of the migration setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_environmentSetup.html">environmentSetup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>specifics of setting up the environment</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Symmetrix migration representation of the other side array</p>
+        <a name="path__83_migration_symmetrix_-symmetrixId-_environment.html"></a>
+      <h1>/83/migration/symmetrix/{symmetrixId}/environment</h1>
+      <a name="GETpath__83_migration_symmetrix_-symmetrixId-_environment.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the local array being checked against
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_dmStorageArrayList.html">dmStorageArrayList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of array IDs which have NDM environments setup with the local array</p>
+        <a name="path__83_migration_symmetrix_-symmetrixId-_environment_-remoteArrayId-.html"></a>
+      <h1>/83/migration/symmetrix/{symmetrixId}/environment/{remoteArrayId}</h1>
+      <a name="DELETEpath__83_migration_symmetrix_-symmetrixId-_environment_-remoteArrayId-.html"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>remoteArrayId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__83_migration_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/83/migration/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__83_migration_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets Storage Group names for a Symmetrix.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the request is being made to.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>includeMigrations</td>
+          <td>
+            optional parameter also add a list of migrating SG names.  True means SGs with migrations will be included
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_dmStorageGroupList.html">dmStorageGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of Storage Group names</p>
+        <a name="path__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/83/migration/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#POSTpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">POST</a></li>
+        <li><a href="#GETpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">GET</a></li>
+        <li><a href="#PUTpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">DELETE</a></li>
+      </ul>
+      <a name="POSTpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the source array of the migration
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_migrationCreate.html">migrationCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>the parameters needed to create a migration session</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the migration session after being created</p>
+      <a name="GETpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets a migrating Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_storageGroup.html">storageGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the Storage Group representation</p>
+      <a name="PUTpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call gets a migration session for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration83_migrationUpdate.html">migrationUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__83_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call terminates a migration session.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>revert</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_migration_capabilities_symmetrix.html"></a>
+      <h1>/84/migration/capabilities/symmetrix</h1>
+      <a name="GETpath__84_migration_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Capability checker to see if NDM will execute on the Symmetrix arrays.  NDM is capability checked for source and target capability
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_dmStorageArrayCapabilityList.html">dmStorageArrayCapabilityList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of Symmetrix and their ability to accept REST calls for NDM</p>
+        <a name="path__84_migration_symmetrix.html"></a>
+      <h1>/84/migration/symmetrix</h1>
+      <a name="GETpath__84_migration_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for local Symmetrix IDs
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_dmStorageArrayList.html">dmStorageArrayList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the 12 digit local Symmetrix IDs</p>
+        <a name="path__84_migration_symmetrix_-symmetrixId-.html"></a>
+      <h1>/84/migration/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__84_migration_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call retrieves a Symmetrix when given a valid ID
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit Symmetrix ID for the Symmetrix being looked for.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_storageArray.html">storageArray</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Symmetrix.</p>
+      <a name="POSTpath__84_migration_symmetrix_-symmetrixId-.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array on one side of the migration setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_environmentSetup.html">environmentSetup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>specifics of setting up the environment</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Symmetrix migration representation of the other side array</p>
+        <a name="path__84_migration_symmetrix_-symmetrixId-_environment.html"></a>
+      <h1>/84/migration/symmetrix/{symmetrixId}/environment</h1>
+      <a name="GETpath__84_migration_symmetrix_-symmetrixId-_environment.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the local array being checked against
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_dmStorageArrayList.html">dmStorageArrayList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of array IDs which have NDM environments setup with the local array</p>
+        <a name="path__84_migration_symmetrix_-symmetrixId-_environment_-otherSymmetrixId-.html"></a>
+      <h1>/84/migration/symmetrix/{symmetrixId}/environment/{otherSymmetrixId}</h1>
+      <a name="GETpath__84_migration_symmetrix_-symmetrixId-_environment_-otherSymmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            NDM migration state between both Symms
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>otherSymmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_symmetrixMigrationEnvironment.html">symmetrixMigrationEnvironment</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>NDM state.</p>
+        <a name="path__84_migration_symmetrix_-symmetrixId-_environment_-remoteArrayId-.html"></a>
+      <h1>/84/migration/symmetrix/{symmetrixId}/environment/{remoteArrayId}</h1>
+      <a name="DELETEpath__84_migration_symmetrix_-symmetrixId-_environment_-remoteArrayId-.html"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>remoteArrayId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_migration_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/84/migration/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__84_migration_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets Storage Group names for a Symmetrix.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the request is being made to.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>includeMigrations</td>
+          <td>
+            optional parameter also add a list of migrating SG names.  True means SGs with migrations will be included
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_dmStorageGroupList.html">dmStorageGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of Storage Group names</p>
+        <a name="path__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/84/migration/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">GET</a></li>
+        <li><a href="#POSTpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">POST</a></li>
+        <li><a href="#PUTpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets a migrating Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_storageGroup.html">storageGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the Storage Group representation</p>
+      <a name="POSTpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the source array of the migration
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_migrationCreate.html">migrationCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>the parameters needed to create a migration session</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the migration session after being created</p>
+      <a name="PUTpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call gets a migration session for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_migration84_migrationUpdate.html">migrationUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__84_migration_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call terminates a migration session.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>revert</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>symforce</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

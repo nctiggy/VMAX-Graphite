@@ -1,0 +1,1944 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>System</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">System</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="rest.html">REST</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="resource_System.html">System</a>
+              <ul>
+                <li><a href="resource_Common.html">Common</a></li>
+                <li><a href="resource_Dsa.html">Dsa</a></li>
+                <li><a href="resource_Migration.html">Migration</a></li>
+                <li><a href="resource_Performance.html">Performance</a></li>
+                <li><a href="resource_Provisioning.html">Provisioning</a></li>
+                <li><a href="resource_Replication.html">Replication</a></li>
+                <li><a href="resource_SLO Provisioning.html">SLO Provisioning</a></li>
+                <li><a href="resource_System.html">System</a></li>
+                <li><a href="resource_VVol.html">VVol</a></li>
+                <li><a href="resource_Workload.html">Workload</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>System</h1>
+
+      <p></p>
+      <p>The following resources are applicable:</p>
+      <ul>
+        <li>
+        <a href="#path__82_system_alert_summary.html">/82/system/alert_summary</a>
+        </li>
+        <li>
+        <a href="#path__84_system_alert.html">/84/system/alert</a>
+        </li>
+        <li>
+        <a href="#path__84_system_alert_summary.html">/84/system/alert_summary</a>
+        </li>
+        <li>
+        <a href="#path__84_system_alert_-alertId-.html">/84/system/alert/{alertId}</a>
+        </li>
+        <li>
+        <a href="#path__84_system_job.html">/84/system/job</a>
+        </li>
+        <li>
+        <a href="#path__84_system_job_-jobId-.html">/84/system/job/{jobId}</a>
+        </li>
+        <li>
+        <a href="#path__84_system_symmetrix.html">/84/system/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_system_symmetrix_-symmetrixId-.html">/84/system/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__84_system_symmetrix_-symmetrixId-_alert.html">/84/system/symmetrix/{symmetrixId}/alert</a>
+        </li>
+        <li>
+        <a href="#path__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html">/84/system/symmetrix/{symmetrixId}/alert/{alertId}</a>
+        </li>
+        <li>
+        <a href="#path__84_system_symmetrix_-symmetrixId-_job.html">/84/system/symmetrix/{symmetrixId}/job</a>
+        </li>
+        <li>
+        <a href="#path__84_system_symmetrix_-symmetrixId-_job_-jobId-.html">/84/system/symmetrix/{symmetrixId}/job/{jobId}</a>
+        </li>
+        <li>
+        <a href="#path__84_system_version.html">/84/system/version</a>
+        </li>
+        <li>
+        <a href="#path__system_alert.html">/system/alert</a>
+        </li>
+        <li>
+        <a href="#path__system_alert_-alertId-.html">/system/alert/{alertId}</a>
+        </li>
+        <li>
+        <a href="#path__system_job.html">/system/job</a>
+        </li>
+        <li>
+        <a href="#path__system_job_-jobId-.html">/system/job/{jobId}</a>
+        </li>
+        <li>
+        <a href="#path__system_symmetrix.html">/system/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__system_symmetrix_-symmetrixId-.html">/system/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__system_symmetrix_-symmetrixId-_alert.html">/system/symmetrix/{symmetrixId}/alert</a>
+        </li>
+        <li>
+        <a href="#path__system_symmetrix_-symmetrixId-_alert_-alertId-.html">/system/symmetrix/{symmetrixId}/alert/{alertId}</a>
+        </li>
+        <li>
+        <a href="#path__system_symmetrix_-symmetrixId-_job.html">/system/symmetrix/{symmetrixId}/job</a>
+        </li>
+        <li>
+        <a href="#path__system_symmetrix_-symmetrixId-_job_-jobId-.html">/system/symmetrix/{symmetrixId}/job/{jobId}</a>
+        </li>
+        <li>
+        <a href="#path__system_version.html">/system/version</a>
+        </li>
+      </ul>
+        <a name="path__82_system_alert_summary.html"></a>
+      <h1>/82/system/alert_summary</h1>
+      <a name="GETpath__82_system_alert_summary.html"></a>
+      <h2>GET</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system82_alertSummary.html">alertSummary</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_system_alert.html"></a>
+      <h1>/84/system/alert</h1>
+      <a name="GETpath__84_system_alert.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of All Alert ids across all symmetrix arrays
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: ARRAY, PERFORMANCE, SERVER
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>
+            Optional value that filters returned list to display
+Alerts that have the specified description e.g. equal to "description=description1" or contains "description=< like>description"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>severity</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: NORMAL, INFORMATION, MINOR, WARNING, CRITICAL, FATAL
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>state</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following state: NEW, ACKNOWLEDGED, CLEARED
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are greater than(">1"), Less than("<1") or equal to the specified created_date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>acknowledged</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are acknowledged or not  (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_listAlertResult.html">listAlertResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Alert Ids</p>
+        <a name="path__84_system_alert_summary.html"></a>
+      <h1>/84/system/alert_summary</h1>
+      <a name="GETpath__84_system_alert_summary.html"></a>
+      <h2>GET</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_alertSummary.html">alertSummary</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_system_alert_-alertId-.html"></a>
+      <h1>/84/system/alert/{alertId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_system_alert_-alertId-.html">GET</a></li>
+        <li><a href="#PUTpath__84_system_alert_-alertId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__84_system_alert_-alertId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__84_system_alert_-alertId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Alert
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The alert ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_alert.html">alert</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Alert object</p>
+      <a name="PUTpath__84_system_alert_-alertId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call edits an existing Alert, choose one edit operation only per request
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_editAlertParam.html">editAlertParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditAlertParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_alert.html">alert</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+      <a name="DELETEpath__84_system_alert_-alertId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call deletes an existing Alert
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_system_job.html"></a>
+      <h1>/84/system/job</h1>
+      <a name="GETpath__84_system_job.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of Job ids across all symmetrix arrays
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that have a Job name associated
+e.g. equal to "name=name1" or contains "name=< like>name"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>status</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids  that have one of the following status:
+CREATED, SCHEDULED ,RETRIEVING_PICTURE,RUNNING, SUCCEEDED, FAILED, ABORTED, UNKNOWN,VALIDATING, VALIDATED, VALIDATE_FAILED,INVALID
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that have a username associated
+e.g. equal to "username=username" or contains "username=< like>username"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_listJobListResult.html">listJobListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Job ids</p>
+        <a name="path__84_system_job_-jobId-.html"></a>
+      <h1>/84/system/job/{jobId}</h1>
+      <a name="GETpath__84_system_job_-jobId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Job
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>jobId</td>
+          <td>
+            The Job ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_job.html">job</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Job object</p>
+        <a name="path__84_system_symmetrix.html"></a>
+      <h1>/84/system/symmetrix</h1>
+      <a name="GETpath__84_system_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of all Authorized Symmetrix Ids
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>locked</td>
+          <td>
+            Optional value that filters the returned list to display Symmetrix arrays that have a symmetrix lock (true/false)
+Note: retrieving lock info may be a long running task
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_listSymmetrixResult.html">listSymmetrixResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Symmetrix IDs</p>
+        <a name="path__84_system_symmetrix_-symmetrixId-.html"></a>
+      <h1>/84/system/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__84_system_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specific Authorized Symmetrix using its ID
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>include_lock_info</td>
+          <td>
+            Optional value that does a look up of Symmetrix Locks and returns the lock_info is there is a lock (true/false).
+Note: retrieving lock info may be a long running task
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Symmetrix object</p>
+      <a name="PUTpath__84_system_symmetrix_-symmetrixId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call modifies an existing Symmetrix, choose one edit operation only per request
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_sloprovisioning84_editSymmetrixParam.html">editSymmetrixParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditSymmetrixParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_symmetrix.html">symmetrix</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a [@code Job} instance is returned if the ASYNCHRONOUS execution option was selected otherwise
+by default the modified Symmetrix resource will be returned.</p>
+        <a name="path__84_system_symmetrix_-symmetrixId-_alert.html"></a>
+      <h1>/84/system/symmetrix/{symmetrixId}/alert</h1>
+      <a name="GETpath__84_system_symmetrix_-symmetrixId-_alert.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of Alert ids  for the specified symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: ARRAY, PERFORMANCE, SERVER
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>
+            Optional value that filters returned list to display
+Alerts that have the specified description e.g. equal to "description=description1" or contains "description=< like>description"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>severity</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: NORMAL, INFORMATION, MINOR, WARNING, CRITICAL, FATAL
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>state</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following state: NEW, ACKNOWLEDGED, CLEARED
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are greater than(">1"), Less than("<1") or equal to the specified created_date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>acknowledged</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are acknowledged or not  (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_listAlertResult.html">listAlertResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Alert Ids</p>
+        <a name="path__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h1>/84/system/symmetrix/{symmetrixId}/alert/{alertId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html">GET</a></li>
+        <li><a href="#PUTpath__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Alert on a specified Symmetrix Array
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The alert ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_alert.html">alert</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Alert object</p>
+      <a name="PUTpath__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call edits an existing Alert, choose one edit operation only per request
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_editAlertParam.html">editAlertParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditAlertParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_alert.html">alert</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+      <a name="DELETEpath__84_system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call deletes an existing Alert on a specified Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_system_symmetrix_-symmetrixId-_job.html"></a>
+      <h1>/84/system/symmetrix/{symmetrixId}/job</h1>
+      <a name="GETpath__84_system_symmetrix_-symmetrixId-_job.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of Job ids for the specified symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs that have a Job name associated
+e.g. equal to "name=name1" or contains "name=< like>name"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>status</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs that have one of the following status:
+CREATED, SCHEDULED ,RETRIEVING_PICTURE,RUNNING, SUCCEEDED, FAILED, ABORTED, UNKNOWN,VALIDATING, VALIDATED, VALIDATE_FAILED,INVALID
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs that have a username associated
+e.g. equal to "username=username" or contains "username=< like>username"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_listJobListResult.html">listJobListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Job ids</p>
+        <a name="path__84_system_symmetrix_-symmetrixId-_job_-jobId-.html"></a>
+      <h1>/84/system/symmetrix/{symmetrixId}/job/{jobId}</h1>
+      <a name="GETpath__84_system_symmetrix_-symmetrixId-_job_-jobId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Job on a specified Symmetrix Array
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>jobId</td>
+          <td>
+            The Job ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_job.html">job</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Job object</p>
+        <a name="path__84_system_version.html"></a>
+      <h1>/84/system/version</h1>
+      <a name="GETpath__84_system_version.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a the version of Unisphere for vmax
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system84_getVersionResult.html">getVersionResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>version of Unisphere for vmax</p>
+        <a name="path__system_alert.html"></a>
+      <h1>/system/alert</h1>
+      <a name="GETpath__system_alert.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of All Alert ids across all symmetrix arrays
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: ARRAY, PERFORMANCE, SERVER
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>
+            Optional value that filters returned list to display
+Alerts that have the specified description e.g. equal to "description=description1" or contains "description=< like>description"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>severity</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: NORMAL, INFORMATION, MINOR, WARNING, CRITICAL, FATAL
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>state</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following state: NEW, ACKNOWLEDGED, CLEARED
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are greater than(">1"), Less than("<1") or equal to the specified created_date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>acknowledged</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are acknowledged or not  (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_listAlertResult.html">listAlertResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Alert Ids</p>
+        <a name="path__system_alert_-alertId-.html"></a>
+      <h1>/system/alert/{alertId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__system_alert_-alertId-.html">GET</a></li>
+        <li><a href="#PUTpath__system_alert_-alertId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__system_alert_-alertId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__system_alert_-alertId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Alert
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The alert ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_getAlertResult.html">getAlertResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Alert object</p>
+      <a name="PUTpath__system_alert_-alertId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call edits an existing Alert, choose one edit operation only per request
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_editAlertParam.html">editAlertParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditAlertParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_common_genericResult.html">genericResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+      <a name="DELETEpath__system_alert_-alertId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call deletes an existing Alert
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__system_job.html"></a>
+      <h1>/system/job</h1>
+      <a name="GETpath__system_job.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of Job ids across all symmetrix arrays
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that have a Job name associated
+e.g. equal to "name=name1" or contains "name=< like>name"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>status</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids  that have one of the following status:
+CREATED, SCHEDULED ,RETRIEVING_PICTURE,RUNNING, SUCCEEDED, FAILED, ABORTED, UNKNOWN,VALIDATING, VALIDATED, VALIDATE_FAILED,INVALID
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that have a username associated
+e.g. equal to "username=username" or contains "username=< like>username"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_listJobListResult.html">listJobListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Job ids</p>
+        <a name="path__system_job_-jobId-.html"></a>
+      <h1>/system/job/{jobId}</h1>
+      <a name="GETpath__system_job_-jobId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Job
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>jobId</td>
+          <td>
+            The Job ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_getJobListResult.html">getJobListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Job object</p>
+        <a name="path__system_symmetrix.html"></a>
+      <h1>/system/symmetrix</h1>
+      <a name="GETpath__system_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of all Authorized Symmetrix Ids
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_listSymmetrixResult.html">listSymmetrixResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Symmetrix IDs</p>
+        <a name="path__system_symmetrix_-symmetrixId-.html"></a>
+      <h1>/system/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__system_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specific Authorized Symmetrix using its ID
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_getSymmetrixResult.html">getSymmetrixResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Symmetrix object</p>
+        <a name="path__system_symmetrix_-symmetrixId-_alert.html"></a>
+      <h1>/system/symmetrix/{symmetrixId}/alert</h1>
+      <a name="GETpath__system_symmetrix_-symmetrixId-_alert.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of Alert ids  for the specified symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: ARRAY, PERFORMANCE, SERVER
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>
+            Optional value that filters returned list to display
+Alerts that have the specified description e.g. equal to "description=description1" or contains "description=< like>description"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>severity</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following severity: NORMAL, INFORMATION, MINOR, WARNING, CRITICAL, FATAL
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>state</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that has the following state: NEW, ACKNOWLEDGED, CLEARED
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are greater than(">1"), Less than("<1") or equal to the specified created_date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>created_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>acknowledged</td>
+          <td>
+            Optional value that filters returned list to display
+Alert Ids that are acknowledged or not  (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_listAlertResult.html">listAlertResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Alert Ids</p>
+        <a name="path__system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h1>/system/symmetrix/{symmetrixId}/alert/{alertId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__system_symmetrix_-symmetrixId-_alert_-alertId-.html">GET</a></li>
+        <li><a href="#PUTpath__system_symmetrix_-symmetrixId-_alert_-alertId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__system_symmetrix_-symmetrixId-_alert_-alertId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Alert on a specified Symmetrix Array
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The alert ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_getAlertResult.html">getAlertResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Alert object</p>
+      <a name="PUTpath__system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call edits an existing Alert, choose one edit operation only per request
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_editAlertParam.html">editAlertParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditAlertParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_common_genericResult.html">genericResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+      <a name="DELETEpath__system_symmetrix_-symmetrixId-_alert_-alertId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call deletes an existing Alert on a specified Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>alertId</td>
+          <td>
+            The Alert Id name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__system_symmetrix_-symmetrixId-_job.html"></a>
+      <h1>/system/symmetrix/{symmetrixId}/job</h1>
+      <a name="GETpath__system_symmetrix_-symmetrixId-_job.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a list of Job ids for the specified symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs that have a Job name associated
+e.g. equal to "name=name1" or contains "name=< like>name"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>status</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs that have one of the following status:
+CREATED, SCHEDULED ,RETRIEVING_PICTURE,RUNNING, SUCCEEDED, FAILED, ABORTED, UNKNOWN,VALIDATING, VALIDATED, VALIDATE_FAILED,INVALID
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs that have a username associated
+e.g. equal to "username=username" or contains "username=< like>username"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>last_modified_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scheduled_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date</td>
+          <td>
+            Optional value that filters returned list to display
+Jobs Ids that contain greater than(">1"), Less than("<1") or equal to the specified date "MMM-dd-yyyy HH:mm:ss.SSS"
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>completed_date_milliseconds</td>
+          <td>
+            Optional value that filters returned list to display
+Job Ids that contain greater than(">1"), Less than("<1") or equal to the specified date in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_listJobListResult.html">listJobListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of Job ids</p>
+        <a name="path__system_symmetrix_-symmetrixId-_job_-jobId-.html"></a>
+      <h1>/system/symmetrix/{symmetrixId}/job/{jobId}</h1>
+      <a name="GETpath__system_symmetrix_-symmetrixId-_job_-jobId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a specified Job on a specified Symmetrix Array
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>jobId</td>
+          <td>
+            The Job ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_getJobListResult.html">getJobListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the Job object</p>
+        <a name="path__system_version.html"></a>
+      <h1>/system/version</h1>
+      <a name="GETpath__system_version.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a the version of Unisphere for vmax
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_system_getVersionResult.html">getVersionResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>version of Unisphere for vmax</p>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

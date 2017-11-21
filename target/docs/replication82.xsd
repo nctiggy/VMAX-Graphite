@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/82/replication" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:replication82="http://www.emc.com/em/2012/07/univmax/restapi/82/replication" xmlns:replication="http://www.emc.com/em/2012/07/univmax/restapi/replication" xmlns:replication81="http://www.emc.com/em/2012/07/univmax/restapi/81/replication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/replication" schemaLocation="replication.xsd"/>
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/81/replication" schemaLocation="replication81.xsd"/>
+  <xs:element name="biasParam" type="replication82:BiasParam"/>
+  <xs:element name="establishParam" type="replication82:EstablishParam"/>
+  <xs:element name="failbackParam" type="replication82:FailbackParam"/>
+  <xs:element name="failoverParam" type="replication82:FailoverParam"/>
+  <xs:element name="rdfGroup" type="replication82:RdfGroup"/>
+  <xs:element name="restoreParam" type="replication82:RestoreParam"/>
+  <xs:element name="resumeParam" type="replication82:ResumeParam"/>
+  <xs:element name="snapVXSnapshotGeneration" type="replication82:SnapVXSnapshotGeneration"/>
+  <xs:element name="splitParam" type="replication82:SplitParam"/>
+  <xs:element name="storageGroup" type="replication82:StorageGroup"/>
+  <xs:element name="storageGroupList" type="replication82:StorageGroupList"/>
+  <xs:element name="storageGroupRdfUpdate" type="replication82:StorageGroupRdfUpdate"/>
+  <xs:element name="storageGroupRdfg" type="replication82:StorageGroupRdfg"/>
+  <xs:element name="storageGroupRdfgList" type="replication82:StorageGroupRdfgList"/>
+  <xs:element name="storageGroupSnapshotCreate" type="replication82:StorageGroupSnapshotCreate"/>
+  <xs:element name="storageGroupSnapshotGenCreate" type="replication82:StorageGroupSnapshotGenCreate"/>
+  <xs:element name="storageGroupSrdfCreate" type="replication82:StorageGroupSrdfCreate"/>
+  <xs:element name="suspendParam" type="replication82:SuspendParam"/>
+  <xs:element name="swapParam" type="replication82:SwapParam"/>
+  <xs:complexType name="BiasParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for BiasParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="BiasParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstablishParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EstablishParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EstablishParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="full" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="metroBias" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="full" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Make the action a Full Establish as opposed to an Incremental Establish]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="metroBias" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[When the SRDF Mode is set to Active, this specifies to make the R1 Symmetrix the Bias]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FailbackParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for FailbackParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="FailbackParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="recoverPoint" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="remote" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recoverPoint" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Allows the operation even though one or more devices are tagged for RecoverPoint.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remote" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests a remote data copy flag. When the concurrent link is ready, data is copied to the concurrent SRDF mirror. These operations require the remote data copy option, or the concurrent link to be suspended.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FailoverParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for FailoverParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="FailoverParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="establish" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="restore" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="remote" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="immediate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="establish" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Begins a device copy. The dynamic SRDF device pairs swap personality and an incremental establish is initiated.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="restore" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Begins a full copy from the target to the source, synchronizing the dynamic SRDF pairs. The dynamic SRDF device pairs swap personality and an incremental restore is initiated.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remote" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests a remote data copy flag. When the concurrent link is ready, data is copied to the concurrent SRDF mirror. These operations require the remote data copy option, or the concurrent link to be suspended.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="immediate" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Applies only to SRDF/A-capable devices. Causes command to drop the SRDF/A session immediately.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RdfAction">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfAction.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="RdfAction">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Establish"/>
+&lt;enumeration value="Split"/>
+&lt;enumeration value="Suspend"/>
+&lt;enumeration value="Restore"/>
+&lt;enumeration value="Resume"/>
+&lt;enumeration value="Failover"/>
+&lt;enumeration value="Failback"/>
+&lt;enumeration value="Swap"/>
+&lt;enumeration value="Bias"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Establish"/>
+      <xs:enumeration value="Split"/>
+      <xs:enumeration value="Suspend"/>
+      <xs:enumeration value="Restore"/>
+      <xs:enumeration value="Resume"/>
+      <xs:enumeration value="Failover"/>
+      <xs:enumeration value="Failback"/>
+      <xs:enumeration value="Swap"/>
+      <xs:enumeration value="Bias"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RdfGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RdfGroup">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/81/replication}RdfGroup">
+&lt;sequence>
+&lt;element name="localOnlinePorts" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+&lt;element name="remoteOnlinePorts" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication81:RdfGroup">
+        <xs:sequence>
+          <xs:element name="localOnlinePorts" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The local SRDF ports participating in this SRDF group which are online]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="remoteOnlinePorts" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The remote SRDF ports participating in this SRDF group which are online]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RestoreParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RestoreParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RestoreParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="full" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="remote" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="recoverPoint" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="metroBias" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="full" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Make the action a Full Restore as opposed to an Incremental Restore]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remote" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests a remote data copy flag. When the concurrent link is ready, data is copied to the concurrent SRDF mirror. These operations require the remote data copy option, or the concurrent link to be suspended.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recoverPoint" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Allows the operation even though one or more devices are tagged for RecoverPoint.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="metroBias" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[When the SRDF Mode is set to Active, this specifies to Use Bias]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResumeParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ResumeParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ResumeParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="remote" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="recoverPoint" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remote" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests a remote data copy flag. When the concurrent link is ready, data is copied to the concurrent SRDF mirror. These operations require the remote data copy option, or the concurrent link to be suspended.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recoverPoint" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Allows the operation even though one or more devices are tagged for RecoverPoint.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SnapVXSnapshotGeneration">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXSnapshotGeneration complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXSnapshotGeneration">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVXSnapshotGeneration">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:SnapVXSnapshotGeneration"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SplitParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SplitParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SplitParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="immediate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="immediate" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Applies only to SRDF/A-capable devices. Causes command to drop the SRDF/A session immediately.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroup">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}StorageGroup">
+&lt;sequence>
+&lt;element name="rdf" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:StorageGroup">
+        <xs:sequence>
+          <xs:element name="rdf" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Specifies if the Storage Group is part of an RDF setup]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="numStorageGroups" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Storage Group names for this lookup]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numStorageGroups" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of returned Storage Group names]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupRdfUpdate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupRdfUpdate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupRdfUpdate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="action" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}RdfAction"/>
+&lt;element name="establish" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}EstablishParam" minOccurs="0"/>
+&lt;element name="split" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}SplitParam" minOccurs="0"/>
+&lt;element name="suspend" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}SuspendParam" minOccurs="0"/>
+&lt;element name="restore" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}RestoreParam" minOccurs="0"/>
+&lt;element name="resume" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}ResumeParam" minOccurs="0"/>
+&lt;element name="failover" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}FailoverParam" minOccurs="0"/>
+&lt;element name="failback" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}FailbackParam" minOccurs="0"/>
+&lt;element name="swap" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}SwapParam" minOccurs="0"/>
+&lt;element name="setBias" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/replication}BiasParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="action" type="replication82:RdfAction" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The action to be performed.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="establish" type="replication82:EstablishParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Establish specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="split" type="replication82:SplitParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Split specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="suspend" type="replication82:SuspendParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Suspend specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="restore" type="replication82:RestoreParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Restore specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="resume" type="replication82:ResumeParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Resume specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="failover" type="replication82:FailoverParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Failover specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="failback" type="replication82:FailbackParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Failback specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="swap" type="replication82:SwapParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Swap specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="setBias" type="replication82:BiasParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set Bias specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupRdfg">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupRdfg complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupRdfg">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="storageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="rdfGroupNumber" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="volumeRdfTypes" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="3" minOccurs="0"/>
+&lt;element name="states" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="modes" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="hop2Rdfgs" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="hop2States" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="hop2Modes" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="storageGroupName" type="xs:string" minOccurs="1"/>
+      <xs:element name="rdfGroupNumber" type="xs:int" minOccurs="1"/>
+      <xs:element name="volumeRdfTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="states" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="modes" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="hop2Rdfgs" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="hop2States" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="hop2Modes" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupRdfgList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupRdfgList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupRdfgList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="storageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="rdfgs" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="storageGroupName" type="xs:string" minOccurs="1"/>
+      <xs:element name="rdfgs" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupSnapshotCreate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupSnapshotCreate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupSnapshotCreate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="snapshotName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="daysToLive" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="bothsides" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="snapshotName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The name of the new snapshot.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="daysToLive" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of days that the snapshot is to remain in existence for. Linked snapshot generations will not auto-expire.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="force" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Attempts to force the operation even though one or more volumes may not be in the normal, expected state(s) for the specified
+operation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="star" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Targets the action at volumes in STAR mode.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="bothsides" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Performs the operation on both locally and remotely associated snapshots.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupSnapshotGenCreate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupSnapshotGenCreate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupSnapshotGenCreate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="daysToLive" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="bothsides" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="daysToLive" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of days that the snapshot is to remain in existence for. Linked snapshot generations will not auto-expire.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="force" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Attempts to force the operation even though one or more volumes may not be in the normal, expected state(s) for the specified
+operation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="star" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Targets the action at volumes in STAR mode.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="bothsides" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Performs the operation on both locally and remotely associated snapshots.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupSrdfCreate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupSrdfCreate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupSrdfCreate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="remoteSymmId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="replicationMode" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}RdfMode"/>
+&lt;element name="rdfgNumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="establish" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="metroBias" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="remoteStorageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="thinPool" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="fastPolicy" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="remoteSLO" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="ssid" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="remoteSymmId" type="xs:string" minOccurs="1"/>
+          <xs:element name="replicationMode" type="common:RdfMode" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The replication mode the SRDF pairs will be created]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="rdfgNumber" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Optional: Specify the RDF Group number to use to create the pairs,
+or leave blank to automatically pick or create an SRDF Group for the setup.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="establish" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Specifies if the pairs are to be established on creation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="metroBias" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[When SRDF Mode is set to Active, this specifies to use Bias when creating an SRDF Metro Pair. If set to false, Witness will be
+used.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="remoteStorageGroupName" type="xs:string" minOccurs="1"/>
+          <xs:element name="thinPool" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The name of the Thin Pool that the remote volumes are to be bound to]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="fastPolicy" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The name of the Fast Policy to be applied to the thin pool]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="remoteSLO" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The name of the SLO on the remote Symmetrix that the Storage Group will be given]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ssid" type="xs:long" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SSID to be given to newly created CKD volumes]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SuspendParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SuspendParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SuspendParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="immediate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="consExempt" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="metroBias" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="immediate" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Applies only to SRDF/A-capable devices. Causes command to drop the SRDF/A session immediately.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="consExempt" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Allows devices to be suspended without affecting the state of the SRDF/A session or requiring that other devices in the session be suspended. Used for an SRDF group supporting an active SRDF/A session.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="metroBias" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[When the SRDF is set to Active, this specifies to move the Bias to the R2 Symmetrix]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SwapParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SwapParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SwapParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="halfSwap" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="refreshR1" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="refreshR2" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SymForce option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The star option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Hop2 option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="halfSwap" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Swaps the SRDF personality of one-half of the designated dynamic SRDF pair. Source R1 devices become target R2 devices, and target R2 devices become source R1 devices.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="refreshR1" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Marks the source (R1) devices to refresh from the remote mirror.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="refreshR2" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Marks the target (R2) devices to refresh from the remote mirror.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

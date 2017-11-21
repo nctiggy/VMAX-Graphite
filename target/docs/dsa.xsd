@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/dsa" elementFormDefault="qualified" xmlns:dsa="http://www.emc.com/em/2012/07/univmax/restapi/dsa" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="databaseEnv" type="dsa:DatabaseEnvType"/>
+  <xs:element name="monitoredEnv" type="dsa:MonitoredEnvType"/>
+  <xs:element name="monitoredEnvDB" type="dsa:MonitoredEnvDBType"/>
+  <xs:element name="monitoredEnvironmentDBList" type="dsa:MonitoredEnvironmentsDBList"/>
+  <xs:element name="monitoredEnvironmentList" type="dsa:MonitoredEnvironmentsList"/>
+  <xs:element name="statsRequestInput" type="dsa:StatsRequestInputType"/>
+  <xs:complexType name="DatabaseEnvType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DatabaseEnvType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DatabaseEnvType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="dbName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="responseReadTimeDB" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="responseWriteTimeRedo" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="ioPerSec" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="mbPerSec" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="readWriteRatio" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="dbName" type="xs:string" minOccurs="1"/>
+      <xs:element name="responseReadTimeDB" type="xs:double" minOccurs="0"/>
+      <xs:element name="responseWriteTimeRedo" type="xs:double" minOccurs="0"/>
+      <xs:element name="ioPerSec" type="xs:double" minOccurs="0"/>
+      <xs:element name="mbPerSec" type="xs:double" minOccurs="0"/>
+      <xs:element name="readWriteRatio" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonitoredEnvType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MonitoredEnvType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MonitoredEnvType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="host" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="envName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="envId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="envUser" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="envType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="databaseVersion" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="dbSize" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="symmetrixId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="storageGroups" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="envStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="collectionStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="deviceMapStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="deviceStatStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="mapperLastDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="installationDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="collectionDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="deviceMappingDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="deviceStatDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" minOccurs="1"/>
+      <xs:element name="envName" type="xs:string" minOccurs="1"/>
+      <xs:element name="envId" type="xs:int" minOccurs="1"/>
+      <xs:element name="envUser" type="xs:string" minOccurs="1"/>
+      <xs:element name="envType" type="xs:string" minOccurs="1"/>
+      <xs:element name="databaseVersion" type="xs:string" minOccurs="1"/>
+      <xs:element name="dbSize" type="xs:string" minOccurs="0"/>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="0"/>
+      <xs:element name="storageGroups" type="xs:string" minOccurs="0"/>
+      <xs:element name="envStatus" type="xs:string" minOccurs="1"/>
+      <xs:element name="collectionStatus" type="xs:string" minOccurs="1"/>
+      <xs:element name="deviceMapStatus" type="xs:string" minOccurs="1"/>
+      <xs:element name="deviceStatStatus" type="xs:string" minOccurs="1"/>
+      <xs:element name="mapperLastDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="installationDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="collectionDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="deviceMappingDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="deviceStatDescription" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonitoredEnvDBType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MonitoredEnvDBType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MonitoredEnvDBType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="host" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="envId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="instanceName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="read_response_time_st" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/dsa}databaseEnv"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" minOccurs="1"/>
+      <xs:element name="envId" type="xs:int" minOccurs="1"/>
+      <xs:element name="instanceName" type="xs:string" minOccurs="0"/>
+      <xs:element name="read_response_time_st" type="xs:double" minOccurs="0"/>
+      <xs:element name="databaseEnv" type="dsa:DatabaseEnvType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[This is the environments list of databases that are being monitored by DSA.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonitoredEnvironmentsDBList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MonitoredEnvironmentsDBList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MonitoredEnvironmentsDBList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/dsa}monitoredEnvDB"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="monitoredEnvDB" type="dsa:MonitoredEnvDBType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[This is the environments list of databases that are being monitored by DSA.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonitoredEnvironmentsList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MonitoredEnvironmentsList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MonitoredEnvironmentsList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/dsa}monitoredEnv"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="monitoredEnv" type="dsa:MonitoredEnvType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[This is the environments list that are being monitored by DSA.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatsRequestInputType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StatsRequestInputType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StatsRequestInputType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startTime" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="endTime" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startTime" type="xs:string" minOccurs="1"/>
+          <xs:element name="endTime" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

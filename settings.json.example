@@ -1,18 +1,17 @@
 {
 	"graphite": {
-		"enabled": true,
+		"enabled": false,
 		"prefix": false,
 		"host": "hostname",
 		"port": "2003"
 	},
-	"influx": {
-		"enabled": true,
+	"influxdb": {
+		"enabled": false,
 		"prefix": false,
-		"host": "hostname",
-		"port": "8086"
+		"url": "hostname:port"
 	},
 	"csv": {
-		"enabled": true
+		"enabled": false
 	},
 	"unisphere": [
 		{
@@ -41,89 +40,89 @@
 	"monitor": [
 		{
 			"scope": "Array",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "FEDirector",
-			"enabled": true,
+			"enabled": false,
 			"children": [
 				{
 					"scope": "FEDirectorByPort",
-					"enabled": true
+					"enabled": false
 				}
 			]
 		},
 		{
 			"scope": "BEDirector",
-			"enabled": true,
+			"enabled": false,
 			"children": [
 				{
 					"scope": "BEDirectorByPort",
-					"enabled": true
+					"enabled": false
 				}
 			]
 		},
 		{
 			"scope": "RDFDirector",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "Disk",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "DeviceGroup",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "StorageGroup",
-			"enabled": true,
+			"enabled": false,
 			"children": [
 				{
 					"scope": "TierByStorageGroup",
-					"enabled": true
+					"enabled": false
 				}
 			]
 		},
 		{
 			"scope": "RDFS",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "RDFA",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "CachePartition",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "DiskGroup",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "DSEPool",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "SnapPool",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "ThinPool",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "ThinTier",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "StorageTier",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"scope": "FASTPolicy",
-			"enabled": true
+			"enabled": false
 		}
 	]
 }

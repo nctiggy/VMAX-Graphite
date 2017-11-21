@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/84/system" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:system84="http://www.emc.com/em/2012/07/univmax/restapi/84/system" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="acknowledgedInfo" type="system84:AcknowledgedInfoType"/>
+  <xs:element name="alert" type="system84:AlertType"/>
+  <xs:element name="alertPolicy" type="system84:AlertPolicyType"/>
+  <xs:element name="alertPolicyId" type="system84:AlertPolicyIdType"/>
+  <xs:element name="alertSummary" type="system84:AlertSummaryType"/>
+  <xs:element name="arrayAlertSummary" type="system84:ArrayAlertSummaryType"/>
+  <xs:element name="createSloComplianceAlertPolicyParam" type="system84:CreateSloComplianceAlertPolicyParamType"/>
+  <xs:element name="editAlertParam" type="system84:EditAlertParamType"/>
+  <xs:element name="editAlertPolicyActionParam" type="system84:EditAlertPolicyActionParamType"/>
+  <xs:element name="editAlertPolicyOptionsParam" type="system84:EditAlertPolicyOptionsParamType"/>
+  <xs:element name="editAlertPolicyParam" type="system84:EditAlertPolicyParamType"/>
+  <xs:element name="generateSloComplianceAlertParam" type="system84:GenerateSloComplianceAlertParamType"/>
+  <xs:element name="getAlertPolicyResult" type="system84:GetAlertPolicyResultType"/>
+  <xs:element name="getAlertResult" type="system84:GetAlertResultType"/>
+  <xs:element name="getJobListResult" type="system84:GetJobListResultType"/>
+  <xs:element name="getSymmetrixParam" type="system84:GetSymmetrixParamType"/>
+  <xs:element name="getSymmetrixResult" type="system84:GetSymmetrixResultType"/>
+  <xs:element name="getVersionResult" type="system84:GetVersionResultType"/>
+  <xs:element name="job" type="system84:JobType"/>
+  <xs:element name="listAlertPoliciesResult" type="system84:ListAlertPoliciesResultType"/>
+  <xs:element name="listAlertResult" type="system84:ListAlertResultType"/>
+  <xs:element name="listJobListResult" type="system84:ListJobListResultType"/>
+  <xs:element name="listSymmetrixResult" type="system84:ListSymmetrixResultType"/>
+  <xs:element name="lockInfo" type="system84:LockInfoType"/>
+  <xs:element name="performanceAlertSummary" type="system84:PerformanceAlertSummaryType"/>
+  <xs:element name="renameAlertPolicyParam" type="system84:RenameAlertPolicyParamType"/>
+  <xs:element name="serverAlertSummary" type="system84:ServerAlertSummaryType"/>
+  <xs:element name="symmAlertSummary" type="system84:SymmAlertSummaryType"/>
+  <xs:element name="symmetrix" type="system84:SymmetrixType"/>
+  <xs:element name="task" type="system84:TaskType"/>
+  <xs:complexType name="AcknowledgedInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AcknowledgedInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AcknowledgedInfoType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="acknowledged_user" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="acknowledged_date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="acknowledged_user" type="xs:string" minOccurs="0"/>
+      <xs:element name="acknowledged_date" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AlertType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alertId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}AlertIdType"/>
+&lt;element name="state" type="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}StateType"/>
+&lt;element name="severity" type="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}SeverityType"/>
+&lt;element name="type" type="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}AlertChannelType"/>
+&lt;element name="created_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="created_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="cleared_date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="cleared_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="acknowledged" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}acknowledgedInfo" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertId" type="xs:string" minOccurs="1"/>
+      <xs:element name="state" type="system84:StateType" minOccurs="1"/>
+      <xs:element name="severity" type="system84:SeverityType" minOccurs="1"/>
+      <xs:element name="type" type="system84:AlertChannelType" minOccurs="1"/>
+      <xs:element name="created_date" type="xs:string" minOccurs="1"/>
+      <xs:element name="created_date_milliseconds" type="xs:long" minOccurs="0"/>
+      <xs:element name="cleared_date" type="xs:string" minOccurs="0"/>
+      <xs:element name="cleared_date_milliseconds" type="xs:long" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="1"/>
+      <xs:element name="acknowledged" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="acknowledgedInfo" type="system84:AcknowledgedInfoType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertChannelType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertChannelType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="AlertChannelType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="ARRAY"/>
+&lt;enumeration value="PERFORMANCE"/>
+&lt;enumeration value="SERVER"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ARRAY"/>
+      <xs:enumeration value="PERFORMANCE"/>
+      <xs:enumeration value="SERVER"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertPolicyType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertPolicyType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AlertPolicyType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}alertPolicyId"/>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="stable_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="marginal_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="critical_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="email_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="snmp_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="syslog_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alertPolicyId" type="system84:AlertPolicyIdType" minOccurs="1"/>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="stable_enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="marginal_enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="critical_enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="email_enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="snmp_enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="syslog_enabled" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertPolicyIdType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertPolicyIdType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AlertPolicyIdType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="storageGroupId" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}serverAlertSummary" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}symmAlertSummary" minOccurs="0"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="serverAlertSummary" type="system84:ServerAlertSummaryType" minOccurs="0"/>
+      <xs:element name="symmAlertSummary" type="system84:SymmAlertSummaryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ArrayAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ArrayAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alert_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alert_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_acknowledged_count" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateSloComplianceAlertPolicyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateSloComplianceAlertPolicyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateSloComplianceAlertPolicyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}alertPolicyId"/>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="stable_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="marginal_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="critical_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="email_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="snmp_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="syslog_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="test" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="alertPolicyId" type="system84:AlertPolicyIdType" minOccurs="1"/>
+          <xs:element name="enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="stable_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="marginal_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="critical_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="email_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="snmp_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="syslog_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="test" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EditAlertActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditAlertActionParamType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="EditAlertActionParamType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="ACKNOWLEDGE"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACKNOWLEDGE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EditAlertParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditAlertParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditAlertParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ConfigurationManagementParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}editAlertActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ConfigurationManagementParamType">
+        <xs:sequence>
+          <xs:element name="editAlertActionParam" type="system84:EditAlertActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the specified Alert]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditAlertPolicyActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditAlertPolicyActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditAlertPolicyActionParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}editAlertPolicyOptionsParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}renameAlertPolicyParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="renameAlertPolicyParam" type="system84:RenameAlertPolicyParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Renames the specified Masking View]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="editAlertPolicyOptionsParam" type="system84:EditAlertPolicyOptionsParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Edits the oprions for the specified Alert Policy]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditAlertPolicyOptionsParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditAlertPolicyOptionsParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditAlertPolicyOptionsParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="stable_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="marginal_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="critical_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="email_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="snmp_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="syslog_enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+          <xs:element name="stable_enabled" type="xs:boolean" minOccurs="1"/>
+          <xs:element name="marginal_enabled" type="xs:boolean" minOccurs="1"/>
+          <xs:element name="critical_enabled" type="xs:boolean" minOccurs="1"/>
+          <xs:element name="email_enabled" type="xs:boolean" minOccurs="1"/>
+          <xs:element name="snmp_enabled" type="xs:boolean" minOccurs="1"/>
+          <xs:element name="syslog_enabled" type="xs:boolean" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditAlertPolicyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditAlertPolicyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditAlertPolicyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}editAlertPolicyActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editAlertPolicyActionParam" type="system84:EditAlertPolicyActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the specified Alert Policy]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GenerateSloComplianceAlertParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GenerateSloComplianceAlertParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GenerateSloComplianceAlertParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}alertPolicyId"/>
+&lt;element name="old_slo_state" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="new_slo_state" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="alertPolicyId" type="system84:AlertPolicyIdType" minOccurs="1"/>
+          <xs:element name="old_slo_state" type="xs:string" minOccurs="0"/>
+          <xs:element name="new_slo_state" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetAlertPolicyResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetAlertPolicyResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetAlertPolicyResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}alertPolicy"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="alertPolicy" type="system84:AlertPolicyType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetAlertResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetAlertResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetAlertResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}alert"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="alert" type="system84:AlertType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetJobListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetJobListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetJobListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}job"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="job" type="system84:JobType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}symmetrix"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrix" type="system84:SymmetrixType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned list of Symmetrix Arrays.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetVersionResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetVersionResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetVersionResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="version" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="version" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JobType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for JobType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="JobType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="jobId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}JobIdType"/>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="status" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}JobStatus"/>
+&lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="last_modified_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="last_modified_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="scheduled_date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="scheduled_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="completed_date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="completed_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}task" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="resourceLink" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string" minOccurs="1"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="common:JobStatus" minOccurs="1"/>
+      <xs:element name="username" type="xs:string" minOccurs="1"/>
+      <xs:element name="last_modified_date" type="xs:string" minOccurs="1"/>
+      <xs:element name="last_modified_date_milliseconds" type="xs:long" minOccurs="0"/>
+      <xs:element name="scheduled_date" type="xs:string" minOccurs="0"/>
+      <xs:element name="scheduled_date_milliseconds" type="xs:long" minOccurs="0"/>
+      <xs:element name="completed_date" type="xs:string" minOccurs="0"/>
+      <xs:element name="completed_date_milliseconds" type="xs:long" minOccurs="0"/>
+      <xs:element name="task" type="system84:TaskType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="resourceLink" type="xs:string" minOccurs="0"/>
+      <xs:element name="result" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAlertPoliciesResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListAlertPoliciesResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListAlertPoliciesResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;element name="num_of_alert_policies" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}alertPolicyId"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="num_of_alert_policies" type="xs:int" minOccurs="0"/>
+          <xs:element name="alertPolicyId" type="system84:AlertPolicyIdType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAlertResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListAlertResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListAlertResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="alertId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}AlertIdType" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="alertId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListJobListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListJobListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListJobListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="jobId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}JobIdType" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="jobId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Symmetrix Array ID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LockInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for LockInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="LockInfoType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="lock_number" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="lock_usage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="lock_host" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="lock_user" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="time_held_seconds" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="lock_number" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Lock Number]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lock_usage" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The origin of the lock]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lock_host" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Host were the lock was initiated]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lock_user" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The User that initiated the lock]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="time_held_seconds" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Time in Seconds that the lock has been held for]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PerformanceAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for PerformanceAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="PerformanceAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alert_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alert_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_acknowledged_count" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RenameAlertPolicyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RenameAlertPolicyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RenameAlertPolicyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="newStorageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="newStorageGroupId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServerAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ServerAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ServerAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alert_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alert_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_acknowledged_count" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SeverityType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SeverityType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="SeverityType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="NORMAL"/>
+&lt;enumeration value="INFORMATION"/>
+&lt;enumeration value="MINOR"/>
+&lt;enumeration value="WARNING"/>
+&lt;enumeration value="CRITICAL"/>
+&lt;enumeration value="FATAL"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NORMAL"/>
+      <xs:enumeration value="INFORMATION"/>
+      <xs:enumeration value="MINOR"/>
+      <xs:enumeration value="WARNING"/>
+      <xs:enumeration value="CRITICAL"/>
+      <xs:enumeration value="FATAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StateType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StateType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="StateType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="NEW"/>
+&lt;enumeration value="ACKNOWLEDGED"/>
+&lt;enumeration value="CLEARED"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="ACKNOWLEDGED"/>
+      <xs:enumeration value="CLEARED"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SymmAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}arrayAlertSummary" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}performanceAlertSummary" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmId" type="xs:string" minOccurs="0"/>
+      <xs:element name="arrayAlertSummary" type="system84:ArrayAlertSummaryType" minOccurs="0"/>
+      <xs:element name="performanceAlertSummary" type="system84:PerformanceAlertSummaryType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="device_count" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="ucode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="display_name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="disk_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="cache_size_mb" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="data_encryption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/84/system}lockInfo" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the Symmetrix]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="device_count" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The total number of Volumes on the Symmetrix]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ucode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Current Symmetrix Ucode version]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="model" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix Model]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="local" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Indicates if the Symmetrix is attached locally or remotely]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="display_name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix Alias Name]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="disk_count" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Number of Disks on the Symmetrix]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cache_size_mb" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Cache Size in MBs]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="data_encryption" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The current DARE status on the Box {"Enabled","Disabled","Mixed","N/A"}]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lockInfo" type="system84:LockInfoType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The List of currently held Symmetrix Locks]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaskType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for TaskType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="TaskType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="execution_order" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="execution_order" type="xs:int" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

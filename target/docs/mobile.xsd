@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/mobile" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:mobile="http://www.emc.com/em/2012/07/univmax/restapi/mobile" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="arrayConfigParam" type="mobile:ArrayConfigParamType"/>
+  <xs:element name="arrayConfigResult" type="mobile:ArrayConfigResultType"/>
+  <xs:element name="arrayListResult" type="mobile:ArrayListResultType"/>
+  <xs:element name="fastSettings" type="mobile:FastSettingsType"/>
+  <xs:element name="storageGroupListParam" type="mobile:StorageGroupListParamType"/>
+  <xs:element name="storageGroupListResult" type="mobile:StorageGroupListResultType"/>
+  <xs:complexType name="ArrayConfigParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ArrayConfigParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ArrayConfigParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayConfigResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ArrayConfigResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ArrayConfigResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="symmetrixModel" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixModelType" minOccurs="0"/>
+&lt;element name="symmetrixUCodeVersion" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixUCodeVersionType" minOccurs="0"/>
+&lt;element name="bayCount" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="systemWritePendingPercent" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="totalCapacity" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/mobile}fastSettings" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="name" type="xs:string" minOccurs="1"/>
+          <xs:element name="symmetrixModel" type="xs:string" minOccurs="0"/>
+          <xs:element name="symmetrixUCodeVersion" type="xs:string" minOccurs="0"/>
+          <xs:element name="bayCount" type="xs:int" minOccurs="0"/>
+          <xs:element name="systemWritePendingPercent" type="xs:float" minOccurs="0"/>
+          <xs:element name="totalCapacity" type="xs:float" minOccurs="0"/>
+          <xs:element name="fastSettings" type="mobile:FastSettingsType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ArrayListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ArrayListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FastSettingsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for FastSettingsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="FastSettingsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="fastState" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}FastStateType" minOccurs="0"/>
+&lt;element name="fastMoveMode" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}FastMoveModeType" minOccurs="0"/>
+&lt;element name="fastRelocationRate" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="allocationByPolicy" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="fastState" type="xs:string" minOccurs="0"/>
+      <xs:element name="fastMoveMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="fastRelocationRate" type="xs:float" minOccurs="0"/>
+      <xs:element name="allocationByPolicy" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupListParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupListParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupListParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="storageGroupId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

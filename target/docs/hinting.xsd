@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/hinting" elementFormDefault="qualified" xmlns:hinting="http://www.emc.com/em/2012/07/univmax/restapi/hinting" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="blockedHostsResult" type="hinting:BlockedHostsResultType"/>
+  <xs:element name="blockedListParam" type="hinting:BlockedListParamType"/>
+  <xs:element name="createHintParam" type="hinting:CreateHintParamType"/>
+  <xs:element name="createHintResult" type="hinting:CreateHintResultType"/>
+  <xs:element name="editHintActionParam" type="hinting:EditHintActionParamType"/>
+  <xs:element name="editHintDetailsParam" type="hinting:EditHintDetailsParamType"/>
+  <xs:element name="editHintParam" type="hinting:EditHintParamType"/>
+  <xs:element name="editHintingActionParam" type="hinting:EditHintingActionParamType"/>
+  <xs:element name="editHintingMechanismParam" type="hinting:EditHintingMechanismParamType"/>
+  <xs:element name="editSymmetrixHintingParam" type="hinting:EditSymmetrixHintingParamType"/>
+  <xs:element name="getHintParam" type="hinting:GetHintParamType"/>
+  <xs:element name="getHintsResult" type="hinting:GetHintsResultType"/>
+  <xs:element name="getSymmetrixParam" type="hinting:GetSymmetrixParamType"/>
+  <xs:element name="getSymmetrixResult" type="hinting:GetSymmetrixResultType"/>
+  <xs:element name="hint" type="hinting:HintType"/>
+  <xs:element name="hintExtent" type="hinting:HintExtentType"/>
+  <xs:element name="listHintsResult" type="hinting:ListHintsResultType"/>
+  <xs:element name="listSymmetrixResult" type="hinting:ListSymmetrixResultType"/>
+  <xs:element name="symmetrix" type="hinting:SymmetrixType"/>
+  <xs:element name="volumeExtent" type="hinting:VolumeExtentType"/>
+  <xs:complexType name="BlockedHostsResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for BlockedHostsResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="BlockedHostsResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;element name="num_of_blocked_hosts" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="blocked_hosts" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="num_of_blocked_hosts" type="xs:int" minOccurs="0"/>
+          <xs:element name="blocked_hosts" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BlockedListParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for BlockedListParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="BlockedListParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="hostname" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="hostname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateHintParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateHintParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateHintParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="application" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="provider" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="hostname" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="business_priority" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="start_time" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="repeat_count" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="repeat_interval" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}volumeExtent"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="username" type="xs:string" minOccurs="1"/>
+          <xs:element name="application" type="xs:string" minOccurs="1"/>
+          <xs:element name="description" type="xs:string" minOccurs="1"/>
+          <xs:element name="provider" type="xs:string" minOccurs="1"/>
+          <xs:element name="hostname" type="xs:string" minOccurs="1"/>
+          <xs:element name="business_priority" type="xs:long" minOccurs="1"/>
+          <xs:element name="start_time" type="xs:long" minOccurs="1"/>
+          <xs:element name="duration" type="xs:long" minOccurs="1"/>
+          <xs:element name="repeat_count" type="xs:long" minOccurs="1"/>
+          <xs:element name="repeat_interval" type="xs:long" minOccurs="1"/>
+          <xs:element name="volumeExtent" type="hinting:VolumeExtentType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateHintResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateHintResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateHintResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;element name="hintId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HintIdType" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="hintId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditHintActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditHintActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditHintActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}editHintDetailsParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}editHintStatusParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="editHintStatusParam" type="hinting:EditHintStatusParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Choose one of the hint status actions]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="editHintDetailsParam" type="hinting:EditHintDetailsParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[edit the Hint details]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditHintDetailsParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditHintDetailsParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditHintDetailsParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="start_time" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="repeat_count" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="repeat_interval" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="business_priority" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="start_time" type="xs:long" minOccurs="1"/>
+          <xs:element name="duration" type="xs:long" minOccurs="1"/>
+          <xs:element name="repeat_count" type="xs:long" minOccurs="1"/>
+          <xs:element name="repeat_interval" type="xs:long" minOccurs="1"/>
+          <xs:element name="business_priority" type="xs:long" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditHintParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditHintParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditHintParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}editHintActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editHintActionParam" type="hinting:EditHintActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the specified Hint]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EditHintStatusParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditHintStatusParamType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="EditHintStatusParamType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="suspend"/>
+&lt;enumeration value="resume"/>
+&lt;enumeration value="cancel"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="suspend"/>
+      <xs:enumeration value="resume"/>
+      <xs:enumeration value="cancel"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EditHintingActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditHintingActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditHintingActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}editHintingMechanismParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="editHintingMechanismParam" type="hinting:EditHintingMechanismParamType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditHintingMechanismParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditHintingMechanismParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditHintingMechanismParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element name="enable_hinting" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enable_hinting" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditSymmetrixHintingParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditSymmetrixHintingParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditSymmetrixHintingParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}editHintingActionParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editHintingActionParam" type="hinting:EditHintingActionParamType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetHintParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetHintParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetHintParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="provider" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="application" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="db_host" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="business_priority" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_vols" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_databases" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_child_hints" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storage_group" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="database_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="child_hint_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="parent_hint_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="start_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="start_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="submitted_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="submitted_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="repeat_count" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="end_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="end_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="blocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="parent" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="child" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="username" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="provider" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="application" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="db_host" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="business_priority" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_vols" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_storage_groups" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_databases" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_child_hints" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="status" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="state" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="storage_group" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="database_name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="child_hint_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="parent_hint_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="start_date" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="start_date_milliseconds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="submitted_date" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="submitted_date_milliseconds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="duration" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="repeat_count" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="end_date" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="end_date_milliseconds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="blocked" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="parent" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="child" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetHintsResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetHintsResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetHintsResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}hint"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="hint" type="hinting:HintType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}symmetrix"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrix" type="hinting:SymmetrixType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned list of Symmetrix Arrays.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HintType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HintType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HintType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="hintId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HintIdType"/>
+&lt;element name="parent_hint_id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="parent" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="child" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="application" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="provider" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="hostname" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="business_priority" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="start_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="start_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="duration_long" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="repeat_count" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="repeat_interval" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="submitted_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="submitted_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="recurrence" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="next_recurrence" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="end_date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="end_date_milliseconds" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="num_of_vols" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="num_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="num_of_databases" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="num_of_child_hints" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storage_group" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType" minOccurs="0"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="database" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="child_hint_id" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HintIdType" minOccurs="0"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}volumeExtent"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="hintId" type="xs:string" minOccurs="1"/>
+      <xs:element name="parent_hint_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="parent" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="child" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="status" type="xs:string" minOccurs="1"/>
+      <xs:element name="state" type="xs:string" minOccurs="1"/>
+      <xs:element name="username" type="xs:string" minOccurs="1"/>
+      <xs:element name="application" type="xs:string" minOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="1"/>
+      <xs:element name="provider" type="xs:string" minOccurs="1"/>
+      <xs:element name="hostname" type="xs:string" minOccurs="1"/>
+      <xs:element name="business_priority" type="xs:int" minOccurs="1"/>
+      <xs:element name="start_date" type="xs:string" minOccurs="1"/>
+      <xs:element name="start_date_milliseconds" type="xs:long" minOccurs="1"/>
+      <xs:element name="duration" type="xs:string" minOccurs="1"/>
+      <xs:element name="duration_long" type="xs:long" minOccurs="1"/>
+      <xs:element name="repeat_count" type="xs:long" minOccurs="1"/>
+      <xs:element name="repeat_interval" type="xs:long" minOccurs="1"/>
+      <xs:element name="submitted_date" type="xs:string" minOccurs="1"/>
+      <xs:element name="submitted_date_milliseconds" type="xs:long" minOccurs="1"/>
+      <xs:element name="recurrence" type="xs:string" minOccurs="1"/>
+      <xs:element name="next_recurrence" type="xs:string" minOccurs="1"/>
+      <xs:element name="end_date" type="xs:string" minOccurs="1"/>
+      <xs:element name="end_date_milliseconds" type="xs:long" minOccurs="1"/>
+      <xs:element name="num_of_vols" type="xs:int" minOccurs="0"/>
+      <xs:element name="num_of_storage_groups" type="xs:int" minOccurs="0"/>
+      <xs:element name="num_of_databases" type="xs:int" minOccurs="0"/>
+      <xs:element name="num_of_child_hints" type="xs:int" minOccurs="0"/>
+      <xs:element name="storage_group" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="database" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="child_hint_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="volumeExtent" type="hinting:VolumeExtentType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HintExtentType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HintExtentType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HintExtentType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="extent_offset" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="extent_length" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="extent_offset" type="xs:long" minOccurs="1"/>
+      <xs:element name="extent_length" type="xs:long" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListHintsResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListHintsResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListHintsResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;element name="num_of_hints" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="hintId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HintIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="num_of_hints" type="xs:int" minOccurs="0"/>
+          <xs:element name="hintId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;element name="num_of_symmetrix_arrays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Symmetrix Array ID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="num_of_symmetrix_arrays" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Total number of returned Symmetrix Array IDs.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="device_count" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="ucode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}virtualCapacity"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="device_count" type="xs:double" minOccurs="1"/>
+      <xs:element name="ucode" type="xs:string" minOccurs="1"/>
+      <xs:element name="model" type="xs:string" minOccurs="1"/>
+      <xs:element name="local" type="xs:boolean" minOccurs="1"/>
+      <xs:element ref="common:virtualCapacity" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VolumeExtentType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeExtentType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumeExtentType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="sym_vol_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="writes_per_hour" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="reads_per_hour" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="write_io_size" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="read_io_size" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="prefetch_per_hour" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/hinting}hintExtent"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sym_vol_name" type="xs:string" minOccurs="1"/>
+      <xs:element name="writes_per_hour" type="xs:long" minOccurs="1"/>
+      <xs:element name="reads_per_hour" type="xs:long" minOccurs="1"/>
+      <xs:element name="write_io_size" type="xs:long" minOccurs="1"/>
+      <xs:element name="read_io_size" type="xs:long" minOccurs="1"/>
+      <xs:element name="prefetch_per_hour" type="xs:long" minOccurs="1"/>
+      <xs:element name="hintExtent" type="hinting:HintExtentType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

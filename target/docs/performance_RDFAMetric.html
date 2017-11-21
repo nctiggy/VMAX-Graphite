@@ -1,0 +1,1840 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>RDFAMetric</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">RDFAMetric</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="model.html">Data Model</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="performance.html">performance</a> &gt;
+              <ul>
+                <li><a href="management.html">management</a></li>
+                <li><a href="migration84.html">migration84</a></li>
+                <li><a href="dsa.html">dsa</a></li>
+                <li><a href="system.html">system</a></li>
+                <li><a href="vvol81.html">vvol81</a></li>
+                <li><a href="provisioning82.html">provisioning82</a></li>
+                <li><a href="performance83.html">performance83</a></li>
+                <li><a href="performance81.html">performance81</a></li>
+                <li><a href="migration83.html">migration83</a></li>
+                <li><a href="system82.html">system82</a></li>
+                <li><a href="hinting.html">hinting</a></li>
+                <li><a href="sloprovisioning84.html">sloprovisioning84</a></li>
+                <li><a href="common.html">common</a></li>
+                <li><a href="replication82.html">replication82</a></li>
+                <li><a href="mobile.html">mobile</a></li>
+                <li><a href="replication81.html">replication81</a></li>
+                <li><a href="vvol82.html">vvol82</a></li>
+                <li><a href="provisioning.html">provisioning</a></li>
+                <li><a href="provisioning84.html">provisioning84</a></li>
+                <li><a href="dsa84.html">dsa84</a></li>
+                <li><a href="sloprovisioning.html">sloprovisioning</a></li>
+                <li><a href="performance.html">performance</a></li>
+                <li><a href="wlp82.html">wlp82</a></li>
+                <li><a href="wlp.html">wlp</a></li>
+                <li><a href="vvol84.html">vvol84</a></li>
+                <li><a href="provisioning83.html">provisioning83</a></li>
+                <li><a href="vvol83.html">vvol83</a></li>
+                <li><a href="sloprovisioning82.html">sloprovisioning82</a></li>
+                <li><a href="replication83.html">replication83</a></li>
+                <li><a href="performance82.html">performance82</a></li>
+                <li><a href="replication84.html">replication84</a></li>
+                <li><a href="wlpd.html">wlpd</a></li>
+                <li><a href="system84.html">system84</a></li>
+                <li><a href="replication.html">replication</a></li>
+                <li><a href="wlp84.html">wlp84</a></li>
+                <li><a href="sloprovisioning83.html">sloprovisioning83</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="performance_RDFAMetric.html">RDFAMetric</a>
+              <ul>
+                <li><a href="performance_Alert.html">Alert</a></li>
+                <li><a href="performance_AlertSeverity.html">AlertSeverity</a></li>
+                <li><a href="performance_AlertState.html">AlertState</a></li>
+                <li><a href="performance_ArrayAlertParamType.html">ArrayAlertParamType</a></li>
+                <li><a href="performance_ArrayAlertResultType.html">ArrayAlertResultType</a></li>
+                <li><a href="performance_ArrayAlertType.html">ArrayAlertType</a></li>
+                <li><a href="performance_ArrayInfoType.html">ArrayInfoType</a></li>
+                <li><a href="performance_ArrayKeyResultType.html">ArrayKeyResultType</a></li>
+                <li><a href="performance_ArrayMetric.html">ArrayMetric</a></li>
+                <li><a href="performance_ArrayParamType.html">ArrayParamType</a></li>
+                <li><a href="performance_ArrayResultType.html">ArrayResultType</a></li>
+                <li><a href="performance_BEDirectorInfoType.html">BEDirectorInfoType</a></li>
+                <li><a href="performance_BEDirectorKeyParamType.html">BEDirectorKeyParamType</a></li>
+                <li><a href="performance_BEDirectorKeyResultType.html">BEDirectorKeyResultType</a></li>
+                <li><a href="performance_BEDirectorMetric.html">BEDirectorMetric</a></li>
+                <li><a href="performance_BEDirectorParamType.html">BEDirectorParamType</a></li>
+                <li><a href="performance_BEDirectorResultType.html">BEDirectorResultType</a></li>
+                <li><a href="performance_BeEmulationInfoType.html">BeEmulationInfoType</a></li>
+                <li><a href="performance_BeEmulationKeyParamType.html">BeEmulationKeyParamType</a></li>
+                <li><a href="performance_BeEmulationKeyResultType.html">BeEmulationKeyResultType</a></li>
+                <li><a href="performance_BeEmulationMetric.html">BeEmulationMetric</a></li>
+                <li><a href="performance_BeEmulationParamType.html">BeEmulationParamType</a></li>
+                <li><a href="performance_BeEmulationResultType.html">BeEmulationResultType</a></li>
+                <li><a href="performance_BePortInfoType.html">BePortInfoType</a></li>
+                <li><a href="performance_BePortKeyParamType.html">BePortKeyParamType</a></li>
+                <li><a href="performance_BePortKeyResultType.html">BePortKeyResultType</a></li>
+                <li><a href="performance_BePortMetric.html">BePortMetric</a></li>
+                <li><a href="performance_BePortParamType.html">BePortParamType</a></li>
+                <li><a href="performance_BePortResultType.html">BePortResultType</a></li>
+                <li><a href="performance_BoardInfoType.html">BoardInfoType</a></li>
+                <li><a href="performance_BoardKeyParamType.html">BoardKeyParamType</a></li>
+                <li><a href="performance_BoardKeyResultType.html">BoardKeyResultType</a></li>
+                <li><a href="performance_BoardMetric.html">BoardMetric</a></li>
+                <li><a href="performance_BoardParamType.html">BoardParamType</a></li>
+                <li><a href="performance_BoardResultType.html">BoardResultType</a></li>
+                <li><a href="performance_CachePartitionInfoType.html">CachePartitionInfoType</a></li>
+                <li><a href="performance_CachePartitionKeyParamType.html">CachePartitionKeyParamType</a></li>
+                <li><a href="performance_CachePartitionKeyResultType.html">CachePartitionKeyResultType</a></li>
+                <li><a href="performance_CachePartitionMetric.html">CachePartitionMetric</a></li>
+                <li><a href="performance_CachePartitionParamType.html">CachePartitionParamType</a></li>
+                <li><a href="performance_CachePartitionResultType.html">CachePartitionResultType</a></li>
+                <li><a href="performance_CategoryKpisDaysToFullParamType.html">CategoryKpisDaysToFullParamType</a></li>
+                <li><a href="performance_CategoryKpisDaysToFullResultType.html">CategoryKpisDaysToFullResultType</a></li>
+                <li><a href="performance_CategoryKpisProjectionInstancesResult.html">CategoryKpisProjectionInstancesResult</a></li>
+                <li><a href="performance_CategoryKpisProjectionParamType.html">CategoryKpisProjectionParamType</a></li>
+                <li><a href="performance_CategoryKpisProjectionResultType.html">CategoryKpisProjectionResultType</a></li>
+                <li><a href="performance_CoreInfoType.html">CoreInfoType</a></li>
+                <li><a href="performance_CoreKeyParamType.html">CoreKeyParamType</a></li>
+                <li><a href="performance_CoreKeyResultType.html">CoreKeyResultType</a></li>
+                <li><a href="performance_CoreMetric.html">CoreMetric</a></li>
+                <li><a href="performance_CoreParamType.html">CoreParamType</a></li>
+                <li><a href="performance_CoreResultType.html">CoreResultType</a></li>
+                <li><a href="performance_DatabaseByPoolInfoType.html">DatabaseByPoolInfoType</a></li>
+                <li><a href="performance_DatabaseByPoolKeyParamType.html">DatabaseByPoolKeyParamType</a></li>
+                <li><a href="performance_databaseByPoolKeyResultType.html">databaseByPoolKeyResultType</a></li>
+                <li><a href="performance_DatabaseByPoolMetric.html">DatabaseByPoolMetric</a></li>
+                <li><a href="performance_DatabaseByPoolParamType.html">DatabaseByPoolParamType</a></li>
+                <li><a href="performance_DatabaseByPoolResultType.html">DatabaseByPoolResultType</a></li>
+                <li><a href="performance_DatabaseInfoType.html">DatabaseInfoType</a></li>
+                <li><a href="performance_DatabaseKeyParamType.html">DatabaseKeyParamType</a></li>
+                <li><a href="performance_DatabaseKeyResultType.html">DatabaseKeyResultType</a></li>
+                <li><a href="performance_DatabaseMetric.html">DatabaseMetric</a></li>
+                <li><a href="performance_DatabaseParamType.html">DatabaseParamType</a></li>
+                <li><a href="performance_DatabaseResultType.html">DatabaseResultType</a></li>
+                <li><a href="performance_DataFormat.html">DataFormat</a></li>
+                <li><a href="performance_DaysToFullCategoryType.html">DaysToFullCategoryType</a></li>
+                <li><a href="performance_DaysToFullInstancesResult.html">DaysToFullInstancesResult</a></li>
+                <li><a href="performance_DaysToFullObjectResultType.html">DaysToFullObjectResultType</a></li>
+                <li><a href="performance_DeviceGroupInfoType.html">DeviceGroupInfoType</a></li>
+                <li><a href="performance_DeviceGroupKeyParamType.html">DeviceGroupKeyParamType</a></li>
+                <li><a href="performance_DeviceGroupKeyResultType.html">DeviceGroupKeyResultType</a></li>
+                <li><a href="performance_DeviceGroupMetric.html">DeviceGroupMetric</a></li>
+                <li><a href="performance_DeviceGroupParamType.html">DeviceGroupParamType</a></li>
+                <li><a href="performance_DeviceGroupResultType.html">DeviceGroupResultType</a></li>
+                <li><a href="performance_DiskGroupInfoType.html">DiskGroupInfoType</a></li>
+                <li><a href="performance_DiskGroupKeyParamType.html">DiskGroupKeyParamType</a></li>
+                <li><a href="performance_DiskGroupKeyResultType.html">DiskGroupKeyResultType</a></li>
+                <li><a href="performance_DiskGroupMetric.html">DiskGroupMetric</a></li>
+                <li><a href="performance_DiskGroupParamType.html">DiskGroupParamType</a></li>
+                <li><a href="performance_DiskGroupResultType.html">DiskGroupResultType</a></li>
+                <li><a href="performance_DiskInfoType.html">DiskInfoType</a></li>
+                <li><a href="performance_DiskKeyParamType.html">DiskKeyParamType</a></li>
+                <li><a href="performance_DiskKeyResultType.html">DiskKeyResultType</a></li>
+                <li><a href="performance_DiskMetric.html">DiskMetric</a></li>
+                <li><a href="performance_DiskParamType.html">DiskParamType</a></li>
+                <li><a href="performance_DiskResultType.html">DiskResultType</a></li>
+                <li><a href="performance_DiskTechPoolInfoType.html">DiskTechPoolInfoType</a></li>
+                <li><a href="performance_DiskTechPoolKeyParamType.html">DiskTechPoolKeyParamType</a></li>
+                <li><a href="performance_DiskTechPoolKeyResultType.html">DiskTechPoolKeyResultType</a></li>
+                <li><a href="performance_DiskTechPoolMetric.html">DiskTechPoolMetric</a></li>
+                <li><a href="performance_DiskTechPoolParamType.html">DiskTechPoolParamType</a></li>
+                <li><a href="performance_DiskTechPoolResultType.html">DiskTechPoolResultType</a></li>
+                <li><a href="performance_DSEPoolKeyParamType.html">DSEPoolKeyParamType</a></li>
+                <li><a href="performance_DSEPoolMetric.html">DSEPoolMetric</a></li>
+                <li><a href="performance_DSEPoolParamType.html">DSEPoolParamType</a></li>
+                <li><a href="performance_DSEPoolResultType.html">DSEPoolResultType</a></li>
+                <li><a href="performance_EditPerformanceThresholdParam.html">EditPerformanceThresholdParam</a></li>
+                <li><a href="performance_EDSDirectorInfoType.html">EDSDirectorInfoType</a></li>
+                <li><a href="performance_EDSDirectorKeyParamType.html">EDSDirectorKeyParamType</a></li>
+                <li><a href="performance_EDSDirectorKeyResultType.html">EDSDirectorKeyResultType</a></li>
+                <li><a href="performance_EDSDirectorMetric.html">EDSDirectorMetric</a></li>
+                <li><a href="performance_EDSDirectorParamType.html">EDSDirectorParamType</a></li>
+                <li><a href="performance_EDSDirectorResultType.html">EDSDirectorResultType</a></li>
+                <li><a href="performance_EDSEmulationInfoType.html">EDSEmulationInfoType</a></li>
+                <li><a href="performance_EDSEmulationKeyParamType.html">EDSEmulationKeyParamType</a></li>
+                <li><a href="performance_EDSEmulationKeyResultType.html">EDSEmulationKeyResultType</a></li>
+                <li><a href="performance_EDSEmulationMetric.html">EDSEmulationMetric</a></li>
+                <li><a href="performance_EDSEmulationParamType.html">EDSEmulationParamType</a></li>
+                <li><a href="performance_EDSEmulationResultType.html">EDSEmulationResultType</a></li>
+                <li><a href="performance_ExternalDirectorInfoType.html">ExternalDirectorInfoType</a></li>
+                <li><a href="performance_ExternalDirectorKeyParamType.html">ExternalDirectorKeyParamType</a></li>
+                <li><a href="performance_ExternalDirectorKeyResultType.html">ExternalDirectorKeyResultType</a></li>
+                <li><a href="performance_ExternalDirectorMetric.html">ExternalDirectorMetric</a></li>
+                <li><a href="performance_ExternalDirectorParamType.html">ExternalDirectorParamType</a></li>
+                <li><a href="performance_ExternalDirectorResultType.html">ExternalDirectorResultType</a></li>
+                <li><a href="performance_ExternalDiskGroupInfoType.html">ExternalDiskGroupInfoType</a></li>
+                <li><a href="performance_ExternalDiskGroupKeyParamType.html">ExternalDiskGroupKeyParamType</a></li>
+                <li><a href="performance_ExternalDiskGroupKeyResultType.html">ExternalDiskGroupKeyResultType</a></li>
+                <li><a href="performance_ExternalDiskGroupMetric.html">ExternalDiskGroupMetric</a></li>
+                <li><a href="performance_ExternalDiskGroupParamType.html">ExternalDiskGroupParamType</a></li>
+                <li><a href="performance_ExternalDiskGroupResultType.html">ExternalDiskGroupResultType</a></li>
+                <li><a href="performance_ExternalDiskInfoType.html">ExternalDiskInfoType</a></li>
+                <li><a href="performance_ExternalDiskKeyParamType.html">ExternalDiskKeyParamType</a></li>
+                <li><a href="performance_ExternalDiskKeyResultType.html">ExternalDiskKeyResultType</a></li>
+                <li><a href="performance_ExternalDiskMetric.html">ExternalDiskMetric</a></li>
+                <li><a href="performance_ExternalDiskParamType.html">ExternalDiskParamType</a></li>
+                <li><a href="performance_ExternalDiskResultType.html">ExternalDiskResultType</a></li>
+                <li><a href="performance_FASTPolicyInfoType.html">FASTPolicyInfoType</a></li>
+                <li><a href="performance_FASTPolicyKeyParamType.html">FASTPolicyKeyParamType</a></li>
+                <li><a href="performance_FASTPolicyKeyResultType.html">FASTPolicyKeyResultType</a></li>
+                <li><a href="performance_FASTPolicyMetric.html">FASTPolicyMetric</a></li>
+                <li><a href="performance_FASTPolicyParamType.html">FASTPolicyParamType</a></li>
+                <li><a href="performance_FASTPolicyResultType.html">FASTPolicyResultType</a></li>
+                <li><a href="performance_FEDirectorByPortInfoType.html">FEDirectorByPortInfoType</a></li>
+                <li><a href="performance_FEDirectorByPortKeyParamType.html">FEDirectorByPortKeyParamType</a></li>
+                <li><a href="performance_FEDirectorByPortKeyResultType.html">FEDirectorByPortKeyResultType</a></li>
+                <li><a href="performance_FEDirectorByPortMetric.html">FEDirectorByPortMetric</a></li>
+                <li><a href="performance_FEDirectorByPortParamType.html">FEDirectorByPortParamType</a></li>
+                <li><a href="performance_FEDirectorByPortResultType.html">FEDirectorByPortResultType</a></li>
+                <li><a href="performance_FEDirectorInfoType.html">FEDirectorInfoType</a></li>
+                <li><a href="performance_FEDirectorKeyParamType.html">FEDirectorKeyParamType</a></li>
+                <li><a href="performance_FEDirectorKeyResultType.html">FEDirectorKeyResultType</a></li>
+                <li><a href="performance_FEDirectorMetric.html">FEDirectorMetric</a></li>
+                <li><a href="performance_FEDirectorParamType.html">FEDirectorParamType</a></li>
+                <li><a href="performance_FEDirectorResultType.html">FEDirectorResultType</a></li>
+                <li><a href="performance_FeEmulationInfoType.html">FeEmulationInfoType</a></li>
+                <li><a href="performance_FeEmulationKeyParamType.html">FeEmulationKeyParamType</a></li>
+                <li><a href="performance_FeEmulationKeyResultType.html">FeEmulationKeyResultType</a></li>
+                <li><a href="performance_FeEmulationMetric.html">FeEmulationMetric</a></li>
+                <li><a href="performance_FeEmulationParamType.html">FeEmulationParamType</a></li>
+                <li><a href="performance_FeEmulationResultType.html">FeEmulationResultType</a></li>
+                <li><a href="performance_FePortInfoType.html">FePortInfoType</a></li>
+                <li><a href="performance_FePortKeyParamType.html">FePortKeyParamType</a></li>
+                <li><a href="performance_FePortKeyResultType.html">FePortKeyResultType</a></li>
+                <li><a href="performance_FePortMetric.html">FePortMetric</a></li>
+                <li><a href="performance_FePortParamType.html">FePortParamType</a></li>
+                <li><a href="performance_FePortResultType.html">FePortResultType</a></li>
+                <li><a href="performance_FICONEmulationInfoType.html">FICONEmulationInfoType</a></li>
+                <li><a href="performance_FICONEmulationKeyParamType.html">FICONEmulationKeyParamType</a></li>
+                <li><a href="performance_FICONEmulationKeyResultType.html">FICONEmulationKeyResultType</a></li>
+                <li><a href="performance_FICONEmulationMetric.html">FICONEmulationMetric</a></li>
+                <li><a href="performance_FICONEmulationParamType.html">FICONEmulationParamType</a></li>
+                <li><a href="performance_FICONEmulationResultType.html">FICONEmulationResultType</a></li>
+                <li><a href="performance_FICONEmulationThreadInfoType.html">FICONEmulationThreadInfoType</a></li>
+                <li><a href="performance_FICONEmulationThreadKeyParamType.html">FICONEmulationThreadKeyParamType</a></li>
+                <li><a href="performance_FICONEmulationThreadKeyResultType.html">FICONEmulationThreadKeyResultType</a></li>
+                <li><a href="performance_FICONEmulationThreadMetric.html">FICONEmulationThreadMetric</a></li>
+                <li><a href="performance_FICONEmulationThreadParamType.html">FICONEmulationThreadParamType</a></li>
+                <li><a href="performance_FICONEmulationThreadResultType.html">FICONEmulationThreadResultType</a></li>
+                <li><a href="performance_FICONPortThreadInfoType.html">FICONPortThreadInfoType</a></li>
+                <li><a href="performance_FICONPortThreadKeyParamType.html">FICONPortThreadKeyParamType</a></li>
+                <li><a href="performance_FICONPortThreadKeyResultType.html">FICONPortThreadKeyResultType</a></li>
+                <li><a href="performance_FICONPortThreadMetric.html">FICONPortThreadMetric</a></li>
+                <li><a href="performance_FICONPortThreadParamType.html">FICONPortThreadParamType</a></li>
+                <li><a href="performance_FICONPortThreadResultType.html">FICONPortThreadResultType</a></li>
+                <li><a href="performance_HostInfoType.html">HostInfoType</a></li>
+                <li><a href="performance_HostKeyParamType.html">HostKeyParamType</a></li>
+                <li><a href="performance_HostKeyResultType.html">HostKeyResultType</a></li>
+                <li><a href="performance_HostKeyRootParamType.html">HostKeyRootParamType</a></li>
+                <li><a href="performance_HostMetric.html">HostMetric</a></li>
+                <li><a href="performance_HostParamType.html">HostParamType</a></li>
+                <li><a href="performance_HostResultType.html">HostResultType</a></li>
+                <li><a href="performance_IMDirectorInfoType.html">IMDirectorInfoType</a></li>
+                <li><a href="performance_IMDirectorKeyParamType.html">IMDirectorKeyParamType</a></li>
+                <li><a href="performance_IMDirectorKeyResultType.html">IMDirectorKeyResultType</a></li>
+                <li><a href="performance_IMDirectorMetric.html">IMDirectorMetric</a></li>
+                <li><a href="performance_IMDirectorParamType.html">IMDirectorParamType</a></li>
+                <li><a href="performance_IMDirectorResultType.html">IMDirectorResultType</a></li>
+                <li><a href="performance_IMEmulationInfoType.html">IMEmulationInfoType</a></li>
+                <li><a href="performance_IMEmulationKeyParamType.html">IMEmulationKeyParamType</a></li>
+                <li><a href="performance_IMEmulationKeyResultType.html">IMEmulationKeyResultType</a></li>
+                <li><a href="performance_IMEmulationMetric.html">IMEmulationMetric</a></li>
+                <li><a href="performance_IMEmulationParamType.html">IMEmulationParamType</a></li>
+                <li><a href="performance_IMEmulationResultType.html">IMEmulationResultType</a></li>
+                <li><a href="performance_InitiatorByPortInfoType.html">InitiatorByPortInfoType</a></li>
+                <li><a href="performance_InitiatorByPortKeyParamType.html">InitiatorByPortKeyParamType</a></li>
+                <li><a href="performance_InitiatorByPortKeyResultType.html">InitiatorByPortKeyResultType</a></li>
+                <li><a href="performance_InitiatorByPortKeyRootParamType.html">InitiatorByPortKeyRootParamType</a></li>
+                <li><a href="performance_InitiatorByPortMetric.html">InitiatorByPortMetric</a></li>
+                <li><a href="performance_InitiatorByPortParamType.html">InitiatorByPortParamType</a></li>
+                <li><a href="performance_InitiatorByPortResultType.html">InitiatorByPortResultType</a></li>
+                <li><a href="performance_InitiatorInfoType.html">InitiatorInfoType</a></li>
+                <li><a href="performance_InitiatorKeyParamType.html">InitiatorKeyParamType</a></li>
+                <li><a href="performance_InitiatorKeyResultType.html">InitiatorKeyResultType</a></li>
+                <li><a href="performance_InitiatorKeyRootParamType.html">InitiatorKeyRootParamType</a></li>
+                <li><a href="performance_InitiatorMetric.html">InitiatorMetric</a></li>
+                <li><a href="performance_InitiatorParamType.html">InitiatorParamType</a></li>
+                <li><a href="performance_InitiatorResultType.html">InitiatorResultType</a></li>
+                <li><a href="performance_ISCSIClientInfoType.html">ISCSIClientInfoType</a></li>
+                <li><a href="performance_ISCSIClientKeyParamType.html">ISCSIClientKeyParamType</a></li>
+                <li><a href="performance_ISCSIClientKeyResultType.html">ISCSIClientKeyResultType</a></li>
+                <li><a href="performance_ISCSIClientMetric.html">ISCSIClientMetric</a></li>
+                <li><a href="performance_ISCSIClientParamType.html">ISCSIClientParamType</a></li>
+                <li><a href="performance_ISCSIClientResultType.html">ISCSIClientResultType</a></li>
+                <li><a href="performance_ISCSITargetInfoType.html">ISCSITargetInfoType</a></li>
+                <li><a href="performance_ISCSITargetKeyParamType.html">ISCSITargetKeyParamType</a></li>
+                <li><a href="performance_ISCSITargetKeyResultType.html">ISCSITargetKeyResultType</a></li>
+                <li><a href="performance_ISCSITargetMetric.html">ISCSITargetMetric</a></li>
+                <li><a href="performance_ISCSITargetParamType.html">ISCSITargetParamType</a></li>
+                <li><a href="performance_ISCSITargetResultType.html">ISCSITargetResultType</a></li>
+                <li><a href="performance_KeyInfoType.html">KeyInfoType</a></li>
+                <li><a href="performance_KeyType.html">KeyType</a></li>
+                <li><a href="performance_ListPerformanceThresholdType.html">ListPerformanceThresholdType</a></li>
+                <li><a href="performance_PerformanceSummaryKeyParamType.html">PerformanceSummaryKeyParamType</a></li>
+                <li><a href="performance_PerformanceSummaryKeyResultType.html">PerformanceSummaryKeyResultType</a></li>
+                <li><a href="performance_PerformanceThresholdType.html">PerformanceThresholdType</a></li>
+                <li><a href="performance_PoolInfoType.html">PoolInfoType</a></li>
+                <li><a href="performance_PoolKeyResultType.html">PoolKeyResultType</a></li>
+                <li><a href="performance_PortGroupInfoType.html">PortGroupInfoType</a></li>
+                <li><a href="performance_PortGroupKeyParamType.html">PortGroupKeyParamType</a></li>
+                <li><a href="performance_PortGroupKeyResultType.html">PortGroupKeyResultType</a></li>
+                <li><a href="performance_PortGroupMetric.html">PortGroupMetric</a></li>
+                <li><a href="performance_PortGroupParamType.html">PortGroupParamType</a></li>
+                <li><a href="performance_PortGroupResultType.html">PortGroupResultType</a></li>
+                <li><a href="performance_ProjectionCategoryType.html">ProjectionCategoryType</a></li>
+                <li><a href="performance_RDFAInfoType.html">RDFAInfoType</a></li>
+                <li><a href="performance_RDFAKeyParamType.html">RDFAKeyParamType</a></li>
+                <li><a href="performance_RDFAKeyResultType.html">RDFAKeyResultType</a></li>
+                <li><a href="performance_RDFAMetric.html">RDFAMetric</a></li>
+                <li><a href="performance_RDFAParamType.html">RDFAParamType</a></li>
+                <li><a href="performance_RDFAResultType.html">RDFAResultType</a></li>
+                <li><a href="performance_RDFDirectorInfoType.html">RDFDirectorInfoType</a></li>
+                <li><a href="performance_RDFDirectorKeyParamType.html">RDFDirectorKeyParamType</a></li>
+                <li><a href="performance_RDFDirectorKeyResultType.html">RDFDirectorKeyResultType</a></li>
+                <li><a href="performance_RDFDirectorMetric.html">RDFDirectorMetric</a></li>
+                <li><a href="performance_RDFDirectorParamType.html">RDFDirectorParamType</a></li>
+                <li><a href="performance_RDFDirectorResultType.html">RDFDirectorResultType</a></li>
+                <li><a href="performance_RDFEmulationInfoType.html">RDFEmulationInfoType</a></li>
+                <li><a href="performance_RDFEmulationKeyParamType.html">RDFEmulationKeyParamType</a></li>
+                <li><a href="performance_RDFEmulationKeyResultType.html">RDFEmulationKeyResultType</a></li>
+                <li><a href="performance_RDFEmulationMetric.html">RDFEmulationMetric</a></li>
+                <li><a href="performance_RDFEmulationParamType.html">RDFEmulationParamType</a></li>
+                <li><a href="performance_RDFEmulationResultType.html">RDFEmulationResultType</a></li>
+                <li><a href="performance_RDFPortInfoType.html">RDFPortInfoType</a></li>
+                <li><a href="performance_RDFPortKeyParamType.html">RDFPortKeyParamType</a></li>
+                <li><a href="performance_RDFPortKeyResultType.html">RDFPortKeyResultType</a></li>
+                <li><a href="performance_RDFPortMetric.html">RDFPortMetric</a></li>
+                <li><a href="performance_RDFPortParamType.html">RDFPortParamType</a></li>
+                <li><a href="performance_RDFPortResultType.html">RDFPortResultType</a></li>
+                <li><a href="performance_RDFSInfoType.html">RDFSInfoType</a></li>
+                <li><a href="performance_RDFSKeyParamType.html">RDFSKeyParamType</a></li>
+                <li><a href="performance_RDFSKeyResultType.html">RDFSKeyResultType</a></li>
+                <li><a href="performance_RDFSMetric.html">RDFSMetric</a></li>
+                <li><a href="performance_RDFSParamType.html">RDFSParamType</a></li>
+                <li><a href="performance_RDFSResultType.html">RDFSResultType</a></li>
+                <li><a href="performance_SnapPoolKeyParamType.html">SnapPoolKeyParamType</a></li>
+                <li><a href="performance_SnapPoolMetric.html">SnapPoolMetric</a></li>
+                <li><a href="performance_SnapPoolParamType.html">SnapPoolParamType</a></li>
+                <li><a href="performance_SnapPoolResultType.html">SnapPoolResultType</a></li>
+                <li><a href="performance_SRPInfoType.html">SRPInfoType</a></li>
+                <li><a href="performance_SRPKeyParamType.html">SRPKeyParamType</a></li>
+                <li><a href="performance_SRPKeyResultType.html">SRPKeyResultType</a></li>
+                <li><a href="performance_SRPMetric.html">SRPMetric</a></li>
+                <li><a href="performance_SRPParamType.html">SRPParamType</a></li>
+                <li><a href="performance_SRPResultType.html">SRPResultType</a></li>
+                <li><a href="performance_SRPThinPoolKeyParamType.html">SRPThinPoolKeyParamType</a></li>
+                <li><a href="performance_StatInfoType.html">StatInfoType</a></li>
+                <li><a href="performance_StorageContainerInfoType.html">StorageContainerInfoType</a></li>
+                <li><a href="performance_StorageContainerKeyParamType.html">StorageContainerKeyParamType</a></li>
+                <li><a href="performance_StorageContainerKeyResultType.html">StorageContainerKeyResultType</a></li>
+                <li><a href="performance_StorageContainerMetric.html">StorageContainerMetric</a></li>
+                <li><a href="performance_StorageContainerParamType.html">StorageContainerParamType</a></li>
+                <li><a href="performance_StorageContainerResultType.html">StorageContainerResultType</a></li>
+                <li><a href="performance_StorageGroupByPoolKeyParamType.html">StorageGroupByPoolKeyParamType</a></li>
+                <li><a href="performance_StorageGroupByPoolMetric.html">StorageGroupByPoolMetric</a></li>
+                <li><a href="performance_StorageGroupByPoolParamType.html">StorageGroupByPoolParamType</a></li>
+                <li><a href="performance_StorageGroupByPoolResultType.html">StorageGroupByPoolResultType</a></li>
+                <li><a href="performance_StorageGroupByTierKeyParamType.html">StorageGroupByTierKeyParamType</a></li>
+                <li><a href="performance_StorageGroupByTierMetric.html">StorageGroupByTierMetric</a></li>
+                <li><a href="performance_StorageGroupByTierParamType.html">StorageGroupByTierParamType</a></li>
+                <li><a href="performance_StorageGroupByTierPerfKeyParamType.html">StorageGroupByTierPerfKeyParamType</a></li>
+                <li><a href="performance_StorageGroupByTierResultType.html">StorageGroupByTierResultType</a></li>
+                <li><a href="performance_StorageGroupInfoType.html">StorageGroupInfoType</a></li>
+                <li><a href="performance_StorageGroupKeyParamType.html">StorageGroupKeyParamType</a></li>
+                <li><a href="performance_StorageGroupKeyResultType.html">StorageGroupKeyResultType</a></li>
+                <li><a href="performance_StorageGroupMetric.html">StorageGroupMetric</a></li>
+                <li><a href="performance_StorageGroupParamType.html">StorageGroupParamType</a></li>
+                <li><a href="performance_StorageGroupResultType.html">StorageGroupResultType</a></li>
+                <li><a href="performance_StorageResourceByPoolKeyParamType.html">StorageResourceByPoolKeyParamType</a></li>
+                <li><a href="performance_StorageResourceByPoolMetric.html">StorageResourceByPoolMetric</a></li>
+                <li><a href="performance_StorageResourceByPoolParamType.html">StorageResourceByPoolParamType</a></li>
+                <li><a href="performance_StorageResourceByPoolResultType.html">StorageResourceByPoolResultType</a></li>
+                <li><a href="performance_StorageResourceInfoType.html">StorageResourceInfoType</a></li>
+                <li><a href="performance_StorageResourceKeyParamType.html">StorageResourceKeyParamType</a></li>
+                <li><a href="performance_StorageResourceKeyResultType.html">StorageResourceKeyResultType</a></li>
+                <li><a href="performance_StorageResourceMetric.html">StorageResourceMetric</a></li>
+                <li><a href="performance_StorageResourceParamType.html">StorageResourceParamType</a></li>
+                <li><a href="performance_StorageResourceResultType.html">StorageResourceResultType</a></li>
+                <li><a href="performance_StorageTierKeyParamType.html">StorageTierKeyParamType</a></li>
+                <li><a href="performance_StorageTierMetric.html">StorageTierMetric</a></li>
+                <li><a href="performance_StorageTierParamType.html">StorageTierParamType</a></li>
+                <li><a href="performance_StorageTierResultType.html">StorageTierResultType</a></li>
+                <li><a href="performance_ThinPoolKeyParamType.html">ThinPoolKeyParamType</a></li>
+                <li><a href="performance_ThinPoolMetric.html">ThinPoolMetric</a></li>
+                <li><a href="performance_ThinPoolParamType.html">ThinPoolParamType</a></li>
+                <li><a href="performance_ThinPoolResultType.html">ThinPoolResultType</a></li>
+                <li><a href="performance_ThinTierKeyParamType.html">ThinTierKeyParamType</a></li>
+                <li><a href="performance_ThinTierMetric.html">ThinTierMetric</a></li>
+                <li><a href="performance_ThinTierParamType.html">ThinTierParamType</a></li>
+                <li><a href="performance_ThinTierResultType.html">ThinTierResultType</a></li>
+                <li><a href="performance_ThresholdSeverity.html">ThresholdSeverity</a></li>
+                <li><a href="performance_TierByStorageGroupKeyParamType.html">TierByStorageGroupKeyParamType</a></li>
+                <li><a href="performance_TierByStorageGroupMetric.html">TierByStorageGroupMetric</a></li>
+                <li><a href="performance_TierByStorageGroupParamType.html">TierByStorageGroupParamType</a></li>
+                <li><a href="performance_TierByStorageGroupPerfKeyParamType.html">TierByStorageGroupPerfKeyParamType</a></li>
+                <li><a href="performance_TierByStorageGroupResultType.html">TierByStorageGroupResultType</a></li>
+                <li><a href="performance_TierInfoType.html">TierInfoType</a></li>
+                <li><a href="performance_TierKeyResultType.html">TierKeyResultType</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>RDFAMetric</h1>
+      <table>
+        <tr>
+          <td align="right">Namespace:</td>
+          <td>http://www.emc.com/em/2012/07/univmax/restapi/performance</td>
+        </tr>
+        <tr>
+          <td align="right">XML Schema:</td>
+          <td><a href="performance.xsd">performance.xsd</a></td>
+        </tr>
+      </table>
+      <p>
+            <p>Java class for RDFAMetric.
+
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="RDFAMetric">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="TotalTracksSpilledBack"/>
+&lt;enumeration value="TotalTracksSpilledOver"/>
+&lt;enumeration value="TotalTracksSpilledOverUsed"/>
+&lt;enumeration value="SpillOverPackedSlots"/>
+&lt;enumeration value="AvgCycleTime"/>
+&lt;enumeration value="LastCycleDuration"/>
+&lt;enumeration value="TotalHAWrites"/>
+&lt;enumeration value="TotalHARepeatWrites"/>
+&lt;enumeration value="RDF_R1_R2_IOs"/>
+&lt;enumeration value="RDF_R1_R2_MBs"/>
+&lt;enumeration value="RDF_R2_R1_IOS"/>
+&lt;enumeration value="RDF_R2_R1_MBs"/>
+&lt;enumeration value="HostWrites"/>
+&lt;enumeration value="HostMBWritten"/>
+&lt;enumeration value="SystemWPLimit"/>
+&lt;enumeration value="SystemWPCount"/>
+&lt;enumeration value="LocalWPCount"/>
+&lt;enumeration value="RDFA_WPCount"/>
+&lt;enumeration value="Percent_RDFA_MaxCacheUsage"/>
+&lt;enumeration value="MinCycleTime"/>
+&lt;enumeration value="DSEUsedTracks"/>
+&lt;enumeration value="Percent_R1_UsedCache"/>
+&lt;enumeration value="Percent_R2_UsedCache"/>
+&lt;enumeration value="TotalReads"/>
+&lt;enumeration value="MBReads"/>
+&lt;enumeration value="TimeSinceLastSwitch"/>
+&lt;enumeration value="ActiveCycleSize"/>
+&lt;enumeration value="InactiveCycleSize"/>
+&lt;enumeration value="RDFA_SessionIndicator"/>
+&lt;enumeration value="RDFA_ActiveIndicator"/>
+&lt;enumeration value="SessionPriority"/>
+&lt;enumeration value="CycleNumber"/>
+&lt;enumeration value="HighWaterMark"/>
+&lt;enumeration value="R1_R2_Lag_Time"/>
+&lt;enumeration value="NumDevsInSession"/>
+&lt;enumeration value="R2_LastRestoreTime"/>
+&lt;enumeration value="R2_AvgRestoreTime"/>
+&lt;enumeration value="ConsistencyProtection"/>
+&lt;enumeration value="DSEThreshold"/>
+&lt;enumeration value="SessionNumber"/>
+&lt;enumeration value="UncommittedTracks"/>
+&lt;enumeration value="TotalWrites"/>
+&lt;enumeration value="MBWritten"/>
+&lt;enumeration value="ReadHits"/>
+&lt;enumeration value="MaxCycleTime"/>
+&lt;enumeration value="AvgIOServiceTime"/>
+&lt;enumeration value="AvgCycleSize"/>
+&lt;enumeration value="NumberOfLinks"/>
+&lt;enumeration value="NumberOfCompressedLinks"/>
+&lt;enumeration value="CompressedMBReceived"/>
+&lt;enumeration value="CompressedMBSent"/>
+&lt;enumeration value="CompressedMBSentAndReceived"/>
+&lt;enumeration value="PercentCompressedMBReceived"/>
+&lt;enumeration value="PercentCompressedMBSent"/>
+&lt;enumeration value="PercentCompressedMBSentAndReceived"/>
+&lt;enumeration value="XtremSWCacheIOs"/>
+&lt;enumeration value="PercentXtremSWCacheReadHit"/>
+&lt;enumeration value="XtremSWCacheMBs"/>
+&lt;enumeration value="XtremSWCacheResponseTime"/>
+&lt;enumeration value="OptimizedReadMisses"/>
+&lt;enumeration value="OptimizedMBReadMisses"/>
+&lt;enumeration value="AvgOptimizedReadMissSize"/>
+&lt;enumeration value="RdfReads"/>
+&lt;enumeration value="RdfWrites"/>
+&lt;enumeration value="RdfMBRead"/>
+&lt;enumeration value="RdfMBWritten"/>
+&lt;enumeration value="RdfReadHits"/>
+&lt;enumeration value="RDFRewrites"/>
+&lt;enumeration value="IOServiceTimeLong"/>
+&lt;enumeration value="IOServiceTimeShort"/>
+&lt;enumeration value="MaxIOServiceTime"/>
+&lt;enumeration value="MinIOServiceTime"/>
+&lt;enumeration value="RdfResponseTime"/>
+&lt;enumeration value="NumberOfRDFInvalidTracks"/>
+&lt;enumeration value="ACTIVE_CYCLE_SIZE"/>
+&lt;enumeration value="AVG_CYCLE_SIZE"/>
+&lt;enumeration value="AVG_CYCLE_TIME"/>
+&lt;enumeration value="AVG_IO_SERVICE_TIME"/>
+&lt;enumeration value="COMP_MB_READ_PER_SEC"/>
+&lt;enumeration value="COMP_MB_WRITE_PER_SEC"/>
+&lt;enumeration value="COMP_MB_RATE"/>
+&lt;enumeration value="CONSISTENCY_PROTECTION"/>
+&lt;enumeration value="CYCLE_NUM"/>
+&lt;enumeration value="DSE_THRESHOLD"/>
+&lt;enumeration value="DSE_USED_TRACKS"/>
+&lt;enumeration value="DURATION_LAST_CYCLE"/>
+&lt;enumeration value="HIGHT_WATER_MARK"/>
+&lt;enumeration value="HOST_WRITE_IOS_PER_SEC"/>
+&lt;enumeration value="HOST_WRITE_MB_PER_SEC"/>
+&lt;enumeration value="INACTIVE_CYCLE_SIZE"/>
+&lt;enumeration value="LOCAL_CACHE_USAGE"/>
+&lt;enumeration value="LOCAL_WP"/>
+&lt;enumeration value="MAX_CYCLE_TIME"/>
+&lt;enumeration value="MB_WRITE_PER_SEC"/>
+&lt;enumeration value="MB_READ_PER_SEC"/>
+&lt;enumeration value="MIN_CYCLE"/>
+&lt;enumeration value="NUM_COMP_LINKS"/>
+&lt;enumeration value="NUM_DEV_IN_SESSION"/>
+&lt;enumeration value="NUM_LINKS"/>
+&lt;enumeration value="REMOTE_CACHE_USAGE"/>
+&lt;enumeration value="PERCENT_COMP_MB_READ"/>
+&lt;enumeration value="PERCENT_COMP_MB_WRITTEN"/>
+&lt;enumeration value="PERCENT_COMP_MB"/>
+&lt;enumeration value="R1_R2_LAG_TIME"/>
+&lt;enumeration value="R2_AVG_RESTORE_TIME"/>
+&lt;enumeration value="R2_LAST_RESTORE_TIME"/>
+&lt;enumeration value="RDFA_MAX_CACHE_USAGE"/>
+&lt;enumeration value="RDFA_SESSION_INDICATOR"/>
+&lt;enumeration value="RDFA_ACTIVE_INDICATOR"/>
+&lt;enumeration value="RDF_R1_R2_IO_PER_SEC"/>
+&lt;enumeration value="RDF_R2_R1_IO_PER_SEC"/>
+&lt;enumeration value="RDF_R1_R2_MB_PER_SEC"/>
+&lt;enumeration value="RDF_R2_R1_MB_PER_SEC"/>
+&lt;enumeration value="READ_HIT_PER_SEC"/>
+&lt;enumeration value="READS"/>
+&lt;enumeration value="SESSION_NUM"/>
+&lt;enumeration value="SESSION_PRIORITY"/>
+&lt;enumeration value="SYS_WRITE_PENDING"/>
+&lt;enumeration value="TIME_LAST_SWITCH"/>
+&lt;enumeration value="TOTAL_CACHE_SLOT_IN_USE"/>
+&lt;enumeration value="TOTAL_HA_REPEAT_WRITE_PER_SEC"/>
+&lt;enumeration value="TOTAL_HA_WRITE_PER_SEC"/>
+&lt;enumeration value="UNCOMMIT_TRACK"/>
+&lt;enumeration value="WP_LIMIT"/>
+&lt;enumeration value="WRITES"/>
+&lt;enumeration value="XC_READ_HITS"/>
+&lt;enumeration value="XC_WRITE_HITS"/>
+&lt;enumeration value="XC_READS"/>
+&lt;enumeration value="XC_WRITES"/>
+&lt;enumeration value="XC_IOS"/>
+&lt;enumeration value="XC_SKIPPED_IOS"/>
+&lt;enumeration value="XC_DEDUP_HITS"/>
+&lt;enumeration value="XC_DEDUP_READS"/>
+&lt;enumeration value="XC_DEDUP_WRITES"/>
+&lt;enumeration value="XC_PER_READS"/>
+&lt;enumeration value="XC_PER_WRITES"/>
+&lt;enumeration value="XC_PER_READ_HITS"/>
+&lt;enumeration value="XC_TOTAL_MBS_READ"/>
+&lt;enumeration value="XC_TOTAL_MBS_WRITTEN"/>
+&lt;enumeration value="XC_TOTAL_MBS"/>
+&lt;enumeration value="XC_READ_RESPONSE_TIME"/>
+&lt;enumeration value="XC_WRITE_RESPONSE_TIME"/>
+&lt;enumeration value="XC_RESPONSE_TIME"/>
+&lt;enumeration value="XC_AVG_READ_SIZE"/>
+&lt;enumeration value="XC_AVG_WRITE_SIZE"/>
+&lt;enumeration value="XC_AVG_IO_SIZE"/>
+&lt;enumeration value="ORM_READS"/>
+&lt;enumeration value="ORM_MB_READ"/>
+&lt;enumeration value="ORM_AVG_READ_SIZE"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>
+          </p>
+
+      <h2>Possible Values</h2>
+      <table>
+        <tr>
+          <th>value</th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>TotalTracksSpilledBack</td>
+          <td>
+            
+                 Total Tracks Spilled Back.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TotalTracksSpilledOver</td>
+          <td>
+            
+                 Total Tracks Spilled Over.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TotalTracksSpilledOverUsed</td>
+          <td>
+            
+                 Total Tracks Spilled over used.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>SpillOverPackedSlots</td>
+          <td>
+            
+                 Spillover Packed Slots.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>AvgCycleTime</td>
+          <td>
+            
+                 The mean time (in secs) of the last 16 cycles. (Calculated as true averages- e.g. if only 8 cycles have occurred, the average represents those 8 cycles only.)
+              
+          </td>
+        </tr>
+        <tr>
+          <td>LastCycleDuration</td>
+          <td>
+            
+                 The cycle time (in secs) of the most recently completed cycle. It should be noted that in a regular case the cycles switch every ~30 sec, however, in most cases the collection interval is in minutes, which means some cycle times will be skipped. This an important counter to look at to figure out if SRDF/A is working as expected.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TotalHAWrites</td>
+          <td>
+            
+                 The t+C16otal host adapter writes, measured in write commands to SRDF/A volumes only.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TotalHARepeatWrites</td>
+          <td>
+            
+                 The number of writes to a slot already in the active cycle. Total host adapter repeat writes, measured in write commands to SRDF/A volumes only. This counter helps estimate the cache locality of reference, i.e., how much cache is saved by the re-writes. This does not give any indication to the bandwidth locality of reference.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDF_R1_R2_IOs</td>
+          <td>
+            
+                 The number of IOs/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDF_R1_R2_MBs</td>
+          <td>
+            
+                 The number of MB/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDF_R2_R1_IOS</td>
+          <td>
+            
+                 The number of IOs/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDF_R2_R1_MBs</td>
+          <td>
+            
+                 The number of MB/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">HostWrites</td>
+          <td>
+            
+                 The number of write IOs/sec coming in from the hosts for the volumes in this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">HostMBWritten</td>
+          <td>
+            
+                 The throughput in MB/sec of writes coming in from the hosts for the volumes in this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>SystemWPLimit</td>
+          <td>
+            
+                 The maximum number of write-pending slots for the entire Symmetrix system.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>SystemWPCount</td>
+          <td>
+            
+                 The number of cache slots marked as write pending for the system.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>LocalWPCount</td>
+          <td>
+            
+                 The number of write pending slots waiting to be de-staged to disk. On the R1 - should be less than or equal to the system write pending count.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDFA_WPCount</td>
+          <td>
+            
+                 The number of RDF/A writes pending.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">Percent_RDFA_MaxCacheUsage</td>
+          <td>
+            
+                 The parameter establishing the percent of system write pendings at which an RDF/A session will drop.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MinCycleTime</td>
+          <td>
+            
+                 The setting for the minimum number of seconds for a cycle.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>DSEUsedTracks</td>
+          <td>
+            
+                 The active cycle spilled count plus the inactive cycle spilled count.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">Percent_R1_UsedCache</td>
+          <td>
+            
+                 The ratio of system write pending count to the maximum write pending slots. This is the percent of cache used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">Percent_R2_UsedCache</td>
+          <td>
+            
+                 The ratio of system write pending count to the maximum write pending slots. This is the percent of cache used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TotalReads</td>
+          <td>
+            
+                 The number of tracks read from the R2 (host reads + copy).
+              
+          </td>
+        </tr>
+        <tr>
+          <td>MBReads</td>
+          <td>
+            
+                 The amount of data read from the R2 in MBs+G5.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TimeSinceLastSwitch</td>
+          <td>
+            
+                 The time (in secs) since the last switch from active to inactive or vice versa. Since in a regular case the cycles switch every ~30 sec and the samples are taken every few minutes, this counter may not show very significant data, however, when cycles elongate beyond the sample time, this counter can help indicate an estimate of the R1 to R1 lag time.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>ActiveCycleSize</td>
+          <td>
+            
+                 The count of cache slots that measures the amount of data captured (on the R1 side) or received (on the R2 side).
+              
+          </td>
+        </tr>
+        <tr>
+          <td>InactiveCycleSize</td>
+          <td>
+            
+                 The count of cache slots that measures the amount of data transmitted (on the R1 side) or applied (on the R2 side).
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDFA_SessionIndicator</td>
+          <td>
+            
+                 Indicates if group is RDFA (0/1).
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDFA_ActiveIndicator</td>
+          <td>
+            
+                 Indicates if RDF/A group is active (0/1).
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">SessionPriority</td>
+          <td>
+            
+                 The order in which SRDF/A groups are dropped out of SRDF/A in the event of a cache limit being reached. The highest priority is 1, the lowest is 64, and the default is 33.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>CycleNumber</td>
+          <td>
+            
+                 The active cycle number identifier for the given SRDF/A session. In a regular case, the cycles switch every ~30 seconds, however, in most cases the collection interval is in minutes. Calculating the difference in cycle numbers between collection intervals relative to the minimum cycle time will show how many cycles occurred over the last interval.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">HighWaterMark</td>
+          <td>
+            
+                 The greatest number of cache slots transmitted (on the R1 side) or applied (on the R2 side) in any cycle so far in the session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>R1_R2_Lag_Time</td>
+          <td>
+            
+                 The time that R2 is behind R1 (RPO). This is calculated as the last cycle time plus the time since last switch. In a regular case, the cycles switch every ~30 sec and the samples are taken every few minutes, therefore this counter may not show very significant data, however, when cycles elongate beyond the sample time, this counter can help indicate an estimate of the RPO.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>NumDevsInSession</td>
+          <td>
+            
+                 The number of Symmetrix volumes defined in this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>R2_LastRestoreTime</td>
+          <td>
+            
+                 The  time, in seconds, that the restore of the last active cycle took to complete. The restore is an operation done by the DA and RA to mark the tracks in the apply cycle as Write Pending to the local drives. This operation is usually a very quick cache operation, unless one of the volumes reaches its WP limit. The importance of this counter is that is shows one of the common reasons for an increase in the cycle time.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">R2_AvgRestoreTime</td>
+          <td>
+            
+                 The mean time (in secs) of the last 16 restores. (Calculated as true averages, e.g., if only 8 restores have occurred, the average represents those 8 restores only.)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">ConsistencyProtection</td>
+          <td>
+            
+                 Specifies whether consistency protection is set.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>DSEThreshold</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>SessionNumber</td>
+          <td>
+            
+                 The number of the SRDF/A session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>UncommittedTracks</td>
+          <td>
+            
+                 The number of tracks for all the SRDF/A volumes in the session that have not been committed to the R2 volume.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>TotalWrites</td>
+          <td>
+            
+                 The number of write requests to the RDF director per second.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>MBWritten</td>
+          <td>
+            
+                 The number of MBs written per second for the SRDF/A session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>ReadHits</td>
+          <td>
+            
+                 The total number of read operations that were immediately satisfied by cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MaxCycleTime</td>
+          <td>
+            
+                 The setting for the maximum number of seconds for a cycle.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>AvgIOServiceTime</td>
+          <td>
+            
+                 The average time it took to satisfy reads and writes.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>AvgCycleSize</td>
+          <td>
+            
+                 The average size of all the cycles in RDFA sessions.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>NumberOfLinks</td>
+          <td>
+            
+                 The number of links used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>NumberOfCompressedLinks</td>
+          <td>
+            
+                 The number of compressed links used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>CompressedMBReceived</td>
+          <td>
+            
+                 The number of compressed MBs/sec received by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>CompressedMBSent</td>
+          <td>
+            
+                 The percent of compressed MBs/sec sent by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>CompressedMBSentAndReceived</td>
+          <td>
+            
+                 The number of compressed MBs sent and received by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>PercentCompressedMBReceived</td>
+          <td>
+            
+                 Calculated value: ((Compressed MBs Received/sec /MBs Received/sec) * 100)
+              
+          </td>
+        </tr>
+        <tr>
+          <td>PercentCompressedMBSent</td>
+          <td>
+            
+                 Calculated value: ((Compressed MBs Sent/sec / MBs Sent/sec) * 100)
+              
+          </td>
+        </tr>
+        <tr>
+          <td>PercentCompressedMBSentAndReceived</td>
+          <td>
+            
+                 Calculated value: ((Compressed MBs Sent and Received/sec / MBs Sent and Recieved/sec) * 100)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XtremSWCacheIOs</td>
+          <td>
+            
+                 The number of IOs per second received in the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">PercentXtremSWCacheReadHit</td>
+          <td>
+            
+                 The percent of total XtremSW Cache read IO operations performed each second by all of the Symmetrix volumes that were served by the XtremSW Cache cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XtremSWCacheMBs</td>
+          <td>
+            
+                 Cumulative number of host MBs read and written by the StremSW Cache per second.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XtremSWCacheResponseTime</td>
+          <td>
+            
+                 The average time it took the XtremSW cache to serve one IO.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>OptimizedReadMisses</td>
+          <td>
+            
+                 Number of read requests each second performed directly from disks bypassing the cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>OptimizedMBReadMisses</td>
+          <td>
+            
+                 Number of host MBs read each second directly from disks bypassing the cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>AvgOptimizedReadMissSize</td>
+          <td>
+            
+                 The average read size of the read requests performed directly from disks bypassing the cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RdfReads</td>
+          <td>
+            
+                 RDF Reads.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RdfWrites</td>
+          <td>
+            
+                 RDF Writes.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RdfMBRead</td>
+          <td>
+            
+                 RDF MB Read.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RdfMBWritten</td>
+          <td>
+            
+                 RDFMB Written.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RdfReadHits</td>
+          <td>
+            
+                 RDF Read Hits.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RDFRewrites</td>
+          <td>
+            
+                 RDF Rewrites.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">IOServiceTimeLong</td>
+          <td>
+            
+                 RDF Avg IO Service Time Long ms.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">IOServiceTimeShort</td>
+          <td>
+            
+                 RDF Avg IO Service Time Short.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MaxIOServiceTime</td>
+          <td>
+            
+                 RDF Max IO Service Time ms.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MinIOServiceTime</td>
+          <td>
+            
+                 RDF Min IO Service Time ms.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>RdfResponseTime</td>
+          <td>
+            
+                 RDF Response Time ms.
+              
+          </td>
+        </tr>
+        <tr>
+          <td>NumberOfRDFInvalidTracks</td>
+          <td>
+            
+                 Number Of RDF Invalid Tracks.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">ACTIVE_CYCLE_SIZE</td>
+          <td>
+            
+                 The count of cache slots that measures the amount of data captured (on the R1 side) or received (on the R2 side).
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">AVG_CYCLE_SIZE</td>
+          <td>
+            
+                 The average size of all the cycles in RDFA sessions.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">AVG_CYCLE_TIME</td>
+          <td>
+            
+                 The mean time (in secs) of the last 16 cycles. (Calculated as true averages- e.g. if only 8 cycles have occurred, the average represents those 8 cycles only.)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">AVG_IO_SERVICE_TIME</td>
+          <td>
+            
+                 The average time it took to satisfy reads and writes.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">COMP_MB_READ_PER_SEC</td>
+          <td>
+            
+                 The number of compressed MBs/sec received by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">COMP_MB_WRITE_PER_SEC</td>
+          <td>
+            
+                 The percent of compressed MBs/sec sent by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">COMP_MB_RATE</td>
+          <td>
+            
+                 The number of compressed MBs sent and received by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">CONSISTENCY_PROTECTION</td>
+          <td>
+            
+                 Specifies whether consistency protection is set.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">CYCLE_NUM</td>
+          <td>
+            
+                 The active cycle number identifier for the given SRDF/A session. In a regular case, the cycles switch every ~30 seconds, however, in most cases the collection interval is in minutes. Calculating the difference in cycle numbers between collection intervals relative to the minimum cycle time will show how many cycles occurred over the last interval.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">DSE_THRESHOLD</td>
+          <td>
+            
+                 The percent of write pendings before DSE activates.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">DSE_USED_TRACKS</td>
+          <td>
+            
+                 The active cycle spilled count plus the inactive cycle spilled count.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">DURATION_LAST_CYCLE</td>
+          <td>
+            
+                 The cycle time (in secs) of the most recently completed cycle. It should be noted that in a regular case the cycles switch every ~30 sec, however, in most cases the collection interval is in minutes, which means some cycle times will be skipped. This an important counter to look at to figure out if SRDF/A is working as expected.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">HIGHT_WATER_MARK</td>
+          <td>
+            
+                 The greatest number of cache slots transmitted (on the R1 side) or applied (on the R2 side) in any cycle so far in the session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">HOST_WRITE_IOS_PER_SEC</td>
+          <td>
+            
+                 The number of write IOs/sec coming in from the hosts for the volumes in this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">HOST_WRITE_MB_PER_SEC</td>
+          <td>
+            
+                 The throughput in MB/sec of writes coming in from the hosts for the volumes in this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">INACTIVE_CYCLE_SIZE</td>
+          <td>
+            
+                 The count of cache slots that measures the amount of data transmitted (on the R1 side) or applied (on the R2 side).
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">LOCAL_CACHE_USAGE</td>
+          <td>
+            
+                 The ratio of system write pending count to the maximum write pending slots. This is the percent of cache used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">LOCAL_WP</td>
+          <td>
+            
+                 The number of write pending slots waiting to be de-staged to disk. On the R1 - should be less than or equal to the system write pending count.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MAX_CYCLE_TIME</td>
+          <td>
+            
+                 The setting for the maximum number of seconds for a cycle.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MB_WRITE_PER_SEC</td>
+          <td>
+            
+                 The number of MBs written per second for the SRDF/A session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MB_READ_PER_SEC</td>
+          <td>
+            
+                 The amount of data read from the R2 in MBs+G5.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">MIN_CYCLE</td>
+          <td>
+            
+                 The setting for the minimum number of seconds for a cycle.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">NUM_COMP_LINKS</td>
+          <td>
+            
+                 The number of compressed links used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">NUM_DEV_IN_SESSION</td>
+          <td>
+            
+                 The number of Symmetrix volumes defined in this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">NUM_LINKS</td>
+          <td>
+            
+                 The number of links used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">REMOTE_CACHE_USAGE</td>
+          <td>
+            
+                 The ratio of system write pending count to the maximum write pending slots. This is the percent of cache used by this RDF/A group.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">PERCENT_COMP_MB_READ</td>
+          <td>
+            
+                 Calculated value: ((Compressed MBs Received/sec /MBs Received/sec) * 100)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">PERCENT_COMP_MB_WRITTEN</td>
+          <td>
+            
+                 Calculated value: ((Compressed MBs Sent/sec / MBs Sent/sec) * 100)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">PERCENT_COMP_MB</td>
+          <td>
+            
+                 Calculated value: ((Compressed MBs Sent and Received/sec / MBs Sent and Recieved/sec) * 100)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">R1_R2_LAG_TIME</td>
+          <td>
+            
+                 The time that R2 is behind R1 (RPO). This is calculated as the last cycle time plus the time since last switch. In a regular case, the cycles switch every ~30 sec and the samples are taken every few minutes, therefore this counter may not show very significant data, however, when cycles elongate beyond the sample time, this counter can help indicate an estimate of the RPO.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">R2_AVG_RESTORE_TIME</td>
+          <td>
+            
+                 The mean time (in secs) of the last 16 restores. (Calculated as true averages, e.g., if only 8 restores have occurred, the average represents those 8 restores only.)
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">R2_LAST_RESTORE_TIME</td>
+          <td>
+            
+                 The  time, in seconds, that the restore of the last active cycle took to complete. The restore is an operation done by the DA and RA to mark the tracks in the apply cycle as Write Pending to the local drives. This operation is usually a very quick cache operation, unless one of the volumes reaches its WP limit. The importance of this counter is that is shows one of the common reasons for an increase in the cycle time.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDFA_MAX_CACHE_USAGE</td>
+          <td>
+            
+                 The parameter establishing the percent of system write pendings at which an RDF/A session will drop.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDFA_SESSION_INDICATOR</td>
+          <td>
+            
+                 Indicates if group is RDFA (0/1).
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDFA_ACTIVE_INDICATOR</td>
+          <td>
+            
+                 ndicates if RDF/A group is active (0/1).
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDF_R1_R2_IO_PER_SEC</td>
+          <td>
+            
+                 The number of IOs/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDF_R2_R1_IO_PER_SEC</td>
+          <td>
+            
+                 The number of IOs/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDF_R1_R2_MB_PER_SEC</td>
+          <td>
+            
+                 The number of MB/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">RDF_R2_R1_MB_PER_SEC</td>
+          <td>
+            
+                 The number of MB/sec being transmitted across the links for this session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">READ_HIT_PER_SEC</td>
+          <td>
+            
+                 The total number of read operations that were immediately satisfied by cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">READS</td>
+          <td>
+            
+                 The number of tracks read from the R2 (host reads + copy).
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">SESSION_NUM</td>
+          <td>
+            
+                 The number of the SRDF/A session.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">SESSION_PRIORITY</td>
+          <td>
+            
+                 The order in which SRDF/A groups are dropped out of SRDF/A in the event of a cache limit being reached. The highest priority is 1, the lowest is 64, and the default is 33.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">SYS_WRITE_PENDING</td>
+          <td>
+            
+                 The number of cache slots marked as write pending for the system.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">TIME_LAST_SWITCH</td>
+          <td>
+            
+                 The time (in secs) since the last switch from active to inactive or vice versa. Since in a regular case the cycles switch every ~30 sec and the samples are taken every few minutes, this counter may not show very significant data, however, when cycles elongate beyond the sample time, this counter can help indicate an estimate of the R1 to R1 lag time.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">TOTAL_CACHE_SLOT_IN_USE</td>
+          <td>
+            
+                 The n+C51umber of RDF/A writes pending.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">TOTAL_HA_REPEAT_WRITE_PER_SEC</td>
+          <td>
+            
+                 The number of writes to a slot already in the active cycle. Total host adapter repeat writes, measured in write commands to SRDF/A volumes only. This counter helps estimate the cache locality of reference, i.e., how much cache is saved by the re-writes. This does not give any indication to the bandwidth locality of reference.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">TOTAL_HA_WRITE_PER_SEC</td>
+          <td>
+            
+                 The t+C16otal host adapter writes, measured in write commands to SRDF/A volumes only.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">UNCOMMIT_TRACK</td>
+          <td>
+            
+                 The number of tracks for all the SRDF/A volumes in the session that have not been committed to the R2 volume.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">WP_LIMIT</td>
+          <td>
+            
+                 The maximum number of write-pending slots for the entire Symmetrix system.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">WRITES</td>
+          <td>
+            
+                 The number of write requests to the RDF director per second.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_READ_HITS</td>
+          <td>
+            
+                 The number of reads per second that found in the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_WRITE_HITS</td>
+          <td>
+            
+                 The number of writes per second that found in the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_READS</td>
+          <td>
+            
+                 The number of Reads per second received in the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_WRITES</td>
+          <td>
+            
+                 The number of Writes per second received in the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_IOS</td>
+          <td>
+            
+                 The number of IOs per second received in the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_SKIPPED_IOS</td>
+          <td>
+            
+                 The number of Reads/Writes that skipped the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_DEDUP_HITS</td>
+          <td>
+            
+                 The number of reads/writes per second that has been found in the XtremSW Cache de-dup cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_DEDUP_READS</td>
+          <td>
+            
+                 The number  of reads per second that has been found in the XtremSW Cache de-dup cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_DEDUP_WRITES</td>
+          <td>
+            
+                 The number  of writes per second that has been found in the XtremSW Cache de-dup cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_PER_READS</td>
+          <td>
+            
+                 The percent of total XtremSW Cache read IO operations performed each second by all of the Symmetrix volumes.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_PER_WRITES</td>
+          <td>
+            
+                 The percent of total XtremSW Cache write IO operations performed each second by all of the Symmetrix volumes.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_PER_READ_HITS</td>
+          <td>
+            
+                 The percent of total XtremSW Cache read IO operations performed each second by all of the Symmetrix volumes that were served by the XtremSW Cache cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_TOTAL_MBS_READ</td>
+          <td>
+            
+                 Cumulative number of host MBs read by the StremSW Cache per second.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_TOTAL_MBS_WRITTEN</td>
+          <td>
+            
+                 Cumulative number of host MBs written by the StremSW Cache per second.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_TOTAL_MBS</td>
+          <td>
+            
+                 Cumulative number of host MBs read and written by the StremSW Cache per second.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_READ_RESPONSE_TIME</td>
+          <td>
+            
+                 The average time it took the XtremSW cache to serve one read.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_WRITE_RESPONSE_TIME</td>
+          <td>
+            
+                 The average time it took the XtremSW cache to serve one write.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_RESPONSE_TIME</td>
+          <td>
+            
+                 The average time it took the XtremSW cache to serve one IO.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_AVG_READ_SIZE</td>
+          <td>
+            
+                 The average size of a read served by the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_AVG_WRITE_SIZE</td>
+          <td>
+            
+                 The average size of a write served by the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">XC_AVG_IO_SIZE</td>
+          <td>
+            
+                 The average size of an IO served by the XtremSW Cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">ORM_READS</td>
+          <td>
+            
+                 Number of read requests each second performed directly from disks bypassing the cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">ORM_MB_READ</td>
+          <td>
+            
+                 Number of host MBs read each second directly from disks bypassing the cache.
+              
+          </td>
+        </tr>
+        <tr>
+          <td class="deprecated">ORM_AVG_READ_SIZE</td>
+          <td>
+            
+                 The average read size of the read requests performed directly from disks bypassing the cache.
+              
+          </td>
+        </tr>
+      </table>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

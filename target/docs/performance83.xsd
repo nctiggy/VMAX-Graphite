@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/83/performance" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:performance83="http://www.emc.com/em/2012/07/univmax/restapi/83/performance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="editPerformanceThresholdParam" type="performance83:EditPerformanceThresholdParam"/>
+  <xs:element name="listPerformanceThresholdResult" type="performance83:ListPerformanceThresholdType"/>
+  <xs:simpleType name="AlertSeverity">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertSeverity.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="AlertSeverity">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Information"/>
+&lt;enumeration value="Warning"/>
+&lt;enumeration value="Critical"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Information"/>
+      <xs:enumeration value="Warning"/>
+      <xs:enumeration value="Critical"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EditPerformanceThresholdParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditPerformanceThresholdParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditPerformanceThresholdParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="metric" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="firstThreshold" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="secondThreshold" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="alert" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="firstThresholdOccurrrences" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="firstThresholdSamples" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="firstThresholdSeverity" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/performance}AlertSeverity" minOccurs="0"/>
+&lt;element name="secondThresholdOccurrrences" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdSamples" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdSeverity" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/performance}AlertSeverity" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="metric" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[SPA Metric Name.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="firstThreshold" type="xs:int" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[First Threshold.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="secondThreshold" type="xs:int" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Second Threshold.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="alert" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Alert On/Off.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="firstThresholdOccurrrences" type="xs:int" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Error Occurrrences.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="firstThresholdSamples" type="xs:int" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Error Samples.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="firstThresholdSeverity" type="performance83:AlertSeverity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Error Severity.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="secondThresholdOccurrrences" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Warning Occurrrences.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="secondThresholdSamples" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Warning Samples.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="secondThresholdSeverity" type="performance83:AlertSeverity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Warning Severity.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListPerformanceThresholdType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListPerformanceThresholdType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListPerformanceThresholdType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;element name="category" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="num_of_metric_performance_thresholds" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="performanceThreshold" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/performance}PerformanceThresholdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="category" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[SPA category that we are listing metric names and thresholds for.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="num_of_metric_performance_thresholds" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Total number of returned Performance Thresholds for giving category.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="performanceThreshold" type="performance83:PerformanceThresholdType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Performance Thresholds.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PerformanceThresholdType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for PerformanceThresholdType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="PerformanceThresholdType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="metric" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="kpi" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="custom" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="alertError" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="firstThreshold" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="alertWarning" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="firstThresholdOccurrrences" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="firstThresholdSamples" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="firstThresholdSeverity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="secondThreshold" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdOccurrrences" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdSamples" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdSeverity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="metric" type="xs:string" minOccurs="0"/>
+          <xs:element name="kpi" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="custom" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="alertError" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="firstThreshold" type="xs:int" minOccurs="0"/>
+          <xs:element name="alertWarning" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="firstThresholdOccurrrences" type="xs:int" minOccurs="0"/>
+          <xs:element name="firstThresholdSamples" type="xs:int" minOccurs="0"/>
+          <xs:element name="firstThresholdSeverity" type="xs:string" minOccurs="0"/>
+          <xs:element name="secondThreshold" type="xs:int" minOccurs="0"/>
+          <xs:element name="secondThresholdOccurrrences" type="xs:int" minOccurs="0"/>
+          <xs:element name="secondThresholdSamples" type="xs:int" minOccurs="0"/>
+          <xs:element name="secondThresholdSeverity" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/wlpd" elementFormDefault="qualified" xmlns:wlp="http://www.emc.com/em/2012/07/univmax/restapi/wlp" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:wlpd="http://www.emc.com/em/2012/07/univmax/restapi/wlpd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/wlp" schemaLocation="wlp.xsd"/>
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="symWorkloadCompliance" type="wlpd:SymWorkloadComplianceType"/>
+  <xs:element name="symWorkloadComplianceResult" type="wlpd:SymWorkloadComplianceResultType"/>
+  <xs:element name="systemComponentCharacterizeScore" type="wlpd:SystemComponentCharacterizeScoreType"/>
+  <xs:element name="systemComponentCharacterizeScoreResult" type="wlpd:SystemComponentCharacterizeScoreResultType"/>
+  <xs:element name="systemComponentConfig" type="wlpd:SystemComponentConfigType"/>
+  <xs:element name="systemComponentConfigResult" type="wlpd:SystemComponentConfigResultType"/>
+  <xs:element name="systemComponentDetails" type="wlpd:SystemComponentDetailsType"/>
+  <xs:element name="systemComponentList" type="wlpd:SystemComponentListType"/>
+  <xs:element name="systemComponentListResult" type="wlpd:SystemComponentListResultType"/>
+  <xs:element name="systemComponentMap" type="wlpd:SystemComponentMapType"/>
+  <xs:element name="systemComponentMapResult" type="wlpd:SystemComponentMapResultType"/>
+  <xs:complexType name="SymWorkloadComplianceType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadComplianceType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadComplianceType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="workloadName" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;element name="percentStable" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="percentMarginal" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="percentUnderperforming" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="workloadName" type="xs:string" minOccurs="1"/>
+      <xs:element name="percentStable" type="xs:double" minOccurs="1"/>
+      <xs:element name="percentMarginal" type="xs:double" minOccurs="1"/>
+      <xs:element name="percentUnderperforming" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadComplianceResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadComplianceResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadComplianceResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}symWorkloadCompliance"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symWorkloadCompliance" type="wlpd:SymWorkloadComplianceType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentCharacterizeScoreType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentCharacterizeScoreType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentCharacterizeScoreType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="componentName" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentIdType"/>
+&lt;element name="componentType" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentTypeType"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentDetails" minOccurs="0"/>
+&lt;element name="scoreType" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}ScoreTypeType"/>
+&lt;element name="score" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="componentName" type="xs:string" minOccurs="1"/>
+      <xs:element name="componentType" type="xs:string" minOccurs="1"/>
+      <xs:element name="systemComponentDetails" type="wlpd:SystemComponentDetailsType" minOccurs="0"/>
+      <xs:element name="scoreType" type="xs:string" minOccurs="1"/>
+      <xs:element name="score" type="wlp:BucketsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentCharacterizeScoreResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentCharacterizeScoreResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentCharacterizeScoreResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentCharacterizeScore"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="systemComponentCharacterizeScore" type="wlpd:SystemComponentCharacterizeScoreType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentConfigType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentConfigType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentConfigType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="componentName" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentIdType"/>
+&lt;element name="componentType" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentTypeType"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="componentConfig" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentConfigDetailsType"/>
+&lt;/sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentDetails" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="componentName" type="xs:string" minOccurs="1"/>
+      <xs:element name="componentType" type="xs:string" minOccurs="1"/>
+      <xs:element name="componentConfig" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="systemComponentDetails" type="wlpd:SystemComponentDetailsType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentConfigResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentConfigResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentConfigResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentConfig"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="systemComponentConfig" type="wlpd:SystemComponentConfigType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentDetailsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentDetailsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentDetailsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="lastProcessedSpaTimestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+&lt;element name="lastProcessedWlpTimestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="lastProcessedSpaTimestamp" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="lastProcessedWlpTimestamp" type="xs:dateTime" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="componentName" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentIdType"/>
+&lt;element name="componentType" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentTypeType"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentDetails" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="componentName" type="xs:string" minOccurs="1"/>
+      <xs:element name="componentType" type="xs:string" minOccurs="1"/>
+      <xs:element name="systemComponentDetails" type="wlpd:SystemComponentDetailsType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentList"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="systemComponentList" type="wlpd:SystemComponentListType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentMapType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentMapType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentMapType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="componentName" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentIdType"/>
+&lt;element name="componentType" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentTypeType"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="componentMapping" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}SystemComponentIdType"/>
+&lt;/sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentDetails" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="componentName" type="xs:string" minOccurs="1"/>
+      <xs:element name="componentType" type="xs:string" minOccurs="1"/>
+      <xs:element name="componentMapping" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="systemComponentDetails" type="wlpd:SystemComponentDetailsType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemComponentMapResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemComponentMapResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemComponentMapResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlpd}systemComponentMap"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="systemComponentMap" type="wlpd:SystemComponentMapType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,1776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/replication" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:replication="http://www.emc.com/em/2012/07/univmax/restapi/replication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="rdfActionFlags" type="replication:RDFActionFlags"/>
+  <xs:element name="rdfDeviceGroupUpdate" type="replication:RdfDeviceGroupUpdate"/>
+  <xs:element name="rdfGroupID" type="replication:RDFGroupID"/>
+  <xs:element name="replicationDeviceGroup" type="replication:ReplicationDeviceGroup"/>
+  <xs:element name="replicationDeviceGroupList" type="replication:ReplicationDeviceGroupList"/>
+  <xs:element name="replicationDeviceGroupRdfGroupList" type="replication:ReplicationDeviceGroupRdfGroupList"/>
+  <xs:element name="replicationSymmetrix" type="replication:ReplicationSymmetrix"/>
+  <xs:element name="replicationSymmetrixCapabilityList" type="replication:ReplicationSymmetrixCapabilityList"/>
+  <xs:element name="replicationSymmetrixDeviceGroupList" type="replication:ReplicationSymmetrixDeviceGroupList"/>
+  <xs:element name="replicationSymmetrixList" type="replication:ReplicationSymmetrixList"/>
+  <xs:element name="replicationSymmetrixRdfGroup" type="replication:ReplicationSymmetrixRdfGroup"/>
+  <xs:element name="replicationSymmetrixRdfGroupLabelList" type="replication:ReplicationSymmetrixRdfGroupLabelList"/>
+  <xs:element name="replicationSymmetrixRdfGroupList" type="replication:ReplicationSymmetrixRdfGroupList"/>
+  <xs:element name="replicationSymmetrixStorageGroup" type="replication:ReplicationSymmetrixStorageGroup"/>
+  <xs:element name="replicationSymmetrixStorageGroupList" type="replication:ReplicationSymmetrixStorageGroupList"/>
+  <xs:element name="replicationSymmetrixStorageGroupSnapshot" type="replication:ReplicationSymmetrixStorageGroupSnapshot"/>
+  <xs:element name="replicationSymmetrixStorageGroupSnapshotGen" type="replication:ReplicationSymmetrixStorageGroupSnapshotGen"/>
+  <xs:element name="replicationSymmetrixStorageGroupSnapshotGenList" type="replication:ReplicationSymmetrixStorageGroupSnapshotGenList"/>
+  <xs:element name="replicationSymmetrixStorageGroupSnapshotList" type="replication:ReplicationSymmetrixStorageGroupSnapshotList"/>
+  <xs:element name="snapVXRenameParam" type="replication:SnapVXRenameParam"/>
+  <xs:element name="snapVXSetModeParam" type="replication:SnapVXSetModeParam"/>
+  <xs:element name="snapVXSnapshot" type="replication:SnapVXSnapshot"/>
+  <xs:element name="snapVxFlags" type="replication:SnapVxFlags"/>
+  <xs:element name="snapVxLinkParam" type="replication:SnapVxLinkParam"/>
+  <xs:element name="snapVxRelinkParam" type="replication:SnapVXRelinkParam"/>
+  <xs:element name="snapVxTtlParam" type="replication:SnapVxDaysToLiveParam"/>
+  <xs:element name="snapVxUnlinkParam" type="replication:SnapVXUnlinkParam"/>
+  <xs:element name="symmetrix" type="replication:Symmetrix"/>
+  <xs:element name="symmetrixCapability" type="replication:SymmetrixCapability"/>
+  <xs:element name="symmetrixStorageGroupSnapshotEstablish" type="replication:SymmetrixStorageGroupSnapshotEstablish"/>
+  <xs:element name="symmetrixStorageGroupSnapshotEstablishResult" type="replication:SymmetrixStorageGroupSnapshotEstablishResult"/>
+  <xs:element name="symmetrixStorageGroupSnapshotGenEstablish" type="replication:SymmetrixStorageGroupSnapshotGenEstablish"/>
+  <xs:element name="symmetrixStorageGroupSnapshotGenEstablishResult" type="replication:SymmetrixStorageGroupSnapshotGenEstablishResult"/>
+  <xs:element name="symmetrixStorageGroupSnapshotGenUpdate" type="replication:SymmetrixStorageGroupSnapshotGenUpdate"/>
+  <xs:complexType name="DeviceGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DeviceGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DeviceGroup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="symmetrixId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="isValid" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="isConcurrentRdf" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="isCascadedRdf" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="numStandards" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="standardRdfgs" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="standardPairStates" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="standardHop2PairStates" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="numBcvs" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="bcvRdfgs" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="bcvPairStates" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="bcvHop2PairStates" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="isValid" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Set if the Device Group is valid.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isConcurrentRdf" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Set if the Device Group is involved in a Concurrent SRDF setup.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isCascadedRdf" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Set if the Device Group is involved in a Cascaded SRDF setup.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numStandards" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="standardRdfgs" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="standardPairStates" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="standardHop2PairStates" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="numBcvs" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="bcvRdfgs" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="bcvPairStates" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="bcvHop2PairStates" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RdfAction">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfAction.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="RdfAction">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Establish"/>
+&lt;enumeration value="Split"/>
+&lt;enumeration value="Suspend"/>
+&lt;enumeration value="Restore"/>
+&lt;enumeration value="Resume"/>
+&lt;enumeration value="Failover"/>
+&lt;enumeration value="Failback"/>
+&lt;enumeration value="Swap"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Establish"/>
+      <xs:enumeration value="Split"/>
+      <xs:enumeration value="Suspend"/>
+      <xs:enumeration value="Restore"/>
+      <xs:enumeration value="Resume"/>
+      <xs:enumeration value="Failover"/>
+      <xs:enumeration value="Failback"/>
+      <xs:enumeration value="Swap"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RDFActionFlags">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RDFActionFlags complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RDFActionFlags">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="all" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="bcv" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="bypass" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="full" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="hop2" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="remote" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="immediate" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="consExempt" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="rp" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="establish" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="restore" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="refreshR1" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="refreshR2" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="symForce" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="star" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="halfSwap" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="all" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Lists all SRDF mirrors of the selected devices. Used with symrdf list.
+When performing an SRDF control or set operation, it targets the SRDF action at all devices in the device group: Standard SRDF devices
+and locally-attached BCV SRDF devices.
+This option is only supported for list and device group operations.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bcv" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Targets the SRDF action at the Device Group's locally-associated BCV volumes that are configured as SRDF BCV volumes.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bypass" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Bypasses any existing Symmetrix exclusive locks during an SRDF operation.
+WARNING: Only use this flag if you are certain no other SRDF operation is in progress at the local and/or remote Symmetrix arrays.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="full" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests a full establish or restore operation. By default, if the -full option is not specified, an incremental establish or restore is
+attempted.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hop2" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Targets the SRDF action at the group's second-hop volumes in a cascaded SRDF relationship. For example, in an RDF1 group, the action
+targets the R21->R2 pair of the R1->R21->R2 relationship.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remote" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests a remote data copy flag with failback, failover, restore, update, and resume. When the concurrent link is ready, data is copied
+to the concurrent SRDF mirror. These operations require the remote data copy option, or the concurrent link to be suspended.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="immediate" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Applies only to SRDF/A-capable devices. Causes failover, split, and suspend commands to drop the SRDF/A session immediately.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="consExempt" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Allows devices to be added, removed, or suspended without affecting the state of the SRDF/A session or requiring that other devices in
+the session be suspended. Used for an SRDF group supporting an active SRDF/A session.
+When used with list operations, lists devices that are consistency exempt or that are paired with devices that are consistency exempt.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="rp" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Allows the operation even though one or more volumes are tagged for RecoverPoint. When used with refresh, only allowed for refresh R1.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="establish" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Begins a volume copy. When used with createpair, a full copy from the source to the target is started, synchronizing the dynamic SRDF
+pairs in the volume file. When used with failover, the dynamic SRDF volume pairs swap personality and an incremental establish is
+initiated.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="restore" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Begins a full copy from the target to the source, synchronizing the dynamic SRDF pairs in the volume file. When used with failover, the
+dynamic SRDF volume pairs swap personality and an incremental restore is initiated.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="refreshR1" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Marks the source (R1) volumes to refresh from the remote mirror.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="refreshR2" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Marks the target (R2) volumes to refresh from the remote mirror.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="force" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Attempts to force the operation even though one or more volumes in the Device Group may not be in the normal, expected SRDF state or
+SRDF mode for that operation.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symForce" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Requests the Symmetrix array force operation be executed when normally it is rejected. Use extreme caution when using this option.
+CAUTION: Use care when applying -symforce, as data could be lost or corrupted. Use of this option is not recommended, except in an
+emergency.
+NOTE: To enable -symforce, a parameter called SYMAPI_ALLOW_RDF_SYMFORCE in the options file must be set to TRUE.
+When used with -symforce, a split command executes on an SRDF pair, even when the pair is sync in progress or restore in progress.
+During the execution of an establish or restore command, -symforce prohibits the verification of valid tracks on the device at the
+source.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="star" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Specifies the action is targeted for volumes in STAR mode.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="halfSwap" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Swaps the SRDF personality of one-half of the designated dynamic SRDF pair. Source R1 devices become target R2 devices, and target R2
+devices become source R1 devices.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RdfDeviceGroupUpdate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfDeviceGroupUpdate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RdfDeviceGroupUpdate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="action" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}RdfAction"/>
+&lt;element name="flags" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}RDFActionFlags" minOccurs="0"/>
+&lt;element name="rdfgNumber" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="action" type="replication:RdfAction" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The action to be performed.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="flags" type="replication:RDFActionFlags" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The flags to be used in the action.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="rdfgNumber" type="xs:long" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRDF Group number to perform the action on. Essential if working with Concurrent SRDF setups.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RdfGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RdfGroup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="rdfgNumber" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="label" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="remoteRdfgNumber" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="remoteSymmetrix" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="numDevices" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="totalDeviceCapacity" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="rdfgNumber" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SRDF Group number for the local Symmetrix.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="label" type="xs:string" minOccurs="1"/>
+      <xs:element name="remoteRdfgNumber" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SRDF Group number for the remote Symmetrix.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remoteSymmetrix" type="xs:string" minOccurs="1"/>
+      <xs:element name="numDevices" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of SRDF'd volumes in the group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalDeviceCapacity" type="xs:double" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The total GB capacity of the volumes in the SRDF group]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDFGroupID">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RDFGroupID complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RDFGroupID">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="rdfgNumber" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="label" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="rdfgNumber" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The SRDF Group number for the local Symmetrix.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="label" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReplicationDeviceGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationDeviceGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationDeviceGroup">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}deviceGroup"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="deviceGroup" type="replication:DeviceGroup" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the Device Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationDeviceGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationDeviceGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationDeviceGroupList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The list of Device Group names]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationDeviceGroupRdfGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationDeviceGroupRdfGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationDeviceGroupRdfGroupList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element name="rdfgNumbers" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="bcvRdfgNumbers" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="rdfgNumbers" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="bcvRdfgNumbers" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationResultType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="successful" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="failMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="successful" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set to true if the command executed successfully, false otherwise.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="failMessage" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set in the event of a failure, usually when the successful option is false.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrix">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrix complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrix">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}symmetrix"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="symmetrix" type="replication:Symmetrix" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The replication represntation of the Symmetrix.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixCapabilityList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixCapabilityList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixCapabilityList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}symmetrixCapability"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixCapability" type="replication:SymmetrixCapability" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The capabilities for replication relevant Symmetrix]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixDeviceGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixDeviceGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixDeviceGroupList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The list of Device Group names for the Symmetrix]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The locally attached Symmetrix IDs.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixRdfGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixRdfGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixRdfGroup">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}rdfGroup" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="rdfGroup" type="replication:RdfGroup" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the SRDF Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixRdfGroupLabelList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixRdfGroupLabelList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixRdfGroupLabelList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}rdfGroupID" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="rdfGroupID" type="replication:RDFGroupID" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the SRDF Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixRdfGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixRdfGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixRdfGroupList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="rdfgNumbers" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="rdfgNumbers" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixStorageGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixStorageGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixStorageGroup">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}storageGroup"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="storageGroup" type="replication:StorageGroup" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object represneting the Storage Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixStorageGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixStorageGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixStorageGroupList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="numStorageGroups" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Storage Group names for this Symmetrix]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="numStorageGroups" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of returned Storage Group names]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixStorageGroupSnapshot">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixStorageGroupSnapshot complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixStorageGroupSnapshot">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}snapVXSnapshot"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="snapVXSnapshot" type="replication:SnapVXSnapshot" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the snapshot for the Storage Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixStorageGroupSnapshotGen">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixStorageGroupSnapshotGen complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixStorageGroupSnapshotGen">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/replication}snapVXSnapshotGeneration"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="snapVXSnapshotGeneration" type="replication:SnapVXSnapshotGeneration" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the snapshot generation for the Storage Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixStorageGroupSnapshotGenList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixStorageGroupSnapshotGenList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixStorageGroupSnapshotGenList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="generations" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="generations" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixStorageGroupSnapshotList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixStorageGroupSnapshotList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixStorageGroupSnapshotList">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The names of the snapshots for the Storage Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SnapVXRenameParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXRenameParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXRenameParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="newSnapshotName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="newSnapshotName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The new name of the snapshot]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SnapVXSetModeParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXSetModeParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXSetModeParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="linkedStorageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="linkedStorageGroupName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Storage Group that is linked which will have the copy mode set]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SnapVXSnapshot">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXSnapshot complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXSnapshot">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="generationCount" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <xs:element name="generationCount" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of generations for the snapshot. 0 is the newest getting older as the generation number increases.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SnapVXSnapshotGeneration">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXSnapshotGeneration complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXSnapshotGeneration">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="generation" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="timestamp" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+&lt;element name="numSourceVolumes" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="numStorageGroupVolumes" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="numUniqueTracks" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="numSharedTracks" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="expiry" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="isLinked" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="isRestored" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="linkedStorageGroup" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <xs:element name="generation" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of generation for the snapshot.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="timestamp" type="xs:string" minOccurs="1"/>
+      <xs:element name="state" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="numSourceVolumes" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of source volumes in the snapshot generation.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numStorageGroupVolumes" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of non-gatekeeper storage group volumes.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numUniqueTracks" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of unique tracks for this snapshot generation.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numSharedTracks" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of shared tracks for this snapshot generation.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="expiry" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[When the snapshot will expire once it is not linked.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isLinked" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Set if this generation is SnapVX linked.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isRestored" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Set if this generation is restored.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="linkedStorageGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Linked Storage Group names. Only populated if the generation is linked.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SnapVxAction">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVxAction.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="SnapVxAction">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Restore"/>
+&lt;enumeration value="SetDaysToLive"/>
+&lt;enumeration value="Link"/>
+&lt;enumeration value="Relink"/>
+&lt;enumeration value="Unlink"/>
+&lt;enumeration value="SetMode"/>
+&lt;enumeration value="Rename"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Restore"/>
+      <xs:enumeration value="SetDaysToLive"/>
+      <xs:enumeration value="Link"/>
+      <xs:enumeration value="Relink"/>
+      <xs:enumeration value="Unlink"/>
+      <xs:enumeration value="SetMode"/>
+      <xs:enumeration value="Rename"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SnapVxFlags">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVxFlags complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVxFlags">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="symforce" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="exact" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="copy" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Attempts to force the operation even though one or more volumes may not be in the normal, expected state(s) for the specified operation.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="symforce" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Forces the operation to execute when normally it is rejected. Use extreme caution with this option. If used when a link is copy in
+progress or when a restore is restore in progress, this will cause an incomplete copy and data on the copy target would not be usable.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="exact" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[When specified, pairs source and link volumes in their ordinal positions within the selection. When not set uses the source and link
+volume selections as a pool that pairs by best match.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="copy" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Sets the link copy mode to perform background copy to the target volume(s).]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SnapVxLinkParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVxLinkParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVxLinkParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="linkStorageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="linkStorageGroupName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Storage Group to be used as a link target for this snapshot generation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SnapVXRelinkParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXRelinkParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXRelinkParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="relinkStorageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="relinkStorageGroupName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Storage Group to be used as a link target for this snapshot generation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SnapVxDaysToLiveParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVxDaysToLiveParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVxDaysToLiveParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="daysToLive" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="daysToLive" type="xs:int" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of days that the snapshot is to remain in existence for. Linked snapshot generations will not auto-expire.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SnapVXUnlinkParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SnapVXUnlinkParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SnapVXUnlinkParam">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="unlinkStorageGroupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="unlinkStorageGroupName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Storage Group to be used as a link target for this snapshot generation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="parentName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="childNames" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="numDevicesNonGk" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="capacityGB" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="numSnapVXSnapshots" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="snapVXSnapshots" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="linkedSgNames" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="isLinkTarget" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix that the Storage Group belongs to.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="parentName" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The the name of the parent Storage Group. Empty if there is no parent.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="childNames" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="numDevicesNonGk" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of non-GateKeeper volumes in the Storage Group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="capacityGB" type="xs:double" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The capacity, if GB, of the Storage Group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numSnapVXSnapshots" type="xs:long" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of SnapVX Snapshots associated with the Storage Group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="snapVXSnapshots" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="linkedSgNames" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="isLinkTarget" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Is this Storage Group a target of a SnapVX snapshot.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Symmetrix">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for Symmetrix complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="Symmetrix">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="storageGroupCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="rdfGroupCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix array ID.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="storageGroupCount" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of the Storage Groups on the Symmetrix.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="rdfGroupCount" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of the SRDF Groups on the Symmetrix.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixCapability">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixCapability complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixCapability">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="snapVxCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="rdfCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix array ID.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="snapVxCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of performing supported SnapVX actions.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="rdfCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of performing supported SRDF actions.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixStorageGroupSnapshotEstablish">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixStorageGroupSnapshotEstablish complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixStorageGroupSnapshotEstablish">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="snapshotName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="daysToLive" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="flags" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVxFlags" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="snapshotName" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The name of the new snapshot.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="daysToLive" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of days that the snapshot is to remain in existence for. Linked snapshot generations will not auto-expire.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="flags" type="replication:SnapVxFlags" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The flags to be used in the action.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixStorageGroupSnapshotEstablishResult">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixStorageGroupSnapshotEstablishResult complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixStorageGroupSnapshotEstablishResult">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixStorageGroupSnapshotGenEstablish">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixStorageGroupSnapshotGenEstablish complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixStorageGroupSnapshotGenEstablish">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="daysToLive" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="flags" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVxFlags" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="daysToLive" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of days that the snapshot is to remain in existence for. Linked snapshot generations will not auto-expire.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="flags" type="replication:SnapVxFlags" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The flags to be used in the action.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixStorageGroupSnapshotGenEstablishResult">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixStorageGroupSnapshotGenEstablishResult complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixStorageGroupSnapshotGenEstablishResult">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixStorageGroupSnapshotGenUpdate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixStorageGroupSnapshotGenUpdate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixStorageGroupSnapshotGenUpdate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="action" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVxAction"/>
+&lt;element name="flags" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVxFlags" minOccurs="0"/>
+&lt;element name="daysToLive" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVxDaysToLiveParam" minOccurs="0"/>
+&lt;element name="link" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVxLinkParam" minOccurs="0"/>
+&lt;element name="relink" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVXRelinkParam" minOccurs="0"/>
+&lt;element name="unlink" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVXUnlinkParam" minOccurs="0"/>
+&lt;element name="setMode" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVXSetModeParam" minOccurs="0"/>
+&lt;element name="rename" type="{http://www.emc.com/em/2012/07/univmax/restapi/replication}SnapVXRenameParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="action" type="replication:SnapVxAction" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The action to be performed.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="flags" type="replication:SnapVxFlags" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The flags to be used in the action.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="daysToLive" type="replication:SnapVxDaysToLiveParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Days to live specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="link" type="replication:SnapVxLinkParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Link specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="relink" type="replication:SnapVXRelinkParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Relink specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="unlink" type="replication:SnapVXUnlinkParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Unlink specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="setMode" type="replication:SnapVXSetModeParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set Mode specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="rename" type="replication:SnapVXRenameParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set Mode specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/81/replication" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:replication="http://www.emc.com/em/2012/07/univmax/restapi/replication" xmlns:replication81="http://www.emc.com/em/2012/07/univmax/restapi/81/replication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/replication" schemaLocation="replication.xsd"/>
+  <xs:element name="deviceGroup" type="replication81:DeviceGroupType"/>
+  <xs:element name="replicationDeviceGroup" type="replication81:ReplicationDeviceGroupType"/>
+  <xs:element name="replicationSymmetrixRdfGroup" type="replication81:ReplicationSymmetrixRdfGroupType"/>
+  <xs:complexType name="DeviceGroupType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DeviceGroupType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DeviceGroupType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}DeviceGroup">
+&lt;sequence>
+&lt;element name="groupType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:DeviceGroup">
+        <xs:sequence>
+          <xs:element name="groupType" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The type of the Device Group, e.g. Regular, RDF1, RDF21, RDF2, Any]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RdfGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RdfGroup">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}RdfGroup">
+&lt;sequence>
+&lt;element name="localPorts" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+&lt;element name="remotePorts" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+&lt;element name="modes" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+&lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="metro" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="async" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="witness" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="quorumSymmetrixID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="witnessConfigured" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="witnessEffective" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="biasConfigured" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="biasEffective" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="witnessDegraded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:RdfGroup">
+        <xs:sequence>
+          <xs:element name="localPorts" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The local SRDF ports participating in this SRDF group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="remotePorts" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The remote SRDF ports participating in this SRDF group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="modes" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRDF modes for the volumes in the group. Asynchronous or Metro are group specific, Synchronous and Adaptive Copy can exist
+at the same time.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="type" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRDF group type. E.g. Static, Dynamic, Witness]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="metro" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group devices are configured for SRDF/Metro.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="async" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group devices are configured for Asynchronous mode.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="witness" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group is a witness group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quorumSymmetrixID" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Witness Symmetrix ID for this SRDF/Metro group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="witnessConfigured" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group is configured to use witness. This means that when the establish/restore was issued both the R1
+and R2 sides had a witness RDF group that was both defined and online to the same witness Symmetrix.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="witnessEffective" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group is witness protected.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="biasConfigured" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group is configured to use bias. This means that when the establish/restore was issued the use bias
+option was given.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="biasEffective" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group is bias protected.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="witnessDegraded" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates that the SRDF group is witness protected but the witness Symmetrix can only be reached by either the R1 or the R2
+Symmetrix, but not by both.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationDeviceGroupType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationDeviceGroupType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationDeviceGroupType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/81/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/replication}deviceGroup"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication81:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="deviceGroup" type="replication81:DeviceGroupType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the Device Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationResultType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/replication}ReplicationResultType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication:ReplicationResultType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReplicationSymmetrixRdfGroupType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ReplicationSymmetrixRdfGroupType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ReplicationSymmetrixRdfGroupType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/81/replication}ReplicationResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/replication}rdfGroup" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="replication81:ReplicationResultType">
+        <xs:sequence>
+          <xs:element name="rdfGroup" type="replication81:RdfGroup" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The object representing the SRDF Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

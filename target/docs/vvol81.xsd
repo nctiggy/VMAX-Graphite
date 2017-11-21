@@ -1,0 +1,1595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/81/vvol" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:vvol81="http://www.emc.com/em/2012/07/univmax/restapi/81/vvol" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="addNewStorageResourceParam" type="vvol81:AddNewStorageResourceParamType"/>
+  <xs:element name="avoid_reset_broadcast" type="vvol81:AvoidResetBroadcastType"/>
+  <xs:element name="createHostGroupParam" type="vvol81:CreateHostGroupParamType"/>
+  <xs:element name="createHostParam" type="vvol81:CreateHostParamType"/>
+  <xs:element name="createPortGroupParam" type="vvol81:CreatePortGroupParamType"/>
+  <xs:element name="createStorageContainerParam" type="vvol81:CreateStorageContainerParamType"/>
+  <xs:element name="createStorageGroupParam" type="vvol81:CreateStorageGroupParamType"/>
+  <xs:element name="disable_q_reset_on_ua" type="vvol81:DisableQResetOnUAType"/>
+  <xs:element name="editStorageContainerActionParam" type="vvol81:EditStorageContainerActionParamType"/>
+  <xs:element name="editStorageContainerAttributesParam" type="vvol81:EditStorageContainerAttributesParamType"/>
+  <xs:element name="editStorageContainerParam" type="vvol81:EditStorageContainerParamType"/>
+  <xs:element name="editStorageResourceActionParam" type="vvol81:EditStorageResourceActionParamType"/>
+  <xs:element name="editStorageResourceAttributesParam" type="vvol81:EditStorageResourceAttributesParamType"/>
+  <xs:element name="editStorageResourceParam" type="vvol81:EditStorageResourceParamType"/>
+  <xs:element name="environ_set" type="vvol81:EnvironSetType"/>
+  <xs:element name="getProtocolEndpointParam" type="vvol81:GetProtocolEndpointParamType"/>
+  <xs:element name="getProtocolEndpointResult" type="vvol81:GetProtocolEndpointResultType"/>
+  <xs:element name="getStorageContainerParam" type="vvol81:GetStorageContainerParamType"/>
+  <xs:element name="getStorageContainerResult" type="vvol81:GetStorageContainerResultType"/>
+  <xs:element name="getStorageResourceParam" type="vvol81:GetStorageResourceParamType"/>
+  <xs:element name="getStorageResourceResult" type="vvol81:GetStorageResourceResultType"/>
+  <xs:element name="getSymmetrixParam" type="vvol81:GetSymmetrixParamType"/>
+  <xs:element name="getSymmetrixResult" type="vvol81:GetSymmetrixResultType"/>
+  <xs:element name="hostFlags" type="vvol81:HostFlagsType"/>
+  <xs:element name="hostOrHostGroupSelection" type="vvol81:HostOrHostGroupSelectionType"/>
+  <xs:element name="listProtocolEndpointResult" type="vvol81:ListProtocolEndpointResultType"/>
+  <xs:element name="listStorageContainerResult" type="vvol81:ListStorageContainerResultType"/>
+  <xs:element name="listStorageResourceResult" type="vvol81:ListStorageResourceResultType"/>
+  <xs:element name="listSymmetrixResult" type="vvol81:ListSymmetrixResultType"/>
+  <xs:element name="openvms" type="vvol81:OpenVMSType"/>
+  <xs:element name="portGroupSelection" type="vvol81:PortGroupSelectionType"/>
+  <xs:element name="protocolEndpoint" type="vvol81:ProtocolEndpointType"/>
+  <xs:element name="provisionProtocolEndpointToHostParam" type="vvol81:ProvisionProtocolEndpointToHostParamType"/>
+  <xs:element name="removeStorageResourceParam" type="vvol81:RemoveStorageResourceParamType"/>
+  <xs:element name="scsi_3" type="vvol81:SCSI3Type"/>
+  <xs:element name="scsi_support1" type="vvol81:SCSISupport1Type"/>
+  <xs:element name="spc2_protocol_version" type="vvol81:SPC2ProtocolVersionType"/>
+  <xs:element name="storageContainer" type="vvol81:StorageContainerType"/>
+  <xs:element name="storageResource" type="vvol81:StorageResourceType"/>
+  <xs:element name="storageResourceParam" type="vvol81:StorageResourceParamType"/>
+  <xs:element name="symmetrix" type="vvol81:SymmetrixType"/>
+  <xs:element name="useExistingHostGroupParam" type="vvol81:UseExistingHostGroupParamType"/>
+  <xs:element name="useExistingHostParam" type="vvol81:UseExistingHostParamType"/>
+  <xs:element name="useExistingPortGroupParam" type="vvol81:UseExistingPortGroupParamType"/>
+  <xs:element name="useExistingStorageGroupParam" type="vvol81:UseExistingStorageGroupParamType"/>
+  <xs:element name="volume_set_addressing" type="vvol81:VolumeSetAddressingType"/>
+  <xs:complexType name="AddNewStorageResourceParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AddNewStorageResourceParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AddNewStorageResourceParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}storageResourceParam"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageResourceParam" type="vvol81:StorageResourceParamType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AvoidResetBroadcastType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AvoidResetBroadcastType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AvoidResetBroadcastType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateHostGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateHostGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateHostGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="hostGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostGroupIdType"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="hostId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostIdType"/>
+&lt;/sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}hostFlags" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="hostGroupId" type="xs:string" minOccurs="1"/>
+          <xs:element name="hostId" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="hostFlags" type="vvol81:HostFlagsType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set host Group flags]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateHostParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateHostParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateHostParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="hostId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostIdType"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="initiatorId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}InitiatorIdType"/>
+&lt;/sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}hostFlags" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="hostId" type="xs:string" minOccurs="1"/>
+          <xs:element name="initiatorId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="hostFlags" type="vvol81:HostFlagsType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Set host flags]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreatePortGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreatePortGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreatePortGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="portGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PortGroupIdType"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}symmetrixPortKey"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="portGroupId" type="xs:string" minOccurs="1"/>
+          <xs:element ref="common:symmetrixPortKey" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateStorageContainerParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateStorageContainerParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateStorageContainerParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="storageContainerId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageContainerIdType"/>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}storageResourceParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageContainerId" type="xs:string" minOccurs="1"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="storageResourceParam" type="vvol81:StorageResourceParamType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Parameters required to create a Storage Resource. multiple occurrences will create multiple storage resources]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateStorageGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateStorageGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateStorageGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageGroupId" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Name of the new Storage Group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DisableQResetOnUAType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DisableQResetOnUAType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DisableQResetOnUAType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditStorageContainerActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageContainerActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageContainerActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}editStorageContainerAttributesParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}addNewStorageResourceParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}removeStorageResourceParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="removeStorageResourceParam" type="vvol81:RemoveStorageResourceParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Removes Storage Resources from the specified Storage Container]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="addNewStorageResourceParam" type="vvol81:AddNewStorageResourceParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Add Storage Resources to the specified Storage Container]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="editStorageContainerAttributesParam" type="vvol81:EditStorageContainerAttributesParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Add Storage Resources to the specified Storage Container]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditStorageContainerAttributesParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageContainerAttributesParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageContainerAttributesParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The New Storage Container description]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditStorageContainerParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageContainerParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageContainerParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}editStorageContainerActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editStorageContainerActionParam" type="vvol81:EditStorageContainerActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the specified Storage Container]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditStorageResourceActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageResourceActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageResourceActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}editStorageResourceAttributesParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="editStorageResourceAttributesParam" type="vvol81:EditStorageResourceAttributesParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Add Storage Resources to the specified Storage Container]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditStorageResourceAttributesParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageResourceAttributesParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageResourceAttributesParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="subscribed_limit_gb" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="subscribed_limit_gb" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The New Storage Resource Subscribed Limit (GB)]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditStorageResourceParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageResourceParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageResourceParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}editStorageResourceActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editStorageResourceActionParam" type="vvol81:EditStorageResourceActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the specified storage Resource]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EnvironSetType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EnvironSetType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EnvironSetType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetProtocolEndpointParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetProtocolEndpointParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetProtocolEndpointParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="number_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="number_of_masking_views" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="volume_identifier" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="reserved" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="number_of_storage_groups" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="number_of_masking_views" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="status" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="volume_identifier" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="reserved" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetProtocolEndpointResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetProtocolEndpointResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetProtocolEndpointResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}protocolEndpoint"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="protocolEndpoint" type="vvol81:ProtocolEndpointType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned Protocol Endpoint.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetStorageContainerParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetStorageContainerParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetStorageContainerParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="number_of_storage_resources" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="subscribed_limit_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="subscribed_free_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="subscribed_used_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="uuid" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="number_of_storage_resources" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="subscribed_limit_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="subscribed_free_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="subscribed_used_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="uuid" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetStorageContainerResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetStorageContainerResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetStorageContainerResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}storageContainer"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="storageContainer" type="vvol81:StorageContainerType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned Storage Container.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetStorageResourceParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetStorageResourceParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetStorageResourceParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="sloId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="workloadId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="subscribed_limit_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="subscribed_free_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="subscribed_used_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="uuid" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="srpId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="sloId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="workloadId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="subscribed_limit_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="subscribed_free_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="subscribed_used_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="uuid" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetStorageResourceResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetStorageResourceResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetStorageResourceResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}storageResource"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="storageResource" type="vvol81:StorageResourceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned Storage Container.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}symmetrix"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrix" type="vvol81:SymmetrixType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned list of Symmetrix Arrays.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HostFlagsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostFlagsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostFlagsType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}InitiatorAndHostFlagsType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}volume_set_addressing"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}disable_q_reset_on_ua"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}environ_set"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}avoid_reset_broadcast"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}openvms"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}scsi_3"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}spc2_protocol_version"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}scsi_support1"/>
+&lt;element name="consistent_lun" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:InitiatorAndHostFlagsType">
+        <xs:sequence>
+          <xs:element name="volume_set_addressing" type="vvol81:VolumeSetAddressingType" minOccurs="1"/>
+          <xs:element name="disable_q_reset_on_ua" type="vvol81:DisableQResetOnUAType" minOccurs="1"/>
+          <xs:element name="environ_set" type="vvol81:EnvironSetType" minOccurs="1"/>
+          <xs:element name="avoid_reset_broadcast" type="vvol81:AvoidResetBroadcastType" minOccurs="1"/>
+          <xs:element name="openvms" type="vvol81:OpenVMSType" minOccurs="1"/>
+          <xs:element name="scsi_3" type="vvol81:SCSI3Type" minOccurs="1"/>
+          <xs:element name="spc2_protocol_version" type="vvol81:SPC2ProtocolVersionType" minOccurs="1"/>
+          <xs:element name="scsi_support1" type="vvol81:SCSISupport1Type" minOccurs="1"/>
+          <xs:element name="consistent_lun" type="xs:boolean" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HostOrHostGroupSelectionType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostOrHostGroupSelectionType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostOrHostGroupSelectionType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}useExistingHostParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}createHostParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}useExistingHostGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}createHostGroupParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="createHostGroupParam" type="vvol81:CreateHostGroupParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Create New Host Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="useExistingHostGroupParam" type="vvol81:UseExistingHostGroupParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Use Existing Host Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="createHostParam" type="vvol81:CreateHostParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Create New Host]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="useExistingHostParam" type="vvol81:UseExistingHostParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Use Existing Host]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProtocolEndpointResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListProtocolEndpointResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListProtocolEndpointResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="protocolEndpointId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;/sequence>
+&lt;element name="num_of_protocol_endpoints" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="protocolEndpointId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Protocol Endpoint ID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="num_of_protocol_endpoints" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Total number of returned Protocol Endpoint IDs.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListStorageContainerResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListStorageContainerResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListStorageContainerResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storageContainerId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageContainerIdType"/>
+&lt;/sequence>
+&lt;element name="num_of_storage_containers" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="storageContainerId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Protocol Endpoint ID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="num_of_storage_containers" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Total number of returned Storage Container names.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListStorageResourceResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListStorageResourceResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListStorageResourceResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storageResourceId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageResourceIdType"/>
+&lt;/sequence>
+&lt;element name="num_of_storage_resources" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="storageResourceId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Protocol Endpoint ID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="num_of_storage_resources" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Total number of returned Storage Resource names.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ListSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ListSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;element name="num_of_symmetrix_arrays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Symmetrix Array ID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="num_of_symmetrix_arrays" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Total number of returned Symmetrix Array IDs.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenVMSType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for OpenVMSType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="OpenVMSType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PortGroupSelectionType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for PortGroupSelectionType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="PortGroupSelectionType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}useExistingPortGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}createPortGroupParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="createPortGroupParam" type="vvol81:CreatePortGroupParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Create New Port Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="useExistingPortGroupParam" type="vvol81:UseExistingPortGroupParamType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Use Existing Port Group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProtocolEndpointType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ProtocolEndpointType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ProtocolEndpointType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="protocolEndpointId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;element name="number_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="number_of_masking_views" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="reserved" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="volume_identifier" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="protocolEndpointId" type="xs:string" minOccurs="1"/>
+      <xs:element name="number_of_storage_groups" type="xs:int" minOccurs="0"/>
+      <xs:element name="number_of_masking_views" type="xs:int" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="reserved" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="volume_identifier" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProvisionProtocolEndpointToHostParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ProvisionProtocolEndpointToHostParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ProvisionProtocolEndpointToHostParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="maskingViewId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}MaskingViewIdType"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}hostOrHostGroupSelection" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}portGroupSelection" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/vvol}createStorageGroupParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="maskingViewId" type="xs:string" minOccurs="1"/>
+          <xs:element name="hostOrHostGroupSelection" type="vvol81:HostOrHostGroupSelectionType" minOccurs="0"/>
+          <xs:element name="portGroupSelection" type="vvol81:PortGroupSelectionType" minOccurs="0"/>
+          <xs:element name="createStorageGroupParam" type="vvol81:CreateStorageGroupParamType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveStorageResourceParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RemoveStorageResourceParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RemoveStorageResourceParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storageResourceId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageResourceIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageResourceId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Storage Resource Name to be removed]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SCSI3Type">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SCSI3Type complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SCSI3Type">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SCSISupport1Type">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SCSISupport1Type complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SCSISupport1Type">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SPC2ProtocolVersionType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SPC2ProtocolVersionType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SPC2ProtocolVersionType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageContainerType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageContainerType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageContainerType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="storageContainerId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageContainerIdType"/>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="uuid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="number_of_storage_resources" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="subscribed_limit_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="subscribed_used_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="subscribed_free_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="storageContainerId" type="xs:string" minOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="uuid" type="xs:string" minOccurs="0"/>
+      <xs:element name="number_of_storage_resources" type="xs:int" minOccurs="0"/>
+      <xs:element name="subscribed_limit_gb" type="xs:double" minOccurs="0"/>
+      <xs:element name="subscribed_used_gb" type="xs:double" minOccurs="0"/>
+      <xs:element name="subscribed_free_gb" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageResourceType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageResourceType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageResourceType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="storageResourceId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageResourceIdType"/>
+&lt;element name="storageContainerId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageContainerIdType"/>
+&lt;element name="uuid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType" minOccurs="0"/>
+&lt;element name="sloId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType" minOccurs="0"/>
+&lt;element name="workloadId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType" minOccurs="0"/>
+&lt;element name="subscribed_limit_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="subscribed_free_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="subscribed_used_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="storageResourceId" type="xs:string" minOccurs="1"/>
+      <xs:element name="storageContainerId" type="xs:string" minOccurs="1"/>
+      <xs:element name="uuid" type="xs:string" minOccurs="0"/>
+      <xs:element name="srpId" type="xs:string" minOccurs="0"/>
+      <xs:element name="sloId" type="xs:string" minOccurs="0"/>
+      <xs:element name="workloadId" type="xs:string" minOccurs="0"/>
+      <xs:element name="subscribed_limit_gb" type="xs:double" minOccurs="0"/>
+      <xs:element name="subscribed_free_gb" type="xs:double" minOccurs="0"/>
+      <xs:element name="subscribed_used_gb" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageResourceParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageResourceParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageResourceParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="storageResourceId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageResourceIdType"/>
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType"/>
+&lt;element name="sloId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType"/>
+&lt;element name="workloadId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType" minOccurs="0"/>
+&lt;element name="subscribed_limit_gb" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageResourceId" type="xs:string" minOccurs="1"/>
+          <xs:element name="srpId" type="xs:string" minOccurs="1"/>
+          <xs:element name="sloId" type="xs:string" minOccurs="1"/>
+          <xs:element name="workloadId" type="xs:string" minOccurs="0"/>
+          <xs:element name="subscribed_limit_gb" type="xs:double" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="device_count" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="ucode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}virtualCapacity" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="device_count" type="xs:long" minOccurs="0"/>
+      <xs:element name="ucode" type="xs:string" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="local" type="xs:boolean" minOccurs="0"/>
+      <xs:element ref="common:virtualCapacity" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UseExistingHostGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for UseExistingHostGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="UseExistingHostGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="hostGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="hostGroupId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UseExistingHostParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for UseExistingHostParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="UseExistingHostParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="hostId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="hostId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UseExistingPortGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for UseExistingPortGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="UseExistingPortGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="portGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PortGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="portGroupId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UseExistingStorageGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for UseExistingStorageGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="UseExistingStorageGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageGroupId" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Existing Storage Group Name.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VolumeSetAddressingType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeSetAddressingType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumeSetAddressingType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="enabled" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="override" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/common" elementFormDefault="qualified" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="application" type="common:ApplicationType"/>
+  <xs:element name="applicationInfo" type="common:ApplicationInfoType"/>
+  <xs:element name="databaseSystemBackupName" type="common:DatabaseSystemBackupNameParamType"/>
+  <xs:element name="genericResult" type="common:GenericResultType"/>
+  <xs:element name="iterator" type="common:IteratorType"/>
+  <xs:element name="physicalCapacity" type="common:PhysicalCapacityType"/>
+  <xs:element name="rdfGroupId" type="common:RdfGroupIdType"/>
+  <xs:element name="resultList" type="common:ResultListType"/>
+  <xs:element name="shardEntry" type="common:ShardEntryType"/>
+  <xs:element name="shardingMap" type="common:ShardingMapType"/>
+  <xs:element name="symmetrixPortKey" type="common:SymmetrixPortKeyType"/>
+  <xs:element name="virtualCapacity" type="common:VirtualCapacityType"/>
+  <xs:element name="volumeAttribute" type="common:VolumeAttributeType"/>
+  <xs:element name="volumeIdentifier" type="common:VolumeIdentifierType"/>
+  <xs:element name="volumeResult" type="common:VolumeResultType"/>
+  <xs:element name="volumesList" type="common:VolumesListType"/>
+  <xs:complexType name="ApplicationType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[The list of applications registered with the server.
+<p>Java class for ApplicationType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ApplicationType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}applicationInfo"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="applicationInfo" type="common:ApplicationInfoType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApplicationInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[Represents information about a registered application.
+<p>Java class for ApplicationInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ApplicationInfoType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;attribute name="vendorKey" type="{http://www.w3.org/2001/XMLSchema}string" />
+&lt;attribute name="registeredName" type="{http://www.w3.org/2001/XMLSchema}string" />
+&lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}string" />
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="vendorKey" type="xs:string"/>
+    <xs:attribute name="registeredName" type="xs:string"/>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+  <xs:simpleType name="CapacityUnitType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CapacityUnitType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="CapacityUnitType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="CYL"/>
+&lt;enumeration value="MB"/>
+&lt;enumeration value="GB"/>
+&lt;enumeration value="TB"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CYL"/>
+      <xs:enumeration value="MB"/>
+      <xs:enumeration value="GB"/>
+      <xs:enumeration value="TB"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ConfigurationManagementParamType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[Represents a configuration management top-level parameter
+<p>Java class for ConfigurationManagementParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ConfigurationManagementParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="executionOption" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}ExecutionOption" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="executionOption" type="common:ExecutionOption" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Indicates whether the requested configuration management request should be run
+synchronously or asynchronously]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CreateStorageEmulationType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateStorageEmulationType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="CreateStorageEmulationType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="FBA"/>
+&lt;enumeration value="CELERRA_FBA"/>
+&lt;enumeration value="CKD-3390"/>
+&lt;enumeration value="CKD-3380"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FBA"/>
+      <xs:enumeration value="CELERRA_FBA"/>
+      <xs:enumeration value="CKD-3390"/>
+      <xs:enumeration value="CKD-3380"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DatabaseSystemBackupNameParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DatabaseSystemBackupNameParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DatabaseSystemBackupNameParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="systemBackupName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="systemBackupName" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DiskTechnologyType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DiskTechnologyType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="DiskTechnologyType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="EFD"/>
+&lt;enumeration value="FC"/>
+&lt;enumeration value="SATA"/>
+&lt;enumeration value="External"/>
+&lt;enumeration value="MIXED"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EFD"/>
+      <xs:enumeration value="FC"/>
+      <xs:enumeration value="SATA"/>
+      <xs:enumeration value="External"/>
+      <xs:enumeration value="MIXED"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DynamicDistributionType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DynamicDistributionType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="DynamicDistributionType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Never"/>
+&lt;enumeration value="Always"/>
+&lt;enumeration value="OnFailure"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Never"/>
+      <xs:enumeration value="Always"/>
+      <xs:enumeration value="OnFailure"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EmulationType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EmulationType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="EmulationType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="FBA"/>
+&lt;enumeration value="CELERRA_FBA"/>
+&lt;enumeration value="VME_512_FBA"/>
+&lt;enumeration value="CKD"/>
+&lt;enumeration value="CKD-3390"/>
+&lt;enumeration value="CKD-3380"/>
+&lt;enumeration value="AS/400_M2107_A02"/>
+&lt;enumeration value="AS/400_M2107_A04"/>
+&lt;enumeration value="AS/400_M2107_A05"/>
+&lt;enumeration value="AS/400_M2107_A06"/>
+&lt;enumeration value="AS/400_M2107_A07"/>
+&lt;enumeration value="AS/400_M2107_A82"/>
+&lt;enumeration value="AS/400_M2107_A84"/>
+&lt;enumeration value="AS/400_M2107_A85"/>
+&lt;enumeration value="AS/400_M2107_A86"/>
+&lt;enumeration value="AS/400_M2107_A87"/>
+&lt;enumeration value="AS/400_M2107_099"/>
+&lt;enumeration value="AS/400_M2107_050"/>
+&lt;enumeration value="AS/400_M4326_50"/>
+&lt;enumeration value="AS/400_M4327_50"/>
+&lt;enumeration value="AS/400_M4328_50"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FBA"/>
+      <xs:enumeration value="CELERRA_FBA"/>
+      <xs:enumeration value="VME_512_FBA"/>
+      <xs:enumeration value="CKD"/>
+      <xs:enumeration value="CKD-3390"/>
+      <xs:enumeration value="CKD-3380"/>
+      <xs:enumeration value="AS/400_M2107_A02"/>
+      <xs:enumeration value="AS/400_M2107_A04"/>
+      <xs:enumeration value="AS/400_M2107_A05"/>
+      <xs:enumeration value="AS/400_M2107_A06"/>
+      <xs:enumeration value="AS/400_M2107_A07"/>
+      <xs:enumeration value="AS/400_M2107_A82"/>
+      <xs:enumeration value="AS/400_M2107_A84"/>
+      <xs:enumeration value="AS/400_M2107_A85"/>
+      <xs:enumeration value="AS/400_M2107_A86"/>
+      <xs:enumeration value="AS/400_M2107_A87"/>
+      <xs:enumeration value="AS/400_M2107_099"/>
+      <xs:enumeration value="AS/400_M2107_050"/>
+      <xs:enumeration value="AS/400_M4326_50"/>
+      <xs:enumeration value="AS/400_M4327_50"/>
+      <xs:enumeration value="AS/400_M4328_50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExecutionOption">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ExecutionOption.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="ExecutionOption">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="SYNCHRONOUS"/>
+&lt;enumeration value="ASYNCHRONOUS"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SYNCHRONOUS"/>
+      <xs:enumeration value="ASYNCHRONOUS"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GenericResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GenericResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GenericResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GenericResultImplType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GenericResultImplType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GenericResultImplType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="success" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="success" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Returns The result of the operation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="message" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Returns any error message from the operation.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorAndHostFlagsType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorAndHostFlagsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorAndHostFlagsType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IteratorType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[Iterator over a result set.
+<p>Java class for IteratorType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="IteratorType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}resultList"/>
+&lt;/sequence>
+&lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
+&lt;attribute name="count" type="{http://www.w3.org/2001/XMLSchema}int" />
+&lt;attribute name="expirationTime" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" />
+&lt;attribute name="maxPageSize" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PageSizeType" />
+&lt;attribute name="warningMessage" type="{http://www.w3.org/2001/XMLSchema}string" />
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="resultList" type="common:ResultListType" minOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="count" type="xs:int"/>
+    <xs:attribute name="expirationTime" type="xs:long"/>
+    <xs:attribute name="maxPageSize" type="xs:int"/>
+    <xs:attribute name="warningMessage" type="xs:string"/>
+  </xs:complexType>
+  <xs:simpleType name="JobStatus">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for JobStatus.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="JobStatus">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="CREATED"/>
+&lt;enumeration value="SCHEDULED"/>
+&lt;enumeration value="RUNNING"/>
+&lt;enumeration value="SUCCEEDED"/>
+&lt;enumeration value="FAILED"/>
+&lt;enumeration value="ABORTED"/>
+&lt;enumeration value="UNKNOWN"/>
+&lt;enumeration value="VALIDATING"/>
+&lt;enumeration value="VALIDATED"/>
+&lt;enumeration value="VALIDATE_FAILED"/>
+&lt;enumeration value="INVALID"/>
+&lt;enumeration value="RETRIEVING_PICTURE"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREATED"/>
+      <xs:enumeration value="SCHEDULED"/>
+      <xs:enumeration value="RUNNING"/>
+      <xs:enumeration value="SUCCEEDED"/>
+      <xs:enumeration value="FAILED"/>
+      <xs:enumeration value="ABORTED"/>
+      <xs:enumeration value="UNKNOWN"/>
+      <xs:enumeration value="VALIDATING"/>
+      <xs:enumeration value="VALIDATED"/>
+      <xs:enumeration value="VALIDATE_FAILED"/>
+      <xs:enumeration value="INVALID"/>
+      <xs:enumeration value="RETRIEVING_PICTURE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ParamType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:complexType name="PhysicalCapacityType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for PhysicalCapacityType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="PhysicalCapacityType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="used_capacity_gb" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="total_capacity_gb" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="used_capacity_gb" type="xs:double" minOccurs="1"/>
+      <xs:element name="total_capacity_gb" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ProjectionAggregationType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ProjectionAggregationType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="ProjectionAggregationType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Historical"/>
+&lt;enumeration value="Daily"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Historical"/>
+      <xs:enumeration value="Daily"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RAIDType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RAIDType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="RAIDType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="RAID1"/>
+&lt;enumeration value="RAID5_3_1"/>
+&lt;enumeration value="RAID5_7_1"/>
+&lt;enumeration value="RAID6_6_2"/>
+&lt;enumeration value="RAID6_14_2"/>
+&lt;enumeration value="UNPROTECTED"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RAID1"/>
+      <xs:enumeration value="RAID5_3_1"/>
+      <xs:enumeration value="RAID5_7_1"/>
+      <xs:enumeration value="RAID6_6_2"/>
+      <xs:enumeration value="RAID6_14_2"/>
+      <xs:enumeration value="UNPROTECTED"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RdfConnectivity">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfConnectivity.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="RdfConnectivity">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="FC"/>
+&lt;enumeration value="GigE"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FC"/>
+      <xs:enumeration value="GigE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RdfGroupIdType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfGroupIdType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RdfGroupIdType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="rdf_group_number" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="label" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="rdf_group_number" type="xs:long" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRDF Group number for the local Symmetrix.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="label" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRDF Group label/name.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="RdfMode">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RdfMode.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="RdfMode">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="AdaptiveCopyDisk"/>
+&lt;enumeration value="AdaptiveCopyWP"/>
+&lt;enumeration value="Synchronous"/>
+&lt;enumeration value="Asynchronous"/>
+&lt;enumeration value="Active"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdaptiveCopyDisk"/>
+      <xs:enumeration value="AdaptiveCopyWP"/>
+      <xs:enumeration value="Synchronous"/>
+      <xs:enumeration value="Asynchronous"/>
+      <xs:enumeration value="Active"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ResultListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[Represents one page of results.
+<p>Java class for ResultListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ResultListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="result" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType"/>
+&lt;/sequence>
+&lt;attribute name="from" type="{http://www.w3.org/2001/XMLSchema}int" />
+&lt;attribute name="to" type="{http://www.w3.org/2001/XMLSchema}int" />
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="result" type="common:ResultType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="from" type="xs:int"/>
+    <xs:attribute name="to" type="xs:int"/>
+  </xs:complexType>
+  <xs:complexType name="ResultType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ResultType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:complexType name="ShardEntryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ShardEntryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ShardEntryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="host" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="port" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="host" type="xs:string" minOccurs="1"/>
+      <xs:element name="port" type="xs:int" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShardingMapType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ShardingMapType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ShardingMapType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}shardEntry"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="shardEntry" type="common:ShardEntryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StateType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StateType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="StateType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Enabled"/>
+&lt;enumeration value="Disabled"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Enabled"/>
+      <xs:enumeration value="Disabled"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SymmetrixPortKeyType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixPortKeyType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixPortKeyType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="directorId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DirectorIdType"/>
+&lt;element name="portId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PortIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="directorId" type="xs:string" minOccurs="1"/>
+          <xs:element name="portId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VirtualCapacityType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VirtualCapacityType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VirtualCapacityType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="used_capacity_gb" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="total_capacity_gb" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="used_capacity_gb" type="xs:double" minOccurs="1"/>
+      <xs:element name="total_capacity_gb" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VolumeAttributeType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeAttributeType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumeAttributeType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="capacityUnit" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}CapacityUnitType"/>
+&lt;element name="volume_size" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="capacityUnit" type="common:CapacityUnitType" minOccurs="1"/>
+          <xs:element name="volume_size" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VolumeIdentifierType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeIdentifierType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumeIdentifierType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="volumeIdentifierChoice" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdentifierChoiceType"/>
+&lt;element name="identifier_name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="apend_number" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="volumeIdentifierChoice" type="common:VolumeIdentifierChoiceType" minOccurs="1"/>
+      <xs:element name="identifier_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="apend_number" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VolumeIdentifierChoiceType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeIdentifierChoiceType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="VolumeIdentifierChoiceType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="none"/>
+&lt;enumeration value="identifier_name"/>
+&lt;enumeration value="identifier_name_plus_volume_id"/>
+&lt;enumeration value="name_plus_append_number"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="identifier_name"/>
+      <xs:enumeration value="identifier_name_plus_volume_id"/>
+      <xs:enumeration value="name_plus_append_number"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VolumeResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumeResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;element name="volumeType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="cap_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="volumeId" type="xs:string" minOccurs="1"/>
+          <xs:element name="volumeType" type="xs:string" minOccurs="0"/>
+          <xs:element name="cap_gb" type="xs:double" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VolumesListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumesListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumesListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="volumeId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

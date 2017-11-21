@@ -1,23 +1,20 @@
 #!/usr/bin/env ruby
 
-require "rest_client"
+require "rest-client"
 require "csv"
 require "json"
 require "base64"
-require "timber"
 require "nokogiri"
-#require "pry-byebug"
 require "influxdb"
 %w{simple-graphite}.each { |l| require l }
 
-current_dir=File.dirname(__FILE__)
-settings_file="#{current_dir}/settings.json"
+settings_file="#{Dir.pwd}/settings.json"
 
 ####################################################################################
 # Method: Read's the Unisphere XSD file and gets all Metrics for the specified scope
 ####################################################################################
 def get_metrics(param_type)
-  page = Nokogiri::HTML(open("#{current_dir}/target/docs/performance_#{param_type}Metric.html"))
+  page = Nokogiri::HTML(open("#{Dir.pwd}/target/docs/performance_#{param_type}Metric.html"))
   output = page.css('table').last.css('td:first-child:not(.deprecated)').map(&:text)
   return output
 end
@@ -180,7 +177,7 @@ end
 
 config=readSettings(settings_file)
 g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
-influxdb = InfluxDB::Client.new host: config['influxdb']['host'], port: config['influxdb']['port']}) if config['influxdb']['enabled']
+i = InfluxDB::Client.new url: influx_url if config['influxdb']['enabled']
 
 ## Loop through each Unisphere ##
 config['unisphere'].each do |unisphere|
@@ -228,7 +225,7 @@ config['unisphere'].each do |unisphere|
         end
       end
     end
-    influxdb.write_points(influx_output_payload) if config['influxdb']['enabled']
+    i.write_points(influx_output_payload) if config['influxdb']['enabled']
     g.send_metrics(graphite_output_payload) if config['graphite']['enabled']
     CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| graphite_output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
   end

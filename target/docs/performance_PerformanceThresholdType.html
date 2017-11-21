@@ -1,0 +1,742 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>PerformanceThresholdType</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">PerformanceThresholdType</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="model.html">Data Model</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="performance.html">performance</a> &gt;
+              <ul>
+                <li><a href="management.html">management</a></li>
+                <li><a href="migration84.html">migration84</a></li>
+                <li><a href="dsa.html">dsa</a></li>
+                <li><a href="system.html">system</a></li>
+                <li><a href="vvol81.html">vvol81</a></li>
+                <li><a href="provisioning82.html">provisioning82</a></li>
+                <li><a href="performance83.html">performance83</a></li>
+                <li><a href="performance81.html">performance81</a></li>
+                <li><a href="migration83.html">migration83</a></li>
+                <li><a href="system82.html">system82</a></li>
+                <li><a href="hinting.html">hinting</a></li>
+                <li><a href="sloprovisioning84.html">sloprovisioning84</a></li>
+                <li><a href="common.html">common</a></li>
+                <li><a href="replication82.html">replication82</a></li>
+                <li><a href="mobile.html">mobile</a></li>
+                <li><a href="replication81.html">replication81</a></li>
+                <li><a href="vvol82.html">vvol82</a></li>
+                <li><a href="provisioning.html">provisioning</a></li>
+                <li><a href="provisioning84.html">provisioning84</a></li>
+                <li><a href="dsa84.html">dsa84</a></li>
+                <li><a href="sloprovisioning.html">sloprovisioning</a></li>
+                <li><a href="performance.html">performance</a></li>
+                <li><a href="wlp82.html">wlp82</a></li>
+                <li><a href="wlp.html">wlp</a></li>
+                <li><a href="vvol84.html">vvol84</a></li>
+                <li><a href="provisioning83.html">provisioning83</a></li>
+                <li><a href="vvol83.html">vvol83</a></li>
+                <li><a href="sloprovisioning82.html">sloprovisioning82</a></li>
+                <li><a href="replication83.html">replication83</a></li>
+                <li><a href="performance82.html">performance82</a></li>
+                <li><a href="replication84.html">replication84</a></li>
+                <li><a href="wlpd.html">wlpd</a></li>
+                <li><a href="system84.html">system84</a></li>
+                <li><a href="replication.html">replication</a></li>
+                <li><a href="wlp84.html">wlp84</a></li>
+                <li><a href="sloprovisioning83.html">sloprovisioning83</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="performance_PerformanceThresholdType.html">PerformanceThresholdType</a>
+              <ul>
+                <li><a href="performance_Alert.html">Alert</a></li>
+                <li><a href="performance_AlertSeverity.html">AlertSeverity</a></li>
+                <li><a href="performance_AlertState.html">AlertState</a></li>
+                <li><a href="performance_ArrayAlertParamType.html">ArrayAlertParamType</a></li>
+                <li><a href="performance_ArrayAlertResultType.html">ArrayAlertResultType</a></li>
+                <li><a href="performance_ArrayAlertType.html">ArrayAlertType</a></li>
+                <li><a href="performance_ArrayInfoType.html">ArrayInfoType</a></li>
+                <li><a href="performance_ArrayKeyResultType.html">ArrayKeyResultType</a></li>
+                <li><a href="performance_ArrayMetric.html">ArrayMetric</a></li>
+                <li><a href="performance_ArrayParamType.html">ArrayParamType</a></li>
+                <li><a href="performance_ArrayResultType.html">ArrayResultType</a></li>
+                <li><a href="performance_BEDirectorInfoType.html">BEDirectorInfoType</a></li>
+                <li><a href="performance_BEDirectorKeyParamType.html">BEDirectorKeyParamType</a></li>
+                <li><a href="performance_BEDirectorKeyResultType.html">BEDirectorKeyResultType</a></li>
+                <li><a href="performance_BEDirectorMetric.html">BEDirectorMetric</a></li>
+                <li><a href="performance_BEDirectorParamType.html">BEDirectorParamType</a></li>
+                <li><a href="performance_BEDirectorResultType.html">BEDirectorResultType</a></li>
+                <li><a href="performance_BeEmulationInfoType.html">BeEmulationInfoType</a></li>
+                <li><a href="performance_BeEmulationKeyParamType.html">BeEmulationKeyParamType</a></li>
+                <li><a href="performance_BeEmulationKeyResultType.html">BeEmulationKeyResultType</a></li>
+                <li><a href="performance_BeEmulationMetric.html">BeEmulationMetric</a></li>
+                <li><a href="performance_BeEmulationParamType.html">BeEmulationParamType</a></li>
+                <li><a href="performance_BeEmulationResultType.html">BeEmulationResultType</a></li>
+                <li><a href="performance_BePortInfoType.html">BePortInfoType</a></li>
+                <li><a href="performance_BePortKeyParamType.html">BePortKeyParamType</a></li>
+                <li><a href="performance_BePortKeyResultType.html">BePortKeyResultType</a></li>
+                <li><a href="performance_BePortMetric.html">BePortMetric</a></li>
+                <li><a href="performance_BePortParamType.html">BePortParamType</a></li>
+                <li><a href="performance_BePortResultType.html">BePortResultType</a></li>
+                <li><a href="performance_BoardInfoType.html">BoardInfoType</a></li>
+                <li><a href="performance_BoardKeyParamType.html">BoardKeyParamType</a></li>
+                <li><a href="performance_BoardKeyResultType.html">BoardKeyResultType</a></li>
+                <li><a href="performance_BoardMetric.html">BoardMetric</a></li>
+                <li><a href="performance_BoardParamType.html">BoardParamType</a></li>
+                <li><a href="performance_BoardResultType.html">BoardResultType</a></li>
+                <li><a href="performance_CachePartitionInfoType.html">CachePartitionInfoType</a></li>
+                <li><a href="performance_CachePartitionKeyParamType.html">CachePartitionKeyParamType</a></li>
+                <li><a href="performance_CachePartitionKeyResultType.html">CachePartitionKeyResultType</a></li>
+                <li><a href="performance_CachePartitionMetric.html">CachePartitionMetric</a></li>
+                <li><a href="performance_CachePartitionParamType.html">CachePartitionParamType</a></li>
+                <li><a href="performance_CachePartitionResultType.html">CachePartitionResultType</a></li>
+                <li><a href="performance_CategoryKpisDaysToFullParamType.html">CategoryKpisDaysToFullParamType</a></li>
+                <li><a href="performance_CategoryKpisDaysToFullResultType.html">CategoryKpisDaysToFullResultType</a></li>
+                <li><a href="performance_CategoryKpisProjectionInstancesResult.html">CategoryKpisProjectionInstancesResult</a></li>
+                <li><a href="performance_CategoryKpisProjectionParamType.html">CategoryKpisProjectionParamType</a></li>
+                <li><a href="performance_CategoryKpisProjectionResultType.html">CategoryKpisProjectionResultType</a></li>
+                <li><a href="performance_CoreInfoType.html">CoreInfoType</a></li>
+                <li><a href="performance_CoreKeyParamType.html">CoreKeyParamType</a></li>
+                <li><a href="performance_CoreKeyResultType.html">CoreKeyResultType</a></li>
+                <li><a href="performance_CoreMetric.html">CoreMetric</a></li>
+                <li><a href="performance_CoreParamType.html">CoreParamType</a></li>
+                <li><a href="performance_CoreResultType.html">CoreResultType</a></li>
+                <li><a href="performance_DatabaseByPoolInfoType.html">DatabaseByPoolInfoType</a></li>
+                <li><a href="performance_DatabaseByPoolKeyParamType.html">DatabaseByPoolKeyParamType</a></li>
+                <li><a href="performance_databaseByPoolKeyResultType.html">databaseByPoolKeyResultType</a></li>
+                <li><a href="performance_DatabaseByPoolMetric.html">DatabaseByPoolMetric</a></li>
+                <li><a href="performance_DatabaseByPoolParamType.html">DatabaseByPoolParamType</a></li>
+                <li><a href="performance_DatabaseByPoolResultType.html">DatabaseByPoolResultType</a></li>
+                <li><a href="performance_DatabaseInfoType.html">DatabaseInfoType</a></li>
+                <li><a href="performance_DatabaseKeyParamType.html">DatabaseKeyParamType</a></li>
+                <li><a href="performance_DatabaseKeyResultType.html">DatabaseKeyResultType</a></li>
+                <li><a href="performance_DatabaseMetric.html">DatabaseMetric</a></li>
+                <li><a href="performance_DatabaseParamType.html">DatabaseParamType</a></li>
+                <li><a href="performance_DatabaseResultType.html">DatabaseResultType</a></li>
+                <li><a href="performance_DataFormat.html">DataFormat</a></li>
+                <li><a href="performance_DaysToFullCategoryType.html">DaysToFullCategoryType</a></li>
+                <li><a href="performance_DaysToFullInstancesResult.html">DaysToFullInstancesResult</a></li>
+                <li><a href="performance_DaysToFullObjectResultType.html">DaysToFullObjectResultType</a></li>
+                <li><a href="performance_DeviceGroupInfoType.html">DeviceGroupInfoType</a></li>
+                <li><a href="performance_DeviceGroupKeyParamType.html">DeviceGroupKeyParamType</a></li>
+                <li><a href="performance_DeviceGroupKeyResultType.html">DeviceGroupKeyResultType</a></li>
+                <li><a href="performance_DeviceGroupMetric.html">DeviceGroupMetric</a></li>
+                <li><a href="performance_DeviceGroupParamType.html">DeviceGroupParamType</a></li>
+                <li><a href="performance_DeviceGroupResultType.html">DeviceGroupResultType</a></li>
+                <li><a href="performance_DiskGroupInfoType.html">DiskGroupInfoType</a></li>
+                <li><a href="performance_DiskGroupKeyParamType.html">DiskGroupKeyParamType</a></li>
+                <li><a href="performance_DiskGroupKeyResultType.html">DiskGroupKeyResultType</a></li>
+                <li><a href="performance_DiskGroupMetric.html">DiskGroupMetric</a></li>
+                <li><a href="performance_DiskGroupParamType.html">DiskGroupParamType</a></li>
+                <li><a href="performance_DiskGroupResultType.html">DiskGroupResultType</a></li>
+                <li><a href="performance_DiskInfoType.html">DiskInfoType</a></li>
+                <li><a href="performance_DiskKeyParamType.html">DiskKeyParamType</a></li>
+                <li><a href="performance_DiskKeyResultType.html">DiskKeyResultType</a></li>
+                <li><a href="performance_DiskMetric.html">DiskMetric</a></li>
+                <li><a href="performance_DiskParamType.html">DiskParamType</a></li>
+                <li><a href="performance_DiskResultType.html">DiskResultType</a></li>
+                <li><a href="performance_DiskTechPoolInfoType.html">DiskTechPoolInfoType</a></li>
+                <li><a href="performance_DiskTechPoolKeyParamType.html">DiskTechPoolKeyParamType</a></li>
+                <li><a href="performance_DiskTechPoolKeyResultType.html">DiskTechPoolKeyResultType</a></li>
+                <li><a href="performance_DiskTechPoolMetric.html">DiskTechPoolMetric</a></li>
+                <li><a href="performance_DiskTechPoolParamType.html">DiskTechPoolParamType</a></li>
+                <li><a href="performance_DiskTechPoolResultType.html">DiskTechPoolResultType</a></li>
+                <li><a href="performance_DSEPoolKeyParamType.html">DSEPoolKeyParamType</a></li>
+                <li><a href="performance_DSEPoolMetric.html">DSEPoolMetric</a></li>
+                <li><a href="performance_DSEPoolParamType.html">DSEPoolParamType</a></li>
+                <li><a href="performance_DSEPoolResultType.html">DSEPoolResultType</a></li>
+                <li><a href="performance_EditPerformanceThresholdParam.html">EditPerformanceThresholdParam</a></li>
+                <li><a href="performance_EDSDirectorInfoType.html">EDSDirectorInfoType</a></li>
+                <li><a href="performance_EDSDirectorKeyParamType.html">EDSDirectorKeyParamType</a></li>
+                <li><a href="performance_EDSDirectorKeyResultType.html">EDSDirectorKeyResultType</a></li>
+                <li><a href="performance_EDSDirectorMetric.html">EDSDirectorMetric</a></li>
+                <li><a href="performance_EDSDirectorParamType.html">EDSDirectorParamType</a></li>
+                <li><a href="performance_EDSDirectorResultType.html">EDSDirectorResultType</a></li>
+                <li><a href="performance_EDSEmulationInfoType.html">EDSEmulationInfoType</a></li>
+                <li><a href="performance_EDSEmulationKeyParamType.html">EDSEmulationKeyParamType</a></li>
+                <li><a href="performance_EDSEmulationKeyResultType.html">EDSEmulationKeyResultType</a></li>
+                <li><a href="performance_EDSEmulationMetric.html">EDSEmulationMetric</a></li>
+                <li><a href="performance_EDSEmulationParamType.html">EDSEmulationParamType</a></li>
+                <li><a href="performance_EDSEmulationResultType.html">EDSEmulationResultType</a></li>
+                <li><a href="performance_ExternalDirectorInfoType.html">ExternalDirectorInfoType</a></li>
+                <li><a href="performance_ExternalDirectorKeyParamType.html">ExternalDirectorKeyParamType</a></li>
+                <li><a href="performance_ExternalDirectorKeyResultType.html">ExternalDirectorKeyResultType</a></li>
+                <li><a href="performance_ExternalDirectorMetric.html">ExternalDirectorMetric</a></li>
+                <li><a href="performance_ExternalDirectorParamType.html">ExternalDirectorParamType</a></li>
+                <li><a href="performance_ExternalDirectorResultType.html">ExternalDirectorResultType</a></li>
+                <li><a href="performance_ExternalDiskGroupInfoType.html">ExternalDiskGroupInfoType</a></li>
+                <li><a href="performance_ExternalDiskGroupKeyParamType.html">ExternalDiskGroupKeyParamType</a></li>
+                <li><a href="performance_ExternalDiskGroupKeyResultType.html">ExternalDiskGroupKeyResultType</a></li>
+                <li><a href="performance_ExternalDiskGroupMetric.html">ExternalDiskGroupMetric</a></li>
+                <li><a href="performance_ExternalDiskGroupParamType.html">ExternalDiskGroupParamType</a></li>
+                <li><a href="performance_ExternalDiskGroupResultType.html">ExternalDiskGroupResultType</a></li>
+                <li><a href="performance_ExternalDiskInfoType.html">ExternalDiskInfoType</a></li>
+                <li><a href="performance_ExternalDiskKeyParamType.html">ExternalDiskKeyParamType</a></li>
+                <li><a href="performance_ExternalDiskKeyResultType.html">ExternalDiskKeyResultType</a></li>
+                <li><a href="performance_ExternalDiskMetric.html">ExternalDiskMetric</a></li>
+                <li><a href="performance_ExternalDiskParamType.html">ExternalDiskParamType</a></li>
+                <li><a href="performance_ExternalDiskResultType.html">ExternalDiskResultType</a></li>
+                <li><a href="performance_FASTPolicyInfoType.html">FASTPolicyInfoType</a></li>
+                <li><a href="performance_FASTPolicyKeyParamType.html">FASTPolicyKeyParamType</a></li>
+                <li><a href="performance_FASTPolicyKeyResultType.html">FASTPolicyKeyResultType</a></li>
+                <li><a href="performance_FASTPolicyMetric.html">FASTPolicyMetric</a></li>
+                <li><a href="performance_FASTPolicyParamType.html">FASTPolicyParamType</a></li>
+                <li><a href="performance_FASTPolicyResultType.html">FASTPolicyResultType</a></li>
+                <li><a href="performance_FEDirectorByPortInfoType.html">FEDirectorByPortInfoType</a></li>
+                <li><a href="performance_FEDirectorByPortKeyParamType.html">FEDirectorByPortKeyParamType</a></li>
+                <li><a href="performance_FEDirectorByPortKeyResultType.html">FEDirectorByPortKeyResultType</a></li>
+                <li><a href="performance_FEDirectorByPortMetric.html">FEDirectorByPortMetric</a></li>
+                <li><a href="performance_FEDirectorByPortParamType.html">FEDirectorByPortParamType</a></li>
+                <li><a href="performance_FEDirectorByPortResultType.html">FEDirectorByPortResultType</a></li>
+                <li><a href="performance_FEDirectorInfoType.html">FEDirectorInfoType</a></li>
+                <li><a href="performance_FEDirectorKeyParamType.html">FEDirectorKeyParamType</a></li>
+                <li><a href="performance_FEDirectorKeyResultType.html">FEDirectorKeyResultType</a></li>
+                <li><a href="performance_FEDirectorMetric.html">FEDirectorMetric</a></li>
+                <li><a href="performance_FEDirectorParamType.html">FEDirectorParamType</a></li>
+                <li><a href="performance_FEDirectorResultType.html">FEDirectorResultType</a></li>
+                <li><a href="performance_FeEmulationInfoType.html">FeEmulationInfoType</a></li>
+                <li><a href="performance_FeEmulationKeyParamType.html">FeEmulationKeyParamType</a></li>
+                <li><a href="performance_FeEmulationKeyResultType.html">FeEmulationKeyResultType</a></li>
+                <li><a href="performance_FeEmulationMetric.html">FeEmulationMetric</a></li>
+                <li><a href="performance_FeEmulationParamType.html">FeEmulationParamType</a></li>
+                <li><a href="performance_FeEmulationResultType.html">FeEmulationResultType</a></li>
+                <li><a href="performance_FePortInfoType.html">FePortInfoType</a></li>
+                <li><a href="performance_FePortKeyParamType.html">FePortKeyParamType</a></li>
+                <li><a href="performance_FePortKeyResultType.html">FePortKeyResultType</a></li>
+                <li><a href="performance_FePortMetric.html">FePortMetric</a></li>
+                <li><a href="performance_FePortParamType.html">FePortParamType</a></li>
+                <li><a href="performance_FePortResultType.html">FePortResultType</a></li>
+                <li><a href="performance_FICONEmulationInfoType.html">FICONEmulationInfoType</a></li>
+                <li><a href="performance_FICONEmulationKeyParamType.html">FICONEmulationKeyParamType</a></li>
+                <li><a href="performance_FICONEmulationKeyResultType.html">FICONEmulationKeyResultType</a></li>
+                <li><a href="performance_FICONEmulationMetric.html">FICONEmulationMetric</a></li>
+                <li><a href="performance_FICONEmulationParamType.html">FICONEmulationParamType</a></li>
+                <li><a href="performance_FICONEmulationResultType.html">FICONEmulationResultType</a></li>
+                <li><a href="performance_FICONEmulationThreadInfoType.html">FICONEmulationThreadInfoType</a></li>
+                <li><a href="performance_FICONEmulationThreadKeyParamType.html">FICONEmulationThreadKeyParamType</a></li>
+                <li><a href="performance_FICONEmulationThreadKeyResultType.html">FICONEmulationThreadKeyResultType</a></li>
+                <li><a href="performance_FICONEmulationThreadMetric.html">FICONEmulationThreadMetric</a></li>
+                <li><a href="performance_FICONEmulationThreadParamType.html">FICONEmulationThreadParamType</a></li>
+                <li><a href="performance_FICONEmulationThreadResultType.html">FICONEmulationThreadResultType</a></li>
+                <li><a href="performance_FICONPortThreadInfoType.html">FICONPortThreadInfoType</a></li>
+                <li><a href="performance_FICONPortThreadKeyParamType.html">FICONPortThreadKeyParamType</a></li>
+                <li><a href="performance_FICONPortThreadKeyResultType.html">FICONPortThreadKeyResultType</a></li>
+                <li><a href="performance_FICONPortThreadMetric.html">FICONPortThreadMetric</a></li>
+                <li><a href="performance_FICONPortThreadParamType.html">FICONPortThreadParamType</a></li>
+                <li><a href="performance_FICONPortThreadResultType.html">FICONPortThreadResultType</a></li>
+                <li><a href="performance_HostInfoType.html">HostInfoType</a></li>
+                <li><a href="performance_HostKeyParamType.html">HostKeyParamType</a></li>
+                <li><a href="performance_HostKeyResultType.html">HostKeyResultType</a></li>
+                <li><a href="performance_HostKeyRootParamType.html">HostKeyRootParamType</a></li>
+                <li><a href="performance_HostMetric.html">HostMetric</a></li>
+                <li><a href="performance_HostParamType.html">HostParamType</a></li>
+                <li><a href="performance_HostResultType.html">HostResultType</a></li>
+                <li><a href="performance_IMDirectorInfoType.html">IMDirectorInfoType</a></li>
+                <li><a href="performance_IMDirectorKeyParamType.html">IMDirectorKeyParamType</a></li>
+                <li><a href="performance_IMDirectorKeyResultType.html">IMDirectorKeyResultType</a></li>
+                <li><a href="performance_IMDirectorMetric.html">IMDirectorMetric</a></li>
+                <li><a href="performance_IMDirectorParamType.html">IMDirectorParamType</a></li>
+                <li><a href="performance_IMDirectorResultType.html">IMDirectorResultType</a></li>
+                <li><a href="performance_IMEmulationInfoType.html">IMEmulationInfoType</a></li>
+                <li><a href="performance_IMEmulationKeyParamType.html">IMEmulationKeyParamType</a></li>
+                <li><a href="performance_IMEmulationKeyResultType.html">IMEmulationKeyResultType</a></li>
+                <li><a href="performance_IMEmulationMetric.html">IMEmulationMetric</a></li>
+                <li><a href="performance_IMEmulationParamType.html">IMEmulationParamType</a></li>
+                <li><a href="performance_IMEmulationResultType.html">IMEmulationResultType</a></li>
+                <li><a href="performance_InitiatorByPortInfoType.html">InitiatorByPortInfoType</a></li>
+                <li><a href="performance_InitiatorByPortKeyParamType.html">InitiatorByPortKeyParamType</a></li>
+                <li><a href="performance_InitiatorByPortKeyResultType.html">InitiatorByPortKeyResultType</a></li>
+                <li><a href="performance_InitiatorByPortKeyRootParamType.html">InitiatorByPortKeyRootParamType</a></li>
+                <li><a href="performance_InitiatorByPortMetric.html">InitiatorByPortMetric</a></li>
+                <li><a href="performance_InitiatorByPortParamType.html">InitiatorByPortParamType</a></li>
+                <li><a href="performance_InitiatorByPortResultType.html">InitiatorByPortResultType</a></li>
+                <li><a href="performance_InitiatorInfoType.html">InitiatorInfoType</a></li>
+                <li><a href="performance_InitiatorKeyParamType.html">InitiatorKeyParamType</a></li>
+                <li><a href="performance_InitiatorKeyResultType.html">InitiatorKeyResultType</a></li>
+                <li><a href="performance_InitiatorKeyRootParamType.html">InitiatorKeyRootParamType</a></li>
+                <li><a href="performance_InitiatorMetric.html">InitiatorMetric</a></li>
+                <li><a href="performance_InitiatorParamType.html">InitiatorParamType</a></li>
+                <li><a href="performance_InitiatorResultType.html">InitiatorResultType</a></li>
+                <li><a href="performance_ISCSIClientInfoType.html">ISCSIClientInfoType</a></li>
+                <li><a href="performance_ISCSIClientKeyParamType.html">ISCSIClientKeyParamType</a></li>
+                <li><a href="performance_ISCSIClientKeyResultType.html">ISCSIClientKeyResultType</a></li>
+                <li><a href="performance_ISCSIClientMetric.html">ISCSIClientMetric</a></li>
+                <li><a href="performance_ISCSIClientParamType.html">ISCSIClientParamType</a></li>
+                <li><a href="performance_ISCSIClientResultType.html">ISCSIClientResultType</a></li>
+                <li><a href="performance_ISCSITargetInfoType.html">ISCSITargetInfoType</a></li>
+                <li><a href="performance_ISCSITargetKeyParamType.html">ISCSITargetKeyParamType</a></li>
+                <li><a href="performance_ISCSITargetKeyResultType.html">ISCSITargetKeyResultType</a></li>
+                <li><a href="performance_ISCSITargetMetric.html">ISCSITargetMetric</a></li>
+                <li><a href="performance_ISCSITargetParamType.html">ISCSITargetParamType</a></li>
+                <li><a href="performance_ISCSITargetResultType.html">ISCSITargetResultType</a></li>
+                <li><a href="performance_KeyInfoType.html">KeyInfoType</a></li>
+                <li><a href="performance_KeyType.html">KeyType</a></li>
+                <li><a href="performance_ListPerformanceThresholdType.html">ListPerformanceThresholdType</a></li>
+                <li><a href="performance_PerformanceSummaryKeyParamType.html">PerformanceSummaryKeyParamType</a></li>
+                <li><a href="performance_PerformanceSummaryKeyResultType.html">PerformanceSummaryKeyResultType</a></li>
+                <li><a href="performance_PerformanceThresholdType.html">PerformanceThresholdType</a></li>
+                <li><a href="performance_PoolInfoType.html">PoolInfoType</a></li>
+                <li><a href="performance_PoolKeyResultType.html">PoolKeyResultType</a></li>
+                <li><a href="performance_PortGroupInfoType.html">PortGroupInfoType</a></li>
+                <li><a href="performance_PortGroupKeyParamType.html">PortGroupKeyParamType</a></li>
+                <li><a href="performance_PortGroupKeyResultType.html">PortGroupKeyResultType</a></li>
+                <li><a href="performance_PortGroupMetric.html">PortGroupMetric</a></li>
+                <li><a href="performance_PortGroupParamType.html">PortGroupParamType</a></li>
+                <li><a href="performance_PortGroupResultType.html">PortGroupResultType</a></li>
+                <li><a href="performance_ProjectionCategoryType.html">ProjectionCategoryType</a></li>
+                <li><a href="performance_RDFAInfoType.html">RDFAInfoType</a></li>
+                <li><a href="performance_RDFAKeyParamType.html">RDFAKeyParamType</a></li>
+                <li><a href="performance_RDFAKeyResultType.html">RDFAKeyResultType</a></li>
+                <li><a href="performance_RDFAMetric.html">RDFAMetric</a></li>
+                <li><a href="performance_RDFAParamType.html">RDFAParamType</a></li>
+                <li><a href="performance_RDFAResultType.html">RDFAResultType</a></li>
+                <li><a href="performance_RDFDirectorInfoType.html">RDFDirectorInfoType</a></li>
+                <li><a href="performance_RDFDirectorKeyParamType.html">RDFDirectorKeyParamType</a></li>
+                <li><a href="performance_RDFDirectorKeyResultType.html">RDFDirectorKeyResultType</a></li>
+                <li><a href="performance_RDFDirectorMetric.html">RDFDirectorMetric</a></li>
+                <li><a href="performance_RDFDirectorParamType.html">RDFDirectorParamType</a></li>
+                <li><a href="performance_RDFDirectorResultType.html">RDFDirectorResultType</a></li>
+                <li><a href="performance_RDFEmulationInfoType.html">RDFEmulationInfoType</a></li>
+                <li><a href="performance_RDFEmulationKeyParamType.html">RDFEmulationKeyParamType</a></li>
+                <li><a href="performance_RDFEmulationKeyResultType.html">RDFEmulationKeyResultType</a></li>
+                <li><a href="performance_RDFEmulationMetric.html">RDFEmulationMetric</a></li>
+                <li><a href="performance_RDFEmulationParamType.html">RDFEmulationParamType</a></li>
+                <li><a href="performance_RDFEmulationResultType.html">RDFEmulationResultType</a></li>
+                <li><a href="performance_RDFPortInfoType.html">RDFPortInfoType</a></li>
+                <li><a href="performance_RDFPortKeyParamType.html">RDFPortKeyParamType</a></li>
+                <li><a href="performance_RDFPortKeyResultType.html">RDFPortKeyResultType</a></li>
+                <li><a href="performance_RDFPortMetric.html">RDFPortMetric</a></li>
+                <li><a href="performance_RDFPortParamType.html">RDFPortParamType</a></li>
+                <li><a href="performance_RDFPortResultType.html">RDFPortResultType</a></li>
+                <li><a href="performance_RDFSInfoType.html">RDFSInfoType</a></li>
+                <li><a href="performance_RDFSKeyParamType.html">RDFSKeyParamType</a></li>
+                <li><a href="performance_RDFSKeyResultType.html">RDFSKeyResultType</a></li>
+                <li><a href="performance_RDFSMetric.html">RDFSMetric</a></li>
+                <li><a href="performance_RDFSParamType.html">RDFSParamType</a></li>
+                <li><a href="performance_RDFSResultType.html">RDFSResultType</a></li>
+                <li><a href="performance_SnapPoolKeyParamType.html">SnapPoolKeyParamType</a></li>
+                <li><a href="performance_SnapPoolMetric.html">SnapPoolMetric</a></li>
+                <li><a href="performance_SnapPoolParamType.html">SnapPoolParamType</a></li>
+                <li><a href="performance_SnapPoolResultType.html">SnapPoolResultType</a></li>
+                <li><a href="performance_SRPInfoType.html">SRPInfoType</a></li>
+                <li><a href="performance_SRPKeyParamType.html">SRPKeyParamType</a></li>
+                <li><a href="performance_SRPKeyResultType.html">SRPKeyResultType</a></li>
+                <li><a href="performance_SRPMetric.html">SRPMetric</a></li>
+                <li><a href="performance_SRPParamType.html">SRPParamType</a></li>
+                <li><a href="performance_SRPResultType.html">SRPResultType</a></li>
+                <li><a href="performance_SRPThinPoolKeyParamType.html">SRPThinPoolKeyParamType</a></li>
+                <li><a href="performance_StatInfoType.html">StatInfoType</a></li>
+                <li><a href="performance_StorageContainerInfoType.html">StorageContainerInfoType</a></li>
+                <li><a href="performance_StorageContainerKeyParamType.html">StorageContainerKeyParamType</a></li>
+                <li><a href="performance_StorageContainerKeyResultType.html">StorageContainerKeyResultType</a></li>
+                <li><a href="performance_StorageContainerMetric.html">StorageContainerMetric</a></li>
+                <li><a href="performance_StorageContainerParamType.html">StorageContainerParamType</a></li>
+                <li><a href="performance_StorageContainerResultType.html">StorageContainerResultType</a></li>
+                <li><a href="performance_StorageGroupByPoolKeyParamType.html">StorageGroupByPoolKeyParamType</a></li>
+                <li><a href="performance_StorageGroupByPoolMetric.html">StorageGroupByPoolMetric</a></li>
+                <li><a href="performance_StorageGroupByPoolParamType.html">StorageGroupByPoolParamType</a></li>
+                <li><a href="performance_StorageGroupByPoolResultType.html">StorageGroupByPoolResultType</a></li>
+                <li><a href="performance_StorageGroupByTierKeyParamType.html">StorageGroupByTierKeyParamType</a></li>
+                <li><a href="performance_StorageGroupByTierMetric.html">StorageGroupByTierMetric</a></li>
+                <li><a href="performance_StorageGroupByTierParamType.html">StorageGroupByTierParamType</a></li>
+                <li><a href="performance_StorageGroupByTierPerfKeyParamType.html">StorageGroupByTierPerfKeyParamType</a></li>
+                <li><a href="performance_StorageGroupByTierResultType.html">StorageGroupByTierResultType</a></li>
+                <li><a href="performance_StorageGroupInfoType.html">StorageGroupInfoType</a></li>
+                <li><a href="performance_StorageGroupKeyParamType.html">StorageGroupKeyParamType</a></li>
+                <li><a href="performance_StorageGroupKeyResultType.html">StorageGroupKeyResultType</a></li>
+                <li><a href="performance_StorageGroupMetric.html">StorageGroupMetric</a></li>
+                <li><a href="performance_StorageGroupParamType.html">StorageGroupParamType</a></li>
+                <li><a href="performance_StorageGroupResultType.html">StorageGroupResultType</a></li>
+                <li><a href="performance_StorageResourceByPoolKeyParamType.html">StorageResourceByPoolKeyParamType</a></li>
+                <li><a href="performance_StorageResourceByPoolMetric.html">StorageResourceByPoolMetric</a></li>
+                <li><a href="performance_StorageResourceByPoolParamType.html">StorageResourceByPoolParamType</a></li>
+                <li><a href="performance_StorageResourceByPoolResultType.html">StorageResourceByPoolResultType</a></li>
+                <li><a href="performance_StorageResourceInfoType.html">StorageResourceInfoType</a></li>
+                <li><a href="performance_StorageResourceKeyParamType.html">StorageResourceKeyParamType</a></li>
+                <li><a href="performance_StorageResourceKeyResultType.html">StorageResourceKeyResultType</a></li>
+                <li><a href="performance_StorageResourceMetric.html">StorageResourceMetric</a></li>
+                <li><a href="performance_StorageResourceParamType.html">StorageResourceParamType</a></li>
+                <li><a href="performance_StorageResourceResultType.html">StorageResourceResultType</a></li>
+                <li><a href="performance_StorageTierKeyParamType.html">StorageTierKeyParamType</a></li>
+                <li><a href="performance_StorageTierMetric.html">StorageTierMetric</a></li>
+                <li><a href="performance_StorageTierParamType.html">StorageTierParamType</a></li>
+                <li><a href="performance_StorageTierResultType.html">StorageTierResultType</a></li>
+                <li><a href="performance_ThinPoolKeyParamType.html">ThinPoolKeyParamType</a></li>
+                <li><a href="performance_ThinPoolMetric.html">ThinPoolMetric</a></li>
+                <li><a href="performance_ThinPoolParamType.html">ThinPoolParamType</a></li>
+                <li><a href="performance_ThinPoolResultType.html">ThinPoolResultType</a></li>
+                <li><a href="performance_ThinTierKeyParamType.html">ThinTierKeyParamType</a></li>
+                <li><a href="performance_ThinTierMetric.html">ThinTierMetric</a></li>
+                <li><a href="performance_ThinTierParamType.html">ThinTierParamType</a></li>
+                <li><a href="performance_ThinTierResultType.html">ThinTierResultType</a></li>
+                <li><a href="performance_ThresholdSeverity.html">ThresholdSeverity</a></li>
+                <li><a href="performance_TierByStorageGroupKeyParamType.html">TierByStorageGroupKeyParamType</a></li>
+                <li><a href="performance_TierByStorageGroupMetric.html">TierByStorageGroupMetric</a></li>
+                <li><a href="performance_TierByStorageGroupParamType.html">TierByStorageGroupParamType</a></li>
+                <li><a href="performance_TierByStorageGroupPerfKeyParamType.html">TierByStorageGroupPerfKeyParamType</a></li>
+                <li><a href="performance_TierByStorageGroupResultType.html">TierByStorageGroupResultType</a></li>
+                <li><a href="performance_TierInfoType.html">TierInfoType</a></li>
+                <li><a href="performance_TierKeyResultType.html">TierKeyResultType</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>PerformanceThresholdType</h1>
+      <table>
+        <tr>
+          <td align="right">Extends:</td>
+          <td><a href="common_ResultType.html">ResultType</a></td>
+        </tr>
+        <tr>
+          <td align="right">Namespace:</td>
+          <td>http://www.emc.com/em/2012/07/univmax/restapi/performance</td>
+        </tr>
+        <tr>
+          <td align="right">XML Schema:</td>
+          <td><a href="performance.xsd">performance.xsd</a></td>
+        </tr>
+      </table>
+      <p>
+            <p>Java class for PerformanceThresholdType complex type.
+
+<p>The following schema fragment specifies the expected content contained within this class.
+
+<pre>
+&lt;complexType name="PerformanceThresholdType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="metric" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="kpi" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="custom" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="alertError" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="firstThreshold" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="alertWarning" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="firstThresholdOccurrrences" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="firstThresholdSamples" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="firstThresholdSeverity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="secondThreshold" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdOccurrrences" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdSamples" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="secondThresholdSeverity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>
+          </p>
+
+      <h2>XML</h2>
+      <h3>Elements</h3>
+      <table>
+        <tr>
+          <th>name (type)</th>
+          <th>min/max<br/>occurs</th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>
+            metric (string)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            kpi (boolean)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            custom (boolean)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            alertError (boolean)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            firstThreshold (int)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            alertWarning (boolean)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            firstThresholdOccurrrences (int)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            firstThresholdSamples (int)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            firstThresholdSeverity (string)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            secondThreshold (int)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            secondThresholdOccurrrences (int)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            secondThresholdSamples (int)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            secondThresholdSeverity (string)
+          </td>
+          <td>0/1</td>
+          <td>
+          </td>
+        </tr>
+      </table>
+
+      <h2>JSON</h2>
+      <table>
+        <tr>
+          <th>property</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>metric</td>
+          <td>
+              metric (string)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>kpi</td>
+          <td>
+              kpi (boolean)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>custom</td>
+          <td>
+              custom (boolean)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>alertError</td>
+          <td>
+              alertError (boolean)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>firstThreshold</td>
+          <td>
+              firstThreshold (int)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>alertWarning</td>
+          <td>
+              alertWarning (boolean)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>firstThresholdOccurrrences</td>
+          <td>
+              firstThresholdOccurrrences (int)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>firstThresholdSamples</td>
+          <td>
+              firstThresholdSamples (int)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>firstThresholdSeverity</td>
+          <td>
+              firstThresholdSeverity (string)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>secondThreshold</td>
+          <td>
+              secondThreshold (int)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>secondThresholdOccurrrences</td>
+          <td>
+              secondThresholdOccurrrences (int)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>secondThresholdSamples</td>
+          <td>
+              secondThresholdSamples (int)
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>secondThresholdSeverity</td>
+          <td>
+              secondThresholdSeverity (string)
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

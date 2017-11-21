@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/83/provisioning" elementFormDefault="qualified" xmlns:provisioning83="http://www.emc.com/em/2012/07/univmax/restapi/83/provisioning" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="getVolumeParam" type="provisioning83:GetVolumeParamType"/>
+  <xs:complexType name="GetVolumeParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetVolumeParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetVolumeParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="wwn" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="emulation" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="ssid" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="disk_group" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="disk_technology" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="save_pool_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="save_pool_type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="data_pool_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="data_pool_type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="encapsulated_wwn" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="physical_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="volume_identifier" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="symmlun" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="allocated_percent" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="cap_tb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="cap_gb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="cap_mb" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="cap_cyl" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_masking_views" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_front_end_paths" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_pools" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="num_of_meta_members" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="virtual_volumes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="regular_volumes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="private_volumes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="available_thin_volumes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="available_thick_volumes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="tdev" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="thin_bcv" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="vdev" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bcv" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="ckd" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="as400" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="gatekeeper" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="data_volume" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="dld" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="drv" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="meta" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="meta_member" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="mapped" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="bound_tdev" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="reserved" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="pinned" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="encapsulated" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="associated" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="raid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="raid1" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="raid5" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="raid6" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="wwn" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="storageGroupId" type="xs:string" minOccurs="1"/>
+          <xs:element name="type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="emulation" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="ssid" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="disk_group" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="disk_technology" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="save_pool_name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="save_pool_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="data_pool_name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="data_pool_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="encapsulated_wwn" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="status" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="physical_name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="volume_identifier" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="symmlun" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="allocated_percent" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="cap_tb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="cap_gb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="cap_mb" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="cap_cyl" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_storage_groups" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_masking_views" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_front_end_paths" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_pools" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="num_of_meta_members" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="virtual_volumes" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="regular_volumes" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="private_volumes" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="available_thin_volumes" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="available_thick_volumes" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="tdev" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="thin_bcv" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="vdev" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="bcv" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ckd" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="as400" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="gatekeeper" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="data_volume" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="dld" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="drv" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="meta" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="meta_member" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="mapped" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="bound_tdev" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="reserved" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="pinned" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="encapsulated" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="associated" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="raid" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="raid1" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="raid5" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="raid6" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,5160 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Replication</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">Replication</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="rest.html">REST</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="resource_Replication.html">Replication</a>
+              <ul>
+                <li><a href="resource_Common.html">Common</a></li>
+                <li><a href="resource_Dsa.html">Dsa</a></li>
+                <li><a href="resource_Migration.html">Migration</a></li>
+                <li><a href="resource_Performance.html">Performance</a></li>
+                <li><a href="resource_Provisioning.html">Provisioning</a></li>
+                <li><a href="resource_Replication.html">Replication</a></li>
+                <li><a href="resource_SLO Provisioning.html">SLO Provisioning</a></li>
+                <li><a href="resource_System.html">System</a></li>
+                <li><a href="resource_VVol.html">VVol</a></li>
+                <li><a href="resource_Workload.html">Workload</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>Replication</h1>
+
+      <p></p>
+      <p>The following resources are applicable:</p>
+      <ul>
+        <li>
+        <a href="#path__81_replication_devicegroup_-deviceGroupId-.html">/81/replication/devicegroup/{deviceGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__81_replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html">/81/replication/symmetrix/{symmetrixId}/rdf_group/{rdfg_num}</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html">/82/replication/symmetrix/{symmetrixId}/rdf_group/{rdfg_num}</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_storagegroup.html">/82/replication/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html">/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html">/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group/{rdf_num}</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html">/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</a>
+        </li>
+        <li>
+        <a href="#path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html">/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_capabilities_symmetrix.html">/83/replication/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_devicegroup.html">/83/replication/devicegroup</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_devicegroup_-deviceGroupId-.html">/83/replication/devicegroup/{deviceGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_devicegroup_-deviceGroupId-_rdf_group.html">/83/replication/devicegroup/{deviceGroupId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix.html">/83/replication/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-.html">/83/replication/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_director.html">/83/replication/symmetrix/{symmetrixId}/rdf_director</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-.html">/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port.html">/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-.html">/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_rdf_group.html">/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_remote_port.html">/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/remote_port</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_group.html">/83/replication/symmetrix/{symmetrixId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-.html">/83/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume.html">/83/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume_-volumeId-.html">/83/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume/{volumeId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup.html">/83/replication/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group/{rdfgNumId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation/{generationNumber}</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_virtual_witness.html">/83/replication/symmetrix/{symmetrixId}/virtual_witness</a>
+        </li>
+        <li>
+        <a href="#path__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">/83/replication/symmetrix/{symmetrixId}/virtual_witness/{witnessNameId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_capabilities_symmetrix.html">/84/replication/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_devicegroup.html">/84/replication/devicegroup</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_devicegroup_-deviceGroupId-.html">/84/replication/devicegroup/{deviceGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_devicegroup_-deviceGroupId-_rdf_group.html">/84/replication/devicegroup/{deviceGroupId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix.html">/84/replication/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-.html">/84/replication/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_director.html">/84/replication/symmetrix/{symmetrixId}/rdf_director</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-.html">/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port.html">/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-.html">/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_rdf_group.html">/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_remote_port.html">/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/remote_port</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_group.html">/84/replication/symmetrix/{symmetrixId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-.html">/84/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume.html">/84/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume_-volumeId-.html">/84/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume/{volumeId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup.html">/84/replication/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group/{rdfgNumId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation/{generationNumber}</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_virtual_witness.html">/84/replication/symmetrix/{symmetrixId}/virtual_witness</a>
+        </li>
+        <li>
+        <a href="#path__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">/84/replication/symmetrix/{symmetrixId}/virtual_witness/{witnessNameId}</a>
+        </li>
+        <li>
+        <a href="#path__replication_capabilities_symmetrix.html">/replication/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__replication_devicegroup.html">/replication/devicegroup</a>
+        </li>
+        <li>
+        <a href="#path__replication_devicegroup_-deviceGroupId-.html">/replication/devicegroup/{deviceGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__replication_devicegroup_-deviceGroupId-_rdf_group.html">/replication/devicegroup/{deviceGroupId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix.html">/replication/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-.html">/replication/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_rdf_group.html">/replication/symmetrix/{symmetrixId}/rdf_group</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html">/replication/symmetrix/{symmetrixId}/rdf_group/{rdfg_num}</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_storagegroup.html">/replication/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html">/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html">/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html">/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</a>
+        </li>
+        <li>
+        <a href="#path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation/{generationNumber}</a>
+        </li>
+      </ul>
+        <a name="path__81_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h1>/81/replication/devicegroup/{deviceGroupId}</h1>
+      <a name="GETpath__81_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a particular Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            is the Device Group name that is being queried
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication81_replicationDeviceGroup.html">replicationDeviceGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Device Group</p>
+        <a name="path__81_replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html"></a>
+      <h1>/81/replication/symmetrix/{symmetrixId}/rdf_group/{rdfg_num}</h1>
+      <a name="GETpath__81_replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group details for a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfg_num</td>
+          <td>
+            the SRDF group number being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication81_replicationSymmetrixRdfGroup.html">replicationSymmetrixRdfGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group information</p>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/rdf_group/{rdfg_num}</h1>
+      <a name="GETpath__82_replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group details for a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfg_num</td>
+          <td>
+            the SRDF group number being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_rdfGroup.html">rdfGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group information</p>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__82_replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hasSrdf</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupList.html">storageGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <a name="GETpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroup.html">storageGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF Storage group names</p>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group</h1>
+      <a name="GETpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF Groups on a Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupRdfgList.html">storageGroupRdfgList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing a list of SRDF Protected Storage group names and SRDF Groups</p>
+      <a name="POSTpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h2>POST</h2>
+      <p>
+            create an SRDF pairing between this Storage Group and a new Storage Group on a remote Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the local array which will become the RDF1 side
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the local Storage Group which will be RDF'd
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupSrdfCreate.html">storageGroupSrdfCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the parameters required for the SRDF creation</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object and URI for the resource just created</p>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group/{rdf_num}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html">GET</a></li>
+        <li><a href="#PUTpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html">PUT</a></li>
+        <li><a href="#DELETEpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up an SRDF Protected Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdf_num</td>
+          <td>
+            the SRDF Group Number
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupRdfg.html">storageGroupRdfg</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF Storage group properties</p>
+      <a name="PUTpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call executes Storage Group level SRDF actions.  There are specific options for the action in the body object
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdf_num</td>
+          <td>
+            the SRDF Group Number
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupRdfUpdate.html">storageGroupRdfUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdf_num-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            delete SRDF pairing for a particular RDFG
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the local array for the RDF setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the local SG for the RDF setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdf_num</td>
+          <td>
+            the RDF group number that will be removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>half_delete</td>
+          <td>
+            is the command a Half Delete (as opposed to full)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hop2</td>
+          <td>
+            is this to run on the Hop2 leg
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>force</td>
+          <td>
+            is the force option to be used
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>symforce</td>
+          <td>
+            is the symforce option to be used, use this with care
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>star</td>
+          <td>
+            are there volumes in a Star configuration
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</h1>
+      <a name="POSTpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupSnapshotCreate.html">storageGroupSnapshotCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_snapVXSnapshotGeneration.html">snapVXSnapshotGeneration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h1>/82/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</h1>
+      <a name="POSTpath__82_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_storageGroupSnapshotGenCreate.html">storageGroupSnapshotGenCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication82_snapVXSnapshotGeneration.html">snapVXSnapshotGeneration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__83_replication_capabilities_symmetrix.html"></a>
+      <h1>/83/replication/capabilities/symmetrix</h1>
+      <a name="GETpath__83_replication_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Capability checker to see if SnapVX  or SRDF will execute on the Symmetrix arrays.  SnapVX is capability checked and license checked.  SRDF is capability checked, license checked and also checked to see if there are Device Groups associated with the array that can be managed.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_symmetrixCapabilityList.html">symmetrixCapabilityList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of Symmetrix and their ability to accept REST calls for SnapVX and SRDF</p>
+        <a name="path__83_replication_devicegroup.html"></a>
+      <h1>/83/replication/devicegroup</h1>
+      <a name="GETpath__83_replication_devicegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up the known Device Group names
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the request is being made to. This is the 12 digit Symmetrix ID.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_deviceGroupList.html">deviceGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing a list of Device Group names</p>
+        <a name="path__83_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h1>/83/replication/devicegroup/{deviceGroupId}</h1>
+      <a name="GETpath__83_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a particular Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            is the Device Group name that is being queried
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_deviceGroup.html">deviceGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Device Group</p>
+      <a name="PUTpath__83_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call executes a Device Group level SRDF actions.  There are specific options for the action in the body object
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            The Device Group name for the action being performed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_deviceGroupRdfUpdate.html">deviceGroupRdfUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>is the body of the request including the particular SRDF action, SRDF flags and SRDF group number to perform the action upon if required</p>
+        <a name="path__83_replication_devicegroup_-deviceGroupId-_rdf_group.html"></a>
+      <h1>/83/replication/devicegroup/{deviceGroupId}/rdf_group</h1>
+      <a name="GETpath__83_replication_devicegroup_-deviceGroupId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group numbers for a Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            the Device Group being looked at
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_deviceGroupRdfGroupList.html">deviceGroupRdfGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group numbers for STD and BCV local devices</p>
+        <a name="path__83_replication_symmetrix.html"></a>
+      <h1>/83/replication/symmetrix</h1>
+      <a name="GETpath__83_replication_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for Symmetrix IDs
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_symmetrixIdList.html">symmetrixIdList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the 12 digit local Symmetrix IDs</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_symmetrix.html">symmetrix</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the representation of the Symmetrix</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_director.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_director</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_director.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>online</td>
+          <td>
+            optional parameter to say if only online directors are sought
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfDirectorList.html">rdfDirectorList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>list of director names</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the name of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfDirector.html">rdfDirector</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the representation of the director</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the name of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>online</td>
+          <td>
+            optional parameter to say if only online ports are sought
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfDirectorPortList.html">rdfDirectorPortList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>list of port names</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the name of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>portId</td>
+          <td>
+            the number of the port being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfDirectorPort.html">rdfDirectorPort</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the representation of the port</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_rdf_group.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/rdf_group</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            return the SRDF group numbers which sit on this SRDF port
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the identity of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>portId</td>
+          <td>
+            the number of the port being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfDirectorPortRdfGroupList.html">rdfDirectorPortRdfGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the SRDF group numbers for this port</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_remote_port.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/remote_port</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_remote_port.html"></a>
+      <h2>GET</h2>
+      <p>
+            perform a fresh SRDF SAN scan from the requested local port
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symm to scan from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the ident of the director to scan from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>portId</td>
+          <td>
+            the port to scan from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfPortRemotePortsList.html">rdfPortRemotePortsList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the remote SRDF ports that can be seen</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_group.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_group</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for list of SRDF group labels
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit Symmetrix ID which will be used to query for its related SRDF group numbers
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfGroupLabelList.html">rdfGroupLabelList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the SRDF group labels</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group details for a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the SRDF group number being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfGroup.html">rdfGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group information</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the number of the RDFG being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfGroupDeviceList.html">rdfGroupDeviceList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>list of volume names in the RDFG</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume_-volumeId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume/{volumeId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume_-volumeId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the number of the RDFG being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>volumeId</td>
+          <td>
+            the name of the volume being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_rdfDevicePair.html">rdfDevicePair</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the pair details for the volume for this RDFG</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hasSrdf</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hasSnapshots</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupList.html">storageGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroup.html">storageGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF Storage group names</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group</h1>
+      <a name="POSTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupSrdfCreate.html">storageGroupSrdfCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF Groups on a Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupRdfgList.html">storageGroupRdfgList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing a list of SRDF Protected Storage group names and SRDF Groups</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group/{rdfgNumId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">GET</a></li>
+        <li><a href="#PUTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up an SRDF Protected Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the SRDF Group Number
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupRdfg.html">storageGroupRdfg</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF Storage group properties</p>
+      <a name="PUTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call executes Storage Group level SRDF actions.  There are specific options for the action in the body object
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the SRDF Group Number
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupRdfUpdate.html">storageGroupRdfUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            delete SRDF pairing for a particular RDFG
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the local array for the RDF setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the local SG for the RDF setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the RDF group number that will be removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>half_delete</td>
+          <td>
+            is the command a Half Delete (as opposed to full)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hop2</td>
+          <td>
+            is this to run on the Hop2 leg
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>force</td>
+          <td>
+            is the force option to be used
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>symforce</td>
+          <td>
+            is the symforce option to be used, use this with care
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>star</td>
+          <td>
+            are there volumes in a Star configuration
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the snapshot names for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupSnapshotList.html">storageGroupSnapshotList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of snapshot names</p>
+      <a name="POSTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>POST</h2>
+      <p>
+            starting 8.2 handling
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupSnapshotCreate.html">storageGroupSnapshotCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets a snapshot name and generation count information for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the name of the snapshot being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_snapVXSnapshot.html">snapVXSnapshot</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the snapshot name and generation count</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the snapshot generation numbers for a Storage Group snapshot.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the name of the snapshot being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupSnapshotGenList.html">storageGroupSnapshotGenList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of snapshot generation numbers</p>
+      <a name="POSTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupSnapshotGenCreate.html">storageGroupSnapshotGenCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation/{generationNumber}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">GET</a></li>
+        <li><a href="#PUTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">PUT</a></li>
+        <li><a href="#DELETEpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the generation details for a Storage Group snapshot generation number.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_snapVXSnapshotGeneration.html">snapVXSnapshotGeneration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the details of the snapshot generation</p>
+      <a name="PUTpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_storageGroupSnapshotGenUpdate.html">storageGroupSnapshotGenUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__83_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call terminates a snapshot generation.  If the snapshot generation is restored, the restored
+session will be terminated.  If there is no restore session associated with the snapshot generation,
+the generation itself will be terminated.  If it is not known if the generation is restored before
+issuing the DELETE command, performing a GET for the generations after a successful DELETE will indicate
+if the generation still exists (a restore was terminated) or if the generation is gone (the original
+generation was terminated).
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>force</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>symforce</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>star</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_virtual_witness.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/virtual_witness</h1>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_virtual_witness.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_virtualWitnessNamesList.html">virtualWitnessNamesList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="POSTpath__83_replication_symmetrix_-symmetrixId-_virtual_witness.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array which is being configured with the Virtual Witness
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_virtualWitnessAdd.html">virtualWitnessAdd</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>the parameters required to add a Virtual Witness</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the HTTP response</p>
+        <a name="path__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h1>/83/replication/symmetrix/{symmetrixId}/virtual_witness/{witnessNameId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">GET</a></li>
+        <li><a href="#PUTpath__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>witnessNameId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_virtualWitness.html">virtualWitness</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="PUTpath__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array which is being updated with the Virtual Witness
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>witnessNameId</td>
+          <td>
+            the name of thw Virtual Witness being updated
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication83_virtualWitnessUpdate.html">virtualWitnessUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>the parameters required to update the Virtual Witness</p>
+      <a name="DELETEpath__83_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array which is having the Virtual Witness removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>witnessNameId</td>
+          <td>
+            the name of thw Virtual Witness being removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_replication_capabilities_symmetrix.html"></a>
+      <h1>/84/replication/capabilities/symmetrix</h1>
+      <a name="GETpath__84_replication_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Capability checker to see if SnapVX  or SRDF will execute on the Symmetrix arrays.  SnapVX is capability checked and license checked.  SRDF is capability checked, license checked and also checked to see if there are Device Groups associated with the array that can be managed.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_symmetrixCapabilityList.html">symmetrixCapabilityList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of Symmetrix and their ability to accept REST calls for SnapVX and SRDF</p>
+        <a name="path__84_replication_devicegroup.html"></a>
+      <h1>/84/replication/devicegroup</h1>
+      <a name="GETpath__84_replication_devicegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up the known Device Group names
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the request is being made to. This is the 12 digit Symmetrix ID.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_deviceGroupList.html">deviceGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing a list of Device Group names</p>
+        <a name="path__84_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h1>/84/replication/devicegroup/{deviceGroupId}</h1>
+      <a name="GETpath__84_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a particular Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            is the Device Group name that is being queried
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_deviceGroup.html">deviceGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Device Group</p>
+      <a name="PUTpath__84_replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call executes a Device Group level SRDF actions.  There are specific options for the action in the body object
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            The Device Group name for the action being performed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_deviceGroupRdfUpdate.html">deviceGroupRdfUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>is the body of the request including the particular SRDF action, SRDF flags and SRDF group number to perform the action upon if required</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_replication_devicegroup_-deviceGroupId-_rdf_group.html"></a>
+      <h1>/84/replication/devicegroup/{deviceGroupId}/rdf_group</h1>
+      <a name="GETpath__84_replication_devicegroup_-deviceGroupId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group numbers for a Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            the Device Group being looked at
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_deviceGroupRdfGroupList.html">deviceGroupRdfGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group numbers for STD and BCV local devices</p>
+        <a name="path__84_replication_symmetrix.html"></a>
+      <h1>/84/replication/symmetrix</h1>
+      <a name="GETpath__84_replication_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for Symmetrix IDs
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_symmetrixIdList.html">symmetrixIdList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the 12 digit local Symmetrix IDs</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_symmetrix.html">symmetrix</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the representation of the Symmetrix</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_director.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_director</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_director.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>online</td>
+          <td>
+            optional parameter to say if only online directors are sought
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfDirectorList.html">rdfDirectorList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>list of director names</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the name of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfDirector.html">rdfDirector</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the representation of the director</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the name of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>online</td>
+          <td>
+            optional parameter to say if only online ports are sought
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfDirectorPortList.html">rdfDirectorPortList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>list of port names</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the name of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>portId</td>
+          <td>
+            the number of the port being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfDirectorPort.html">rdfDirectorPort</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the representation of the port</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_rdf_group.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/rdf_group</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            return the SRDF group numbers which sit on this SRDF port
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the identity of the director being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>portId</td>
+          <td>
+            the number of the port being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfDirectorPortRdfGroupList.html">rdfDirectorPortRdfGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the SRDF group numbers for this port</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_remote_port.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_director/{directorId}/port/{portId}/remote_port</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_director_-directorId-_port_-portId-_remote_port.html"></a>
+      <h2>GET</h2>
+      <p>
+            perform a fresh SRDF SAN scan from the requested local port
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symm to scan from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>directorId</td>
+          <td>
+            the ident of the director to scan from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>portId</td>
+          <td>
+            the port to scan from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfPortRemotePortsList.html">rdfPortRemotePortsList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the remote SRDF ports that can be seen</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_group.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_group</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for list of SRDF group labels
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit Symmetrix ID which will be used to query for its related SRDF group numbers
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfGroupLabelList.html">rdfGroupLabelList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the SRDF group labels</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group details for a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the SRDF group number being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfGroup.html">rdfGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group information</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the number of the RDFG being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfGroupDeviceList.html">rdfGroupDeviceList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>list of volume names in the RDFG</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume_-volumeId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/rdf_group/{rdfgNumId}/volume/{volumeId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_rdf_group_-rdfgNumId-_volume_-volumeId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the ID of the Symmetrix being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the number of the RDFG being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>volumeId</td>
+          <td>
+            the name of the volume being looked up
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_rdfDevicePair.html">rdfDevicePair</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the pair details for the volume for this RDFG</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hasSrdf</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hasSnapshots</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupList.html">storageGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroup.html">storageGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF Storage group names</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group</h1>
+      <a name="POSTpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupSrdfCreate.html">storageGroupSrdfCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF Groups on a Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupRdfgList.html">storageGroupRdfgList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing a list of SRDF Protected Storage group names and SRDF Groups</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/rdf_group/{rdfgNumId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">GET</a></li>
+        <li><a href="#PUTpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up an SRDF Protected Storage Groups on a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the SRDF Group Number
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupRdfg.html">storageGroupRdfg</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF Storage group properties</p>
+      <a name="PUTpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call executes Storage Group level SRDF actions.  There are specific options for the action in the body object
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF storage groups
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the ID of the SRDF Storage Group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the SRDF Group Number
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupRdfUpdate.html">storageGroupRdfUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_rdf_group_-rdfgNumId-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            delete SRDF pairing for a particular RDFG
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the local array for the RDF setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the local SG for the RDF setup
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfgNumId</td>
+          <td>
+            the RDF group number that will be removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>half_delete</td>
+          <td>
+            is the command a Half Delete (as opposed to full)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hop2</td>
+          <td>
+            is this to run on the Hop2 leg
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>force</td>
+          <td>
+            is the force option to be used
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>symforce</td>
+          <td>
+            is the symforce option to be used, use this with care
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>star</td>
+          <td>
+            are there volumes in a Star configuration
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>bypass</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the snapshot names for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupSnapshotList.html">storageGroupSnapshotList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of snapshot names</p>
+      <a name="POSTpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>POST</h2>
+      <p>
+            starting 8.2 handling
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupSnapshotCreate.html">storageGroupSnapshotCreate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets a snapshot name and generation count information for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the name of the snapshot being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_snapVXSnapshot.html">snapVXSnapshot</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the snapshot name and generation count</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the snapshot generation numbers for a Storage Group snapshot.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the name of the snapshot being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupSnapshotGenList.html">storageGroupSnapshotGenList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of snapshot generation numbers</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation/{generationNumber}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">GET</a></li>
+        <li><a href="#PUTpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">PUT</a></li>
+        <li><a href="#DELETEpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the generation details for a Storage Group snapshot generation number.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_snapVXSnapshotGeneration.html">snapVXSnapshotGeneration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the details of the snapshot generation</p>
+      <a name="PUTpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_storageGroupSnapshotGenUpdate.html">storageGroupSnapshotGenUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__84_replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call terminates a snapshot generation.  If the snapshot generation is restored, the restored
+session will be terminated.  If there is no restore session associated with the snapshot generation,
+the generation itself will be terminated.  If it is not known if the generation is restored before
+issuing the DELETE command, performing a GET for the generations after a successful DELETE will indicate
+if the generation still exists (a restore was terminated) or if the generation is gone (the original
+generation was terminated).
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>force</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>symforce</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>star</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_virtual_witness.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/virtual_witness</h1>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_virtual_witness.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_virtualWitnessNamesList.html">virtualWitnessNamesList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="POSTpath__84_replication_symmetrix_-symmetrixId-_virtual_witness.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array which is being configured with the Virtual Witness
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_virtualWitnessAdd.html">virtualWitnessAdd</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the parameters required to add a Virtual Witness</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_virtualWitness.html">virtualWitness</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the HTTP response</p>
+        <a name="path__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h1>/84/replication/symmetrix/{symmetrixId}/virtual_witness/{witnessNameId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">GET</a></li>
+        <li><a href="#PUTpath__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">PUT</a></li>
+        <li><a href="#DELETEpath__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>witnessNameId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_virtualWitness.html">virtualWitness</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="PUTpath__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array which is being updated with the Virtual Witness
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>witnessNameId</td>
+          <td>
+            the name of thw Virtual Witness being updated
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication84_virtualWitnessUpdate.html">virtualWitnessUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the parameters required to update the Virtual Witness</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__84_replication_symmetrix_-symmetrixId-_virtual_witness_-witnessNameId-.html"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            array which is having the Virtual Witness removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>witnessNameId</td>
+          <td>
+            the name of thw Virtual Witness being removed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__replication_capabilities_symmetrix.html"></a>
+      <h1>/replication/capabilities/symmetrix</h1>
+      <a name="GETpath__replication_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Capability checker to see if SnapVX  or SRDF will execute on the Symmetrix arrays.  SnapVX is capability checked and license checked.  SRDF is capability checked, license checked and also checked to see if there are Device Groups associated with the array that can be managed.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixCapabilityList.html">replicationSymmetrixCapabilityList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of Symmetrix and their ability to accept REST calls for SnapVX and SRDF</p>
+        <a name="path__replication_devicegroup.html"></a>
+      <h1>/replication/devicegroup</h1>
+      <a name="GETpath__replication_devicegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up the known Device Group names
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the request is being made to. This is the 12 digit Symmetrix ID.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationDeviceGroupList.html">replicationDeviceGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing a list of Device Group names</p>
+        <a name="path__replication_devicegroup_-deviceGroupId-.html"></a>
+      <h1>/replication/devicegroup/{deviceGroupId}</h1>
+      <a name="GETpath__replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for a particular Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            is the Device Group name that is being queried
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationDeviceGroup.html">replicationDeviceGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Device Group</p>
+      <a name="PUTpath__replication_devicegroup_-deviceGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call executes a Device Group level SRDF actions.  There are specific options for the action in the body object
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            The Device Group name for the action being performed
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_rdfDeviceGroupUpdate.html">rdfDeviceGroupUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>is the body of the request including the particular SRDF action, SRDF flags and SRDF group number to perform the action upon if required</p>
+        <a name="path__replication_devicegroup_-deviceGroupId-_rdf_group.html"></a>
+      <h1>/replication/devicegroup/{deviceGroupId}/rdf_group</h1>
+      <a name="GETpath__replication_devicegroup_-deviceGroupId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group numbers for a Device Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>deviceGroupId</td>
+          <td>
+            the Device Group being looked at
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationDeviceGroupRdfGroupList.html">replicationDeviceGroupRdfGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group numbers for STD and BCV local devices</p>
+        <a name="path__replication_symmetrix.html"></a>
+      <h1>/replication/symmetrix</h1>
+      <a name="GETpath__replication_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for Symmetrix IDs
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixList.html">replicationSymmetrixList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the 12 digit local Symmetrix IDs</p>
+        <a name="path__replication_symmetrix_-symmetrixId-.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call retrieves a Symmetrix when given a valid ID
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit Symmetrix ID for the Symmetrix being looked for.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrix.html">replicationSymmetrix</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the representation of the Symmetrix.</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_rdf_group.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/rdf_group</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_rdf_group.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call queries for list of SRDF group labels
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit Symmetrix ID which will be used to query for its related SRDF group numbers
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixRdfGroupLabelList.html">replicationSymmetrixRdfGroupLabelList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the SRDF group labels</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/rdf_group/{rdfg_num}</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_rdf_group_-rdfg_num-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call looks up SRDF group details for a Symmetrix
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the 12 digit local Symmetrix ID which will be used to query for the SRDF group
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rdfg_num</td>
+          <td>
+            the SRDF group number being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixRdfGroup.html">replicationSymmetrixRdfGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>object containing SRDF group information</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets Storage Group names for a Symmetrix.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the request is being made to.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>hasSnapshots</td>
+          <td>
+            optional parameter to narrow down full SG names list.  True means SGs with snapshot count > 0, False means SGs with snapshot count = 0, not specified means all SGs/
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixStorageGroupList.html">replicationSymmetrixStorageGroupList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of Storage Group names</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets a Storage Group with information relating to SnapVX.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixStorageGroup.html">replicationSymmetrixStorageGroup</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the Storage Group representation</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the snapshot names for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixStorageGroupSnapshotList.html">replicationSymmetrixStorageGroupSnapshotList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of snapshot names</p>
+      <a name="POSTpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call creates a Snapshot of the Storage Group
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group to be snapshotted
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_symmetrixStorageGroupSnapshotEstablish.html">symmetrixStorageGroupSnapshotEstablish</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the parameters needed to create the Snapshot</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_symmetrixStorageGroupSnapshotEstablishResult.html">symmetrixStorageGroupSnapshotEstablishResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the success status of the action and an error string if required</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}</h1>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets a snapshot name and generation count information for a Storage Group.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the name of the snapshot being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixStorageGroupSnapshot.html">replicationSymmetrixStorageGroupSnapshot</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the snapshot name and generation count</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation</h1>
+      <a name="POSTpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call establishes a new generation of a SnapVX snapshot for a particular source Storage Group.  This new generation will be generation 0 of the snapshot name.  Any already existing generations for that snapshot name will have their generation numbers incremented by one.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name that the snapshot is taken from
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_symmetrixStorageGroupSnapshotGenEstablish.html">symmetrixStorageGroupSnapshotGenEstablish</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>is the body of the request</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_symmetrixStorageGroupSnapshotGenEstablishResult.html">symmetrixStorageGroupSnapshotGenEstablishResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the success status of the action and an error string if required</p>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the snapshot generation numbers for a Storage Group snapshot.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the name of the snapshot being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixStorageGroupSnapshotGenList.html">replicationSymmetrixStorageGroupSnapshotGenList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the list of snapshot generation numbers</p>
+        <a name="path__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h1>/replication/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/snapshot/{snapshotId}/generation/{generationNumber}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">GET</a></li>
+        <li><a href="#PUTpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">PUT</a></li>
+        <li><a href="#DELETEpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html">DELETE</a></li>
+      </ul>
+      <a name="GETpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call gets the generation details for a Storage Group snapshot generation number.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being looked for
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_replicationSymmetrixStorageGroupSnapshotGen.html">replicationSymmetrixStorageGroupSnapshotGen</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the object containing the details of the snapshot generation</p>
+      <a name="PUTpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call performs actions on existing snapshot generations
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_replication_symmetrixStorageGroupSnapshotGenUpdate.html">symmetrixStorageGroupSnapshotGenUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the details of the action being performed on the snapshot and the corresponding parameters</p>
+      <a name="DELETEpath__replication_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_snapshot_-snapshotId-_generation_-generationNumber-.html"></a>
+      <h2>DELETE</h2>
+      <p>
+            This call terminates a snapshot generation.  If the snapshot generation is restored, the restored
+session will be terminated.  If there is no restore session associated with the snapshot generation,
+the generation itself will be terminated.  If it is not known if the generation is restored before
+issuing the DELETE command, performing a GET for the generations after a successful DELETE will indicate
+if the generation still exists (a restore was terminated) or if the generation is gone (the original
+generation was terminated).
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            the Symmetrix that the Storage Group is on.  This is the 12 digit Symmetrix ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            the Storage Group name for the group being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>snapshotId</td>
+          <td>
+            the snapshot name being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>generationNumber</td>
+          <td>
+            the snapshot generation being acted upon
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

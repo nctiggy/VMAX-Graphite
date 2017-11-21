@@ -1,0 +1,4818 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Performance</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">Performance</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="rest.html">REST</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="resource_Performance.html">Performance</a>
+              <ul>
+                <li><a href="resource_Common.html">Common</a></li>
+                <li><a href="resource_Dsa.html">Dsa</a></li>
+                <li><a href="resource_Migration.html">Migration</a></li>
+                <li><a href="resource_Performance.html">Performance</a></li>
+                <li><a href="resource_Provisioning.html">Provisioning</a></li>
+                <li><a href="resource_Replication.html">Replication</a></li>
+                <li><a href="resource_SLO Provisioning.html">SLO Provisioning</a></li>
+                <li><a href="resource_System.html">System</a></li>
+                <li><a href="resource_VVol.html">VVol</a></li>
+                <li><a href="resource_Workload.html">Workload</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>Performance</h1>
+
+      <p></p>
+      <p>The following resources are applicable:</p>
+      <ul>
+        <li class="deprecated">
+        <a href="#path__81_performance_Host_keys.html">/81/performance/Host/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_Host_metrics.html">/81/performance/Host/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_Initiator_keys.html">/81/performance/Initiator/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_Initiator_metrics.html">/81/performance/Initiator/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_InitiatorByPort_keys.html">/81/performance/InitiatorByPort/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_InitiatorByPort_metrics.html">/81/performance/InitiatorByPort/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_ISCSIClient_keys.html">/81/performance/ISCSIClient/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_ISCSIClient_metrics.html">/81/performance/ISCSIClient/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_ISCSITarget_keys.html">/81/performance/ISCSITarget/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__81_performance_ISCSITarget_metrics.html">/81/performance/ISCSITarget/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__82_performance_StorageContainer_keys.html">/82/performance/StorageContainer/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__82_performance_StorageContainer_metrics.html">/82/performance/StorageContainer/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__82_performance_StorageResource_keys.html">/82/performance/StorageResource/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__82_performance_StorageResource_metrics.html">/82/performance/StorageResource/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__82_performance_StorageResourceByPool_keys.html">/82/performance/StorageResourceByPool/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__82_performance_StorageResourceByPool_metrics.html">/82/performance/StorageResourceByPool/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__83_performance_threshold_list_-category-.html">/83/performance/threshold/list/{category}</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__83_performance_threshold_update_-category-.html">/83/performance/threshold/update/{category}</a>
+        </li>
+        <li>
+        <a href="#path__performance_Array_alerts.html">/performance/Array/alerts</a>
+        </li>
+        <li>
+        <a href="#path__performance_Array_keys.html">/performance/Array/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Array_metrics.html">/performance/Array/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Array_registration_-symmetrixId-.html">/performance/Array/registration/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__performance_BEDirector_keys.html">/performance/BEDirector/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_BEDirector_metrics.html">/performance/BEDirector/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_BeEmulation_keys.html">/performance/BeEmulation/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_BeEmulation_metrics.html">/performance/BeEmulation/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_BEPort_keys.html">/performance/BEPort/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_BEPort_metrics.html">/performance/BEPort/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Board_keys.html">/performance/Board/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Board_metrics.html">/performance/Board/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_CachePartition_keys.html">/performance/CachePartition/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_CachePartition_metrics.html">/performance/CachePartition/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Core_keys.html">/performance/Core/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Core_metrics.html">/performance/Core/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Database_keys.html">/performance/Database/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Database_metrics.html">/performance/Database/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_DatabaseByPool_keys.html">/performance/DatabaseByPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_DatabaseByPool_metrics.html">/performance/DatabaseByPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_daystofull.html">/performance/daystofull</a>
+        </li>
+        <li>
+        <a href="#path__performance_DeviceGroup_keys.html">/performance/DeviceGroup/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_DeviceGroup_metrics.html">/performance/DeviceGroup/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Disk_keys.html">/performance/Disk/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Disk_metrics.html">/performance/Disk/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_DiskGroup_keys.html">/performance/DiskGroup/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_DiskGroup_metrics.html">/performance/DiskGroup/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_DiskTechPool_keys.html">/performance/DiskTechPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_DiskTechPool_metrics.html">/performance/DiskTechPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_DSEPool_keys.html">/performance/DSEPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_DSEPool_metrics.html">/performance/DSEPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_EDSDirector_keys.html">/performance/EDSDirector/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_EDSDirector_metrics.html">/performance/EDSDirector/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_EDSEmulation_keys.html">/performance/EDSEmulation/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_EDSEmulation_metrics.html">/performance/EDSEmulation/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_ExternalDirector_keys.html">/performance/ExternalDirector/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ExternalDirector_metrics.html">/performance/ExternalDirector/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_ExternalDisk_keys.html">/performance/ExternalDisk/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ExternalDisk_metrics.html">/performance/ExternalDisk/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_ExternalDiskGroup_keys.html">/performance/ExternalDiskGroup/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ExternalDiskGroup_metrics.html">/performance/ExternalDiskGroup/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__performance_FASTPolicy_keys.html">/performance/FASTPolicy/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__performance_FASTPolicy_metrics.html">/performance/FASTPolicy/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_FEDirector_keys.html">/performance/FEDirector/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_FEDirector_metrics.html">/performance/FEDirector/metrics</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__performance_FEDirectorByPort_keys.html">/performance/FEDirectorByPort/keys</a>
+        </li>
+        <li class="deprecated">
+        <a href="#path__performance_FEDirectorByPort_metrics.html">/performance/FEDirectorByPort/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_FeEmulation_keys.html">/performance/FeEmulation/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_FeEmulation_metrics.html">/performance/FeEmulation/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_FEPort_keys.html">/performance/FEPort/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_FEPort_metrics.html">/performance/FEPort/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_FiconEmulation_keys.html">/performance/FiconEmulation/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_FiconEmulation_metrics.html">/performance/FiconEmulation/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_FiconEmulationThread_keys.html">/performance/FiconEmulationThread/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_FiconEmulationThread_metrics.html">/performance/FiconEmulationThread/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_FiconPortThread_keys.html">/performance/FiconPortThread/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_FiconPortThread_metrics.html">/performance/FiconPortThread/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Host_keys.html">/performance/Host/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Host_metrics.html">/performance/Host/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_IMDirector_keys.html">/performance/IMDirector/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_IMDirector_metrics.html">/performance/IMDirector/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_IMEmulation_keys.html">/performance/IMEmulation/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_IMEmulation_metrics.html">/performance/IMEmulation/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Initiator_keys.html">/performance/Initiator/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_Initiator_metrics.html">/performance/Initiator/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_InitiatorByPort_keys.html">/performance/InitiatorByPort/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_InitiatorByPort_metrics.html">/performance/InitiatorByPort/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_IPInterface_keys.html">/performance/IPInterface/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_IPInterface_metrics.html">/performance/IPInterface/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_ISCSITarget_keys.html">/performance/ISCSITarget/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ISCSITarget_metrics.html">/performance/ISCSITarget/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_PortGroup_keys.html">/performance/PortGroup/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_PortGroup_metrics.html">/performance/PortGroup/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_projection_metrics.html">/performance/projection/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFA_keys.html">/performance/RDFA/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFA_metrics.html">/performance/RDFA/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFDirector_keys.html">/performance/RDFDirector/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFDirector_metrics.html">/performance/RDFDirector/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFEmulation_keys.html">/performance/RDFEmulation/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFEmulation_metrics.html">/performance/RDFEmulation/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFPort_keys.html">/performance/RDFPort/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFPort_metrics.html">/performance/RDFPort/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFS_keys.html">/performance/RDFS/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_RDFS_metrics.html">/performance/RDFS/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Settings_importFiles.html">/performance/Settings/importFiles</a>
+        </li>
+        <li>
+        <a href="#path__performance_SnapPool_keys.html">/performance/SnapPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_SnapPool_metrics.html">/performance/SnapPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_SRP_keys.html">/performance/SRP/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_SRP_metrics.html">/performance/SRP/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_SRPThinPool_keys.html">/performance/SRPThinPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageContainer_keys.html">/performance/StorageContainer/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageContainer_metrics.html">/performance/StorageContainer/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroup_keys.html">/performance/StorageGroup/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroup_metrics.html">/performance/StorageGroup/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroupByPool_keys.html">/performance/StorageGroupByPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroupByPool_metrics.html">/performance/StorageGroupByPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroupByTier_keys.html">/performance/StorageGroupByTier/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroupByTier_metrics.html">/performance/StorageGroupByTier/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageGroupByTier_perf_keys.html">/performance/StorageGroupByTier/perf/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageResource_keys.html">/performance/StorageResource/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageResource_metrics.html">/performance/StorageResource/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageResourceByPool_keys.html">/performance/StorageResourceByPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageResourceByPool_metrics.html">/performance/StorageResourceByPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageTier_keys.html">/performance/StorageTier/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_StorageTier_metrics.html">/performance/StorageTier/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_Summary_keys.html">/performance/Summary/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ThinPool_keys.html">/performance/ThinPool/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ThinPool_metrics.html">/performance/ThinPool/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_ThinTier_keys.html">/performance/ThinTier/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_ThinTier_metrics.html">/performance/ThinTier/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_threshold_categories.html">/performance/threshold/categories</a>
+        </li>
+        <li>
+        <a href="#path__performance_threshold_list_-category-.html">/performance/threshold/list/{category}</a>
+        </li>
+        <li>
+        <a href="#path__performance_threshold_update_-category-.html">/performance/threshold/update/{category}</a>
+        </li>
+        <li>
+        <a href="#path__performance_TierByStorageGroup_keys.html">/performance/TierByStorageGroup/keys</a>
+        </li>
+        <li>
+        <a href="#path__performance_TierByStorageGroup_metrics.html">/performance/TierByStorageGroup/metrics</a>
+        </li>
+        <li>
+        <a href="#path__performance_TierByStorageGroup_perf_keys.html">/performance/TierByStorageGroup/perf/keys</a>
+        </li>
+      </ul>
+        <a name="path__81_performance_Host_keys.html"></a>
+      <h1>/81/performance/Host/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_Host_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Deprecated: The call queries for a list of hosts for the specific symmetrix.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi/performance/Host/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_hostKeyParam.html">hostKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_hostKeyParam.html">HostKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IHostKey and their available time ranges of performance data.</p>
+        <a name="path__81_performance_Host_metrics.html"></a>
+      <h1>/81/performance/Host/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_Host_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries a list of performance data for a specific host and specific metrics at a specific time ranges.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi/performance/Host/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_hostParam.html">hostParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_hostParam.html">HostParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__81_performance_Initiator_keys.html"></a>
+      <h1>/81/performance/Initiator/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_Initiator_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries for a list of initiators for the specific symmetrix.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/Initiator/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_initiatorKeyParam.html">initiatorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorKeyParam.html">InitiatorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IInitiatorKey and their available time ranges of performance data.</p>
+        <a name="path__81_performance_Initiator_metrics.html"></a>
+      <h1>/81/performance/Initiator/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_Initiator_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Deprecated: The call queries a list of performance data for a specific initiator and specific metrics at a specific time ranges.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/Initiator/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_initiatorParam.html">initiatorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorParam.html">InitiatorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__81_performance_InitiatorByPort_keys.html"></a>
+      <h1>/81/performance/InitiatorByPort/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_InitiatorByPort_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Deprecated: The call queries for a list of initiatorByPorts for the specific symmetrix.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/InitiatorByPort/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_initiatorByPortKeyParam.html">initiatorByPortKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorByPortKeyParam.html">InitiatorByPortKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IInitiatorByPortKey and their available time ranges of performance data.</p>
+        <a name="path__81_performance_InitiatorByPort_metrics.html"></a>
+      <h1>/81/performance/InitiatorByPort/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_InitiatorByPort_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprcated: The call queries a list of performance data for a specific initiatorByPort and specific metrics at a specific time ranges.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/InitiatorByPort/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_initiatorByPortParam.html">initiatorByPortParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorByPortParam.html">InitiatorByPortParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__81_performance_ISCSIClient_keys.html"></a>
+      <h1>/81/performance/ISCSIClient/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_ISCSIClient_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries for a list of iscsiClients for the specific symmetrix.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi/performance/IPInterface/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_iSCSIClientKeyParam.html">iSCSIClientKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSIClientKeyParam.html">ISCSIClientKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IISCSIClientKey and their available time ranges of performance data.</p>
+        <a name="path__81_performance_ISCSIClient_metrics.html"></a>
+      <h1>/81/performance/ISCSIClient/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_ISCSIClient_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Deprecated: The call queries a list of performance data for a specific ISCSI Client and specific metrics at a specific time ranges.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/IPInterface/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_iSCSIClientParam.html">iSCSIClientParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSIClientParam.html">ISCSIClientParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__81_performance_ISCSITarget_keys.html"></a>
+      <h1>/81/performance/ISCSITarget/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_ISCSITarget_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries for a list of iscsiTargets for the specific symmetrix.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/ISCSITarget/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_iSCSITargetKeyParam.html">iSCSITargetKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSITargetKeyParam.html">ISCSITargetKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IISCSITargetKey and their available time ranges of performance data.</p>
+        <a name="path__81_performance_ISCSITarget_metrics.html"></a>
+      <h1>/81/performance/ISCSITarget/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__81_performance_ISCSITarget_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries a list of performance data for a specific ISCSI Target and specific metrics at a specific time ranges.
+
+Please use replacement endpoint https://000.000.000.000:8443/univmax/restapi//performance/ISCSITarget/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance81_iSCSITargetParam.html">iSCSITargetParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSITargetParam.html">ISCSITargetParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__82_performance_StorageContainer_keys.html"></a>
+      <h1>/82/performance/StorageContainer/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__82_performance_StorageContainer_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries for a list of storage groups for the specific symmetrix.
+
+Please use replacement call https://000.000.000.000:8443/univmax/restapi/performance/StorageContainer/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance82_storageContainerKeyParam.html">storageContainerKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageContainerKeyParam.html">StorageContainerKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of storage groups and their available time ranges of performance data.</p>
+        <a name="path__82_performance_StorageContainer_metrics.html"></a>
+      <h1>/82/performance/StorageContainer/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__82_performance_StorageContainer_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries a list of performance data for a specific storage container and specific metrics at a specific time ranges.
+
+Please use replacement call https://000.000.000.000:8443/univmax/restapi/performance/StorageContainer/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance82_storageContainerParam.html">storageContainerParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_StorageContainerParam.html">StorageContainerParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__82_performance_StorageResource_keys.html"></a>
+      <h1>/82/performance/StorageResource/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__82_performance_StorageResource_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries for a list of storage resources for the specific symmetrix.
+
+Please use replacement call https://000.000.000.000:8443/univmax/restapi/performance/StorageResource/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance82_storageResourceKeyParam.html">storageResourceKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageResourceKeyParam.html">StorageResourceKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of storage groups and their available time ranges of performance data.</p>
+        <a name="path__82_performance_StorageResource_metrics.html"></a>
+      <h1>/82/performance/StorageResource/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__82_performance_StorageResource_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecate: The call queries a list of performance data for a specific storage resource and specific metrics at a specific time ranges.
+
+Please use replacement call https://000.000.000.000:8443/univmax/restapi/performance/StorageResource/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance82_storageResourceParam.html">storageResourceParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_StorageResourceParam.html">StorageResourceParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__82_performance_StorageResourceByPool_keys.html"></a>
+      <h1>/82/performance/StorageResourceByPool/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__82_performance_StorageResourceByPool_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries for a list of storage resource by SRP Pool for the specific symmetrix.
+
+Please use replacement call https://000.000.000.000:8443/univmax/restapi/performance/StorageResourceByPool/keys
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance82_storageResourceByPoolKeyParam.html">storageResourceByPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageResourceByPoolKeyParam.html">StorageResourceByPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of thin pools and their available time ranges of performance data.</p>
+        <a name="path__82_performance_StorageResourceByPool_metrics.html"></a>
+      <h1>/82/performance/StorageResourceByPool/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__82_performance_StorageResourceByPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Dreprecated: The call queries a list of performance data for a specific storage resources and SRP and specific metrics at a specific time ranges.
+
+Please use replacement call https://000.000.000.000:8443/univmax/restapi/performance/StorageResourceByPool/metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance82_storageResourceByPoolParam.html">storageResourceByPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageResourcesByPoolPerfKeyParam.html">StorageResourcesByPoolPerfKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__83_performance_threshold_list_-category-.html"></a>
+      <h1>/83/performance/threshold/list/{category}</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="GETpath__83_performance_threshold_list_-category-.html"></a>
+      <h2>GET</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Deprecated: This call retrieves a lists of kpis when given a valid SPA Category
+
+Please use replacement endpoints https://000.000.000.000:8443/univmax/restapi/performance/threshold/categories
+/list/{category}
+/update/{category}
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>category</td>
+          <td>
+            a valid symmId.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>true if is registered else false.</p>
+        <a name="path__83_performance_threshold_update_-category-.html"></a>
+      <h1>/83/performance/threshold/update/{category}</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="PUTpath__83_performance_threshold_update_-category-.html"></a>
+      <h2>PUT</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            Deprecated: This call edits an existing Global Threshold across all symms
+
+Please use replacement endpoints for Thresholds
+
+https://000.000.000.000:8443/univmax/restapi/performance/threshold/categories
+/list/{category}
+/update/{category}
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>category</td>
+          <td>
+            SPA Category
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance83_editPerformanceThresholdParam.html">editPerformanceThresholdParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditPerformanceThresholdParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+        <a name="path__performance_Array_alerts.html"></a>
+      <h1>/performance/Array/alerts</h1>
+      <a name="POSTpath__performance_Array_alerts.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call queries a list of performance alerts for a specific symmetrix at a specific time range.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_arrayAlertParam.html">arrayAlertParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_arrayAlertParam.html">ArrayAlertParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance alerts.</p>
+        <a name="path__performance_Array_keys.html"></a>
+      <h1>/performance/Array/keys</h1>
+      <a name="GETpath__performance_Array_keys.html"></a>
+      <h2>GET</h2>
+      <p>
+            The call queries a list of Arrays registered for performance data collection.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of Array Ids and their available time ranges of performance data.</p>
+        <a name="path__performance_Array_metrics.html"></a>
+      <h1>/performance/Array/metrics</h1>
+      <a name="POSTpath__performance_Array_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call returns a list of performance data for a specific symmetrix and specific metrics at a specific time range.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_arrayParam.html">arrayParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_arrayParam.html">ArrayParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Array_registration_-symmetrixId-.html"></a>
+      <h1>/performance/Array/registration/{symmetrixId}</h1>
+      <a name="GETpath__performance_Array_registration_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call checks the supplied Array ID to see if it is
+currently registered for SPA Diagnostic Stats(5 min intervals)
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            a valid symmId.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>true if is registered else false.</p>
+        <a name="path__performance_BEDirector_keys.html"></a>
+      <h1>/performance/BEDirector/keys</h1>
+      <a name="POSTpath__performance_BEDirector_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of BE directos for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_beDirectorKeyParam.html">beDirectorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beDirectorKeyParam.html">BeDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of BE directos and their available time ranges of performance data.</p>
+        <a name="path__performance_BEDirector_metrics.html"></a>
+      <h1>/performance/BEDirector/metrics</h1>
+      <a name="POSTpath__performance_BEDirector_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific BE director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_beDirectorParam.html">beDirectorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beDirectorParam.html">BeDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_BeEmulation_keys.html"></a>
+      <h1>/performance/BeEmulation/keys</h1>
+      <a name="POSTpath__performance_BeEmulation_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_beEmulationKeyParam.html">beEmulationKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beEmulationKeyParam.html">BeEmulationKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_BeEmulation_metrics.html"></a>
+      <h1>/performance/BeEmulation/metrics</h1>
+      <a name="POSTpath__performance_BeEmulation_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_beEmulationParam.html">beEmulationParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beEmulationParam.html">BeEmulationParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_BEPort_keys.html"></a>
+      <h1>/performance/BEPort/keys</h1>
+      <a name="POSTpath__performance_BEPort_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of symmetrix BE ports for the specific symmetrix and the specific back end director id.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_bePortKeyParam.html">bePortKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_bePortKeyParam.html">BePortKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of BE ports and their available time ranges of performance data.</p>
+        <a name="path__performance_BEPort_metrics.html"></a>
+      <h1>/performance/BEPort/metrics</h1>
+      <a name="POSTpath__performance_BEPort_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific BE port and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_bePortParam.html">bePortParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_bePortParam.html">BePortParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Board_keys.html"></a>
+      <h1>/performance/Board/keys</h1>
+      <a name="POSTpath__performance_Board_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of boards for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_boardKeyParam.html">boardKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_boardKeyParam.html">BoardKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of boards and their available time ranges of performance data.</p>
+        <a name="path__performance_Board_metrics.html"></a>
+      <h1>/performance/Board/metrics</h1>
+      <a name="POSTpath__performance_Board_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call queries a list of performance data for a specific symmetrix board and specific metrics at a specific time range.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_boardParam.html">boardParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_boardParam.html">BoardParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_CachePartition_keys.html"></a>
+      <h1>/performance/CachePartition/keys</h1>
+      <a name="POSTpath__performance_CachePartition_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of cache partitions for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_cachePartitionKeyParam.html">cachePartitionKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_cachePartitionKeyParam.html">CachePartitionKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of symmetrix cache partitions and their available time ranges of performance data.</p>
+        <a name="path__performance_CachePartition_metrics.html"></a>
+      <h1>/performance/CachePartition/metrics</h1>
+      <a name="POSTpath__performance_CachePartition_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific cache partition and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_cachePartitionParam.html">cachePartitionParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_cachePartitionParam.html">CachePartitionParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Core_keys.html"></a>
+      <h1>/performance/Core/keys</h1>
+      <a name="POSTpath__performance_Core_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of core ids for the specific symmetrix and the specific board.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_coreKeyParam.html">coreKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_coreKeyParam.html">CoreKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of core ids and their available time ranges of performance data.</p>
+        <a name="path__performance_Core_metrics.html"></a>
+      <h1>/performance/Core/metrics</h1>
+      <a name="POSTpath__performance_Core_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific core and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_coreParam.html">coreParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_coreParam.html">CoreParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Database_keys.html"></a>
+      <h1>/performance/Database/keys</h1>
+      <a name="POSTpath__performance_Database_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of databases for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_databaseKeyParam.html">databaseKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_databaseKeyParam.html">DatabaseKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of database ids and their available time ranges of performance data.</p>
+        <a name="path__performance_Database_metrics.html"></a>
+      <h1>/performance/Database/metrics</h1>
+      <a name="POSTpath__performance_Database_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific database and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_databaseParam.html">databaseParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_databaseParam.html">DatabaseParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_DatabaseByPool_keys.html"></a>
+      <h1>/performance/DatabaseByPool/keys</h1>
+      <a name="POSTpath__performance_DatabaseByPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of databases by pool for the specific symmetrix and the specific database.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_databaseByPoolKeyParam.html">databaseByPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_databaseByPoolKeyParam.html">DatabaseByPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of pool ids  and their available time ranges of performance data.</p>
+        <a name="path__performance_DatabaseByPool_metrics.html"></a>
+      <h1>/performance/DatabaseByPool/metrics</h1>
+      <a name="POSTpath__performance_DatabaseByPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific database and specific port at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_databaseByPoolParam.html">databaseByPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_databaseByPoolParam.html">DatabaseByPoolParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_daystofull.html"></a>
+      <h1>/performance/daystofull</h1>
+      <a name="POSTpath__performance_daystofull.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call will get Projection Metrics for specified Category and
+metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_categoryKpisDaysToFullParamType.html">categoryKpisDaysToFullParamType</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_DeviceGroup_keys.html"></a>
+      <h1>/performance/DeviceGroup/keys</h1>
+      <a name="POSTpath__performance_DeviceGroup_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of device groups for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_deviceGroupKeyParam.html">deviceGroupKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_deviceGroupKeyParam.html">DeviceGroupKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of device groups and their available time ranges of performance data.</p>
+        <a name="path__performance_DeviceGroup_metrics.html"></a>
+      <h1>/performance/DeviceGroup/metrics</h1>
+      <a name="POSTpath__performance_DeviceGroup_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific device group and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_deviceGroupParam.html">deviceGroupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_deviceGroupParam.html">DeviceGroupParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Disk_keys.html"></a>
+      <h1>/performance/Disk/keys</h1>
+      <a name="POSTpath__performance_Disk_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of disks for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_diskKeyParam.html">diskKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_DiskKeyParam.html">DiskKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of disks and their available time ranges of performance data.</p>
+        <a name="path__performance_Disk_metrics.html"></a>
+      <h1>/performance/Disk/metrics</h1>
+      <a name="POSTpath__performance_Disk_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific disk and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_diskParam.html">diskParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_diskParam.html">DiskParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_DiskGroup_keys.html"></a>
+      <h1>/performance/DiskGroup/keys</h1>
+      <a name="POSTpath__performance_DiskGroup_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of disk groups for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_diskGroupKeyParam.html">diskGroupKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_diskGroupKeyParam.html">DiskGroupKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of disk groups and their available time ranges of performance data.</p>
+        <a name="path__performance_DiskGroup_metrics.html"></a>
+      <h1>/performance/DiskGroup/metrics</h1>
+      <a name="POSTpath__performance_DiskGroup_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific disk group and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_diskGroupParam.html">diskGroupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_diskGroupParam.html">DiskGroupParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_DiskTechPool_keys.html"></a>
+      <h1>/performance/DiskTechPool/keys</h1>
+      <a name="POSTpath__performance_DiskTechPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of disk technologies for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_diskTechPoolKeyParam.html">diskTechPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_diskTechPoolKeyParam.html">DiskTechPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of disk technologies and their available time ranges of performance data.</p>
+        <a name="path__performance_DiskTechPool_metrics.html"></a>
+      <h1>/performance/DiskTechPool/metrics</h1>
+      <a name="POSTpath__performance_DiskTechPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific disk technology and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_diskTechPoolParam.html">diskTechPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_diskTechPoolParam.html">DiskTechPoolParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_DSEPool_keys.html"></a>
+      <h1>/performance/DSEPool/keys</h1>
+      <a name="POSTpath__performance_DSEPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of DSE pools for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_dsePoolKeyParam.html">dsePoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_dsePoolKeyParam.html">DsePoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of DSE pools and their available time ranges of performance data.</p>
+        <a name="path__performance_DSEPool_metrics.html"></a>
+      <h1>/performance/DSEPool/metrics</h1>
+      <a name="POSTpath__performance_DSEPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific DSE pool and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_dsePoolParam.html">dsePoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_dsePoolParam.html">DsePoolParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_EDSDirector_keys.html"></a>
+      <h1>/performance/EDSDirector/keys</h1>
+      <a name="POSTpath__performance_EDSDirector_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_edsDirectorKeyParam.html">edsDirectorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_edsDirectorKeyParam.html">EdsDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_EDSDirector_metrics.html"></a>
+      <h1>/performance/EDSDirector/metrics</h1>
+      <a name="POSTpath__performance_EDSDirector_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_edsDirectorParam.html">edsDirectorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_edsDirectorParam.html">EdsDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_EDSEmulation_keys.html"></a>
+      <h1>/performance/EDSEmulation/keys</h1>
+      <a name="POSTpath__performance_EDSEmulation_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_edsEmulationKeyParam.html">edsEmulationKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iMDirectorKeyParam.html">IMDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_EDSEmulation_metrics.html"></a>
+      <h1>/performance/EDSEmulation/metrics</h1>
+      <a name="POSTpath__performance_EDSEmulation_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_edsEmulationParam.html">edsEmulationParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_imDirectorParam.html">ImDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_ExternalDirector_keys.html"></a>
+      <h1>/performance/ExternalDirector/keys</h1>
+      <a name="POSTpath__performance_ExternalDirector_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call lists external directors for given symmetrix id.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_externalDirectorKeyParam.html">externalDirectorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_ExternalDirector_metrics.html"></a>
+      <h1>/performance/ExternalDirector/metrics</h1>
+      <a name="POSTpath__performance_ExternalDirector_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call queries performance data for an External Director for specified metrics
+for given time range.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_externalDirectorParam.html">externalDirectorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_ExternalDisk_keys.html"></a>
+      <h1>/performance/ExternalDisk/keys</h1>
+      <a name="POSTpath__performance_ExternalDisk_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of BE directos for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_externalDiskKeyParam.html">externalDiskKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beDirectorKeyParam.html">BeDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of BE directos and their available time ranges of performance data.</p>
+        <a name="path__performance_ExternalDisk_metrics.html"></a>
+      <h1>/performance/ExternalDisk/metrics</h1>
+      <a name="POSTpath__performance_ExternalDisk_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific BE director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_externalDiskParam.html">externalDiskParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beDirectorParam.html">BeDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_ExternalDiskGroup_keys.html"></a>
+      <h1>/performance/ExternalDiskGroup/keys</h1>
+      <a name="POSTpath__performance_ExternalDiskGroup_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of BE directos for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_externalDiskGroupKeyParam.html">externalDiskGroupKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beDirectorKeyParam.html">BeDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of BE directos and their available time ranges of performance data.</p>
+        <a name="path__performance_ExternalDiskGroup_metrics.html"></a>
+      <h1>/performance/ExternalDiskGroup/metrics</h1>
+      <a name="POSTpath__performance_ExternalDiskGroup_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific BE director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_externalDiskGroupParam.html">externalDiskGroupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_beDirectorParam.html">BeDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FASTPolicy_keys.html"></a>
+      <h1>/performance/FASTPolicy/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__performance_FASTPolicy_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            The call queries for a list of fast policies for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_fastPolicyKeyParam.html">fastPolicyKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_fastPolicyKeyParam.html">FastPolicyKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of fast policies and their available time ranges of performance data.</p>
+        <a name="path__performance_FASTPolicy_metrics.html"></a>
+      <h1>/performance/FASTPolicy/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__performance_FASTPolicy_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            The call queries a list of performance data for a specific fast policy and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_fastPolicyParam.html">fastPolicyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_fastPolicyParam.html">FastPolicyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FEDirector_keys.html"></a>
+      <h1>/performance/FEDirector/keys</h1>
+      <a name="POSTpath__performance_FEDirector_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of FE directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_feDirectorKeyParam.html">feDirectorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_feDirectorKeyParam.html">FeDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of FE directors and their available time ranges of performance data.</p>
+        <a name="path__performance_FEDirector_metrics.html"></a>
+      <h1>/performance/FEDirector/metrics</h1>
+      <a name="POSTpath__performance_FEDirector_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific FE director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_feDirectorParam.html">feDirectorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_feDirectorParam.html">FeDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FEDirectorByPort_keys.html"></a>
+      <h1>/performance/FEDirectorByPort/keys</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__performance_FEDirectorByPort_keys.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            The call queries for a list of FE director by pool for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_feDirectorByPortKeyParam.html">feDirectorByPortKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_feDirectorByPortKeyParam.html">FeDirectorByPortKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of port Ids and their available time ranges of performance data.</p>
+        <a name="path__performance_FEDirectorByPort_metrics.html"></a>
+      <h1>/performance/FEDirectorByPort/metrics</h1>
+  <p class="alert">This resource has been deprecated.</p>
+      <a name="POSTpath__performance_FEDirectorByPort_metrics.html"></a>
+      <h2>POST</h2>
+      <p class="alert">This operation has been deprecated.  </p>
+      <p>
+            The call queries a list of performance data for a specific FE director by port and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_feDirectorByPortParam.html">feDirectorByPortParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_feDirectorByPortParam.html">FeDirectorByPortParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FeEmulation_keys.html"></a>
+      <h1>/performance/FeEmulation/keys</h1>
+      <a name="POSTpath__performance_FeEmulation_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_feEmulationKeyParam.html">feEmulationKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_feEmulationKeyParam.html">FeEmulationKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_FeEmulation_metrics.html"></a>
+      <h1>/performance/FeEmulation/metrics</h1>
+      <a name="POSTpath__performance_FeEmulation_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_feEmulationParam.html">feEmulationParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_feEmulationParam.html">FeEmulationParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FEPort_keys.html"></a>
+      <h1>/performance/FEPort/keys</h1>
+      <a name="POSTpath__performance_FEPort_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of FE ports for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_fePortKeyParam.html">fePortKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_fePortKeyParam.html">FePortKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of FE ports and their available time ranges of performance data.</p>
+        <a name="path__performance_FEPort_metrics.html"></a>
+      <h1>/performance/FEPort/metrics</h1>
+      <a name="POSTpath__performance_FEPort_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific FE port and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_fePortParam.html">fePortParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_fePortParam.html">FePortParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FiconEmulation_keys.html"></a>
+      <h1>/performance/FiconEmulation/keys</h1>
+      <a name="POSTpath__performance_FiconEmulation_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_ficonEmulationKeyParam.html">ficonEmulationKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_ficonEmulationKeyParam.html">FiconEmulationKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_FiconEmulation_metrics.html"></a>
+      <h1>/performance/FiconEmulation/metrics</h1>
+      <a name="POSTpath__performance_FiconEmulation_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_ficonEmulationParam.html">ficonEmulationParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_ficonEmulationParam.html">FiconEmulationParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_FiconEmulationThread_keys.html"></a>
+      <h1>/performance/FiconEmulationThread/keys</h1>
+      <a name="POSTpath__performance_FiconEmulationThread_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call returns a list of keys for FICON Emulation Thread
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_ficonEmulationThreadKeyParam.html">ficonEmulationThreadKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_FiconEmulationThread_metrics.html"></a>
+      <h1>/performance/FiconEmulationThread/metrics</h1>
+      <a name="POSTpath__performance_FiconEmulationThread_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call returns metrics for FICON Emulation Thread ID passed in.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_ficonEmulationThreadParam.html">ficonEmulationThreadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_FiconPortThread_keys.html"></a>
+      <h1>/performance/FiconPortThread/keys</h1>
+      <a name="POSTpath__performance_FiconPortThread_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call returns a list of keys for Ficon Port Threads
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_ficonPortThreadKeyParam.html">ficonPortThreadKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_FiconPortThread_metrics.html"></a>
+      <h1>/performance/FiconPortThread/metrics</h1>
+      <a name="POSTpath__performance_FiconPortThread_metrics.html"></a>
+      <h2>POST</h2>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_ficonPortThreadParam.html">ficonPortThreadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_Host_keys.html"></a>
+      <h1>/performance/Host/keys</h1>
+      <a name="POSTpath__performance_Host_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of active hosts for given symmetrix id.
+
+Note: Inactive Hosts and ISCSI Hosts will not appear on this list
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_hostKeyRootParam.html">hostKeyRootParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_hostKeyParam.html">HostKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IHostKey and their available time ranges of performance data.</p>
+        <a name="path__performance_Host_metrics.html"></a>
+      <h1>/performance/Host/metrics</h1>
+      <a name="POSTpath__performance_Host_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific host and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_hostParam.html">hostParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_hostParam.html">HostParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_IMDirector_keys.html"></a>
+      <h1>/performance/IMDirector/keys</h1>
+      <a name="POSTpath__performance_IMDirector_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iMDirectorKeyParam.html">iMDirectorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iMDirectorKeyParam.html">IMDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_IMDirector_metrics.html"></a>
+      <h1>/performance/IMDirector/metrics</h1>
+      <a name="POSTpath__performance_IMDirector_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_imDirectorParam.html">imDirectorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_imDirectorParam.html">ImDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_IMEmulation_keys.html"></a>
+      <h1>/performance/IMEmulation/keys</h1>
+      <a name="POSTpath__performance_IMEmulation_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iMEmulationKeyParam.html">iMEmulationKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iMEmulationKeyParam.html">IMEmulationKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_IMEmulation_metrics.html"></a>
+      <h1>/performance/IMEmulation/metrics</h1>
+      <a name="POSTpath__performance_IMEmulation_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iMEmulationParam.html">iMEmulationParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iMEmulationParam.html">IMEmulationParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Initiator_keys.html"></a>
+      <h1>/performance/Initiator/keys</h1>
+      <a name="POSTpath__performance_Initiator_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call queries for a list of "Active" initiators for the specific symmetrix.
+
+SPA DB only collects stats for "Active" initiators
+
+If you initiator is ISCSI initator SPA DB will not know about it as there is
+no SPM_INITIATOR_BY_IQN or SPM_INITIATOR_BY_ISCSI_TARGET from STPDaemon
+
+To get superset of all initiators from OM including "Inactive", "Active" and ISCSI
+initiators use call
+
+public Response keys(InitiatorKeyRootParam param, @Context UriInfo uriInfo)
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_initiatorKeyParam.html">initiatorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorKeyParam.html">InitiatorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IInitiatorKey and their available time ranges of performance data.</p>
+        <a name="path__performance_Initiator_metrics.html"></a>
+      <h1>/performance/Initiator/metrics</h1>
+      <a name="POSTpath__performance_Initiator_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific initiator and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_initiatorParam.html">initiatorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorParam.html">InitiatorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_InitiatorByPort_keys.html"></a>
+      <h1>/performance/InitiatorByPort/keys</h1>
+      <a name="POSTpath__performance_InitiatorByPort_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of initiatorByPorts for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_initiatorByPortKeyParam.html">initiatorByPortKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorByPortKeyParam.html">InitiatorByPortKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IInitiatorByPortKey and their available time ranges of performance data.</p>
+        <a name="path__performance_InitiatorByPort_metrics.html"></a>
+      <h1>/performance/InitiatorByPort/metrics</h1>
+      <a name="POSTpath__performance_InitiatorByPort_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific initiatorByPort and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_initiatorByPortParam.html">initiatorByPortParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_initiatorByPortParam.html">InitiatorByPortParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_IPInterface_keys.html"></a>
+      <h1>/performance/IPInterface/keys</h1>
+      <a name="POSTpath__performance_IPInterface_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IP Interfaces for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iSCSIClientKeyParam.html">iSCSIClientKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSIClientKeyParam.html">ISCSIClientKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IISCSIClientKey and their available time ranges of performance data.</p>
+        <a name="path__performance_IPInterface_metrics.html"></a>
+      <h1>/performance/IPInterface/metrics</h1>
+      <a name="POSTpath__performance_IPInterface_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IP Interface and  metrics for a given time range.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iSCSIClientParam.html">iSCSIClientParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSIClientParam.html">ISCSIClientParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_ISCSITarget_keys.html"></a>
+      <h1>/performance/ISCSITarget/keys</h1>
+      <a name="POSTpath__performance_ISCSITarget_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of iscsiTargets for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iSCSITargetKeyParam.html">iSCSITargetKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSITargetKeyParam.html">ISCSITargetKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IISCSITargetKey and their available time ranges of performance data.</p>
+        <a name="path__performance_ISCSITarget_metrics.html"></a>
+      <h1>/performance/ISCSITarget/metrics</h1>
+      <a name="POSTpath__performance_ISCSITarget_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific ISCSI Target and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_iSCSITargetParam.html">iSCSITargetParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_iSCSITargetParam.html">ISCSITargetParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_PortGroup_keys.html"></a>
+      <h1>/performance/PortGroup/keys</h1>
+      <a name="POSTpath__performance_PortGroup_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of port groups for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_portGroupKeyParam.html">portGroupKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_portGroupKeyParam.html">PortGroupKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of port groups and their available time ranges of performance data.</p>
+        <a name="path__performance_PortGroup_metrics.html"></a>
+      <h1>/performance/PortGroup/metrics</h1>
+      <a name="POSTpath__performance_PortGroup_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific port group and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_portGroupParam.html">portGroupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_portGroupParam.html">PortGroupParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_projection_metrics.html"></a>
+      <h1>/performance/projection/metrics</h1>
+      <a name="POSTpath__performance_projection_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call will get Projection Metrics for specified
+Category(Array,SRP, or ThinPool) and metrics
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_categoryKpisProjectionParam.html">categoryKpisProjectionParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_RDFA_keys.html"></a>
+      <h1>/performance/RDFA/keys</h1>
+      <a name="POSTpath__performance_RDFA_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of RDFA groups for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfaKeyParam.html">rdfaKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfaKeyParam.html">RdfaKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of RDFA groups and their available time ranges of performance data.</p>
+        <a name="path__performance_RDFA_metrics.html"></a>
+      <h1>/performance/RDFA/metrics</h1>
+      <a name="POSTpath__performance_RDFA_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific RDFA group and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfaParam.html">rdfaParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfaParam.html">RdfaParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_RDFDirector_keys.html"></a>
+      <h1>/performance/RDFDirector/keys</h1>
+      <a name="POSTpath__performance_RDFDirector_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of sRDF directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfDirectorKeyParam.html">rdfDirectorKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfDirectorKeyParam.html">RdfDirectorKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of RDF directors and their available time ranges of performance data.</p>
+        <a name="path__performance_RDFDirector_metrics.html"></a>
+      <h1>/performance/RDFDirector/metrics</h1>
+      <a name="POSTpath__performance_RDFDirector_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific RDF director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfDirectorParam.html">rdfDirectorParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfDirectorParam.html">RdfDirectorParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_RDFEmulation_keys.html"></a>
+      <h1>/performance/RDFEmulation/keys</h1>
+      <a name="POSTpath__performance_RDFEmulation_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of IM directors for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfEmulationKeyParam.html">rdfEmulationKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfEmulationKeyParam.html">RdfEmulationKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of IM directors and their available time ranges of performance data.</p>
+        <a name="path__performance_RDFEmulation_metrics.html"></a>
+      <h1>/performance/RDFEmulation/metrics</h1>
+      <a name="POSTpath__performance_RDFEmulation_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific IM director and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfEmulationParam.html">rdfEmulationParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfEmulationParam.html">RdfEmulationParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_RDFPort_keys.html"></a>
+      <h1>/performance/RDFPort/keys</h1>
+      <a name="POSTpath__performance_RDFPort_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of RDF ports for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfPortKeyParam.html">rdfPortKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfPortKeyParam.html">RdfPortKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of RDF ports and their available time ranges of performance data.</p>
+        <a name="path__performance_RDFPort_metrics.html"></a>
+      <h1>/performance/RDFPort/metrics</h1>
+      <a name="POSTpath__performance_RDFPort_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific RDF port and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfPortParam.html">rdfPortParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfPortParam.html">RdfPortParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_RDFS_keys.html"></a>
+      <h1>/performance/RDFS/keys</h1>
+      <a name="POSTpath__performance_RDFS_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of RDFS groups for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfsKeyParam.html">rdfsKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfsKeyParam.html">RdfsKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of RDFS groups and their available time ranges of performance data.</p>
+        <a name="path__performance_RDFS_metrics.html"></a>
+      <h1>/performance/RDFS/metrics</h1>
+      <a name="POSTpath__performance_RDFS_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific RDFS group and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_rdfsParam.html">rdfsParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_rdfsParam.html">RdfsParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Settings_importFiles.html"></a>
+      <h1>/performance/Settings/importFiles</h1>
+      <a name="POSTpath__performance_Settings_importFiles.html"></a>
+      <h2>POST</h2>
+      <p>
+            This call imports Performance Settings for Unisphere
+
+The call accepts a form which must contain 2 fields of type file.
+
+One field should be called "zipFile" and contain a valid zip file containing the settings.
+This zip file is created using the Export function in another Unisphere instance.
+
+The second field should be called "optionsFile" and should contain an Options File, which is
+a plain text file containing 3 comma-separated strings:
+- the zip file password
+- "includesMetrics" flag for Metrics and Alert Definitions (true/false)
+- "includeTemplates" flag for include User Templates (true/false)
+
+Sample options file content:
+TestPassw0rd,includeMetrics=true,includeTemplates=true
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>entity</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>multipart/form-data<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_common_genericResult.html">genericResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+        <a name="path__performance_SnapPool_keys.html"></a>
+      <h1>/performance/SnapPool/keys</h1>
+      <a name="POSTpath__performance_SnapPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of SNAP pools for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_snapPoolKeyParam.html">snapPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_snapPoolKeyParam.html">SnapPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of SNAP pools and their available time ranges of performance data.</p>
+        <a name="path__performance_SnapPool_metrics.html"></a>
+      <h1>/performance/SnapPool/metrics</h1>
+      <a name="POSTpath__performance_SnapPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific SNAP pool and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_snapPoolParam.html">snapPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_snapPoolParam.html">SnapPoolParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_SRP_keys.html"></a>
+      <h1>/performance/SRP/keys</h1>
+      <a name="POSTpath__performance_SRP_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of SRPs for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_SRPKeyParam.html">SRPKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_srpKeyParam.html">SRPKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of SRPs and their available time ranges of performance data.</p>
+        <a name="path__performance_SRP_metrics.html"></a>
+      <h1>/performance/SRP/metrics</h1>
+      <a name="POSTpath__performance_SRP_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific SRP and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_srpParam.html">srpParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_srpParam.html">SrpParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_SRPThinPool_keys.html"></a>
+      <h1>/performance/SRPThinPool/keys</h1>
+      <a name="POSTpath__performance_SRPThinPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of thin pool by a SRP for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_srpThinPoolKeyParam.html">srpThinPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_SrpThinPoolKeyParam.html">SrpThinPoolParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of thin pools and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageContainer_keys.html"></a>
+      <h1>/performance/StorageContainer/keys</h1>
+      <a name="POSTpath__performance_StorageContainer_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage containers for the specified symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageContainerKeyParam.html">storageContainerKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageContainerKeyParam.html">StorageContainerKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of storage groups and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageContainer_metrics.html"></a>
+      <h1>/performance/StorageContainer/metrics</h1>
+      <a name="POSTpath__performance_StorageContainer_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage container and specific metrics for a given time range.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageContainerParam.html">storageContainerParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_StorageContainerParam.html">StorageContainerParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_StorageGroup_keys.html"></a>
+      <h1>/performance/StorageGroup/keys</h1>
+      <a name="POSTpath__performance_StorageGroup_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage groups for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupKeyParam.html">storageGroupKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupKeyParam.html">StorageGroupKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of storage groups and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageGroup_metrics.html"></a>
+      <h1>/performance/StorageGroup/metrics</h1>
+      <a name="POSTpath__performance_StorageGroup_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage groups and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupParam.html">storageGroupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupParam.html">StorageGroupParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_StorageGroupByPool_keys.html"></a>
+      <h1>/performance/StorageGroupByPool/keys</h1>
+      <a name="POSTpath__performance_StorageGroupByPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage group by Thin Pool for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupByPoolKeyParam.html">storageGroupByPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupByPoolKeyParam.html">StorageGroupByPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of thin pools and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageGroupByPool_metrics.html"></a>
+      <h1>/performance/StorageGroupByPool/metrics</h1>
+      <a name="POSTpath__performance_StorageGroupByPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage group and Thin Pool and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupByPoolParam.html">storageGroupByPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupByPoolPerfKeyParam.html">StorageGroupByPoolPerfKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_StorageGroupByTier_keys.html"></a>
+      <h1>/performance/StorageGroupByTier/keys</h1>
+      <a name="POSTpath__performance_StorageGroupByTier_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage group by tier for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupByTierKeyParam.html">storageGroupByTierKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupByTierKeyParam.html">StorageGroupByTierKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of tiers and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageGroupByTier_metrics.html"></a>
+      <h1>/performance/StorageGroupByTier/metrics</h1>
+      <a name="POSTpath__performance_StorageGroupByTier_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage group and tier and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupByTierParam.html">storageGroupByTierParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupByTierPerfKeyParam.html">StorageGroupByTierPerfKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_StorageGroupByTier_perf_keys.html"></a>
+      <h1>/performance/StorageGroupByTier/perf/keys</h1>
+      <a name="POSTpath__performance_StorageGroupByTier_perf_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage group by tier for the specicifc symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageGroupByTierPerfKeyParam.html">storageGroupByTierPerfKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageGroupByTierKeyParam.html">StorageGroupByTierKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of tiers and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageResource_keys.html"></a>
+      <h1>/performance/StorageResource/keys</h1>
+      <a name="POSTpath__performance_StorageResource_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage resources for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageResourceKeyParam.html">storageResourceKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageResourceKeyParam.html">StorageResourceKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of storage groups and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageResource_metrics.html"></a>
+      <h1>/performance/StorageResource/metrics</h1>
+      <a name="POSTpath__performance_StorageResource_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage resource and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageResourceParam.html">storageResourceParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_StorageResourceParam.html">StorageResourceParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_StorageResourceByPool_keys.html"></a>
+      <h1>/performance/StorageResourceByPool/keys</h1>
+      <a name="POSTpath__performance_StorageResourceByPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage resource by SRP Pool for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageResourceByPoolKeyParam.html">storageResourceByPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageResourceByPoolKeyParam.html">StorageResourceByPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of thin pools and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageResourceByPool_metrics.html"></a>
+      <h1>/performance/StorageResourceByPool/metrics</h1>
+      <a name="POSTpath__performance_StorageResourceByPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage resources and SRP and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageResourceByPoolParam.html">storageResourceByPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageResourcesByPoolPerfKeyParam.html">StorageResourcesByPoolPerfKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_StorageTier_keys.html"></a>
+      <h1>/performance/StorageTier/keys</h1>
+      <a name="POSTpath__performance_StorageTier_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of storage tiers for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageTierKeyParam.html">storageTierKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageTierKeyParam.html">StorageTierKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of storage tiers and their available time ranges of performance data.</p>
+        <a name="path__performance_StorageTier_metrics.html"></a>
+      <h1>/performance/StorageTier/metrics</h1>
+      <a name="POSTpath__performance_StorageTier_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific storage tier and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_storageTierParam.html">storageTierParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_storageTierParam.html">StorageTierParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_Summary_keys.html"></a>
+      <h1>/performance/Summary/keys</h1>
+      <a name="POSTpath__performance_Summary_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a performance summary for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_performanceSummaryKeyParam.html">performanceSummaryKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_performanceSummaryKeyParam.html">PerformanceSummaryKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A summary of performance data.</p>
+        <a name="path__performance_ThinPool_keys.html"></a>
+      <h1>/performance/ThinPool/keys</h1>
+      <a name="POSTpath__performance_ThinPool_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of thin pools for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_thinPoolKeyParam.html">thinPoolKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_thinPoolKeyParam.html">ThinPoolKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of thin pools and their available time ranges of performance data.</p>
+        <a name="path__performance_ThinPool_metrics.html"></a>
+      <h1>/performance/ThinPool/metrics</h1>
+      <a name="POSTpath__performance_ThinPool_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific thin pool and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_thinPoolParam.html">thinPoolParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_thinPoolParam.html">ThinPoolParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_ThinTier_keys.html"></a>
+      <h1>/performance/ThinTier/keys</h1>
+      <a name="POSTpath__performance_ThinTier_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of thin tiers for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_thinTierKeyParam.html">thinTierKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_thinTierKeyParam.html">ThinTierKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of thin tiers and their available time ranges of performance data.</p>
+        <a name="path__performance_ThinTier_metrics.html"></a>
+      <h1>/performance/ThinTier/metrics</h1>
+      <a name="POSTpath__performance_ThinTier_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific thin tier and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_thinTierParam.html">thinTierParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_thinTierParam.html">ThinTierParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_threshold_categories.html"></a>
+      <h1>/performance/threshold/categories</h1>
+      <a name="GETpath__performance_threshold_categories.html"></a>
+      <h2>GET</h2>
+      <p>
+            Returns the list of Category Endpoints that can be used
+with thresholds
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__performance_threshold_list_-category-.html"></a>
+      <h1>/performance/threshold/list/{category}</h1>
+      <a name="GETpath__performance_threshold_list_-category-.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call retrieves a lists of Thresholds and Alerts when given a valid SPA Category
+that a user can set thresholds for alerts.
+
+If the result contains Alert information then alerting is enabled
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>category</td>
+          <td>
+            a valid symmId.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>true if is registered else false.</p>
+        <a name="path__performance_threshold_update_-category-.html"></a>
+      <h1>/performance/threshold/update/{category}</h1>
+      <a name="PUTpath__performance_threshold_update_-category-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            This call edits an existing Global Threshold across all symms
+
+Note: In order for this feature email needs to be setup
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>category</td>
+          <td>
+            SPA Category
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_editPerformanceThresholdParam.html">editPerformanceThresholdParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The EditPerformanceThresholdParam parameter</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>success true or false with error message</p>
+        <a name="path__performance_TierByStorageGroup_keys.html"></a>
+      <h1>/performance/TierByStorageGroup/keys</h1>
+      <a name="POSTpath__performance_TierByStorageGroup_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of tier by storage group for the specific symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_tierByStorageGroupKeyParam.html">tierByStorageGroupKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_tierByStorageGroupKeyParam.html">TierByStorageGroupKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of tiers and their available time ranges of performance data.</p>
+        <a name="path__performance_TierByStorageGroup_metrics.html"></a>
+      <h1>/performance/TierByStorageGroup/metrics</h1>
+      <a name="POSTpath__performance_TierByStorageGroup_metrics.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries a list of performance data for a specific tier and storage group and specific metrics at a specific time ranges.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_tierByStorageGroupParam.html">tierByStorageGroupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_tierByStorageGroupParam.html">TierByStorageGroupParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of performance data.</p>
+        <a name="path__performance_TierByStorageGroup_perf_keys.html"></a>
+      <h1>/performance/TierByStorageGroup/perf/keys</h1>
+      <a name="POSTpath__performance_TierByStorageGroup_perf_keys.html"></a>
+      <h2>POST</h2>
+      <p>
+            The call queries for a list of tier by storage group for the specicifc symmetrix.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_performance_tierByStorageGroupPerfKeyParam.html">tierByStorageGroupPerfKeyParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p><a href="el_performance_tierByStorageGroupKeyParam.html">TierByStorageGroupKeyParam</a></p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of tiers and their available time ranges of performance data.</p>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>
