@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/82/system" elementFormDefault="qualified" xmlns:system82="http://www.emc.com/em/2012/07/univmax/restapi/82/system" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="alertSummary" type="system82:AlertSummaryType"/>
+  <xs:element name="arrayAlertSummary" type="system82:ArrayAlertSummaryType"/>
+  <xs:element name="performanceAlertSummary" type="system82:PerformanceAlertSummaryType"/>
+  <xs:element name="serverAlertSummary" type="system82:ServerAlertSummaryType"/>
+  <xs:element name="symmAlertSummary" type="system82:SymmAlertSummaryType"/>
+  <xs:complexType name="AlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/system}serverAlertSummary" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/system}symmAlertSummary" minOccurs="0"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="serverAlertSummary" type="system82:ServerAlertSummaryType" minOccurs="0"/>
+      <xs:element name="symmAlertSummary" type="system82:SymmAlertSummaryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ArrayAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ArrayAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alert_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alert_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_acknowledged_count" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PerformanceAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for PerformanceAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="PerformanceAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alert_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alert_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_acknowledged_count" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServerAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ServerAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ServerAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="alert_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_unacknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="all_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="fatal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="critical_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="warning_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="info_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="minor_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="normal_acknowledged_count" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alert_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_unacknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="all_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="fatal_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="critical_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="warning_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="info_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="minor_acknowledged_count" type="xs:int" minOccurs="0"/>
+      <xs:element name="normal_acknowledged_count" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmAlertSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmAlertSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmAlertSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/system}arrayAlertSummary" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/system}performanceAlertSummary" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmId" type="xs:string" minOccurs="0"/>
+      <xs:element name="arrayAlertSummary" type="system82:ArrayAlertSummaryType" minOccurs="0"/>
+      <xs:element name="performanceAlertSummary" type="system82:PerformanceAlertSummaryType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning" elementFormDefault="qualified" xmlns:sloprovisioning82="http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:sloprovisioning="http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning" schemaLocation="sloprovisioning.xsd"/>
+  <xs:element name="addNewStorageGroupParam" type="sloprovisioning82:AddNewStorageGroupParamType"/>
+  <xs:element name="assignAliasRangeParam" type="sloprovisioning82:AssignAliasRangeParamType"/>
+  <xs:element name="createCUImageParam" type="sloprovisioning82:CreateCUImageParamType"/>
+  <xs:element name="createCUImageWithMappedVolumesParam" type="sloprovisioning82:CreateCUImageWithMappedVolumesParamType"/>
+  <xs:element name="createStorageGroupParam" type="sloprovisioning82:CreateStorageGroupParamType"/>
+  <xs:element name="cuImage" type="sloprovisioning82:CUImageType"/>
+  <xs:element name="cuImageActionParam" type="sloprovisioning82:CUImageActionParamType"/>
+  <xs:element name="cuImageList" type="sloprovisioning82:CUImageListType"/>
+  <xs:element name="editCUImageActionParam" type="sloprovisioning82:EditCUImageActionParamType"/>
+  <xs:element name="editCUImageParam" type="sloprovisioning82:EditCUImageParamType"/>
+  <xs:element name="editStorageGroupActionParam" type="sloprovisioning82:EditStorageGroupActionParamType"/>
+  <xs:element name="editStorageGroupParam" type="sloprovisioning82:EditStorageGroupParamType"/>
+  <xs:element name="existingCUImageParam" type="sloprovisioning82:ExistingCUImageParamType"/>
+  <xs:element name="expandStorageGroupParam" type="sloprovisioning82:ExpandStorageGroupParamType"/>
+  <xs:element name="getSymmetrixResult" type="sloprovisioning82:GetSymmetrixResultType"/>
+  <xs:element name="mapVolumeParam" type="sloprovisioning82:MapVolumeParamType"/>
+  <xs:element name="removeAliasRangeParam" type="sloprovisioning82:RemoveAliasRangeParamType"/>
+  <xs:element name="sloCompliance" type="sloprovisioning82:SloComplianceType"/>
+  <xs:element name="sloList" type="sloprovisioning82:SloListType"/>
+  <xs:element name="split" type="sloprovisioning82:SplitType"/>
+  <xs:element name="splitList" type="sloprovisioning82:SplitListType"/>
+  <xs:element name="srpList" type="sloprovisioning82:SrpListType"/>
+  <xs:element name="storageGroupList" type="sloprovisioning82:StorageGroupListType"/>
+  <xs:element name="storageProvisioningToHostParam" type="sloprovisioning82:StorageProvisioningToHostParamType"/>
+  <xs:element name="symmetrix" type="sloprovisioning82:SymmetrixType"/>
+  <xs:element name="unmapVolumeParam" type="sloprovisioning82:UnmapVolumeParamType"/>
+  <xs:element name="volume" type="sloprovisioning82:VolumeType"/>
+  <xs:element name="volumesList" type="sloprovisioning82:VolumesListType"/>
+  <xs:complexType name="AddNewStorageGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AddNewStorageGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AddNewStorageGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence>
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}sloBasedStorageGroupParam"/>
+&lt;/sequence>
+&lt;element name="emulation" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}CreateStorageEmulationType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="srpId" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRP to be associated with the Storage Group.
+An existing SRP or 'none' must be specified]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="sloprovisioning:sloBasedStorageGroupParam" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="emulation" type="sloprovisioning82:CreateStorageEmulationType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The emulation to be associated with the Storage Group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AssignAliasRangeParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AssignAliasRangeParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AssignAliasRangeParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startAliasAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;element name="endAliasAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startAliasAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The start alias address value (hex)]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="endAliasAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The end alias address value (hex)]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BaseCreateCUImageParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for BaseCreateCUImageParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="BaseCreateCUImageParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="cuImageSSID" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;element name="cuImageNumber" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;element name="startBaseAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="cuImageSSID" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The new CU image SSID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cuImageNumber" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The new CU image number.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="startBaseAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The starting base address to use for the volume mapping.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateCUImageParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateCUImageParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateCUImageParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}BaseCreateCUImageParamType">
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="sloprovisioning82:BaseCreateCUImageParamType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateCUImageWithMappedVolumesParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateCUImageWithMappedVolumesParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateCUImageWithMappedVolumesParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}BaseCreateCUImageParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="sloprovisioning82:BaseCreateCUImageParamType">
+        <xs:sequence>
+          <xs:element name="volumeId" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CreateStorageEmulationType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateStorageEmulationType.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="CreateStorageEmulationType">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="FBA"/>
+&lt;enumeration value="CELERRA_FBA"/>
+&lt;enumeration value="CKD-3390"/>
+&lt;enumeration value="CKD-3380"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FBA"/>
+      <xs:enumeration value="CELERRA_FBA"/>
+      <xs:enumeration value="CKD-3390"/>
+      <xs:enumeration value="CKD-3380"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CreateStorageGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CreateStorageGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CreateStorageGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;element name="create_empty_storage_group" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}sloBasedStorageGroupParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;element name="emulation" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}CreateStorageEmulationType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageGroupId" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The Name of the new Storage Group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="create_empty_storage_group" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Empty storage group is created if set to true, this parameter overrides any other create setting i.e create regular.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="srpId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The SRP to be associated with the Storage Group.
+An existing SRP or 'none' must be specified]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="sloprovisioning:sloBasedStorageGroupParam" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="emulation" type="sloprovisioning82:CreateStorageEmulationType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The emulation to be associated with the Storage Group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CUImageType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CUImageType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CUImageType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="imageNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="ssid" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;element name="numMappedVolumes" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="numStorageGroups" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="numBaseAddresses" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="numAvailableBaseAddresses" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="nextAvailableBaseAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="numAliases" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="startAliasAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="endAliasAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="imageNumber" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The CU image number]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ssid" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The CU image SSID]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numMappedVolumes" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of volumes mapped to the CU image]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numStorageGroups" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of storage groups that contain volumes mapped to the CU image]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numBaseAddresses" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The total number of base addresses that can be used for volume mapping to the CU image]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numAvailableBaseAddresses" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of base addresses that are available to be assigned to volume mappings to the CU
+image]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nextAvailableBaseAddress" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The next available base address that can be used for a new volume mapping to the CU image]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numAliases" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The total number of aliases configured on the CU image]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="startAliasAddress" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The start alias address, if an alias range has been assigned.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="endAliasAddress" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The end alias address, if an alias range has been assigned.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="status" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The status of the CU image.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CUImageActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CUImageActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CUImageActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}existingCUImageParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}createCUImageParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="createCUImageParam" type="sloprovisioning82:CreateCUImageParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Details the new CU Image to be created for use.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="existingCUImageParam" type="sloprovisioning82:ExistingCUImageParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Details the existing CU Image to use.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CUImageListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[The CU images configured on a specific Symmetrix
+<p>Java class for CUImageListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CUImageListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="numCUImages" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="cuImageSSID" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="numCUImages" type="xs:int" minOccurs="1"/>
+      <xs:element name="cuImageSSID" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditCUImageActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditCUImageActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditCUImageActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}unmapVolumeParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}mapVolumeParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}removeAliasRangeParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}assignAliasRangeParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="assignAliasRangeParam" type="sloprovisioning82:AssignAliasRangeParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Assigns the specified alias range to the CU image.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="removeAliasRangeParam" type="sloprovisioning82:RemoveAliasRangeParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Removes the specified alias range from the CU image.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="mapVolumeParam" type="sloprovisioning82:MapVolumeParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Maps the specified volumes to the CU image.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unmapVolumeParam" type="sloprovisioning82:UnmapVolumeParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Unmaps the specified volumes from the CU image.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditCUImageParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditCUImageParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditCUImageParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}editCUImageActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editCUImageActionParam" type="sloprovisioning82:EditCUImageActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the CU image.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EditStorageGroupActionParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageGroupActionParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageGroupActionParamType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;choice>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}renameStorageGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}addNewStorageGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}addExistingStorageGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}removeStorageGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}editStorageGroupSRPParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}editStorageGroupSLOParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}editStorageGroupWorkloadParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}expandStorageGroupParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}addVolumeParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}removeVolumeParam" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/sloprovisioning}setHostIOLimitsParam" minOccurs="0"/>
+&lt;/choice>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="sloprovisioning:setHostIOLimitsParam" minOccurs="0"/>
+      <xs:element ref="sloprovisioning:removeVolumeParam" minOccurs="0"/>
+      <xs:element ref="sloprovisioning:addVolumeParam" minOccurs="0"/>
+      <xs:element name="expandStorageGroupParam" type="sloprovisioning82:ExpandStorageGroupParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Add volumes to the SG
+Applicable to Standalone and Child SGs only]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="sloprovisioning:editStorageGroupWorkloadParam" minOccurs="0"/>
+      <xs:element ref="sloprovisioning:editStorageGroupSLOParam" minOccurs="0"/>
+      <xs:element ref="sloprovisioning:editStorageGroupSRPParam" minOccurs="0"/>
+      <xs:element ref="sloprovisioning:removeStorageGroupParam" minOccurs="0"/>
+      <xs:element ref="sloprovisioning:addExistingStorageGroupParam" minOccurs="0"/>
+      <xs:element name="addNewStorageGroupParam" type="sloprovisioning82:AddNewStorageGroupParamType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Adds a SLO Based SG to the specified SG, if specified SG is a standalone SG then the specified SG
+becomes a Parent with 2 Child SGs.
+Applicable to Standalone and Parent SGs only]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="sloprovisioning:renameStorageGroupParam" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditStorageGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EditStorageGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EditStorageGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}editStorageGroupActionParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="editStorageGroupActionParam" type="sloprovisioning82:EditStorageGroupActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Select one of the Edit Options to modify the specified storage group]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExistingCUImageParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ExistingCUImageParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ExistingCUImageParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="cuImageSSID" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;element name="startBaseAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="cuImageSSID" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The CU image SSID.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="startBaseAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The starting base address to use for the volume mapping.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExpandStorageGroupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ExpandStorageGroupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ExpandStorageGroupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="num_of_vols" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}volumeAttribute"/>
+&lt;element name="create_new_volumes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="emulation" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}CreateStorageEmulationType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="num_of_vols" type="xs:long" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The number of volumes required to create a storage group to desired size]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="common:volumeAttribute" minOccurs="1"/>
+          <xs:element name="create_new_volumes" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Overrides default volume selection by requesting new volumes instead of best effort.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="emulation" type="sloprovisioning82:CreateStorageEmulationType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The emulation of the volumes to be added to the Storage Group.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetSymmetrixResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetSymmetrixResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetSymmetrixResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}GenericResultImplType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}symmetrix"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:GenericResultImplType">
+        <xs:sequence>
+          <xs:element name="symmetrix" type="sloprovisioning82:SymmetrixType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The returned list of Symmetrix Arrays.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MapVolumeParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MapVolumeParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MapVolumeParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startBaseAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startBaseAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The starting base address to use for the volume mapping.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="volumeId" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveAliasRangeParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RemoveAliasRangeParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RemoveAliasRangeParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startAliasAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;element name="endAliasAddress" type="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}HexStringType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startAliasAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The start alias address value (hex)]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="endAliasAddress" type="xs:string" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The end alias address value (hex)]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SloComplianceType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SloComplianceType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SloComplianceType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="slo_stable" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="slo_marginal" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="slo_critical" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="no_slo" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="slo_stable" type="xs:int" minOccurs="0"/>
+      <xs:element name="slo_marginal" type="xs:int" minOccurs="0"/>
+      <xs:element name="slo_critical" type="xs:int" minOccurs="0"/>
+      <xs:element name="no_slo" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SloListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SloListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SloListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="numSlos" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="sloId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="numSlos" type="xs:int" minOccurs="1"/>
+      <xs:element name="sloId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SplitType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SplitType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SplitType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="alphaSerialNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="hyperPAVState" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StateType" minOccurs="0"/>
+&lt;element name="numCUImages" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="numPorts" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}symmetrixPortKey"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Split name]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alphaSerialNum" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The alpha serial number of the split]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hyperPAVState" type="common:StateType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Indicates whether hyper PAV is enabled or disabled.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numCUImages" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of CU images associated to the FICON split.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numPorts" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of FICON ports assigned to the split.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="common:symmetrixPortKey" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SplitListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[The FICON splits configured on a specific Symmetrix
+<p>Java class for SplitListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SplitListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="numSplits" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="splitId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="numSplits" type="xs:int" minOccurs="1"/>
+      <xs:element name="splitId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SrpListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SrpListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SrpListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="numSrps" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="numSrps" type="xs:int" minOccurs="1"/>
+      <xs:element name="srpId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="num_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="num_of_storage_groups" type="xs:int" minOccurs="0"/>
+      <xs:element name="storageGroupId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageProvisioningToHostParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageProvisioningToHostParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageProvisioningToHostParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}cuImageActionParam"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}createStorageGroupParam"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="cuImageActionParam" type="sloprovisioning82:CUImageActionParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The details on the CU Image to be used (existing or new).]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="createStorageGroupParam" type="sloprovisioning82:CreateStorageGroupParamType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The details on the storage group to be created.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="device_count" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="ucode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="targetUcode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/82/sloprovisioning}sloCompliance" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}virtualCapacity" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}physicalCapacity" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+      <xs:element name="device_count" type="xs:long" minOccurs="0"/>
+      <xs:element name="ucode" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetUcode" type="xs:string" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="local" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="sloCompliance" type="sloprovisioning82:SloComplianceType" minOccurs="0"/>
+      <xs:element ref="common:virtualCapacity" minOccurs="0"/>
+      <xs:element ref="common:physicalCapacity" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnmapVolumeParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for UnmapVolumeParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="UnmapVolumeParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="volumeId" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VolumeType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumeType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumeType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="emulation" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}EmulationType" minOccurs="0"/>
+&lt;element name="ssid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="allocated_percent" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="cap_gb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="cap_mb" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="cap_cyl" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="reserved" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="pinned" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="physical_name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="volume_identifier" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="wwn" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="encapsulated" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="num_of_storage_groups" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;element name="num_of_front_end_paths" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/common}symmetrixPortKey"/>
+&lt;/sequence>
+&lt;element name="cuImageBaseAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="volumeId" type="xs:string" minOccurs="1"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="emulation" type="common:EmulationType" minOccurs="0"/>
+      <xs:element name="ssid" type="xs:string" minOccurs="0"/>
+      <xs:element name="allocated_percent" type="xs:long" minOccurs="0"/>
+      <xs:element name="cap_gb" type="xs:double" minOccurs="0"/>
+      <xs:element name="cap_mb" type="xs:double" minOccurs="0"/>
+      <xs:element name="cap_cyl" type="xs:long" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="reserved" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="pinned" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="physical_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="volume_identifier" type="xs:string" minOccurs="0"/>
+      <xs:element name="wwn" type="xs:string" minOccurs="0"/>
+      <xs:element name="encapsulated" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="num_of_storage_groups" type="xs:int" minOccurs="0"/>
+      <xs:element name="num_of_front_end_paths" type="xs:long" minOccurs="0"/>
+      <xs:element name="storageGroupId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="common:symmetrixPortKey" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cuImageBaseAddress" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VolumesListType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for VolumesListType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="VolumesListType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="numVolumes" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="volumeId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}VolumeIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="numVolumes" type="xs:int" minOccurs="1"/>
+      <xs:element name="volumeId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

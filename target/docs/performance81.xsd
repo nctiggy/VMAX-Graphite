@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/81/performance" elementFormDefault="qualified" xmlns:performance81="http://www.emc.com/em/2012/07/univmax/restapi/81/performance" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:performance="http://www.emc.com/em/2012/07/univmax/restapi/performance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/performance" schemaLocation="performance.xsd"/>
+  <xs:element name="hostInfo" type="performance81:HostInfoType"/>
+  <xs:element name="hostKeyParam" type="performance81:HostKeyParamType"/>
+  <xs:element name="hostKeyResult" type="performance81:HostKeyResultType"/>
+  <xs:element name="hostParam" type="performance81:HostParamType"/>
+  <xs:element name="hostResult" type="performance81:HostResultType"/>
+  <xs:element name="iSCSIClientInfo" type="performance81:ISCSIClientInfoType"/>
+  <xs:element name="iSCSIClientKeyParam" type="performance81:ISCSIClientKeyParamType"/>
+  <xs:element name="iSCSIClientKeyResult" type="performance81:ISCSIClientKeyResultType"/>
+  <xs:element name="iSCSIClientParam" type="performance81:ISCSIClientParamType"/>
+  <xs:element name="iSCSIClientResult" type="performance81:ISCSIClientResultType"/>
+  <xs:element name="iSCSITargetInfo" type="performance81:ISCSITargetInfoType"/>
+  <xs:element name="iSCSITargetKeyParam" type="performance81:ISCSITargetKeyParamType"/>
+  <xs:element name="iSCSITargetKeyResult" type="performance81:ISCSITargetKeyResultType"/>
+  <xs:element name="iSCSITargetParam" type="performance81:ISCSITargetParamType"/>
+  <xs:element name="iSCSITargetResult" type="performance81:ISCSITargetResultType"/>
+  <xs:element name="initiatorByPortInfo" type="performance81:InitiatorByPortInfoType"/>
+  <xs:element name="initiatorByPortKeyParam" type="performance81:InitiatorByPortKeyParamType"/>
+  <xs:element name="initiatorByPortKeyResult" type="performance81:InitiatorByPortKeyResultType"/>
+  <xs:element name="initiatorByPortParam" type="performance81:InitiatorByPortParamType"/>
+  <xs:element name="initiatorByPortResult" type="performance81:InitiatorByPortResultType"/>
+  <xs:element name="initiatorInfo" type="performance81:InitiatorInfoType"/>
+  <xs:element name="initiatorKeyParam" type="performance81:InitiatorKeyParamType"/>
+  <xs:element name="initiatorKeyResult" type="performance81:InitiatorKeyResultType"/>
+  <xs:element name="initiatorParam" type="performance81:InitiatorParamType"/>
+  <xs:element name="initiatorResult" type="performance81:InitiatorResultType"/>
+  <xs:complexType name="HostInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostInfoType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/performance}StatInfoType">
+&lt;sequence>
+&lt;element name="hostId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="performance:StatInfoType">
+        <xs:sequence>
+          <xs:element name="hostId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HostKeyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostKeyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostKeyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" minOccurs="0"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="startDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HostKeyResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostKeyResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostKeyResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}hostInfo"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="hostInfo" type="performance81:HostInfoType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="HostMetric">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostMetric.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="HostMetric">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="HostIOs"/>
+&lt;enumeration value="HostMBReads"/>
+&lt;enumeration value="HostMBWrites"/>
+&lt;enumeration value="Reads"/>
+&lt;enumeration value="ResponseTime"/>
+&lt;enumeration value="ReadResponseTime"/>
+&lt;enumeration value="WriteReponseTime"/>
+&lt;enumeration value="WriteResponseTime"/>
+&lt;enumeration value="SyscallCount"/>
+&lt;enumeration value="Writes"/>
+&lt;enumeration value="MBs"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HostIOs"/>
+      <xs:enumeration value="HostMBReads"/>
+      <xs:enumeration value="HostMBWrites"/>
+      <xs:enumeration value="Reads"/>
+      <xs:enumeration value="ResponseTime"/>
+      <xs:enumeration value="ReadResponseTime"/>
+      <xs:enumeration value="WriteReponseTime"/>
+      <xs:enumeration value="WriteResponseTime"/>
+      <xs:enumeration value="SyscallCount"/>
+      <xs:enumeration value="Writes"/>
+      <xs:enumeration value="MBs"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HostParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="hostId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}HostIdType"/>
+&lt;element name="dataFormat" type="{http://www.emc.com/em/2012/07/univmax/restapi/performance}DataFormat" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="metrics" type="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}HostMetric"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="hostId" type="xs:string" minOccurs="1"/>
+          <xs:element name="dataFormat" type="performance:DataFormat" minOccurs="0"/>
+          <xs:element name="metrics" type="performance81:HostMetric" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HostResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HostResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HostResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="HostIOs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="MBs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="HostMBReads" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="HostMBWrites" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="Reads" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="ResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="ReadResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="WriteReponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="WriteResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="SyscallCount" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="Writes" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;/sequence>
+&lt;attribute name="timestamp" use="required" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="HostIOs" type="xs:float" minOccurs="0"/>
+          <xs:element name="MBs" type="xs:float" minOccurs="0"/>
+          <xs:element name="HostMBReads" type="xs:float" minOccurs="0"/>
+          <xs:element name="HostMBWrites" type="xs:float" minOccurs="0"/>
+          <xs:element name="Reads" type="xs:float" minOccurs="0"/>
+          <xs:element name="ResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="ReadResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="WriteReponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="WriteResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="SyscallCount" type="xs:float" minOccurs="0"/>
+          <xs:element name="Writes" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="timestamp" use="required" type="xs:long"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSIClientInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSIClientInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSIClientInfoType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/performance}StatInfoType">
+&lt;sequence>
+&lt;element name="iSCSIClientId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="performance:StatInfoType">
+        <xs:sequence>
+          <xs:element name="iSCSIClientId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSIClientKeyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSIClientKeyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSIClientKeyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSIClientKeyResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSIClientKeyResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSIClientKeyResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}iSCSIClientInfo"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="iSCSIClientInfo" type="performance81:ISCSIClientInfoType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ISCSIClientMetric">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSIClientMetric.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="ISCSIClientMetric">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="MBs"/>
+&lt;enumeration value="PacketCount"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MBs"/>
+      <xs:enumeration value="PacketCount"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ISCSIClientParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSIClientParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSIClientParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="iSCSIClientId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="dataFormat" type="{http://www.emc.com/em/2012/07/univmax/restapi/performance}DataFormat" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="metrics" type="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}ISCSIClientMetric"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="iSCSIClientId" type="xs:string" minOccurs="1"/>
+          <xs:element name="dataFormat" type="performance:DataFormat" minOccurs="0"/>
+          <xs:element name="metrics" type="performance81:ISCSIClientMetric" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSIClientResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSIClientResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSIClientResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="MBs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="PacketCount" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;/sequence>
+&lt;attribute name="timestamp" use="required" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="MBs" type="xs:float" minOccurs="0"/>
+          <xs:element name="PacketCount" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="timestamp" use="required" type="xs:long"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSITargetInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSITargetInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSITargetInfoType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/performance}StatInfoType">
+&lt;sequence>
+&lt;element name="iscsiTargetId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="performance:StatInfoType">
+        <xs:sequence>
+          <xs:element name="iscsiTargetId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSITargetKeyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSITargetKeyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSITargetKeyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSITargetKeyResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSITargetKeyResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSITargetKeyResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}iSCSITargetInfo"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="iSCSITargetInfo" type="performance81:ISCSITargetInfoType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ISCSITargetMetric">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSITargetMetric.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="ISCSITargetMetric">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="MBs"/>
+&lt;enumeration value="PacketCount"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MBs"/>
+      <xs:enumeration value="PacketCount"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ISCSITargetParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSITargetParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSITargetParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="iSCSITargetId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="dataFormat" type="{http://www.emc.com/em/2012/07/univmax/restapi/performance}DataFormat" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="metrics" type="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}ISCSITargetMetric"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="iSCSITargetId" type="xs:string" minOccurs="1"/>
+          <xs:element name="dataFormat" type="performance:DataFormat" minOccurs="0"/>
+          <xs:element name="metrics" type="performance81:ISCSITargetMetric" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ISCSITargetResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ISCSITargetResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ISCSITargetResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="MBs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="PacketCount" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;/sequence>
+&lt;attribute name="timestamp" use="required" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="MBs" type="xs:float" minOccurs="0"/>
+          <xs:element name="PacketCount" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="timestamp" use="required" type="xs:long"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorByPortInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorByPortInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorByPortInfoType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/performance}StatInfoType">
+&lt;sequence>
+&lt;element name="initiatorByPortId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}InitiatorIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="performance:StatInfoType">
+        <xs:sequence>
+          <xs:element name="initiatorByPortId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorByPortKeyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorByPortKeyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorByPortKeyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" minOccurs="0"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="startDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorByPortKeyResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorByPortKeyResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorByPortKeyResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}initiatorByPortInfo"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="initiatorByPortInfo" type="performance81:InitiatorByPortInfoType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="InitiatorByPortMetric">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorByPortMetric.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="InitiatorByPortMetric">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="HostIOs"/>
+&lt;enumeration value="MBs"/>
+&lt;enumeration value="HostMBReads"/>
+&lt;enumeration value="HostMBWrites"/>
+&lt;enumeration value="Reads"/>
+&lt;enumeration value="ResponseTime"/>
+&lt;enumeration value="ReadResponseTime"/>
+&lt;enumeration value="WriteReponseTime"/>
+&lt;enumeration value="WriteResponseTime"/>
+&lt;enumeration value="SyscallCount"/>
+&lt;enumeration value="Writes"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HostIOs"/>
+      <xs:enumeration value="MBs"/>
+      <xs:enumeration value="HostMBReads"/>
+      <xs:enumeration value="HostMBWrites"/>
+      <xs:enumeration value="Reads"/>
+      <xs:enumeration value="ResponseTime"/>
+      <xs:enumeration value="ReadResponseTime"/>
+      <xs:enumeration value="WriteReponseTime"/>
+      <xs:enumeration value="WriteResponseTime"/>
+      <xs:enumeration value="SyscallCount"/>
+      <xs:enumeration value="Writes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InitiatorByPortParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorByPortParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorByPortParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="initiatorByPortId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}InitiatorIdType"/>
+&lt;element name="dataFormat" type="{http://www.emc.com/em/2012/07/univmax/restapi/performance}DataFormat" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="metrics" type="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}InitiatorByPortMetric"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="initiatorByPortId" type="xs:string" minOccurs="1"/>
+          <xs:element name="dataFormat" type="performance:DataFormat" minOccurs="0"/>
+          <xs:element name="metrics" type="performance81:InitiatorByPortMetric" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorByPortResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorByPortResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorByPortResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="HostIOs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="MBs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="HostMBReads" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="HostMBWrites" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="Reads" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="ResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="ReadResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="WriteReponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="WriteResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="SyscallCount" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="Writes" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;/sequence>
+&lt;attribute name="timestamp" use="required" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="HostIOs" type="xs:float" minOccurs="0"/>
+          <xs:element name="MBs" type="xs:float" minOccurs="0"/>
+          <xs:element name="HostMBReads" type="xs:float" minOccurs="0"/>
+          <xs:element name="HostMBWrites" type="xs:float" minOccurs="0"/>
+          <xs:element name="Reads" type="xs:float" minOccurs="0"/>
+          <xs:element name="ResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="ReadResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="WriteReponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="WriteResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="SyscallCount" type="xs:float" minOccurs="0"/>
+          <xs:element name="Writes" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="timestamp" use="required" type="xs:long"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorInfoType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorInfoType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorInfoType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/performance}StatInfoType">
+&lt;sequence>
+&lt;element name="initiatorId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}InitiatorIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="performance:StatInfoType">
+        <xs:sequence>
+          <xs:element name="initiatorId" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorKeyParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorKeyParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorKeyParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" minOccurs="0"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="startDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorKeyResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorKeyResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorKeyResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}initiatorInfo"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="initiatorInfo" type="performance81:InitiatorInfoType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="InitiatorMetric">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorMetric.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="InitiatorMetric">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="HostIOs"/>
+&lt;enumeration value="MBs"/>
+&lt;enumeration value="HostMBReads"/>
+&lt;enumeration value="HostMBWrites"/>
+&lt;enumeration value="Reads"/>
+&lt;enumeration value="ResponseTime"/>
+&lt;enumeration value="ReadResponseTime"/>
+&lt;enumeration value="WriteReponseTime"/>
+&lt;enumeration value="WriteResponseTime"/>
+&lt;enumeration value="SyscallCount"/>
+&lt;enumeration value="Writes"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HostIOs"/>
+      <xs:enumeration value="MBs"/>
+      <xs:enumeration value="HostMBReads"/>
+      <xs:enumeration value="HostMBWrites"/>
+      <xs:enumeration value="Reads"/>
+      <xs:enumeration value="ResponseTime"/>
+      <xs:enumeration value="ReadResponseTime"/>
+      <xs:enumeration value="WriteReponseTime"/>
+      <xs:enumeration value="WriteResponseTime"/>
+      <xs:enumeration value="SyscallCount"/>
+      <xs:enumeration value="Writes"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InitiatorParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="startDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="endDate" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="initiatorId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}InitiatorIdType"/>
+&lt;element name="dataFormat" type="{http://www.emc.com/em/2012/07/univmax/restapi/performance}DataFormat" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="metrics" type="{http://www.emc.com/em/2012/07/univmax/restapi/81/performance}InitiatorMetric"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="startDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="endDate" type="xs:long" minOccurs="1"/>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="1"/>
+          <xs:element name="initiatorId" type="xs:string" minOccurs="1"/>
+          <xs:element name="dataFormat" type="performance:DataFormat" minOccurs="0"/>
+          <xs:element name="metrics" type="performance81:InitiatorMetric" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InitiatorResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for InitiatorResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="InitiatorResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element name="HostIOs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="MBs" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="HostMBReads" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="HostMBWrites" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="Reads" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="ResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="ReadResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="WriteReponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="WriteResponseTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="SyscallCount" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;element name="Writes" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+&lt;/sequence>
+&lt;attribute name="timestamp" use="required" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="HostIOs" type="xs:float" minOccurs="0"/>
+          <xs:element name="MBs" type="xs:float" minOccurs="0"/>
+          <xs:element name="HostMBReads" type="xs:float" minOccurs="0"/>
+          <xs:element name="HostMBWrites" type="xs:float" minOccurs="0"/>
+          <xs:element name="Reads" type="xs:float" minOccurs="0"/>
+          <xs:element name="ResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="ReadResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="WriteReponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="WriteResponseTime" type="xs:float" minOccurs="0"/>
+          <xs:element name="SyscallCount" type="xs:float" minOccurs="0"/>
+          <xs:element name="Writes" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="timestamp" use="required" type="xs:long"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

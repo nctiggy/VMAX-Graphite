@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/wlp" elementFormDefault="qualified" xmlns:wlp="http://www.emc.com/em/2012/07/univmax/restapi/wlp" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="admissibilityError" type="wlp:AdmissibilityErrorType"/>
+  <xs:element name="buckets" type="wlp:BucketsType"/>
+  <xs:element name="changeSLOParam" type="wlp:ChangeSLOParamType"/>
+  <xs:element name="characterizationTarget" type="wlp:CharacterizationTargetType"/>
+  <xs:element name="componentLoadComparison" type="wlp:ComponentLoadComparisonType"/>
+  <xs:element name="getHeadroomParam" type="wlp:GetHeadroomParamType"/>
+  <xs:element name="headroom" type="wlp:HeadroomType"/>
+  <xs:element name="headroomExpiry" type="wlp:HeadroomExpiryType"/>
+  <xs:element name="headroomResult" type="wlp:HeadroomResultType"/>
+  <xs:element name="processingDetails" type="wlp:ProcessingDetailsType"/>
+  <xs:element name="skew" type="wlp:SkewType"/>
+  <xs:element name="skewPoint" type="wlp:SkewPointType"/>
+  <xs:element name="sloListResult" type="wlp:SloListResultType"/>
+  <xs:element name="srpListResult" type="wlp:SrpListResultType"/>
+  <xs:element name="storageGroupIdTarget" type="wlp:StorageGroupIdTargetType"/>
+  <xs:element name="symWorkloadAdmissibility" type="wlp:SymWorkloadAdmissibilityType"/>
+  <xs:element name="symWorkloadAdmissibilityLookupParam" type="wlp:SymWorkloadAdmissibilityLookupParamType"/>
+  <xs:element name="symWorkloadAdmissibilityParam" type="wlp:SymWorkloadAdmissibilityParamType"/>
+  <xs:element name="symWorkloadAdmissibilityRequestResult" type="wlp:SymWorkloadAdmissibilityRequestResultType"/>
+  <xs:element name="symWorkloadAdmissibilityResult" type="wlp:SymWorkloadAdmissibilityResultType"/>
+  <xs:element name="symWorkloadCharacterization" type="wlp:SymWorkloadCharacterizationType"/>
+  <xs:element name="symWorkloadCharacterizationResult" type="wlp:SymWorkloadCharacterizationResultType"/>
+  <xs:element name="symWorkloadDetails" type="wlp:SymWorkloadDetailsType"/>
+  <xs:element name="symWorkloadDetailsResult" type="wlp:SymWorkloadDetailsResultType"/>
+  <xs:element name="symWorkloadListResult" type="wlp:SymWorkloadListResultType"/>
+  <xs:element name="symWorkloadParam" type="wlp:SymWorkloadParamType"/>
+  <xs:element name="symWorkloadRebaseParam" type="wlp:SymWorkloadRebaseParamType"/>
+  <xs:element name="symWorkloadSummary" type="wlp:SymWorkloadSummaryType"/>
+  <xs:element name="symmetrixCapability" type="wlp:SymmetrixCapabilityType"/>
+  <xs:element name="symmetrixCapabilityResult" type="wlp:SymmetrixCapabilityResultType"/>
+  <xs:element name="symmetrixDetails" type="wlp:SymmetrixDetailsType"/>
+  <xs:element name="symmetrixDetailsResult" type="wlp:SymmetrixDetailsResultType"/>
+  <xs:element name="symmetrixListResult" type="wlp:SymmetrixListResultType"/>
+  <xs:element name="workloadMixture" type="wlp:WorkloadMixtureType"/>
+  <xs:element name="workloadTypeListResult" type="wlp:WorkloadTypeListResultType"/>
+  <xs:complexType name="AdmissibilityErrorType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for AdmissibilityErrorType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="AdmissibilityErrorType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="errorMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="errorCode" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}ErrorCode" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+      <xs:element name="errorCode" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BucketsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for BucketsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="BucketsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="Sun0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sun4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sun8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sun12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sun16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sun20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Mon0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Mon4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Mon8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Mon12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Mon16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Mon20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Tue0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Tue4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Tue8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Tue12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Tue16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Tue20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Wed0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Wed4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Wed8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Wed12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Wed16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Wed20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Thu0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Thu4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Thu8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Thu12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Thu16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Thu20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Fri0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Fri4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Fri8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Fri12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Fri16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Fri20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sat0to4GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sat4to8GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sat8to12GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sat12to16GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sat16to20GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="Sat20to24GMT" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Sun0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sun4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sun8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sun12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sun16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sun20to24GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Mon0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Mon4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Mon8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Mon12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Mon16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Mon20to24GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Tue0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Tue4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Tue8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Tue12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Tue16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Tue20to24GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Wed0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Wed4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Wed8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Wed12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Wed16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Wed20to24GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Thu0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Thu4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Thu8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Thu12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Thu16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Thu20to24GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Fri0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Fri4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Fri8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Fri12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Fri16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Fri20to24GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sat0to4GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sat4to8GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sat8to12GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sat12to16GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sat16to20GMT" type="xs:double" minOccurs="1"/>
+      <xs:element name="Sat20to24GMT" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeSLOParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ChangeSLOParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ChangeSLOParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="new_srp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="new_slo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="new_workloadtype" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="loadFactor" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="capacityFactor" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="new_srp" type="xs:string" minOccurs="0"/>
+          <xs:element name="new_slo" type="xs:string" minOccurs="0"/>
+          <xs:element name="new_workloadtype" type="xs:string" minOccurs="0"/>
+          <xs:element name="loadFactor" type="xs:string" minOccurs="0"/>
+          <xs:element name="capacityFactor" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CharacterizationTargetType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CharacterizationTargetType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CharacterizationTargetType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="characterization" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}SymWorkloadCharacterizationType"/>
+&lt;element name="srp" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType" minOccurs="0"/>
+&lt;element name="sloName" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType" minOccurs="0"/>
+&lt;element name="workloadType" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType" minOccurs="0"/>
+&lt;element name="fePortCheckBehavior" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}WorkloadFEPortRequirement" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="characterization" type="wlp:SymWorkloadCharacterizationType" minOccurs="1"/>
+      <xs:element name="srp" type="xs:string" minOccurs="0"/>
+      <xs:element name="sloName" type="xs:string" minOccurs="0"/>
+      <xs:element name="workloadType" type="xs:string" minOccurs="0"/>
+      <xs:element name="fePortCheckBehavior" type="wlp:WorkloadFEPortRequirement" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComponentLoadComparisonType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ComponentLoadComparisonType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ComponentLoadComparisonType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="feCpuIopsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="raCpuIopsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="beCpuIopsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="efdIopsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="fcIopsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="sataIopsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="fePortMbpsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="raPortMbpsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="bePortMbpsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="efdMbpsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="fcMbpsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="sataMbpsComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="efdGbComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="fcGbComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="sataGbComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="efdDemandComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="fcDemandComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="sataDemandComparison" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="feCpuIopsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="raCpuIopsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="beCpuIopsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="efdIopsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="fcIopsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="sataIopsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="fePortMbpsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="raPortMbpsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="bePortMbpsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="efdMbpsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="fcMbpsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="sataMbpsComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="efdGbComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="fcGbComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="sataGbComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="efdDemandComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="fcDemandComparison" type="xs:double" minOccurs="1"/>
+      <xs:element name="sataDemandComparison" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetHeadroomParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GetHeadroomParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GetHeadroomParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="srp" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="slo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="workloadtype" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="headroom_expiry" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="srp" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="slo" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="workloadtype" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="headroom_expiry" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeadroomType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HeadroomType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HeadroomType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="srp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="sloName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="workloadType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="headroomCapacity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}processingDetails" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}headroomExpiry" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="srp" type="xs:string" minOccurs="0"/>
+      <xs:element name="sloName" type="xs:string" minOccurs="0"/>
+      <xs:element name="workloadType" type="xs:string" minOccurs="0"/>
+      <xs:element name="headroomCapacity" type="xs:double" minOccurs="0"/>
+      <xs:element name="processingDetails" type="wlp:ProcessingDetailsType" minOccurs="0"/>
+      <xs:element name="headroomExpiry" type="wlp:HeadroomExpiryType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeadroomExpiryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HeadroomExpiryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HeadroomExpiryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="daysUntilFull" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="confidence" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="daysUntilFull" type="xs:double" minOccurs="0"/>
+      <xs:element name="confidence" type="xs:double" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeadroomResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for HeadroomResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="HeadroomResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}headroom"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="headroom" type="wlp:HeadroomType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PlanState">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for PlanState.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="PlanState">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="REBASE"/>
+&lt;enumeration value="CUSTOM"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REBASE"/>
+      <xs:enumeration value="CUSTOM"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ProcessingDetailsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ProcessingDetailsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ProcessingDetailsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="lastProcessedSpaTimestamp" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}DateType"/>
+&lt;element name="nextUpdate" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="lastProcessedSpaTimestamp" type="xs:long" minOccurs="1"/>
+      <xs:element name="nextUpdate" type="xs:int" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkewType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SkewType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SkewType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="paretoLoadPercent" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="skewPoints" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}SkewPointType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="paretoLoadPercent" type="xs:double" minOccurs="1"/>
+      <xs:element name="skewPoints" type="wlp:SkewPointType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkewPointType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SkewPointType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SkewPointType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="score" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="capacity" type="xs:double" minOccurs="1"/>
+      <xs:element name="score" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SloListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SloListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SloListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="sloId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="sloId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SrpListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SrpListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SrpListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="srpId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StorageGroupIdTargetType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroupIdTargetType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroupIdTargetType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;element name="srp" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType" minOccurs="0"/>
+&lt;element name="sloName" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType" minOccurs="0"/>
+&lt;element name="workloadType" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType" minOccurs="0"/>
+&lt;element name="fePortCheckBehavior" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}WorkloadFEPortRequirement" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="storageGroupId" type="xs:string" minOccurs="1"/>
+      <xs:element name="srp" type="xs:string" minOccurs="0"/>
+      <xs:element name="sloName" type="xs:string" minOccurs="0"/>
+      <xs:element name="workloadType" type="xs:string" minOccurs="0"/>
+      <xs:element name="fePortCheckBehavior" type="wlp:WorkloadFEPortRequirement" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadAdmissibilityType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadAdmissibilityType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadAdmissibilityType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="overallScore" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="feScore" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="cacheScore" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="rdfScore" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="beScore" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="ports" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PortIdType"/>
+&lt;/sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="errors" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}AdmissibilityErrorType"/>
+&lt;/sequence>
+&lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}processingDetails"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="overallScore" type="xs:double" minOccurs="0"/>
+      <xs:element name="feScore" type="xs:double" minOccurs="0"/>
+      <xs:element name="cacheScore" type="xs:double" minOccurs="0"/>
+      <xs:element name="rdfScore" type="xs:double" minOccurs="0"/>
+      <xs:element name="beScore" type="xs:double" minOccurs="0"/>
+      <xs:element name="ports" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="errors" type="wlp:AdmissibilityErrorType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="processingDetails" type="wlp:ProcessingDetailsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadAdmissibilityLookupParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadAdmissibilityLookupParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadAdmissibilityLookupParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="sourceSymmetrix" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;sequence maxOccurs="unbounded">
+&lt;element name="workloads" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}StorageGroupIdTargetType"/>
+&lt;/sequence>
+&lt;element name="numberOfPorts" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="ports" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PortIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;attribute name="debug" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="sourceSymmetrix" type="xs:string" minOccurs="1"/>
+          <xs:element name="workloads" type="wlp:StorageGroupIdTargetType" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="numberOfPorts" type="xs:int" minOccurs="0"/>
+          <xs:element name="ports" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="debug" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadAdmissibilityParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadAdmissibilityParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadAdmissibilityParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="workloads" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}CharacterizationTargetType"/>
+&lt;/sequence>
+&lt;element name="numberOfPorts" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="ports" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}PortIdType"/>
+&lt;/sequence>
+&lt;/sequence>
+&lt;attribute name="debug" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="workloads" type="wlp:CharacterizationTargetType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="numberOfPorts" type="xs:int" minOccurs="0"/>
+          <xs:element name="ports" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="debug" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadAdmissibilityRequestResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadAdmissibilityRequestResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadAdmissibilityRequestResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence minOccurs="0">
+&lt;element name="requestId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="requestId" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadAdmissibilityResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadAdmissibilityResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadAdmissibilityResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}symWorkloadAdmissibility"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symWorkloadAdmissibility" type="wlp:SymWorkloadAdmissibilityType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadCharacterizationType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadCharacterizationType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadCharacterizationType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="workloadName" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;element name="skew" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}SkewType"/>
+&lt;element name="mixture" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}WorkloadMixtureType" minOccurs="0"/>
+&lt;element name="isRDFRequired" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="isRDFS" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="isRDFA" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="workloadName" type="xs:string" minOccurs="1"/>
+      <xs:element name="skew" type="wlp:SkewType" minOccurs="1"/>
+      <xs:element name="mixture" type="wlp:WorkloadMixtureType" minOccurs="0"/>
+      <xs:element name="isRDFRequired" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="isRDFS" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="isRDFA" type="xs:boolean" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadCharacterizationResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadCharacterizationResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadCharacterizationResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}symWorkloadCharacterization"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symWorkloadCharacterization" type="wlp:SymWorkloadCharacterizationType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadDetailsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadDetailsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadDetailsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="workloadName" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;element name="workloadState" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}SymWorkloadState"/>
+&lt;element name="allocatedCapacity" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="capacityTrend" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="maxAllocatedCapacity" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="currentWaitWeightedResponseTime" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="recentWaitWeightedResponseTime" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="currentRateWeightedIoRate" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="recentRateWeightedIoRate" type="{http://www.w3.org/2001/XMLSchema}double"/>
+&lt;element name="currentComponentLoadComparison" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}ComponentLoadComparisonType" minOccurs="0"/>
+&lt;element name="recentComponentLoadComparison" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}ComponentLoadComparisonType" minOccurs="0"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}processingDetails"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="workloadName" type="xs:string" minOccurs="1"/>
+      <xs:element name="workloadState" type="wlp:SymWorkloadState" minOccurs="1"/>
+      <xs:element name="allocatedCapacity" type="xs:double" minOccurs="1"/>
+      <xs:element name="capacityTrend" type="xs:double" minOccurs="1"/>
+      <xs:element name="maxAllocatedCapacity" type="xs:double" minOccurs="1"/>
+      <xs:element name="currentWaitWeightedResponseTime" type="xs:double" minOccurs="1"/>
+      <xs:element name="recentWaitWeightedResponseTime" type="xs:double" minOccurs="1"/>
+      <xs:element name="currentRateWeightedIoRate" type="xs:double" minOccurs="1"/>
+      <xs:element name="recentRateWeightedIoRate" type="xs:double" minOccurs="1"/>
+      <xs:element name="currentComponentLoadComparison" type="wlp:ComponentLoadComparisonType" minOccurs="0"/>
+      <xs:element name="recentComponentLoadComparison" type="wlp:ComponentLoadComparisonType" minOccurs="0"/>
+      <xs:element name="processingDetails" type="wlp:ProcessingDetailsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadDetailsResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadDetailsResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadDetailsResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}symWorkloadDetails"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symWorkloadDetails" type="wlp:SymWorkloadDetailsType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}symWorkloadSummary"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symWorkloadSummary" type="wlp:SymWorkloadSummaryType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="storageGroupId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="storageGroupId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymWorkloadRebaseParamType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadRebaseParamType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadRebaseParamType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="action" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}PlanState"/>
+&lt;element name="autofill" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="characterization" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}SymWorkloadCharacterizationType" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="action" type="wlp:PlanState" minOccurs="1"/>
+          <xs:element name="autofill" type="xs:boolean" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[When true, any 4 hour time window with no stats will be populated with the average value
+of the same day of the week and the same 4 hour time window across the week.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="characterization" type="wlp:SymWorkloadCharacterizationType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SymWorkloadState">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadState.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="SymWorkloadState">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="NONE"/>
+&lt;enumeration value="CRITICAL"/>
+&lt;enumeration value="MARGINAL"/>
+&lt;enumeration value="STABLE"/>
+&lt;enumeration value="OVERPERFORMING"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="CRITICAL"/>
+      <xs:enumeration value="MARGINAL"/>
+      <xs:enumeration value="STABLE"/>
+      <xs:enumeration value="OVERPERFORMING"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SymWorkloadSummaryType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymWorkloadSummaryType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymWorkloadSummaryType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="workloadName" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}StorageGroupIdType"/>
+&lt;element name="workloadState" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}SymWorkloadState" minOccurs="0"/>
+&lt;element name="srpId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SrpIdType" minOccurs="0"/>
+&lt;element name="sloId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SloIdType" minOccurs="0"/>
+&lt;element name="workloadType" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="workloadName" type="xs:string" minOccurs="1"/>
+      <xs:element name="workloadState" type="wlp:SymWorkloadState" minOccurs="0"/>
+      <xs:element name="srpId" type="xs:string" minOccurs="0"/>
+      <xs:element name="sloId" type="xs:string" minOccurs="0"/>
+      <xs:element name="workloadType" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixCapabilityType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixCapabilityType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixCapabilityType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;element name="sloComplianceCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="planComparisonCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="characterizeWorkloadCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="checkWorkloadAdmissibilityCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="fastSidewaysToV3Capable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="fastSidewaysToV2Capable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="headroomCapable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="symmetrixId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix array ID.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sloComplianceCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of returning an SLO compliance for WLP-eligible workloads.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="planComparisonCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of comparing workload characterization to planned characterization.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="characterizeWorkloadCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of characterizing workloads for subsequent admissibility requests.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="checkWorkloadAdmissibilityCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of determining admissibility for incoming workloads.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fastSidewaysToV3Capable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of performing FAST sideways to a V3 array.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fastSidewaysToV2Capable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of performing FAST sideways to a V2 array.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="headroomCapable" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Symmetrix is capable of returning headroom capacity for a given SLO on a given SRP.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixCapabilityResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixCapabilityResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixCapabilityResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}symmetrixCapability"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixCapability" type="wlp:SymmetrixCapabilityType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The workload planning capabilities of all authorized Symmetrix.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixDetailsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixDetailsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixDetailsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="spaRegistered" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}processingDetails" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="spaRegistered" type="xs:boolean" minOccurs="1"/>
+      <xs:element name="processingDetails" type="wlp:ProcessingDetailsType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixDetailsResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixDetailsResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixDetailsResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}symmetrixDetails"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixDetails" type="wlp:SymmetrixDetailsType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SymmetrixListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SymmetrixListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SymmetrixListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="symmetrixId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}SymmetrixIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="symmetrixId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="WorkloadFEPortRequirement">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for WorkloadFEPortRequirement.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="WorkloadFEPortRequirement">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="DEFAULT"/>
+&lt;enumeration value="EXISTING_SG_NEW_PORTS"/>
+&lt;enumeration value="EXISTING_SG_SAME_PORTS"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEFAULT"/>
+      <xs:enumeration value="EXISTING_SG_NEW_PORTS"/>
+      <xs:enumeration value="EXISTING_SG_SAME_PORTS"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="WorkloadMixtureType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for WorkloadMixtureType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="WorkloadMixtureType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="randomReadHitIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="sequentialReadIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="readMissIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="randomWriteIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="sequentialWriteIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="writeHitIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="copyIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="adaptiveCopyIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="srdfsWriteIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="srdfaWriteIops" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="randomReadHitMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="sequentialReadMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="readMissMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="randomWriteMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="sequentialWriteMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="writeHitMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="copyMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="adaptiveCopyMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="srdfsWriteMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;element name="srdfaWriteMbps" type="{http://www.emc.com/em/2012/07/univmax/restapi/wlp}BucketsType"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="randomReadHitIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="sequentialReadIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="readMissIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="randomWriteIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="sequentialWriteIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="writeHitIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="copyIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="adaptiveCopyIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="srdfsWriteIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="srdfaWriteIops" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="randomReadHitMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="sequentialReadMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="readMissMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="randomWriteMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="sequentialWriteMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="writeHitMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="copyMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="adaptiveCopyMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="srdfsWriteMbps" type="wlp:BucketsType" minOccurs="1"/>
+      <xs:element name="srdfaWriteMbps" type="wlp:BucketsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkloadTypeListResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for WorkloadTypeListResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="WorkloadTypeListResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="workloadId" type="{http://www.emc.com/em/2012/07/univmax/restapi/common}WorkloadIdType"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="workloadId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

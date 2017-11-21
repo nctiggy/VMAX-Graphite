@@ -1,0 +1,2469 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Workload</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">Workload</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li>
+              <a href="rest.html">REST</a> &gt;
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+            <li class="current">
+              <a href="resource_Workload.html">Workload</a>
+              <ul>
+                <li><a href="resource_Common.html">Common</a></li>
+                <li><a href="resource_Dsa.html">Dsa</a></li>
+                <li><a href="resource_Migration.html">Migration</a></li>
+                <li><a href="resource_Performance.html">Performance</a></li>
+                <li><a href="resource_Provisioning.html">Provisioning</a></li>
+                <li><a href="resource_Replication.html">Replication</a></li>
+                <li><a href="resource_SLO Provisioning.html">SLO Provisioning</a></li>
+                <li><a href="resource_System.html">System</a></li>
+                <li><a href="resource_VVol.html">VVol</a></li>
+                <li><a href="resource_Workload.html">Workload</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+      <h1>Workload</h1>
+
+      <p></p>
+      <p>The following resources are applicable:</p>
+      <ul>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-.html">/82/wlp/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-_admissibility.html">/82/wlp/symmetrix/{symmetrixId}/admissibility</a>
+        </li>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-_compliance.html">/82/wlp/symmetrix/{symmetrixId}/compliance</a>
+        </li>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-_headroom.html">/82/wlp/symmetrix/{symmetrixId}/headroom</a>
+        </li>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-_referenceworkload.html">/82/wlp/symmetrix/{symmetrixId}/referenceworkload</a>
+        </li>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">/82/wlp/symmetrix/{symmetrixId}/referenceworkload/{referenceWorkloadId}</a>
+        </li>
+        <li>
+        <a href="#path__82_wlp_symmetrix_-symmetrixId-_utilization.html">/82/wlp/symmetrix/{symmetrixId}/utilization</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_capabilities_symmetrix.html">/84/wlp/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_capabilities_symmetrix_-symmetrixId-.html">/84/wlp/capabilities/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix.html">/84/wlp/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-.html">/84/wlp/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_admissibility.html">/84/wlp/symmetrix/{symmetrixId}/admissibility</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_admissibility_lookup.html">/84/wlp/symmetrix/{symmetrixId}/admissibility_lookup</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_characterize.html">/84/wlp/symmetrix/{symmetrixId}/characterize</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-.html">/84/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-.html">/84/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-_workloadtype_-workloadType-.html">/84/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}/workloadtype/{workloadType}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_compliance.html">/84/wlp/symmetrix/{symmetrixId}/compliance</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_headroom.html">/84/wlp/symmetrix/{symmetrixId}/headroom</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_referenceworkload.html">/84/wlp/symmetrix/{symmetrixId}/referenceworkload</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">/84/wlp/symmetrix/{symmetrixId}/referenceworkload/{referenceWorkloadId}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_storagegroup.html">/84/wlp/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/84/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_changeslo.html">/84/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/changeslo</a>
+        </li>
+        <li>
+        <a href="#path__84_wlp_symmetrix_-symmetrixId-_utilization.html">/84/wlp/symmetrix/{symmetrixId}/utilization</a>
+        </li>
+        <li>
+        <a href="#path__wlp_capabilities_symmetrix.html">/wlp/capabilities/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__wlp_capabilities_symmetrix_-symmetrixId-.html">/wlp/capabilities/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix.html">/wlp/symmetrix</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-.html">/wlp/symmetrix/{symmetrixId}</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_admissibility.html">/wlp/symmetrix/{symmetrixId}/admissibility</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_admissibility_lookup.html">/wlp/symmetrix/{symmetrixId}/admissibility_lookup</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_characterize.html">/wlp/symmetrix/{symmetrixId}/characterize</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-.html">/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-.html">/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-_workloadtype_-workloadType-.html">/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}/workloadtype/{workloadType}</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_headroom.html">/wlp/symmetrix/{symmetrixId}/headroom</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_storagegroup.html">/wlp/symmetrix/{symmetrixId}/storagegroup</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html">/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</a>
+        </li>
+        <li>
+        <a href="#path__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_changeslo.html">/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/changeslo</a>
+        </li>
+      </ul>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__82_wlp_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Show SPA registration status, last processed timestamp, and seconds to next WLP processing time estimate.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_symmetrixWlpRegistration.html">symmetrixWlpRegistration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>SPA registration status, last processed timestamp, and seconds to next processing.</p>
+      <a name="PUTpath__82_wlp_symmetrix_-symmetrixId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            Set or update epoch and excluded buckets bucket IDs.
+Return SPA registration status, last processed timestamp, and seconds to next WLP processing time estimate.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_exclusionWindowUpdate.html">exclusionWindowUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>- New epoch value and/or excluded bucket IDs.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_symmetrixWlpRegistration.html">symmetrixWlpRegistration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>SPA registration status, last processed timestamp, and seconds to next processing.</p>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-_admissibility.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}/admissibility</h1>
+      <a name="POSTpath__82_wlp_symmetrix_-symmetrixId-_admissibility.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadAdmissibilityParam.html">symWorkloadAdmissibilityParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains one or more full workload characterizations (including mixture and skew information)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_admissibilityResult.html">admissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility scores for several array components (FE, BE, Cache, SRDF) and sorted list of ports.</p>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-_compliance.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}/compliance</h1>
+      <a name="GETpath__82_wlp_symmetrix_-symmetrixId-_compliance.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get a list of storage groups and the percentage of time spent in each SLO compliance state for a given time window along with any epoch and/or excluded bucket ids set.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>starttime</td>
+          <td>
+            the start time in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>endtime</td>
+          <td>
+            the end time in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_sloComplianceResult.html">sloComplianceResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the storage group name, percent of time spent in each state (stable, marginal and critical), epoch and/or excluded bucket ids set for the system</p>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-_headroom.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}/headroom</h1>
+      <a name="GETpath__82_wlp_symmetrix_-symmetrixId-_headroom.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get headroom capacity values for all SLO/WorkloadType combinations on all SRPs on a given Symmetrix array, Headroom expiry with confidence > 0.5 will also be returned.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>srp</td>
+          <td>
+            Optional value that filters the returned list to only show specified SRP Headroom details
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>slo</td>
+          <td>
+            Optional value that filters the returned list to only show specified slo Headroom details
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>workloadtype</td>
+          <td>
+            Optional value that filters the returned list to only show specified workloadtype Headroom details [NONE,OLTP,OLTP_REP,DSS,DSS_REP]
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>emulation</td>
+          <td>
+            Optional value that filters the returned list to only show headroom for a specific emulation for an SRP [FBA, CKD]
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>headroom_expiry</td>
+          <td>
+            Optional value that forces Headroom expiry with confidence <0.5 to be displayed (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_wlpHeadroomResult.html">wlpHeadroomResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of headroom capacity values and last updated timestamps.</p>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-_referenceworkload.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}/referenceworkload</h1>
+      <a name="GETpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_referenceWorkloadListResult.html">referenceWorkloadListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="POSTpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_createReferenceWorkloadParam.html">createReferenceWorkloadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}/referenceworkload/{referenceWorkloadId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">GET</a></li>
+        <li><a href="#DELETEpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">DELETE</a></li>
+        <li><a href="#PUTpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">PUT</a></li>
+      </ul>
+      <a name="GETpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>referenceWorkloadId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_referenceWorkloadDetailsResult.html">referenceWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>referenceWorkloadId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <a name="PUTpath__82_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>referenceWorkloadId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_renameReferenceWorkloadParam.html">renameReferenceWorkloadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_referenceWorkloadDetailsResult.html">referenceWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__82_wlp_symmetrix_-symmetrixId-_utilization.html"></a>
+      <h1>/82/wlp/symmetrix/{symmetrixId}/utilization</h1>
+      <a name="GETpath__82_wlp_symmetrix_-symmetrixId-_utilization.html"></a>
+      <h2>GET</h2>
+      <p>
+            Returns the most utilized component and utilization value for each 4 hour time window over the most recently processed two weeks.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            - The Symmetrix Array ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>bucket</td>
+          <td>
+            - Optional filter overrides normal behavior. Returns up to 2 utilization values for all components during the specified 4 hour bucket index.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>headroom</td>
+          <td>
+            - Optional filter (default false) to ignore components that do not impact headroom calculations.
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp82_maxArrayComponentUtilizationList.html">maxArrayComponentUtilizationList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Component utilizations.</p>
+        <a name="path__84_wlp_capabilities_symmetrix.html"></a>
+      <h1>/84/wlp/capabilities/symmetrix</h1>
+      <a name="GETpath__84_wlp_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Generate WLP capability list for each Symmetrix.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symmetrixCapabilityResult.html">symmetrixCapabilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Capabilities for WLP-eligible arrays.</p>
+        <a name="path__84_wlp_capabilities_symmetrix_-symmetrixId-.html"></a>
+      <h1>/84/wlp/capabilities/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__84_wlp_capabilities_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Generate WLP capability list for a single Symmetrix array.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symmetrixCapabilityResult.html">symmetrixCapabilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Capabilities for WLP-eligible arrays.</p>
+        <a name="path__84_wlp_symmetrix.html"></a>
+      <h1>/84/wlp/symmetrix</h1>
+      <a name="GETpath__84_wlp_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            List WLP-capable Symmetrix arrays.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symmetrixListResult.html">symmetrixListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Simple list of WLP-eligible Symmetrix arrays.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Show SPA registration status, last processed timestamp, and seconds to next WLP processing time estimate.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symmetrixDetailsResult.html">symmetrixDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>SPA registration status, last processed timestamp, and seconds to next processing.</p>
+      <a name="PUTpath__84_wlp_symmetrix_-symmetrixId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            Set or update epoch and excluded buckets bucket IDs.
+Return SPA registration status, last processed timestamp, and seconds to next WLP processing time estimate.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_exclusionWindowUpdate.html">exclusionWindowUpdate</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>- New epoch value and/or excluded bucket IDs.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symmetrixWlpRegistration.html">symmetrixWlpRegistration</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>SPA registration status, last processed timestamp, and seconds to next processing.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_admissibility.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/admissibility</h1>
+      <a name="POSTpath__84_wlp_symmetrix_-symmetrixId-_admissibility.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadAdmissibilityParam.html">symWorkloadAdmissibilityParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains one or more full workload characterizations (including mixture and skew information)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_admissibilityResult.html">admissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility scores for several array components (FE, BE, Cache, SRDF) and sorted list of ports.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_admissibility_lookup.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/admissibility_lookup</h1>
+      <a name="POSTpath__84_wlp_symmetrix_-symmetrixId-_admissibility_lookup.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            - Target symmetrix ID for workloads
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadAdmissibilityLookupParam.html">symWorkloadAdmissibilityLookupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>- Contains one or more workload names with associated source Symmetrix ID</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadAdmissibilityResult.html">symWorkloadAdmissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility scores for several array components (FE, BE, Cache, SRDF) and sorted list of ports.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_characterize.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/characterize</h1>
+      <a name="POSTpath__84_wlp_symmetrix_-symmetrixId-_characterize.html"></a>
+      <h2>POST</h2>
+      <p>
+            View observed mixture and skew values for a workload or set of workloads. These can be used in subsequent admissibility requests.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadParam.html">symWorkloadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains list of workload names</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of workload characterizations.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get synthetic workload characterization for a given capacity using default workload.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            Capacity in GB of workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Synthetic workload characterization for a given capacity.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get synthetic workload characterization for a given capacity and SLO with no workload type.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            Capacity in GB of workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>sloId</td>
+          <td>
+            SLO name for the workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Synthetic workload characterization for a given capacity.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-_workloadtype_-workloadType-.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}/workloadtype/{workloadType}</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-_workloadtype_-workloadType-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get synthetic workload characterization for a given capacity, SLO, and workload type.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            Capacity in GB of workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>sloId</td>
+          <td>
+            SLO name for the workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>workloadType</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Synthetic workload characterization for a given capacity.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_compliance.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/compliance</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_compliance.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get a list of storage groups and the percentage of time spent in each SLO compliance state for a given time window along with any epoch and/or excluded bucket ids set.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>starttime</td>
+          <td>
+            the start time in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>endtime</td>
+          <td>
+            the end time in milliseconds
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_sloComplianceResult.html">sloComplianceResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the storage group name, percent of time spent in each state (stable, marginal and critical), epoch and/or excluded bucket ids set for the system</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_headroom.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/headroom</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_headroom.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get headroom capacity values for all SLO/WorkloadType combinations on all SRPs on a given Symmetrix array, Headroom expiry with confidence > 0.5 will also be returned.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>srp</td>
+          <td>
+            Optional value that filters the returned list to only show specified SRP Headroom details
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>slo</td>
+          <td>
+            Optional value that filters the returned list to only show specified slo Headroom details
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>workloadtype</td>
+          <td>
+            Optional value that filters the returned list to only show specified workloadtype Headroom details [NONE,OLTP,OLTP_REP,DSS,DSS_REP]
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>emulation</td>
+          <td>
+            Optional value that filters the returned list to only show headroom for a specific emulation for an SRP [FBA, CKD]
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>headroom_expiry</td>
+          <td>
+            Optional value that forces Headroom expiry with confidence <0.5 to be displayed (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_wlpHeadroomResult.html">wlpHeadroomResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of headroom capacity values and last updated timestamps.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_referenceworkload.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/referenceworkload</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_referenceWorkloadListResult.html">referenceWorkloadListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="POSTpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload.html"></a>
+      <h2>POST</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_createReferenceWorkloadParam.html">createReferenceWorkloadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/referenceworkload/{referenceWorkloadId}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GETpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">GET</a></li>
+        <li><a href="#DELETEpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">DELETE</a></li>
+        <li><a href="#PUTpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html">PUT</a></li>
+      </ul>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>referenceWorkloadId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_referenceWorkloadDetailsResult.html">referenceWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETEpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>referenceWorkloadId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <a name="PUTpath__84_wlp_symmetrix_-symmetrixId-_referenceworkload_-referenceWorkloadId-.html"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>referenceWorkloadId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_renameReferenceWorkloadParam.html">renameReferenceWorkloadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_referenceWorkloadDetailsResult.html">referenceWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call returns all WLP-eligible storage groups on an array.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadListResult.html">symWorkloadListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of WLP-eligible storage groups.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            View high level capacity trend and performance indicators for a given workload, as well as component load
+scores as compared to planned load scores for a given workload.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            WLP-eligible storage group ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadDetailsResult.html">symWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Comparison of workload characterization to workload plan.</p>
+      <a name="PUTpath__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            Set the performance plan for a given workload.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            The workload name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadRebaseParam.html">symWorkloadRebaseParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The action to be taken and (optionally) a workload characterization</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadDetailsResult.html">symWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_changeslo.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/changeslo</h1>
+      <a name="POSTpath__84_wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_changeslo.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_changeSLOParam.html">changeSLOParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains the name of the storage group, and ChangeSLOParam.
+ChangeSLOParam consists of the new SLO name, the new SRP name, load factor and capacity factor
+Note: load factor and capacity factor are reserved for future use and not implemented yet.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_symWorkloadAdmissibilityResult.html">symWorkloadAdmissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility score from the back end.</p>
+        <a name="path__84_wlp_symmetrix_-symmetrixId-_utilization.html"></a>
+      <h1>/84/wlp/symmetrix/{symmetrixId}/utilization</h1>
+      <a name="GETpath__84_wlp_symmetrix_-symmetrixId-_utilization.html"></a>
+      <h2>GET</h2>
+      <p>
+            Returns the most utilized component and utilization value for each 4 hour time window over the most recently processed two weeks.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            - The Symmetrix Array ID.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>bucket</td>
+          <td>
+            - Optional filter overrides normal behavior. Returns up to 2 utilization values for all components during the specified 4 hour bucket index.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>headroom</td>
+          <td>
+            - Optional filter (default false) to ignore components that do not impact headroom calculations.
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp84_maxArrayComponentUtilizationList.html">maxArrayComponentUtilizationList</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Component utilizations.</p>
+        <a name="path__wlp_capabilities_symmetrix.html"></a>
+      <h1>/wlp/capabilities/symmetrix</h1>
+      <a name="GETpath__wlp_capabilities_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            Generate WLP capability list for each Symmetrix.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symmetrixCapabilityResult.html">symmetrixCapabilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Capabilities for WLP-eligible arrays.</p>
+        <a name="path__wlp_capabilities_symmetrix_-symmetrixId-.html"></a>
+      <h1>/wlp/capabilities/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__wlp_capabilities_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Generate WLP capability list for a single Symmetrix array.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symmetrixCapabilityResult.html">symmetrixCapabilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Capabilities for WLP-eligible arrays.</p>
+        <a name="path__wlp_symmetrix.html"></a>
+      <h1>/wlp/symmetrix</h1>
+      <a name="GETpath__wlp_symmetrix.html"></a>
+      <h2>GET</h2>
+      <p>
+            List WLP-capable Symmetrix arrays.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symmetrixListResult.html">symmetrixListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Simple list of WLP-eligible Symmetrix arrays.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Show SPA registration status, last processed timestamp, and seconds to next WLP processing time estimate.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symmetrixDetailsResult.html">symmetrixDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>SPA registration status, last processed timestamp, and seconds to next processing.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_admissibility.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/admissibility</h1>
+      <a name="POSTpath__wlp_symmetrix_-symmetrixId-_admissibility.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadAdmissibilityParam.html">symWorkloadAdmissibilityParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains one or more full workload characterizations (including mixture and skew information)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadAdmissibilityResult.html">symWorkloadAdmissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility scores for several array components (FE, BE, Cache, SRDF) and sorted list of ports.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_admissibility_lookup.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/admissibility_lookup</h1>
+      <a name="POSTpath__wlp_symmetrix_-symmetrixId-_admissibility_lookup.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            - Target symmetrix ID for workloads
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadAdmissibilityLookupParam.html">symWorkloadAdmissibilityLookupParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>- Contains one or more workload names with associated source Symmetrix ID</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadAdmissibilityResult.html">symWorkloadAdmissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility scores for several array components (FE, BE, Cache, SRDF) and sorted list of ports.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_characterize.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/characterize</h1>
+      <a name="POSTpath__wlp_symmetrix_-symmetrixId-_characterize.html"></a>
+      <h2>POST</h2>
+      <p>
+            View observed mixture and skew values for a workload or set of workloads. These can be used in subsequent admissibility requests.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadParam.html">symWorkloadParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains list of workload names</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of workload characterizations.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get synthetic workload characterization for a given capacity using default workload.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            Capacity in GB of workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Synthetic workload characterization for a given capacity.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get synthetic workload characterization for a given capacity and SLO with no workload type.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            Capacity in GB of workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>sloId</td>
+          <td>
+            SLO name for the workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Synthetic workload characterization for a given capacity.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-_workloadtype_-workloadType-.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/characterize_slo/capacity/{capacity}/slo/{sloId}/workloadtype/{workloadType}</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-_characterize_slo_capacity_-capacity-_slo_-sloId-_workloadtype_-workloadType-.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get synthetic workload characterization for a given capacity, SLO, and workload type.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>capacity</td>
+          <td>
+            Capacity in GB of workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>sloId</td>
+          <td>
+            SLO name for the workload
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>workloadType</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadCharacterizationResult.html">symWorkloadCharacterizationResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Synthetic workload characterization for a given capacity.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_headroom.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/headroom</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-_headroom.html"></a>
+      <h2>GET</h2>
+      <p>
+            Get headroom capacity values for all SLO/WorkloadType combinations on all SRPs on a given Symmetrix array, Headroom expiry with confidence > 0.5 will also be returned.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>srp</td>
+          <td>
+            Optional value that filters the returned list to only show specified SRP Headroom details
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>slo</td>
+          <td>
+            Optional value that filters the returned list to only show specified slo Headroom details
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>workloadtype</td>
+          <td>
+            Optional value that filters the returned list to only show specified workloadtype Headroom details [NONE,OLTP,OLTP_REP,DSS,DSS_REP]
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>headroom_expiry</td>
+          <td>
+            Optional value that forces Headroom expiry with confidence <0.5 to be displayed (true/false)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_headroomResult.html">headroomResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of headroom capacity values and last updated timestamps.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/storagegroup</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-_storagegroup.html"></a>
+      <h2>GET</h2>
+      <p>
+            This call returns all WLP-eligible storage groups on an array.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadListResult.html">symWorkloadListResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>List of WLP-eligible storage groups.</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}</h1>
+      <a name="GETpath__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>GET</h2>
+      <p>
+            View high level capacity trend and performance indicators for a given workload, as well as component load
+scores as compared to planned load scores for a given workload.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            WLP-eligible storage group ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadDetailsResult.html">symWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Comparison of workload characterization to workload plan.</p>
+      <a name="PUTpath__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-.html"></a>
+      <h2>PUT</h2>
+      <p>
+            Set the performance plan for a given workload.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            The workload name
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadRebaseParam.html">symWorkloadRebaseParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The action to be taken and (optionally) a workload characterization</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadDetailsResult.html">symWorkloadDetailsResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_changeslo.html"></a>
+      <h1>/wlp/symmetrix/{symmetrixId}/storagegroup/{storageGroupId}/changeslo</h1>
+      <a name="POSTpath__wlp_symmetrix_-symmetrixId-_storagegroup_-storageGroupId-_changeslo.html"></a>
+      <h2>POST</h2>
+      <p>
+            Generate admissibility scores and recommended front-end ports for a given workload or workloads.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>symmetrixId</td>
+          <td>
+            The Symmetrix Array ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>storageGroupId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_changeSLOParam.html">changeSLOParam</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Contains the name of the storage group, and ChangeSLOParam.
+ChangeSLOParam consists of the new SLO name, the new SRP name, load factor and capacity factor
+Note: load factor and capacity factor are reserved for future use and not implemented yet.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td><a href="el_wlp_symWorkloadAdmissibilityResult.html">symWorkloadAdmissibilityResult</a></td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/x-java-serialized-object<br/>application/json</td>
+        </tr>
+      </table>
+      <p>Admissibility score from the back end.</p>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">EMC Corporation. All rights reserved. Published in the USA.</span><br/>
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

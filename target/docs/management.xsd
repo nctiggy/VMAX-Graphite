@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/management" elementFormDefault="qualified" xmlns:management="http://www.emc.com/em/2012/07/univmax/restapi/management" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="applicationLoadStats" type="management:ApplicationLoadStatsType"/>
+  <xs:element name="cpuStats" type="management:CpuStatsType"/>
+  <xs:element name="fsStats" type="management:FsStatsType"/>
+  <xs:element name="gatekeeperCount" type="management:GatekeeperCountType"/>
+  <xs:element name="jvmStats" type="management:JvmStatsType"/>
+  <xs:element name="memoryStats" type="management:MemoryStatsType"/>
+  <xs:element name="runtimeArrayResources" type="management:RuntimeArrayResourcesType"/>
+  <xs:element name="runtimeGenericResources" type="management:RuntimeGenericResourcesType"/>
+  <xs:element name="runtimeUsageResult" type="management:RuntimeUsageResultType"/>
+  <xs:element name="systemStats" type="management:SystemStatsType"/>
+  <xs:complexType name="ApplicationLoadStatsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for ApplicationLoadStatsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="ApplicationLoadStatsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="deviceCount" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="localSymmCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="remoteSymmCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}gatekeeperCount" maxOccurs="unbounded"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="deviceCount" type="xs:long" minOccurs="1"/>
+      <xs:element name="localSymmCount" type="xs:int" minOccurs="1"/>
+      <xs:element name="remoteSymmCount" type="xs:int" minOccurs="1"/>
+      <xs:element name="gatekeeperCount" type="management:GatekeeperCountType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CpuStatsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for CpuStatsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="CpuStatsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="usage" type="{http://www.w3.org/2001/XMLSchema}float"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="usage" type="xs:float" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FsStatsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for FsStatsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="FsStatsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="free" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="free" type="xs:long" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GatekeeperCountType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for GatekeeperCountType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="GatekeeperCountType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
+&lt;attribute name="count" type="{http://www.w3.org/2001/XMLSchema}int" />
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="count" type="xs:int"/>
+  </xs:complexType>
+  <xs:complexType name="JvmStatsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for JvmStatsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="JvmStatsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="heap" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="heapMax" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="heapUsed" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="threadCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="gcCount" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="upTime" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="heap" type="xs:long" minOccurs="1"/>
+      <xs:element name="heapMax" type="xs:long" minOccurs="1"/>
+      <xs:element name="heapUsed" type="xs:long" minOccurs="1"/>
+      <xs:element name="threadCount" type="xs:int" minOccurs="1"/>
+      <xs:element name="gcCount" type="xs:long" minOccurs="1"/>
+      <xs:element name="upTime" type="xs:long" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MemoryStatsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MemoryStatsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MemoryStatsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;element name="used" type="{http://www.w3.org/2001/XMLSchema}long"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="total" type="xs:long" minOccurs="1"/>
+      <xs:element name="used" type="xs:long" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RuntimeArrayResourcesType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RuntimeArrayResourcesType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RuntimeArrayResourcesType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}applicationLoadStats"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="applicationLoadStats" type="management:ApplicationLoadStatsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RuntimeGenericResourcesType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RuntimeGenericResourcesType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RuntimeGenericResourcesType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}systemStats"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}jvmStats"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="systemStats" type="management:SystemStatsType" minOccurs="1"/>
+      <xs:element name="jvmStats" type="management:JvmStatsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RuntimeUsageResultType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RuntimeUsageResultType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RuntimeUsageResultType">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ResultType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}runtimeGenericResources"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}runtimeArrayResources"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ResultType">
+        <xs:sequence>
+          <xs:element name="runtimeGenericResources" type="management:RuntimeGenericResourcesType" minOccurs="1"/>
+          <xs:element name="runtimeArrayResources" type="management:RuntimeArrayResourcesType" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SystemStatsType">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SystemStatsType complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SystemStatsType">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}cpuStats"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}memoryStats"/>
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/management}fsStats"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cpuStats" type="management:CpuStatsType" minOccurs="1"/>
+      <xs:element name="memoryStats" type="management:MemoryStatsType" minOccurs="1"/>
+      <xs:element name="fsStats" type="management:FsStatsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.emc.com/em/2012/07/univmax/restapi/83/migration" elementFormDefault="qualified" xmlns:migration83="http://www.emc.com/em/2012/07/univmax/restapi/83/migration" xmlns:common="http://www.emc.com/em/2012/07/univmax/restapi/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.emc.com/em/2012/07/univmax/restapi/common" schemaLocation="common.xsd"/>
+  <xs:element name="dmStorageArrayCapabilityList" type="migration83:DmStorageArrayCapabilityList"/>
+  <xs:element name="dmStorageArrayList" type="migration83:DmStorageArrayList"/>
+  <xs:element name="dmStorageGroupList" type="migration83:DmStorageGroupList"/>
+  <xs:element name="environmentSetup" type="migration83:EnvironmentSetup"/>
+  <xs:element name="migrationCreate" type="migration83:MigrationCreate"/>
+  <xs:element name="migrationDevicePair" type="migration83:MigrationDevicePair"/>
+  <xs:element name="migrationInitiator" type="migration83:MigrationInitiator"/>
+  <xs:element name="migrationInitiatorGroup" type="migration83:MigrationInitiatorGroup"/>
+  <xs:element name="migrationMaskingView" type="migration83:MigrationMaskingView"/>
+  <xs:element name="migrationPort" type="migration83:MigrationPort"/>
+  <xs:element name="migrationPortGroup" type="migration83:MigrationPortGroup"/>
+  <xs:element name="migrationUpdate" type="migration83:MigrationUpdate"/>
+  <xs:element name="recoverParam" type="migration83:RecoverParam"/>
+  <xs:element name="storageArray" type="migration83:StorageArray"/>
+  <xs:element name="storageArrayCapability" type="migration83:StorageArrayCapability"/>
+  <xs:element name="storageGroup" type="migration83:StorageGroup"/>
+  <xs:element name="syncParam" type="migration83:SyncParam"/>
+  <xs:complexType name="DmStorageArrayCapabilityList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DmStorageArrayCapabilityList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DmStorageArrayCapabilityList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element ref="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}storageArrayCapability"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="storageArrayCapability" type="migration83:StorageArrayCapability" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The capabilities for migration relevant array]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DmStorageArrayList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DmStorageArrayList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DmStorageArrayList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="arrayId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arrayId" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array IDs.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DmStorageGroupList">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for DmStorageGroupList complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="DmStorageGroupList">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="numStorageGroups" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;sequence maxOccurs="unbounded" minOccurs="0">
+&lt;element name="migratingName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/sequence>
+&lt;element name="numMigratingStorageGroups" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Storage Group names for this array]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numStorageGroups" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of returned Storage Group names]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="migratingName" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The migrating Storage Group names for this array]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="numMigratingStorageGroups" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of returned migrating Storage Group names]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnvironmentSetup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for EnvironmentSetup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="EnvironmentSetup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;all>
+&lt;element name="targetArrayId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;/all>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="targetArrayId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the target array with which migrations will happen.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MigrationAction">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationAction.
+<p>The following schema fragment specifies the expected content contained within this class.
+<p>
+<pre>
+&lt;simpleType name="MigrationAction">
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+&lt;enumeration value="Cutover"/>
+&lt;enumeration value="Sync"/>
+&lt;enumeration value="Commit"/>
+&lt;enumeration value="Recover"/>
+&lt;/restriction>
+&lt;/simpleType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cutover"/>
+      <xs:enumeration value="Sync"/>
+      <xs:enumeration value="Commit"/>
+      <xs:enumeration value="Recover"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MigrationCreate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationCreate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationCreate">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;all>
+&lt;element name="targetArrayId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="srp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="noCompression" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/all>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="targetArrayId" type="xs:string" minOccurs="1"/>
+      <xs:element name="srp" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the migration session target array SRP.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="noCompression" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Create the target Storage Group without compression. Only supported when the target array and SRP support compression.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationDevicePair">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationDevicePair complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationDevicePair">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="srcVolumeName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="invalidSrc" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="missingSrc" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="tgtVolumeName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="invalidTgt" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="missingTgt" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="srcVolumeName" type="xs:string" minOccurs="1"/>
+      <xs:element name="invalidSrc" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the source device is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="missingSrc" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the source device is missing]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tgtVolumeName" type="xs:string" minOccurs="1"/>
+      <xs:element name="invalidTgt" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the target device is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="missingTgt" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the target device is missing]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationInitiator">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationInitiator complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationInitiator">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="wwn" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="invalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the initiator]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="wwn" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The initiator WWN]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="invalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationInitiatorGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationInitiatorGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationInitiatorGroup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="invalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="childInvalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="missing" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="initiator" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationInitiator" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the Masking View]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="invalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="childInvalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if a child entity is valid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="missing" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is missing]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="initiator" type="migration83:MigrationInitiator" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Collection of Port Groups that are part of the Masking View]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationMaskingView">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationMaskingView complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationMaskingView">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="invalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="childInvalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="missing" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="initiatorGroup" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationInitiatorGroup" minOccurs="0"/>
+&lt;element name="portGroup" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationPortGroup" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the Masking View]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="invalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="childInvalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if a child entity is valid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="missing" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is missing]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="initiatorGroup" type="migration83:MigrationInitiatorGroup" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The Initiator Group that is in the Masking View]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="portGroup" type="migration83:MigrationPortGroup" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Collection of Port Group is are part of the Masking View]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationPort">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationPort complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationPort">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="invalid" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The director and port name of the port]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="invalid" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationPortGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationPortGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationPortGroup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="invalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="childInvalid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="missing" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="ports" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationPort" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the Masking View]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="invalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is invalid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="childInvalid" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if a child entity is valid]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="missing" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Flag to indicate if the entity is missing]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ports" type="migration83:MigrationPort" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MigrationUpdate">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for MigrationUpdate complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="MigrationUpdate">
+&lt;complexContent>
+&lt;extension base="{http://www.emc.com/em/2012/07/univmax/restapi/common}ParamType">
+&lt;sequence>
+&lt;element name="action" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationAction"/>
+&lt;element name="sync" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}SyncParam" minOccurs="0"/>
+&lt;element name="recover" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}RecoverParam" minOccurs="0"/>
+&lt;/sequence>
+&lt;/extension>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:ParamType">
+        <xs:sequence>
+          <xs:element name="action" type="migration83:MigrationAction" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[The action to be performed.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="sync" type="migration83:SyncParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Sync specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="recover" type="migration83:RecoverParam" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <![CDATA[Recover specific parameters.]]>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RecoverParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for RecoverParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="RecoverParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;all>
+&lt;element name="force" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/all>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="force" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The force option for the action]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageArray">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageArray complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageArray">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="arrayId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="storageGroupCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="migrationSessionCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+&lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="dmEnvironmentArrayIDs" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arrayId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array ID.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="storageGroupCount" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of the Storage Groups on the array.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="migrationSessionCount" type="xs:int" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The number of the Storage Group migration sessions on the array.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="local" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Is the array locally attached to the management instance.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dmEnvironmentArrayIDs" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array IDs which have valid Data Migration environments setup.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageArrayCapability">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageArrayCapability complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageArrayCapability">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="arrayId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+&lt;element name="dmSource" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="dmTarget" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;element name="setupEnvironments" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="compression" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arrayId" type="xs:string" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array ID.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dmSource" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array is capable of being a source for migration sessions.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dmTarget" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array is capable of being a target for migration sessions.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="setupEnvironments" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="compression" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The array is capable of compression.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for StorageGroup complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="StorageGroup">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;sequence>
+&lt;element name="sourceArray" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="targetArray" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="storageGroup" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+&lt;element name="totalCapacity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="remainingCapacity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+&lt;element name="devicePairs" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationDevicePair" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="sourceMaskingView" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationMaskingView" maxOccurs="unbounded" minOccurs="0"/>
+&lt;element name="targetMaskingView" type="{http://www.emc.com/em/2012/07/univmax/restapi/83/migration}MigrationMaskingView" maxOccurs="unbounded" minOccurs="0"/>
+&lt;/sequence>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sourceArray" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the source array.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="targetArray" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the target array.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="storageGroup" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The name of the Storage Group involved in the migration.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="state" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The state of the migration session]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalCapacity" type="xs:double" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[This is the total amount of data, in GB, to be migrated.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="remainingCapacity" type="xs:double" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The capacity, in GB, that remains to be synchronized in the migrating state and cutover-syncing states. The value 0 will be returned for
+all other states.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="devicePairs" type="migration83:MigrationDevicePair" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="sourceMaskingView" type="migration83:MigrationMaskingView" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The source Masking View for the Storage Group]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="targetMaskingView" type="migration83:MigrationMaskingView" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The target Masking View for the Storage Group]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SyncParam">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[<p>Java class for SyncParam complex type.
+<p>The following schema fragment specifies the expected content contained within this class.
+<pre>
+&lt;complexType name="SyncParam">
+&lt;complexContent>
+&lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+&lt;all>
+&lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;element name="stop" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+&lt;/all>
+&lt;/restriction>
+&lt;/complexContent>
+&lt;/complexType>
+</pre>]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="start" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Used to start replication from the target array to the source array without moving the application.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="stop" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Used to stop replication from the target array to the source array without moving the application.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
