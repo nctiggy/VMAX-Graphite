@@ -15,6 +15,9 @@ WORKDIR ~/VMAX-Graphite
 
 RUN bundle install &&\
     apk del build-dependencies && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    mkdir /vmax-csv
+
+VOLUME ["/data"]
 
 CMD ["./collector.rb"]

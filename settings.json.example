@@ -11,7 +11,8 @@
 		"url": "hostname:port"
 	},
 	"csv": {
-		"enabled": false
+		"enabled": false,
+        "directory": "/data/"
 	},
 	"unisphere": [
 		{

@@ -227,6 +227,6 @@ config['unisphere'].each do |unisphere|
     end
     i.write_points(influx_output_payload) if config['influxdb']['enabled']
     g.send_metrics(graphite_output_payload) if config['graphite']['enabled']
-    CSV.open("#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| graphite_output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
+    CSV.open("${config['csv']['directory']}#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| graphite_output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
   end
 end
