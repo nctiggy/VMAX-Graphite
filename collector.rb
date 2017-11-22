@@ -177,7 +177,7 @@ end
 
 config=readSettings(settings_file)
 g = Graphite.new({host: config['graphite']['host'], port: config['graphite']['port']}) if config['graphite']['enabled']
-i = InfluxDB::Client.new url: influx_url if config['influxdb']['enabled']
+i = InfluxDB::Client.new url: config['influxdb']['url'] if config['influxdb']['enabled']
 
 ## Loop through each Unisphere ##
 config['unisphere'].each do |unisphere|
@@ -227,6 +227,6 @@ config['unisphere'].each do |unisphere|
     end
     i.write_points(influx_output_payload) if config['influxdb']['enabled']
     g.send_metrics(graphite_output_payload) if config['graphite']['enabled']
-    CSV.open("${config['csv']['directory']}#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| graphite_output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
+    CSV.open("#{config['csv']['directory']}#{symmetrix['sid']}-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv", "wb") { |csv| graphite_output_payload.to_a.each { |elem| csv << elem } } if config['csv']['enabled']
   end
 end
