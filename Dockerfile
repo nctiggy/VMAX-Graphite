@@ -1,14 +1,20 @@
 FROM ruby:alpine
 
-RUN apk update && apk upgrade && apk --update add --virtual build-dependencies \
+RUN apk update && \
+    apk upgrade && \
+    apk --update add --virtual build-dependencies \
     openssl-dev \
     build-base \
-    libc-dev
+    libc-dev && \
+    gem update --no-ri --no-rdoc && \
+    gem install bundler --no-ri --no-rdoc
 
 COPY ./ ~/VMAX-Graphite/
 
 WORKDIR ~/VMAX-Graphite
 
-RUN gem install bundler && bundle install
+RUN bundle install &&\
+    apk del build-dependencies && \
+    rm -rf /var/cache/apk/*
 
 CMD ["./collector.rb"]
