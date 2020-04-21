@@ -12,7 +12,7 @@
 	},
 	"csv": {
 		"enabled": false,
-        "directory": "/data/"
+        	"directory": "/data/"
 	},
 	"unisphere": [
 		{
